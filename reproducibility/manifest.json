@@ -87,14 +87,16 @@
       "missing_or_limited": [
         "Fresh 28-point optimization and Genus evaluation are intentionally not run during packaging.",
         "The packaged source builds and passed small fresh-search smoke tests, but rebuilt executables are not claimed byte-identical to historical canonical binaries.",
-        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user."
+        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user.",
+        "The complete Section III-E online runtime controller is not yet reproduced by the release wrapper."
       ],
       "selected_outputs": "experiments/main28/expected/<benchmark>__<anchor>.v",
       "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs",
       "runner": "experiments/main28/run.py",
       "source_provenance": "experiments/main28/source/source_provenance.json",
       "optimization_replay": "python3 experiments/main28/run.py run-one or run-all; see experiments/main28/README.md",
-      "external_validation": "user-provided licensed Genus and formal tools; reuse saved PPA only on exact output-SHA match"
+      "external_validation": "user-provided licensed Genus and formal tools; reuse saved PPA only on exact output-SHA match",
+      "section_iii_e_execution_gap": "The packaged wrapper launches both branches and waits for both, then replays the saved policy from historical external-PPA features. It does not reproduce the online stop/continue decision at Conquer completion, invokes Conquer search-only, and defaults to two internal workers."
     },
     {
       "id": "figure-6-runtime",
@@ -114,7 +116,7 @@
     {
       "id": "figure-7-pareto",
       "paper_location": "Figure 7",
-      "status": "evidence_replay_verified",
+      "status": "evidence_replay_and_fresh_iterative_entry_verified",
       "g0_points": 20,
       "frozen_anchors": 13,
       "objectives": [
@@ -131,7 +133,22 @@
       "source_receipt": "evidence/figure7/source_receipt.json",
       "evidence_replay": "python3 scripts/replay_figure7.py --output-dir reproduced/figure7",
       "external_validation": "all 263 frozen candidates carry saved mapped-as-is Genus PPA and historical formal PASS",
-      "selection_boundary": "candidate pools were frozen using Internal-NLDM-V3 before external evaluation; results are limited to the evaluated pools"
+      "selection_boundary": "candidate pools were frozen using Internal-NLDM-V3 before external evaluation; results are limited to the evaluated pools",
+      "g0_manifest": "experiments/pareto_adder/manifest.json",
+      "g0_inputs": "experiments/pareto_adder/g0/<point_id>.v",
+      "g0_verification": "python3 experiments/pareto_adder/run.py evidence --output reproduced/figure7",
+      "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs",
+      "runner": "experiments/pareto_adder/run.py",
+      "objective_specs": "experiments/pareto_adder/objectives/",
+      "optimization_replay": "python3 experiments/pareto_adder/run.py run-one or run-all; see experiments/pareto_adder/README.md",
+      "method": "Iterative",
+      "method_rationale": "The experiment varies the objective while holding the search method fixed; direct Iterative matches the preserved Figure 7 runs and avoids adding the main method scheduler as a confounding variable.",
+      "fresh_validation": "20/20 G0 hashes, 13 anchors, three objectives, 39-task plan, and one-round p0800/D x A Iterative smoke PASS; complete queue not run",
+      "missing_or_limited": [
+        "Fresh full 39-trajectory optimization and external evaluation are intentionally not run during packaging.",
+        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user.",
+        "A fresh netlist needs fresh formal and mapped-as-is external evaluation before replacing saved evidence."
+      ]
     },
     {
       "id": "figure-8-ablation",

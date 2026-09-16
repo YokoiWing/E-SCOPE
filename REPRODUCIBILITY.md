@@ -52,6 +52,18 @@ explicit. Saved wall times are machine-specific. The available records do not
 by themselves establish the paper's one-CPU-core wording because the search
 configuration also records internal resource workers.
 
+The packaged source contains the main algorithmic pieces described in Section
+III-E: topology candidate generation, conditional sizing, whole-circuit PPA,
+strict acceptance, cold reconstruction, and regional composition. The current
+`main28/run.py` wrapper is not yet a faithful replay of the paper's online
+controller. It starts both branches and waits for both searches to finish; the
+saved method policy is then replayed separately from historical externally
+measured features. It does not stop or continue Iterative at the moment
+Conquer finishes, and its Conquer command is search-only. The wrapper also
+defaults to two internal workers. These are execution-layer gaps, so the
+packaged evidence and method-choice replay must not be described as a fresh
+end-to-end reproduction of the Section III-E runtime controller.
+
 ## Figure 7 Pareto experiment
 
 Recompute Pareto fronts, the three hypervolume claims, the power values at
@@ -66,6 +78,16 @@ The current PDF objectives are D×A, D²AP, and D×P². The compact table has
 formal PASS. Candidate selection occurred before external Genus evaluation.
 The result is empirical coverage within that frozen pool, not a proof of a
 globally optimal Pareto frontier.
+
+The fresh-search package is
+[`experiments/pareto_adder/`](experiments/pareto_adder/README.md). It contains
+all 20 byte-identified G0 netlists, marks the 13 anchors selected from G0-only
+external fronts, and supplies a direct Iterative entry for the three paper
+objectives or a user-provided objective specification. Direct Iterative is the
+preserved experiment design: Section IV-C varies the objective while holding
+the search method fixed, so the main experiment's Iterative/Conquer scheduler
+would introduce an additional variable. A default plan has 39 sequential
+trajectories; packaging did not launch that expensive queue.
 
 ## Figure 8 ablation
 
@@ -112,6 +134,9 @@ available.
 - Main-28 execution: isolated offline Cargo Release build of four binaries PASS;
   `epfl_ctrl` one-round Iterative smoke and Conquer search-only smoke PASS. The
   smoke establishes a working fresh-search path, not paper-output identity.
+- Figure 7 fresh-search entry: 20/20 G0 hashes PASS; 13 frozen anchors and all
+  three objective specifications validate; a 39-task paper plan is generated.
+  One p0800/D×A one-round Iterative smoke PASS. The complete queue was not run.
 - AreaPMO: isolated Release build PASS; `usb_phy` real 10-round smoke and CEC
   PASS (2.071 s native wall on this machine).
 - Iterative: isolated offline Cargo Release build and `cargo fmt --check` PASS;

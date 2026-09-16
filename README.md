@@ -9,7 +9,9 @@ configuration identifiers, not method names.
 
 This artifact contains the six-circuit case study in
 [`case_study/`](case_study/README.md), the 28 exact Table III G0 netlists and
-runtime policy in [`experiments/main28/`](experiments/main28/README.md), plus
+runtime policy in [`experiments/main28/`](experiments/main28/README.md), the
+20-G0 Figure 7 experiment in
+[`experiments/pareto_adder/`](experiments/pareto_adder/README.md), plus
 compact original-precision results and replay scripts for Table III and Figures
 6--8. Current coverage and limitations are recorded in
 [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) and the machine-readable
@@ -22,6 +24,7 @@ python3 scripts/preflight.py
 python3 scripts/verify_release.py
 python3 case_study/verify.py
 python3 experiments/main28/run.py evidence --output reproduced/main28
+python3 experiments/pareto_adder/run.py evidence --output reproduced/figure7
 ```
 
 ## Recompute Table IV from saved evidence
@@ -60,6 +63,26 @@ Iterative/Conquer choice, recomputes the original-precision aggregates, and
 redraws the runtime figure. The same entry also provides `build`, `preflight`,
 `plan`, `run-one`, `select`, and resumable `run-all` subcommands for fresh
 search. See [`experiments/main28/README.md`](experiments/main28/README.md).
+
+## Reproduce the Section IV-C Pareto experiment
+
+The 20 exact high-effort Genus `epfl_adder` G0 netlists, the 13 anchors frozen
+from G0-only fronts, and the D×A, D²AP, and D×P² objective specifications are
+under `experiments/pareto_adder/`. Its entry point checks saved evidence,
+builds the shared source, writes a 39-task plan, runs one direct Iterative
+trajectory, or executes a resumable sequential queue. It also accepts a custom
+objective JSON:
+
+```bash
+python3 experiments/pareto_adder/run.py plan \
+  --objective experiments/pareto_adder/objectives/example_custom.json \
+  --output /tmp/escope-pareto-custom-plan.json
+```
+
+Figure 7 uses Iterative directly because it isolates objective choice while
+holding the search method and all other settings fixed. See
+[`experiments/pareto_adder/README.md`](experiments/pareto_adder/README.md) for
+the rationale and fresh-run commands.
 
 Genus, its license, and the main experiment's full-combinational Liberty file
 are not included. Internal estimates and external Genus
