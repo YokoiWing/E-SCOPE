@@ -153,7 +153,7 @@
     {
       "id": "figure-8-ablation",
       "paper_location": "Figure 8",
-      "status": "evidence_replay_verified_with_documented_plot_discrepancy",
+      "status": "evidence_replay_and_selected_method_fresh_entry_verified",
       "benchmarks": 28,
       "selection": "each benchmark uses the Iterative or Conquer branch frozen by the Table III main-result selection",
       "raw_ppa": "evidence/figure8/selected_flow_ablation_original_precision.csv",
@@ -166,7 +166,13 @@
         "Figure 8's source selection still uses the older epfl_adder t0_0.95x point, while current PDF Table III and Figure 6 use p0800.",
         "The compact evidence table records output SHA-256 values but does not yet package every ablation netlist and formal receipt.",
         "Fresh 28-point optimization is intentionally not run during packaging."
-      ]
+      ],
+      "experiment_manifest": "experiments/ablation/manifest.json",
+      "runner": "experiments/ablation/run.py",
+      "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs and experiments/main28/runtime/scripts/run_conquer_recall_v3.py",
+      "method_selection": "11 Iterative and 17 Conquer, inherited from Table III before considering ablation results",
+      "optimization_replay": "python3 experiments/ablation/run.py run-one; see experiments/ablation/README.md",
+      "fresh_validation": "28/28 method labels and G0 hashes PASS; 84-task plan generated; full fresh search not run"
     }
   ]
 }

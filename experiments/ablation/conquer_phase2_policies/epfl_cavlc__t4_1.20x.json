@@ -1,0 +1,19 @@
+{
+  "active_instance_cap": 32,
+  "area_share_percent": 25,
+  "d1_p1_use_timing_boundary": true,
+  "early_stop_min_relative_gain": 0.005,
+  "early_stop_min_rounds": 2,
+  "early_stop_patience": 1,
+  "gate_threshold": 1000,
+  "leader_followup_active_instance_cap": 128,
+  "leader_followup_exact_budget": 650,
+  "leader_followup_max_instance_count": 4096,
+  "pre_materialization_candidate_cap": 512,
+  "stage25_active_instance_cap": 32,
+  "stage500_active_instance_cap": 32,
+  "stage50_active_instance_cap": 32,
+  "timing_share_percent": 50,
+  "very_large_gate_threshold": 4096,
+  "very_large_pre_materialization_candidate_cap": 256
+}

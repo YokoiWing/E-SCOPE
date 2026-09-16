@@ -105,6 +105,15 @@ displayed bar and the plot-generated CSV, while the aggregate statement agrees
 with the unclipped evidence. Use `--plot paper` to reproduce that documented
 display choice; use `--plot exact` for the unmodified evidence.
 
+Fresh ablation code is under
+[`experiments/ablation/`](experiments/ablation/README.md). It verifies the
+Figure 8 method label against the main-result manifest before running: 11 rows
+use Iterative and 17 use Conquer. Phase-I-only, Phase-II-only, and removal of
+Phase-I drive expansion are executed inside that selected branch. The plan has
+84 tasks and cannot override the selected method. Twenty-seven rows share the
+current main anchor; `epfl_adder` retains the older `t0_0.95x` Figure 8 anchor,
+which selected Iterative just as the current p0800 point does.
+
 ## Fresh optimization
 
 The case-study component READMEs describe their fresh-run entry points. The
@@ -137,6 +146,9 @@ available.
 - Figure 7 fresh-search entry: 20/20 G0 hashes PASS; 13 frozen anchors and all
   three objective specifications validate; a 39-task paper plan is generated.
   One p0800/D×A one-round Iterative smoke PASS. The complete queue was not run.
+- Figure 8 fresh-search entry: 28/28 selected methods match Table III; all G0
+  hashes PASS; the 84-task selected-method plan is generated. Full fresh
+  ablation search was not run during packaging.
 - AreaPMO: isolated Release build PASS; `usb_phy` real 10-round smoke and CEC
   PASS (2.071 s native wall on this machine).
 - Iterative: isolated offline Cargo Release build and `cargo fmt --check` PASS;

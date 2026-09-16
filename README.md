@@ -84,6 +84,20 @@ holding the search method and all other settings fixed. See
 [`experiments/pareto_adder/README.md`](experiments/pareto_adder/README.md) for
 the rationale and fresh-run commands.
 
+## Reproduce the Figure 8 ablation
+
+[`experiments/ablation/`](experiments/ablation/README.md) checks and executes
+the three Figure 8 controls. Each benchmark automatically inherits the method
+selected by the main experiment: 11 use Iterative and 17 use Conquer. The
+method cannot be overridden from the ablation command line.
+
+```bash
+python3 experiments/ablation/run.py evidence \
+  --output reproduced/figure8 --plot exact
+python3 experiments/ablation/run.py plan \
+  --output /tmp/escope-ablation-plan.json
+```
+
 Genus, its license, and the main experiment's full-combinational Liberty file
 are not included. Internal estimates and external Genus
 measurements are distinct. The frozen scheduling policy was fitted on these six

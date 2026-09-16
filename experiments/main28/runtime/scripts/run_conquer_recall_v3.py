@@ -54,6 +54,11 @@ def main():
         action="store_true",
         help="freeze Internal finalists and stop before external Genus/formal validation",
     )
+    parser.add_argument(
+        "--no-phase1-drive-expansion",
+        action="store_true",
+        help="retain structural seeds while suppressing extra drive realizations",
+    )
     args = parser.parse_args()
     root = args.output.resolve()
     root.mkdir(parents=True, exist_ok=True)
@@ -102,6 +107,8 @@ def main():
         "EGG_PROFILE_BATCH_JOBS": str(cfg["profile_jobs"]),
         "EGG_PROFILE_BOUNDARY_RESPONSE": "1",
     })
+    if args.no_phase1_drive_expansion:
+        env["EGG_V8_PHASE_ABLATION"] = "no-pi-drive-expansion"
     if cfg.get("profile_static_only", False):
         env["EGG_PROFILE_STATIC_ONLY"] = "1"
     anchors = load(args.anchor_manifest) if args.anchor_manifest else ANCHORS
@@ -130,6 +137,11 @@ def main():
         D1 / "scripts/conquer_defense_policy_v2.py",
         D1 / "scripts/conquer_recall_policy_v3.py",
         Path(__file__),
+        D1 / "scripts" / (
+            "mine_single_cell_fusions_no_drive.py"
+            if args.no_phase1_drive_expansion
+            else "mine_single_cell_fusions.py"
+        ),
     ]
     assert selected_points, "no anchors selected"
     if resume:
@@ -158,6 +170,7 @@ def main():
         "frozen_unix": started,
         "historical_winner_inputs": [],
         "external_feedback_to_search": False,
+        "phase1_drive_expansion_enabled": not args.no_phase1_drive_expansion,
         "selected_points": [{"benchmark": b, "target": t} for b, t in selected_points],
     }
     dump(root / "frozen_policy.json", policy_receipt)
@@ -262,7 +275,11 @@ def main():
             assert cfg["normal_v8_rounds"] == 0
             dump(point / "normal_lane_status.json", normal)
         mine_command = [
-            "python3", D1 / "scripts/mine_single_cell_fusions.py",
+            "python3", D1 / "scripts" / (
+                "mine_single_cell_fusions_no_drive.py"
+                if args.no_phase1_drive_expansion
+                else "mine_single_cell_fusions.py"
+            ),
             "--graph", point / "g0_state.json",
             "--timing-state", point / "g0_state.json",
             "--audit", AUDIT,
@@ -273,6 +290,8 @@ def main():
             "--variants-per-cone", cfg["mining_variants_per_cone"],
             "--max-candidates", cfg["mining_cap"],
         ]
+        if args.no_phase1_drive_expansion:
+            mine_command.extend(["--no-drive-expansion", "--scale-rules", SCALE])
         if not resume_point:
             run(tag + "_mine", mine_command)
         raw_plans = load(point / "mined/candidate_plan.json")
