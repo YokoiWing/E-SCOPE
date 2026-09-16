@@ -1,0 +1,1149 @@
+{
+  "status": "retrospective_overfit_not_validated_online",
+  "features": [
+    "internal_v3",
+    "initial_instances",
+    "current_instances",
+    "stage_index",
+    "stage_round",
+    "total_round",
+    "rules",
+    "candidate_cap",
+    "accepted",
+    "stagnation",
+    "area_gain_fraction"
+  ],
+  "initialization": {
+    "feature": "internal_v3",
+    "threshold": 0.5,
+    "le": {
+      "feature": "initial_instances",
+      "threshold": 4403.5,
+      "le": {
+        "action": "ENTER_P00",
+        "support": 3
+      },
+      "gt": {
+        "feature": "initial_instances",
+        "threshold": 9326.0,
+        "le": {
+          "action": "ENTER_P04",
+          "support": 1
+        },
+        "gt": {
+          "feature": "initial_instances",
+          "threshold": 21689.5,
+          "le": {
+            "action": "ENTER_P02",
+            "support": 1
+          },
+          "gt": {
+            "action": "ENTER_P04",
+            "support": 1
+          }
+        }
+      }
+    },
+    "gt": {
+      "feature": "initial_instances",
+      "threshold": 9326.0,
+      "le": {
+        "action": "ENTER_P01",
+        "support": 4
+      },
+      "gt": {
+        "action": "ENTER_P07",
+        "support": 2
+      }
+    }
+  },
+  "after_round": {
+    "feature": "stagnation",
+    "threshold": 3.5,
+    "le": {
+      "feature": "current_instances",
+      "threshold": 31672.5,
+      "le": {
+        "feature": "stage_round",
+        "threshold": 67.5,
+        "le": {
+          "feature": "total_round",
+          "threshold": 127.5,
+          "le": {
+            "feature": "current_instances",
+            "threshold": 11124.5,
+            "le": {
+              "feature": "accepted",
+              "threshold": 0.5,
+              "le": {
+                "feature": "stage_round",
+                "threshold": 21.5,
+                "le": {
+                  "feature": "internal_v3",
+                  "threshold": 0.5,
+                  "le": {
+                    "action": "CONTINUE",
+                    "support": 8
+                  },
+                  "gt": {
+                    "feature": "initial_instances",
+                    "threshold": 363.0,
+                    "le": {
+                      "feature": "stage_round",
+                      "threshold": 12.5,
+                      "le": {
+                        "action": "CONTINUE",
+                        "support": 1
+                      },
+                      "gt": {
+                        "action": "STOP",
+                        "support": 1
+                      }
+                    },
+                    "gt": {
+                      "action": "CONTINUE",
+                      "support": 2
+                    }
+                  }
+                },
+                "gt": {
+                  "feature": "current_instances",
+                  "threshold": 372.0,
+                  "le": {
+                    "action": "CONTINUE",
+                    "support": 1
+                  },
+                  "gt": {
+                    "action": "STOP",
+                    "support": 2
+                  }
+                }
+              },
+              "gt": {
+                "feature": "current_instances",
+                "threshold": 7181.0,
+                "le": {
+                  "feature": "stage_round",
+                  "threshold": 49.5,
+                  "le": {
+                    "action": "CONTINUE",
+                    "support": 280
+                  },
+                  "gt": {
+                    "feature": "initial_instances",
+                    "threshold": 4403.5,
+                    "le": {
+                      "action": "STOP",
+                      "support": 1
+                    },
+                    "gt": {
+                      "feature": "internal_v3",
+                      "threshold": 0.5,
+                      "le": {
+                        "action": "CONTINUE",
+                        "support": 28
+                      },
+                      "gt": {
+                        "feature": "stage_round",
+                        "threshold": 56.5,
+                        "le": {
+                          "action": "CONTINUE",
+                          "support": 7
+                        },
+                        "gt": {
+                          "action": "STOP",
+                          "support": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                "gt": {
+                  "feature": "current_instances",
+                  "threshold": 7208.0,
+                  "le": {
+                    "action": "ENTER_P12",
+                    "support": 1
+                  },
+                  "gt": {
+                    "feature": "stage_round",
+                    "threshold": 16.5,
+                    "le": {
+                      "feature": "stage_round",
+                      "threshold": 5.5,
+                      "le": {
+                        "action": "CONTINUE",
+                        "support": 22
+                      },
+                      "gt": {
+                        "feature": "area_gain_fraction",
+                        "threshold": 2.7398196488880905e-05,
+                        "le": {
+                          "feature": "internal_v3",
+                          "threshold": 0.5,
+                          "le": {
+                            "action": "CONTINUE",
+                            "support": 1
+                          },
+                          "gt": {
+                            "action": "STOP",
+                            "support": 1
+                          }
+                        },
+                        "gt": {
+                          "feature": "current_instances",
+                          "threshold": 7244.0,
+                          "le": {
+                            "feature": "current_instances",
+                            "threshold": 7228.0,
+                            "le": {
+                              "action": "CONTINUE",
+                              "support": 2
+                            },
+                            "gt": {
+                              "action": "ENTER_P11",
+                              "support": 1
+                            }
+                          },
+                          "gt": {
+                            "action": "CONTINUE",
+                            "support": 14
+                          }
+                        }
+                      }
+                    },
+                    "gt": {
+                      "action": "ENTER_P03",
+                      "support": 1
+                    }
+                  }
+                }
+              }
+            },
+            "gt": {
+              "feature": "stage_round",
+              "threshold": 2.5,
+              "le": {
+                "feature": "initial_instances",
+                "threshold": 21689.5,
+                "le": {
+                  "feature": "internal_v3",
+                  "threshold": 0.5,
+                  "le": {
+                    "action": "CONTINUE",
+                    "support": 1
+                  },
+                  "gt": {
+                    "action": "ENTER_P08",
+                    "support": 1
+                  }
+                },
+                "gt": {
+                  "action": "CONTINUE",
+                  "support": 6
+                }
+              },
+              "gt": {
+                "feature": "area_gain_fraction",
+                "threshold": 0.0006031293657633531,
+                "le": {
+                  "feature": "internal_v3",
+                  "threshold": 0.5,
+                  "le": {
+                    "feature": "stage_round",
+                    "threshold": 3.5,
+                    "le": {
+                      "action": "CONTINUE",
+                      "support": 1
+                    },
+                    "gt": {
+                      "action": "STOP",
+                      "support": 1
+                    }
+                  },
+                  "gt": {
+                    "action": "STOP",
+                    "support": 1
+                  }
+                },
+                "gt": {
+                  "action": "ENTER_P06",
+                  "support": 1
+                }
+              }
+            }
+          },
+          "gt": {
+            "action": "STOP",
+            "support": 1
+          }
+        },
+        "gt": {
+          "action": "ENTER_P10",
+          "support": 1
+        }
+      },
+      "gt": {
+        "feature": "internal_v3",
+        "threshold": 0.5,
+        "le": {
+          "action": "ENTER_P05",
+          "support": 1
+        },
+        "gt": {
+          "action": "ENTER_P09",
+          "support": 1
+        }
+      }
+    },
+    "gt": {
+      "feature": "internal_v3",
+      "threshold": 0.5,
+      "le": {
+        "action": "STOP",
+        "support": 2
+      },
+      "gt": {
+        "feature": "stage_round",
+        "threshold": 24.5,
+        "le": {
+          "action": "CONTINUE",
+          "support": 2
+        },
+        "gt": {
+          "action": "STOP",
+          "support": 1
+        }
+      }
+    }
+  },
+  "profiles": {
+    "P00": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 512,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 256,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "8",
+        "EGG_GENERATOR_JOBS": "8",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "0",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "f52c8a998c4176ed283bd4100f5e0b5e8e80bc84c9e1c14740f5dfb6c2f22d04",
+      "rule_count": 1435,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P01": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 512,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 256,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "8",
+        "EGG_GENERATOR_JOBS": "8",
+        "EGG_INTERNAL_TIMING_MODEL": "driver-aware-v3",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "5.76",
+        "EGG_POWER_MODE": "vectorless",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "0",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "f52c8a998c4176ed283bd4100f5e0b5e8e80bc84c9e1c14740f5dfb6c2f22d04",
+      "rule_count": 1435,
+      "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P02": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 2304,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 2304,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "48",
+        "EGG_GENERATOR_JOBS": "48",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "2048",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "1024",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "16"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P03": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 1024,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 1024,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "1024",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "512",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P04": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 2304,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 2304,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "2048",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "1024",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P05": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 512,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 512,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "512",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "128",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P06": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 512,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 512,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "512",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "256",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "0.99_times_original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P07": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 2304,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 2304,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "32",
+        "EGG_GENERATOR_JOBS": "32",
+        "EGG_INTERNAL_TIMING_MODEL": "driver-aware-v3",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "5.76",
+        "EGG_POWER_MODE": "vectorless",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "2048",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "1024",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P08": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 1024,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 1024,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "driver-aware-v3",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "5.76",
+        "EGG_POWER_MODE": "vectorless",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "1024",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "512",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "previous_stage_final_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P09": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 512,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 512,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "driver-aware-v3",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "5.76",
+        "EGG_POWER_MODE": "vectorless",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "512",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "256",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "previous_stage_final_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P10": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 2048,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 2048,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "genlib-static",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "0",
+        "EGG_POWER_MODE": "legacy",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "2048",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "1024",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "native_saved_incumbent"
+    },
+    "P11": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 512,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 512,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "driver-aware-v3",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "5.76",
+        "EGG_POWER_MODE": "vectorless",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "512",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "256",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "saved_internal_feasible_portfolio_selection"
+    },
+    "P12": {
+      "config": {
+        "gate_threshold": 1000,
+        "d1_p1_use_timing_boundary": true,
+        "active_instance_cap": 32,
+        "timing_share_percent": 50,
+        "area_share_percent": 25,
+        "stage25_active_instance_cap": 32,
+        "stage50_active_instance_cap": 32,
+        "stage500_active_instance_cap": 32,
+        "leader_followup_active_instance_cap": 128,
+        "leader_followup_exact_budget": 650,
+        "leader_followup_max_instance_count": 4096,
+        "pre_materialization_candidate_cap": 128,
+        "very_large_gate_threshold": 4096,
+        "very_large_pre_materialization_candidate_cap": 128,
+        "early_stop_min_rounds": 2,
+        "early_stop_min_relative_gain": 0.0,
+        "early_stop_patience": 1,
+        "planner_top_seeds": 4
+      },
+      "environment": {
+        "EGG_CARGO_OFFLINE": "1",
+        "EGG_ITERATIVE": "1",
+        "EGG_UNIFIED_EQUIVALENCE_CANDIDATES": "1",
+        "EGG_FROZEN_RESOURCE_JOBS": "24",
+        "EGG_GENERATOR_JOBS": "24",
+        "EGG_INTERNAL_TIMING_MODEL": "driver-aware-v3",
+        "EGG_PRIMARY_INPUT_DRIVER_CELL": "BUFx2_ASAP7_75t_R",
+        "EGG_PI_ARRIVAL_PS": "0",
+        "EGG_PI_SLEW_PS": "0",
+        "EGG_DRIVER_INPUT_SLEW_PS": "0",
+        "EGG_PO_LOAD_FF": "5.76",
+        "EGG_POWER_MODE": "vectorless",
+        "EGG_POWER_ACTIVITY_MODEL": "uniform",
+        "EGG_POWER_PERIOD_PS": "1000",
+        "EGG_POWER_VOLTAGE_V": "0.7",
+        "EGG_OBJECTIVE_ENGINE": "v8-pareto",
+        "EGG_CONE_ENUM_DEPTH_BOUND": "1",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "1",
+        "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
+        "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
+        "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
+        "EGG_OBJECTIVE_LOCAL_REWRITE_STEP_CAP": "0",
+        "EGG_OBJECTIVE_DELETION_CANDIDATE_CAP": "128",
+        "EGG_OBJECTIVE_CLOSURE_TRANSACTION_CAP": "64",
+        "EGG_OBJECTIVE_CLOSURE_PRUNE_UNREACHABLE": "1",
+        "EGG_OBJECTIVE_P1_JOBS": "8"
+      },
+      "objective": {
+        "kind": "product",
+        "exponents": {
+          "delay": 0,
+          "area": 1,
+          "power": 0
+        }
+      },
+      "delay_bound_policy": "original_guide_G0_delay",
+      "rules_sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda",
+      "rule_count": 290,
+      "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
+      "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
+      "selection_policy": "saved_internal_feasible_portfolio_selection"
+    }
+  },
+  "limits": [
+    "No benchmark name is a feature; instance counts and stage counters can still fingerprint circuits.",
+    "290-rule library was selected on aes_core development data.",
+    "Labels encode historical human stage choices; successful fitting is not independent reproducibility evidence.",
+    "No inference is available for unobserved alternative trajectories; no EDA search was executed.",
+    "Historical binary/runtime defaults remain dependencies outside this scheduling model."
+  ]
+}

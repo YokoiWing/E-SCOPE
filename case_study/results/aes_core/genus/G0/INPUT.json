@@ -1,0 +1,8 @@
+{
+  "netlist": "results/aes_core/areapmo/G0.v",
+  "sha256": "c07a6b62565f2275912608e74a375e74873094e0ff5c6a65900a6cee7ff76c01",
+  "original_evaluated_input": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_fourcase_table_extension_v1/genus_batches/aes_risc_reference_v1/frozen_inputs/aes_core/G0.v",
+  "original_command_record": "paper_results_v8/areapmo_fourcase_table_extension_v1/genus_batches/aes_risc_reference_v1/command.json",
+  "script_sha256": "c92d5becf6e48f1f0cfbe7af334ce19f75cecc1dfe3c5b22ad9621861804cd24",
+  "environment": null
+}

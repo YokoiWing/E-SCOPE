@@ -1,0 +1,12 @@
+{
+  "netlist": "results/aes_core/iterative_internal_v3/final.v",
+  "sha256": "4d4cab0c4680036a6aa519b51ef5ce9f636376f75f28ff0312e62e9ecda79c45",
+  "original_evaluated_input": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/aes_core/internal_v3/follow_divergence_v1/validation/frozen_final.v",
+  "original_command_record": "paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/aes_core/internal_v3/follow_divergence_v1/validation/COMMAND.json",
+  "script_sha256": "c92d5becf6e48f1f0cfbe7af334ce19f75cecc1dfe3c5b22ad9621861804cd24",
+  "environment": {
+    "EGG_USB_GENUS_OUT": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/aes_core/internal_v3/follow_divergence_v1/validation/genus_reports",
+    "EGG_USB_GENUS_LIBS": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/iterative_usb_phy_75t_r_genus_v1/library/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib|${E_SCOPE_SOURCE_ROOT}/paper_results_v8/iterative_usb_phy_75t_r_genus_v1/library/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib|${E_SCOPE_SOURCE_ROOT}/paper_results_v8/iterative_usb_phy_75t_r_genus_v1/library/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib|${E_SCOPE_SOURCE_ROOT}/paper_results_v8/iterative_usb_phy_75t_r_genus_v1/library/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib",
+    "EGG_USB_GENUS_INPUTS": "aes_core/follow_divergence_v1|${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/aes_core/internal_v3/follow_divergence_v1/validation/frozen_final.v|aes_core"
+  }
+}

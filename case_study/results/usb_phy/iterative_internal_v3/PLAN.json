@@ -1,0 +1,67 @@
+{
+  "schema": "areapmo-sixcase-online-repro-plan-v1",
+  "mode": "plan_only_no_search_executed",
+  "case": "usb_phy",
+  "guide": "internal_v3",
+  "g0": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/6e401fd04f9847a4c1f8d0e04e456a8fc657d56c492aeab3f179a16e44441901.v",
+  "g0_sha256": "6e401fd04f9847a4c1f8d0e04e456a8fc657d56c492aeab3f179a16e44441901",
+  "initial_instances": 281,
+  "initial_delay_bound": 315.8572803159993,
+  "initial_policy_action": "ENTER_P01",
+  "profiles": [
+    "P01"
+  ],
+  "binary": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/706274462bbd3b8ac82d1d16d2222822c8262501a623558a85ae3d90fe78d04d",
+  "binary_sha256": "706274462bbd3b8ac82d1d16d2222822c8262501a623558a85ae3d90fe78d04d",
+  "policy": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/FROZEN_POLICY.json",
+  "policy_sha256": "9f0117e41760aa3ec904aa4ace3f054fc5c927b60aa17dc0c167fa0e28e6790d",
+  "manifest": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/MANIFEST.json",
+  "manifest_sha256": "c3b898018fd42ae8b2ea1049ce3f9837f7a8b7eae1f58bb2eb20c7a99cc4099c",
+  "verified_frozen_asset_records": 235,
+  "stages": [
+    {
+      "stage": 1,
+      "profile": "P01",
+      "selection_policy": "native_saved_incumbent",
+      "delay_bound_policy": "original_guide_G0_delay",
+      "native_requested_round_cap": 50,
+      "historical_observer_rounds": 13,
+      "state_policy": "one native process per historical native stage; reset only at original stage boundary",
+      "stop_policy": "retain original native round cap; freeze completed receipt boundary, never replace with a wall-clock cutoff",
+      "binary_provenance": "historical_binary_sha_not_recorded",
+      "jobs": 8,
+      "candidate_cap": 512,
+      "rule_count": 1435,
+      "timeout_sec": 4549,
+      "assets": {
+        "EGG_V8_ULTRA_CONFIG": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/c3eb46284bc2a6ad10569b1c53637adcf6b697e09a881fe0c4ee85b9d8d2e7c6.json",
+          "sha256": "c3eb46284bc2a6ad10569b1c53637adcf6b697e09a881fe0c4ee85b9d8d2e7c6"
+        },
+        "EGG_OBJECTIVE_SPEC": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/c1a0045bcae5a683e2fa4688fc5b638842803b7055595e9373b04eef3f0755c6.json",
+          "sha256": "c1a0045bcae5a683e2fa4688fc5b638842803b7055595e9373b04eef3f0755c6"
+        },
+        "EGG_RULE_PATHS": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/f52c8a998c4176ed283bd4100f5e0b5e8e80bc84c9e1c14740f5dfb6c2f22d04.json",
+          "sha256": "f52c8a998c4176ed283bd4100f5e0b5e8e80bc84c9e1c14740f5dfb6c2f22d04"
+        },
+        "EGG_SCALE_RULES": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230.json",
+          "sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230"
+        },
+        "EGG_LIB_PATH": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba.lib",
+          "sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba"
+        }
+      },
+      "output_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/usb_phy/internal_v3/follow_divergence_v1/stage_01",
+      "historical_output_sha256": "576c90c70cd8aa4c74d3460da2295a34835dcd05d806a622c9a26cc3e2d55308"
+    }
+  ],
+  "final_reference_sha256": "bb20aef8b15aa7c3a8f2f8a34bd4b57c55c5c16363f5c152525a4a60b100e083",
+  "final_interface_template": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_phy/iterative_internal_v3_final.v",
+  "output_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/usb_phy/internal_v3/follow_divergence_v1",
+  "observer_only": "historical trace stops divergence but never changes selection",
+  "evaluation": "reuse existing Genus/CEC only after exact restored final SHA; otherwise pending new validation"
+}

@@ -1,0 +1,7 @@
+{
+  "source": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/aes_core/internal_v3",
+  "completed_stages": 1,
+  "output_sha256": "70a7a6021fa9d25c2051b943e445b965486d613261b54ab99101b350c85c6c32",
+  "search_seconds": 225.22018824302359,
+  "reason": "reuse this reproduction's observer-exact native stage boundary"
+}

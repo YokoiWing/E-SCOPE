@@ -1,0 +1,7 @@
+.slack -471.6
+.arrival 1471.6
+.required_time 1000.0
+.path_delay 1093.7
+instances 7049
+input_ports 3620
+output_ports 1858

@@ -1,0 +1,15 @@
+{
+  "case": "simple_spi",
+  "guide": "genlib",
+  "search_seconds": 4884.488452277961,
+  "first_divergence": null,
+  "schedule_divergence": null,
+  "continued_after_observer_divergence": true,
+  "trace_rounds": 22,
+  "reference_sha256": "0115bdc27c3a0989a12f656d202b5a3a7914e926738b2057abab79231da84673",
+  "evaluation_evidence_reused": true,
+  "final_sha256": "0115bdc27c3a0989a12f656d202b5a3a7914e926738b2057abab79231da84673",
+  "status": "COMPLETE",
+  "classification": "EXACT_TRAJECTORY_PASS",
+  "evaluation_note": "exact final SHA; historical Genus/CEC evidence reused without new EDA"
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "E-SCOPE: Standard-Cell-Oriented PPA-driven E-graph Extraction for Logic Synthesis",
+    "pdf_sha256": "2be79af2287f89ed0c37fb7abc5aad1591bcead6b96e0e9fff495ff1152c72a4",
+    "pdf_pages": 7,
+    "pdf_created": "2026-09-16T19:05:58+08:00"
+  },
+  "coverage": [
+    {
+      "id": "table-iv-case-study",
+      "paper_location": "Table IV and Section IV-E",
+      "status": "evidence_replay_verified",
+      "benchmarks": [
+        "usb_phy",
+        "simple_spi",
+        "systemcdes",
+        "usb_funct",
+        "aes_core",
+        "RISC"
+      ],
+      "anchor": "one common G0 per circuit and evaluator",
+      "flows": [
+        {
+          "name": "AreaPMO",
+          "source_entry": "case_study/areapmo/source/CMakeLists.txt",
+          "runner": "case_study/areapmo/run.py",
+          "configuration": "seed=5; preserve_depth=true; delay_awareness=true; max_divisors=256; at most 100 rounds; at least 10 rounds; stop after 3 rounds without feasible area improvement",
+          "objective": "minimize area subject to delay <= G0 delay",
+          "input_index": "case_study/areapmo/data/routes.json",
+          "output_index": "case_study/results/TABLE.json",
+          "formal_evidence": "case_study/results/<case>/areapmo/verification",
+          "external_receipts": "case_study/results/<case>/genus/baseline_receipts.json"
+        },
+        {
+          "name": "Iterative GENLIB-guided",
+          "source_entry": "case_study/iterative/source/D1-series/src/bin/run_generator_union_native.rs",
+          "runner": "case_study/iterative/run.py",
+          "configuration": "case-independent frozen online policy with route-specific execution profiles",
+          "objective": "minimize area subject to delay <= G0 delay",
+          "input_index": "case_study/iterative/data/routes.json",
+          "output_index": "case_study/iterative/data/results.json",
+          "formal_evidence": "case_study/results/<case>/iterative_genlib/final.cec.log",
+          "external_receipts": null
+        },
+        {
+          "name": "Iterative Internal-NLDM-V3-guided",
+          "source_entry": "case_study/iterative/source/D1-series/src/bin/run_generator_union_native.rs",
+          "runner": "case_study/iterative/run.py",
+          "configuration": "case-independent frozen online policy with route-specific execution profiles",
+          "objective": "minimize area subject to delay <= G0 delay",
+          "input_index": "case_study/iterative/data/routes.json",
+          "output_index": "case_study/iterative/data/results.json",
+          "formal_evidence": "case_study/results/<case>/iterative_internal_v3/final.cec.log",
+          "external_receipts": "case_study/results/<case>/genus/iterative_receipt.json"
+        }
+      ],
+      "raw_ppa": "case_study/results/TABLE.json",
+      "netlist_sha": "stored per row in case_study/results/TABLE.json",
+      "evidence_replay": "python3 scripts/replay_case_study.py --output-dir reproduced/table_iv",
+      "optimization_replay": "python3 case_study/areapmo/run.py or python3 case_study/iterative/run.py; see component READMEs",
+      "external_validation": "case_study/evaluation/evaluate_genus.tcl with user-provided Genus",
+      "resource_accounting": "saved search_seconds are historical wall times; runtime is not expected to reproduce across machines",
+      "selection_boundary": "the scheduling policy was developed on these six circuits; this is not an untouched generalization experiment",
+      "missing_or_limited": [
+        "The original high-effort ABC preprocessing before the prepared AIG inputs is not replayed.",
+        "The evidence replay does not rerun optimization, ABC CEC, or Genus.",
+        "Commercial Genus must be supplied by the user."
+      ]
+    },
+    {
+      "id": "table-iii-main28",
+      "paper_location": "Table III",
+      "status": "evidence_replay_verified_with_adder_version_replacement",
+      "benchmarks": 28,
+      "objective": "D^2 x A x P",
+      "raw_ppa": "evidence/main28/table_iii_figure6_original_precision.csv",
+      "g0_manifest": "experiments/main28/manifest.json",
+      "g0_inputs": "experiments/main28/g0/<benchmark>__<anchor>.v",
+      "g0_verification": "python3 experiments/main28/verify.py",
+      "method_policy": "experiments/main28/policy.py",
+      "small_policy_verification": "python3 experiments/main28/verify.py --small",
+      "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
+      "aggregate": "D2AP geometric-mean ratio 0.8210095475250041 (17.89904524749959% reduction)",
+      "selection_boundary": "27 rows use the frozen Iterative/Conquer selections; current-PDF adder uses the later p0800 D x A archive_000 result",
+      "policy_boundary": "The retrospective in-sample policy matches all 28 method labels; 27 use the same anchor, while epfl_adder/p0800 is a method-only transfer from an older adder anchor. Saved policy observations use external PPA whose latency is excluded from search-only runtime.",
+      "missing_or_limited": [
+        "All 28 G0 netlists are packaged, but the compact layer does not yet package every selected output netlist or formal receipt.",
+        "Fresh 28-point optimization and Genus evaluation are intentionally not run during packaging."
+      ]
+    },
+    {
+      "id": "figure-6-runtime",
+      "paper_location": "Figure 6",
+      "status": "evidence_replay_verified_with_resource_caveat",
+      "raw_runtime": "evidence/main28/table_iii_figure6_original_precision.csv",
+      "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
+      "aggregate": "geometric mean E-SCOPE search / Genus mapping wall ratio 1.4583649253561954",
+      "adder_tuple": {"anchor": "p0800", "g0_gates": 1942, "genus_wall_sec": 301.06, "escope_wall_sec": 303.351},
+      "resource_limit": "Saved wall times are machine-specific. Internal worker settings in the records require separate reconciliation with the paper's one-CPU-core wording."
+    },
+    {
+      "id": "figure-7-pareto",
+      "paper_location": "Figure 7",
+      "status": "evidence_replay_verified",
+      "g0_points": 20,
+      "frozen_anchors": 13,
+      "objectives": ["D x A", "D^2 x A x P", "D x P^2"],
+      "candidate_counts": {"D x A": 86, "D^2 x A x P": 113, "D x P^2": 64},
+      "raw_ppa": "evidence/figure7/epfl_adder_three_objectives_original_precision.csv",
+      "source_receipt": "evidence/figure7/source_receipt.json",
+      "evidence_replay": "python3 scripts/replay_figure7.py --output-dir reproduced/figure7",
+      "external_validation": "all 263 frozen candidates carry saved mapped-as-is Genus PPA and historical formal PASS",
+      "selection_boundary": "candidate pools were frozen using Internal-NLDM-V3 before external evaluation; results are limited to the evaluated pools"
+    },
+    {
+      "id": "figure-8-ablation",
+      "paper_location": "Figure 8",
+      "status": "evidence_replay_verified_with_documented_plot_discrepancy",
+      "benchmarks": 28,
+      "selection": "each benchmark uses the Iterative or Conquer branch frozen by the Table III main-result selection",
+      "raw_ppa": "evidence/figure8/selected_flow_ablation_original_precision.csv",
+      "evidence_replay": "python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot exact",
+      "paper_figure_replay": "python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot paper",
+      "external_validation": "saved mapped-as-is Genus evidence; no Genus is run by the replay",
+      "formal_status": "referenced historical outputs only; formal receipts are not yet included in this compact Figure 8 layer",
+      "discrepancy": "the current paper plotting script clips epfl_i2c full/Phase-II-only from 1.0708307702363498 to 1.035; aggregate 4.6% text uses the exact ratios",
+      "missing_or_limited": [
+        "Figure 8's source selection still uses the older epfl_adder t0_0.95x point, while current PDF Table III and Figure 6 use p0800.",
+        "The compact evidence table records output SHA-256 values but does not yet package every ablation netlist and formal receipt.",
+        "Fresh 28-point optimization is intentionally not run during packaging."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1744 @@
+{
+  "rewrites": [
+    {
+      "name": "RVT75_two_cell_fusion_01194_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 ?v1 (AND3x1_ASAP7_75t_R ?v2 ?v3 ?v4))",
+      "applier": "(AO32x1_ASAP7_75t_R ?v2 ?v3 ?v4 ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01172_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R (AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3 ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01192_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01166_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01191_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2) ?v3)",
+      "applier": "(AO31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01117_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01184_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R (OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3 ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01190_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3)",
+      "applier": "(AO31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01115_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01195_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 ?v1 (AO21x1_ASAP7_75t_R ?v2 ?v3 ?v4))",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01167_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2) ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01180_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AO211x2_ASAP7_75t_R ?v2 ?v3 ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01304_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 (AND2x2_ASAP7_75t_R ?v3 ?v4) ?v5)",
+      "applier": "(AO33x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01145_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(NAND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01305_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (AND2x2_ASAP7_75t_R ?v4 ?v5))",
+      "applier": "(AO33x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01200_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01179_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2) ?v3)",
+      "applier": "(AO211x2_ASAP7_75t_R ?v1 ?v2 ?v0 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01168_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01178_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3)",
+      "applier": "(AO211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01119_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(OA31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01204_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R ?v0 ?v1 (OA21x2_ASAP7_75t_R ?v2 ?v3 ?v4))",
+      "applier": "(OA221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01152_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v1 ?v2 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01156_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R ?v0 (AO21x1_ASAP7_75t_R ?v1 ?v2 ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v1 ?v2 ?v0 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01214_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 (AO21x1_ASAP7_75t_R ?v2 ?v3 ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01321_contract_forward",
+      "searcher": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (AND2x2_ASAP7_75t_R ?v4 ?v5))",
+      "applier": "(AO222x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01155_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R (AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01196_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 ?v1 (AO22x1_ASAP7_75t_R ?v2 ?v3 ?v4 ?v5))",
+      "applier": "(AO222x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01120_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (OR3x1_ASAP7_75t_R ?v1 ?v2 ?v3))",
+      "applier": "(OA31x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01118_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (AND3x1_ASAP7_75t_R ?v1 ?v2 ?v3))",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01151_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01261_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 (AND2x2_ASAP7_75t_R ?v3 ?v4))",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01212_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AOI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01174_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 ?v1 (AND3x1_ASAP7_75t_R ?v2 ?v3 ?v4))",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01203_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01133_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?v0 (AND3x1_ASAP7_75t_R ?v1 ?v2 ?v3))",
+      "applier": "(AO31x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01132_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(AO31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01235_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 (AND2x2_ASAP7_75t_R ?v3 ?v4))",
+      "applier": "(AO32x1_ASAP7_75t_R ?v2 ?v3 ?v4 ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01233_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2) ?v3 ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01136_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R (AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(AO211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01146_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(NAND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01173_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 (AND3x1_ASAP7_75t_R ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01121_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01181_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01234_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3) ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v2 ?v3 ?v4 ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01202_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2) ?v3)",
+      "applier": "(OA31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01279_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3) ?v4)",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01240_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3) ?v4)",
+      "applier": "(OA221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01193_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AO211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01189_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2))",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01188_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2)",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01187_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2)",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01078_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01165_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2))",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01164_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2)",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01163_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2)",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01076_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01130_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(AO21x1_ASAP7_75t_R ?v1 ?v2 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01186_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 ?v1 (OR3x1_ASAP7_75t_R ?v2 ?v3 ?v4))",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01185_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 (OR3x1_ASAP7_75t_R ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01177_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2))",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01176_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2)",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01175_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2)",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01077_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01171_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(OA211x2_ASAP7_75t_R ?v2 ?v3 ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01170_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2) ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v1 ?v2 ?v0 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01169_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01144_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1))",
+      "applier": "(NAND2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01143_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(NAND2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01072_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (NAND2x1_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(NAND2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01122_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (OA21x2_ASAP7_75t_R ?v1 ?v2 ?v3))",
+      "applier": "(OA211x2_ASAP7_75t_R ?v1 ?v2 ?v0 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01162_contract_forward",
+      "searcher": "(XOR2x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1))",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01161_contract_forward",
+      "searcher": "(XOR2x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01075_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (XOR2x2_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01199_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2))",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01198_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2)",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01197_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2)",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01079_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01239_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01238_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01237_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01236_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01086_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01183_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01182_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2) ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01135_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?v0 (OR3x1_ASAP7_75t_R ?v1 ?v2 ?v3))",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01134_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2) ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01150_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1))",
+      "applier": "(NOR2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01149_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(NOR2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01073_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (NOR2x1_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(NOR2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01116_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(OA21x2_ASAP7_75t_R ?v1 ?v2 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01148_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v1 ?v2 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01147_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01114_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1))",
+      "applier": "(AND2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01113_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(AND2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01070_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(AND2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01303_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (BUFx2_ASAP7_75t_R ?v4))",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01302_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3) ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01301_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3 ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01300_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01299_contract_forward",
+      "searcher": "(AO32x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3 ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01096_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01232_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01320_contract_forward",
+      "searcher": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (BUFx2_ASAP7_75t_R ?v4))",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01319_contract_forward",
+      "searcher": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3) ?v4)",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01318_contract_forward",
+      "searcher": "(AO221x2_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3 ?v4)",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01317_contract_forward",
+      "searcher": "(AO221x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01316_contract_forward",
+      "searcher": "(AO221x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3 ?v4)",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01099_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01131_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01260_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R ?v0 ?v1 (AND2x2_ASAP7_75t_R ?v2 ?v3) ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01259_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R ?v0 (AND2x2_ASAP7_75t_R ?v1 ?v2) ?v3 ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01258_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01126_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (AND4x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01125_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01217_contract_forward",
+      "searcher": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2))",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01216_contract_forward",
+      "searcher": "(OAI21x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2)",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01215_contract_forward",
+      "searcher": "(OAI21x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2)",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01082_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01315_contract_forward",
+      "searcher": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (BUFx2_ASAP7_75t_R ?v4))",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01314_contract_forward",
+      "searcher": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3) ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01313_contract_forward",
+      "searcher": "(OR5x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3 ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01312_contract_forward",
+      "searcher": "(OR5x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01311_contract_forward",
+      "searcher": "(OR5x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3 ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01098_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01201_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3)",
+      "applier": "(OA31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01158_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R ?v0 (AO22x1_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01157_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R (AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01245_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01244_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01243_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01242_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01087_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01280_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 (AND2x2_ASAP7_75t_R ?v3 ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v3 ?v4 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01241_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 (OR2x4_ASAP7_75t_R ?v3 ?v4))",
+      "applier": "(OA221x2_ASAP7_75t_R ?v0 ?v1 ?v3 ?v4 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01249_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 (OR2x4_ASAP7_75t_R ?v3 ?v4))",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01248_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3) ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01247_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R ?v0 (OR2x4_ASAP7_75t_R ?v1 ?v2) ?v3 ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01246_contract_forward",
+      "searcher": "(OR4x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01141_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?v0 (OR4x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01140_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01124_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?v0 (OA22x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(OA221x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01123_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(OA221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01139_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?v0 (AO22x1_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AO221x2_ASAP7_75t_R ?v1 ?v2 ?v3 ?v4 ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01138_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R (AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3) ?v4)",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01310_contract_forward",
+      "searcher": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (BUFx2_ASAP7_75t_R ?v4))",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01309_contract_forward",
+      "searcher": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3) ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01308_contract_forward",
+      "searcher": "(AND5x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3 ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01307_contract_forward",
+      "searcher": "(AND5x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01306_contract_forward",
+      "searcher": "(AND5x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3 ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01097_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01257_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01256_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01255_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01254_contract_forward",
+      "searcher": "(AND4x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01089_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01211_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2))",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01210_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2)",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01209_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2)",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01081_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01218_contract_forward",
+      "searcher": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01160_contract_forward",
+      "searcher": "(XNOR2x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1))",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01159_contract_forward",
+      "searcher": "(XNOR2x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01074_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (XNOR2x2_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01069_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0))",
+      "applier": "?v0",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01278_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01277_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01276_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01275_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01092_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01294_contract_forward",
+      "searcher": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01293_contract_forward",
+      "searcher": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01292_contract_forward",
+      "searcher": "(OAI22x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01291_contract_forward",
+      "searcher": "(OAI22x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01094_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01326_contract_forward",
+      "searcher": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 (BUFx2_ASAP7_75t_R ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01325_contract_forward",
+      "searcher": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3) ?v4)",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01324_contract_forward",
+      "searcher": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3 ?v4)",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01323_contract_forward",
+      "searcher": "(AOI221x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3 ?v4)",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01322_contract_forward",
+      "searcher": "(AOI221x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3 ?v4)",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01231_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01230_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01229_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01228_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01100_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01085_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01213_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01253_contract_forward",
+      "searcher": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 (BUFx2_ASAP7_75t_R ?v3))",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01252_contract_forward",
+      "searcher": "(OA22x2_ASAP7_75t_R ?v0 ?v1 (BUFx2_ASAP7_75t_R ?v2) ?v3)",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01251_contract_forward",
+      "searcher": "(OA22x2_ASAP7_75t_R ?v0 (BUFx2_ASAP7_75t_R ?v1) ?v2 ?v3)",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_two_cell_fusion_01250_contract_forward",
+      "searcher": "(OA22x2_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0) ?v1 ?v2 ?v3)",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00000_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R ?v0)",
+      "applier": "?v0",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00003_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (BUFx2_ASAP7_75t_R ?v0))",
+      "applier": "(INVx1_ASAP7_75t_R ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00004_contract_forward",
+      "searcher": "(BUFx2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0))",
+      "applier": "(INVx1_ASAP7_75t_R ?v0)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00007_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0))",
+      "applier": "?v0",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00014_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(NAND2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00015_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(NOR2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00022_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(NOR2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00023_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(NAND2x1_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00030_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (NAND2x1_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(AND2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00031_contract_forward",
+      "searcher": "(NAND2x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(OR2x4_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00038_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (NOR2x1_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(OR2x4_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00039_contract_forward",
+      "searcher": "(NOR2x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(AND2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00040_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1)))",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00047_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (XNOR2x2_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00048_contract_forward",
+      "searcher": "(XNOR2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00049_contract_forward",
+      "searcher": "(XNOR2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00050_contract_forward",
+      "searcher": "(XNOR2x2_ASAP7_75t_R ?v0 (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00051_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 (INVx1_ASAP7_75t_R ?v1)) (AND2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) ?v1))",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00058_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (XOR2x2_ASAP7_75t_R ?v0 ?v1))",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00059_contract_forward",
+      "searcher": "(XOR2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(XOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00060_contract_forward",
+      "searcher": "(XOR2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) ?v1)",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00061_contract_forward",
+      "searcher": "(XOR2x2_ASAP7_75t_R ?v0 (INVx1_ASAP7_75t_R ?v1))",
+      "applier": "(XNOR2x2_ASAP7_75t_R ?v0 ?v1)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00062_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00075_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(NAND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00076_contract_forward",
+      "searcher": "(AND3x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(NOR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00077_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00090_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(NOR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00091_contract_forward",
+      "searcher": "(OR3x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(NAND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00092_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00103_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00104_contract_forward",
+      "searcher": "(AO21x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00105_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2)",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00116_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00117_contract_forward",
+      "searcher": "(OA21x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00118_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R ?v0 ?v2)) (AND2x2_ASAP7_75t_R ?v1 ?v2))",
+      "applier": "(MAJx2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00131_contract_reverse",
+      "searcher": "(INVx1_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2))",
+      "applier": "(AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00142_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AOI21x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00143_contract_forward",
+      "searcher": "(AOI21x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00144_contract_reverse",
+      "searcher": "(INVx1_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2))",
+      "applier": "(OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00155_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (OAI21x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(OA21x2_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00156_contract_forward",
+      "searcher": "(OAI21x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(AO21x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00157_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1)) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(NAND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00170_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (NAND3x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00171_contract_forward",
+      "searcher": "(NAND3x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00172_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1)) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(NOR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00185_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (NOR3x1_ASAP7_75t_R ?v0 ?v1 ?v2))",
+      "applier": "(OR3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00186_contract_forward",
+      "searcher": "(NOR3x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2))",
+      "applier": "(AND3x1_ASAP7_75t_R ?v0 ?v1 ?v2)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00187_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00205_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AOI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00206_contract_forward",
+      "searcher": "(AO22x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3))",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00207_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3)",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00224_contract_forward",
+      "searcher": "(OA211x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00225_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3)",
+      "applier": "(OR4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00246_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) (OR2x4_ASAP7_75t_R ?v2 ?v3))",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00264_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00265_contract_forward",
+      "searcher": "(OA22x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3))",
+      "applier": "(AOI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00266_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3)",
+      "applier": "(AND4x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00287_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3)",
+      "applier": "(OA31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00305_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3)",
+      "applier": "(AO211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00322_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AO211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00323_contract_reverse",
+      "searcher": "(INVx1_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3))",
+      "applier": "(AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00340_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AOI211x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AO211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00341_contract_forward",
+      "searcher": "(AOI211x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3))",
+      "applier": "(OA211x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00342_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3)",
+      "applier": "(AO31x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00360_contract_reverse",
+      "searcher": "(INVx1_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) (OR2x4_ASAP7_75t_R ?v2 ?v3)))",
+      "applier": "(OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00378_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (OAI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00379_contract_forward",
+      "searcher": "(OAI22x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3))",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00380_contract_reverse",
+      "searcher": "(INVx1_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R ?v2 ?v3)))",
+      "applier": "(AOI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00398_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AOI22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3))",
+      "applier": "(AO22x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00399_contract_forward",
+      "searcher": "(AOI22x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3))",
+      "applier": "(OA22x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00400_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) (AND2x2_ASAP7_75t_R ?v3 ?v4))",
+      "applier": "(AO32x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00425_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3) ?v4)",
+      "applier": "(AND5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00456_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) ?v3) ?v4)",
+      "applier": "(OR5x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00487_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R ?v2 ?v3)) ?v4)",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00511_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00512_contract_reverse",
+      "searcher": "(INVx1_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R ?v2 ?v3)) ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00536_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4))",
+      "applier": "(AO221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00537_contract_forward",
+      "searcher": "(AOI221x1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3) (INVx1_ASAP7_75t_R ?v4))",
+      "applier": "(OA221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00538_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) (OR2x4_ASAP7_75t_R ?v2 ?v3)) ?v4)",
+      "applier": "(OA221x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_phase_00562_contract_forward",
+      "searcher": "(OA221x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?v0) (INVx1_ASAP7_75t_R ?v1) (INVx1_ASAP7_75t_R ?v2) (INVx1_ASAP7_75t_R ?v3) (INVx1_ASAP7_75t_R ?v4))",
+      "applier": "(AOI221x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00563_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v3 ?v4) ?v5))",
+      "applier": "(AO33x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00598_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v3 ?v4) ?v5))",
+      "applier": "(OA33x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00633_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) (AND2x2_ASAP7_75t_R ?v2 ?v3)) (AND2x2_ASAP7_75t_R ?v4 ?v5))",
+      "applier": "(AO222x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00667_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) (OR2x4_ASAP7_75t_R ?v2 ?v3)) (OR2x4_ASAP7_75t_R ?v4 ?v5))",
+      "applier": "(OA222x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00701_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) (AND2x2_ASAP7_75t_R ?v3 ?v4)) (AND2x2_ASAP7_75t_R ?v5 ?v6))",
+      "applier": "(AO322x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00743_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v3 ?v4) ?v5)) ?v6)",
+      "applier": "(OA331x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00786_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v3 ?v4) ?v5)) ?v6)",
+      "applier": "(AO331x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00829_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v3 ?v4) ?v5)) (AND2x2_ASAP7_75t_R ?v6 ?v7))",
+      "applier": "(AO332x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6 ?v7)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00882_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v3 ?v4) ?v5)) (OR2x4_ASAP7_75t_R ?v6 ?v7))",
+      "applier": "(OA332x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6 ?v7)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_00935_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v0 ?v1) ?v2) (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v3 ?v4) ?v5)) (AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?v6 ?v7) ?v8))",
+      "applier": "(AO333x1_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6 ?v7 ?v8)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_decomposition_01002_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v0 ?v1) ?v2) (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v3 ?v4) ?v5)) (OR2x4_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?v6 ?v7) ?v8))",
+      "applier": "(OA333x2_ASAP7_75t_R ?v0 ?v1 ?v2 ?v3 ?v4 ?v5 ?v6 ?v7 ?v8)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_involution_01424_contract_forward",
+      "searcher": "(INVx1_ASAP7_75t_R (INVx1_ASAP7_75t_R ?a))",
+      "applier": "?a",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_distribution_01426_contract_reverse",
+      "searcher": "(OR2x4_ASAP7_75t_R (AND2x2_ASAP7_75t_R ?a ?b) (AND2x2_ASAP7_75t_R ?a ?c))",
+      "applier": "(AND2x2_ASAP7_75t_R ?a (OR2x4_ASAP7_75t_R ?b ?c))",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_absorption_01427_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?a (OR2x4_ASAP7_75t_R ?a ?b))",
+      "applier": "?a",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_complement_01428_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?a (INVx1_ASAP7_75t_R ?a))",
+      "applier": "false",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_consensus_01429_contract_forward",
+      "searcher": "(AND2x2_ASAP7_75t_R ?a (OR2x4_ASAP7_75t_R (INVx1_ASAP7_75t_R ?a) ?b))",
+      "applier": "(AND2x2_ASAP7_75t_R ?a ?b)",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_distribution_01431_contract_reverse",
+      "searcher": "(AND2x2_ASAP7_75t_R (OR2x4_ASAP7_75t_R ?a ?b) (OR2x4_ASAP7_75t_R ?a ?c))",
+      "applier": "(OR2x4_ASAP7_75t_R ?a (AND2x2_ASAP7_75t_R ?b ?c))",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_absorption_01432_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?a (AND2x2_ASAP7_75t_R ?a ?b))",
+      "applier": "?a",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_complement_01433_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?a (INVx1_ASAP7_75t_R ?a))",
+      "applier": "true",
+      "bidirectional": false
+    },
+    {
+      "name": "RVT75_consensus_01434_contract_forward",
+      "searcher": "(OR2x4_ASAP7_75t_R ?a (AND2x2_ASAP7_75t_R (INVx1_ASAP7_75t_R ?a) ?b))",
+      "applier": "(OR2x4_ASAP7_75t_R ?a ?b)",
+      "bidirectional": false
+    }
+  ]
+}

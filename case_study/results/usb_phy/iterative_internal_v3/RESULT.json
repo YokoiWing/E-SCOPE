@@ -1,0 +1,15 @@
+{
+  "case": "usb_phy",
+  "guide": "internal_v3",
+  "search_seconds": 1239.5265463770484,
+  "first_divergence": "stage 1 round 1: candidate_sha256 38d0dac05fa0a9a52a99890f0ea26cab559ed196e5114e542ef8d00bbc8fef6a != cbbce4fc05d4904c34fbb98284f75fac1a6f8ebec5f59e7af67bdc110a766396",
+  "schedule_divergence": null,
+  "continued_after_observer_divergence": true,
+  "trace_rounds": 13,
+  "reference_sha256": "bb20aef8b15aa7c3a8f2f8a34bd4b57c55c5c16363f5c152525a4a60b100e083",
+  "evaluation_evidence_reused": true,
+  "final_sha256": "bb20aef8b15aa7c3a8f2f8a34bd4b57c55c5c16363f5c152525a4a60b100e083",
+  "status": "COMPLETE",
+  "classification": "FINAL_SHA_PASS",
+  "evaluation_note": "exact final SHA; historical Genus/CEC evidence reused without new EDA"
+}

@@ -1,0 +1,25 @@
+{
+  "lane": "usb_genlib_area",
+  "case": "usb_funct",
+  "rounds_completed": 60,
+  "accepted_rounds": 60,
+  "search_elapsed_sec": 2753.217817222,
+  "internal_final": {
+    "delay": 703.24,
+    "area": 671.57,
+    "power": 1.0,
+    "score": 332122591.39323205,
+    "internal_power_legacy": 0.0,
+    "leakage_power_legacy": 0.0,
+    "switched_capacitance_ff": 0.0,
+    "vectorless_internal_power_uw": 0.0,
+    "vectorless_switching_power_uw": 0.0,
+    "vectorless_leakage_power_uw": 0.0,
+    "vectorless_power_uw": 0.0,
+    "vectorless_toggle_sum": 362.0
+  },
+  "cec_pass": true,
+  "gates": 6832,
+  "cold_replay_match": true,
+  "final_verilog": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/usb_genlib_area/final.v"
+}

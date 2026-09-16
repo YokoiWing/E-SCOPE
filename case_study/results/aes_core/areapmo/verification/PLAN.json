@@ -1,0 +1,34 @@
+{
+  "case": "aes_core",
+  "command": [
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/bin/areapmo_native",
+    "optimize",
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/asap7.genlib",
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/inputs/aes_core.aig",
+    "/tmp/case_study_areapmo_queue_20260915/aes_core/native",
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/database/asap7"
+  ],
+  "input_scope": "frozen high-effort prepared AIG; native mapping G0 is rerun",
+  "timeout_sec": 3600,
+  "selection": "feasible delay <= G0 + 1e-9; min(area, round)",
+  "round_cap": 100,
+  "minimum_rounds": 10,
+  "stagnation_patience": 3,
+  "seed": 5,
+  "reference": {
+    "input": "assets/inputs/aes_core.aig",
+    "prepared_input_source": "paper_results_v8/areapmo_table1_genus_reversal_v1/aes_core/areapmo_release/input.aig",
+    "g0_sha256": "c07a6b62565f2275912608e74a375e74873094e0ff5c6a65900a6cee7ff76c01",
+    "final_sha256": "d819b71b7be8750787efdd76215abe24810c608dcf241825882886a428f83e5d",
+    "expected_best": {
+      "area": 1096.33,
+      "cpu_sec": 127.04378,
+      "delay": 424.59,
+      "gates": 11120,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/aes_core/areapmo_release/round_10.blif",
+      "round": 10
+    },
+    "expected_rounds": 13,
+    "historical_wall_sec": 165.159139156
+  }
+}

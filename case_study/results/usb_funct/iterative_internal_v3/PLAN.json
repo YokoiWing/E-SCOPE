@@ -1,0 +1,147 @@
+{
+  "schema": "areapmo-sixcase-online-repro-plan-v1",
+  "mode": "plan_only_no_search_executed",
+  "case": "usb_funct",
+  "guide": "internal_v3",
+  "g0": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/68a1c58d192efb3254a587ff851f721ea01dda7547253c1bfdf238118f3d34f2.v",
+  "g0_sha256": "68a1c58d192efb3254a587ff851f721ea01dda7547253c1bfdf238118f3d34f2",
+  "initial_instances": 7334,
+  "initial_delay_bound": 1426.2771359336673,
+  "initial_policy_action": "ENTER_P01",
+  "profiles": [
+    "P01",
+    "P11",
+    "P12"
+  ],
+  "binary": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/706274462bbd3b8ac82d1d16d2222822c8262501a623558a85ae3d90fe78d04d",
+  "binary_sha256": "706274462bbd3b8ac82d1d16d2222822c8262501a623558a85ae3d90fe78d04d",
+  "policy": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/FROZEN_POLICY.json",
+  "policy_sha256": "9f0117e41760aa3ec904aa4ace3f054fc5c927b60aa17dc0c167fa0e28e6790d",
+  "manifest": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/MANIFEST.json",
+  "manifest_sha256": "c3b898018fd42ae8b2ea1049ce3f9837f7a8b7eae1f58bb2eb20c7a99cc4099c",
+  "verified_frozen_asset_records": 235,
+  "stages": [
+    {
+      "stage": 1,
+      "profile": "P01",
+      "selection_policy": "native_saved_incumbent",
+      "delay_bound_policy": "original_guide_G0_delay",
+      "native_requested_round_cap": 50,
+      "historical_observer_rounds": 10,
+      "state_policy": "one native process per historical native stage; reset only at original stage boundary",
+      "stop_policy": "retain original native round cap; freeze completed receipt boundary, never replace with a wall-clock cutoff",
+      "binary_provenance": "historical_binary_sha_not_recorded",
+      "jobs": 8,
+      "candidate_cap": 512,
+      "rule_count": 1435,
+      "timeout_sec": 133798,
+      "assets": {
+        "EGG_V8_ULTRA_CONFIG": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/c3eb46284bc2a6ad10569b1c53637adcf6b697e09a881fe0c4ee85b9d8d2e7c6.json",
+          "sha256": "c3eb46284bc2a6ad10569b1c53637adcf6b697e09a881fe0c4ee85b9d8d2e7c6"
+        },
+        "EGG_OBJECTIVE_SPEC": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/b9bf29085f179c774bff07444397b30641f3118c31183379294c0e11cd47a6ff.json",
+          "sha256": "b9bf29085f179c774bff07444397b30641f3118c31183379294c0e11cd47a6ff"
+        },
+        "EGG_RULE_PATHS": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/f52c8a998c4176ed283bd4100f5e0b5e8e80bc84c9e1c14740f5dfb6c2f22d04.json",
+          "sha256": "f52c8a998c4176ed283bd4100f5e0b5e8e80bc84c9e1c14740f5dfb6c2f22d04"
+        },
+        "EGG_SCALE_RULES": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230.json",
+          "sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230"
+        },
+        "EGG_LIB_PATH": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba.lib",
+          "sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba"
+        }
+      },
+      "output_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/usb_funct/internal_v3/six_internal_completion_v1/stage_01",
+      "historical_output_sha256": "87d9fa4ef69526df08ee75501f68c38a1f1f01056fbc3cd49eca147eecec5985"
+    },
+    {
+      "stage": 2,
+      "profile": "P11",
+      "selection_policy": "saved_internal_feasible_portfolio_selection",
+      "delay_bound_policy": "original_guide_G0_delay",
+      "native_requested_round_cap": 1,
+      "historical_observer_rounds": 8,
+      "state_policy": "fresh native process for each portfolio iteration; parent selected from saved feasible pool",
+      "stop_policy": "retain original native round cap; freeze completed receipt boundary, never replace with a wall-clock cutoff",
+      "binary_provenance": "historical_binary_sha_not_recorded",
+      "jobs": 24,
+      "candidate_cap": 512,
+      "rule_count": 290,
+      "timeout_sec": 3600,
+      "assets": {
+        "EGG_V8_ULTRA_CONFIG": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/85ec6df21cccd676b7f9f32fa7af41290b1e829987040933977dbe5ee5e8e8ae.json",
+          "sha256": "85ec6df21cccd676b7f9f32fa7af41290b1e829987040933977dbe5ee5e8e8ae"
+        },
+        "EGG_OBJECTIVE_SPEC": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/a2fa1f392cdc795c64a07f12289c687da674f4213ca0e77a5137fe1ed3dcef2a.json",
+          "sha256": "a2fa1f392cdc795c64a07f12289c687da674f4213ca0e77a5137fe1ed3dcef2a"
+        },
+        "EGG_RULE_PATHS": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda.json",
+          "sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda"
+        },
+        "EGG_SCALE_RULES": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230.json",
+          "sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230"
+        },
+        "EGG_LIB_PATH": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba.lib",
+          "sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba"
+        }
+      },
+      "output_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/usb_funct/internal_v3/six_internal_completion_v1/stage_02",
+      "historical_output_sha256": "37480ac107f037d3f4bfe39d53345719ef79f7999cbeaa2a73f3d929ba23f18c"
+    },
+    {
+      "stage": 3,
+      "profile": "P12",
+      "selection_policy": "saved_internal_feasible_portfolio_selection",
+      "delay_bound_policy": "original_guide_G0_delay",
+      "native_requested_round_cap": 1,
+      "historical_observer_rounds": 57,
+      "state_policy": "fresh native process for each portfolio iteration; parent selected from saved feasible pool",
+      "stop_policy": "retain original native round cap; freeze completed receipt boundary, never replace with a wall-clock cutoff",
+      "binary_provenance": "historical_binary_sha_not_recorded",
+      "jobs": 24,
+      "candidate_cap": 128,
+      "rule_count": 290,
+      "timeout_sec": 13884,
+      "assets": {
+        "EGG_V8_ULTRA_CONFIG": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/deadb3e4598360d01852fa707ab35859dbd3583f3862d1058ffef4d06c3b8e1e.json",
+          "sha256": "deadb3e4598360d01852fa707ab35859dbd3583f3862d1058ffef4d06c3b8e1e"
+        },
+        "EGG_OBJECTIVE_SPEC": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/a2fa1f392cdc795c64a07f12289c687da674f4213ca0e77a5137fe1ed3dcef2a.json",
+          "sha256": "a2fa1f392cdc795c64a07f12289c687da674f4213ca0e77a5137fe1ed3dcef2a"
+        },
+        "EGG_RULE_PATHS": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda.json",
+          "sha256": "8c145afc56093256722dfd38017ac97821a033c58a7e65db07ec08cb5fac9eda"
+        },
+        "EGG_SCALE_RULES": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230.json",
+          "sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230"
+        },
+        "EGG_LIB_PATH": {
+          "path": "${E_SCOPE_SOURCE_ROOT}/final_paper/areapmo_flow_audit/deterministic_freeze/assets/8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba.lib",
+          "sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba"
+        }
+      },
+      "output_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/usb_funct/internal_v3/six_internal_completion_v1/stage_03",
+      "historical_output_sha256": "95fea06f01f2809ff724980f6d15d9c78c649bbdeb943c7174ff6fd7ca1f4288"
+    }
+  ],
+  "final_reference_sha256": "66e2d19c96ea70575967dbc49dd8557c1ae4239bff1bc298fae8f85f2bd701b9",
+  "final_interface_template": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/usb_internal_feasible_portfolio_final/final.v",
+  "output_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/usb_funct/internal_v3/six_internal_completion_v1",
+  "observer_only": "historical trace stops divergence but never changes selection",
+  "evaluation": "reuse existing Genus/CEC only after exact restored final SHA; otherwise pending new validation"
+}

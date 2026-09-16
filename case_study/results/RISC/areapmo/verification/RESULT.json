@@ -1,0 +1,127 @@
+{
+  "case": "RISC",
+  "stage": "complete",
+  "native_wall_sec": 335.9771058089682,
+  "rounds": 15,
+  "best": {
+    "area": 3141.04,
+    "cpu_sec": 269.238871,
+    "delay": 1303.48,
+    "gates": 31487,
+    "netlist": "/tmp/case_study_areapmo_queue_20260915/RISC/native/round_12.blif",
+    "round": 12
+  },
+  "genlib_check": {
+    "area_exact_sum": 3141.0399999999213,
+    "area_author_rounding": 3141.04,
+    "delay": 1303.48,
+    "gates": 31956,
+    "author_hash_entries": 31487
+  },
+  "cec_pass": true,
+  "g0_sha256": "3a570fbeea8f7a50f747f2d3c9b942f92002fa8df7c58325bd1c08c9d5d7d338",
+  "final_sha256": "e6813f996cc214d2b4df3f15a7f4b0526375ffb178c886a6753438f66aec0892",
+  "g0_sha_match": true,
+  "final_sha_match": true,
+  "genus_evidence_reusable": true,
+  "genus_rerun": false,
+  "all_round_bindings_match": true,
+  "binding_checks": [
+    {
+      "tag": "g0",
+      "match": true,
+      "new_sha256": "ac2b29d5e9813d1ea6cf6bd3783dea2df90cc7a0db9227c5b381fc5693442eb4",
+      "historical_sha256": "ac2b29d5e9813d1ea6cf6bd3783dea2df90cc7a0db9227c5b381fc5693442eb4"
+    },
+    {
+      "tag": "round_1",
+      "match": true,
+      "new_sha256": "471013787e426fca13686d21e0613e5353e80ce4149cc5a3f2dd1ce8dc032ff3",
+      "historical_sha256": "471013787e426fca13686d21e0613e5353e80ce4149cc5a3f2dd1ce8dc032ff3"
+    },
+    {
+      "tag": "round_2",
+      "match": true,
+      "new_sha256": "61eedd7a681250ce1a79382fbd6bc3389590d265feeab3c132d02b19145db6ff",
+      "historical_sha256": "61eedd7a681250ce1a79382fbd6bc3389590d265feeab3c132d02b19145db6ff"
+    },
+    {
+      "tag": "round_3",
+      "match": true,
+      "new_sha256": "0525195cfd1bc202fb5873d8271c92aed50447107ffb7e56b37292840f12db65",
+      "historical_sha256": "0525195cfd1bc202fb5873d8271c92aed50447107ffb7e56b37292840f12db65"
+    },
+    {
+      "tag": "round_4",
+      "match": true,
+      "new_sha256": "7d3c211b0b41f35579437529bdb34d3858fe3a841028b84465ef2a878c1e7d37",
+      "historical_sha256": "7d3c211b0b41f35579437529bdb34d3858fe3a841028b84465ef2a878c1e7d37"
+    },
+    {
+      "tag": "round_5",
+      "match": true,
+      "new_sha256": "90d2e9f65b5b4a5fffbacf896289a278e64c3626bba4ff23e8c82c4c7b9faa53",
+      "historical_sha256": "90d2e9f65b5b4a5fffbacf896289a278e64c3626bba4ff23e8c82c4c7b9faa53"
+    },
+    {
+      "tag": "round_6",
+      "match": true,
+      "new_sha256": "4689219c26df78163a95ed43e89238c0d70fa9f176989b7619a7336998c62470",
+      "historical_sha256": "4689219c26df78163a95ed43e89238c0d70fa9f176989b7619a7336998c62470"
+    },
+    {
+      "tag": "round_7",
+      "match": true,
+      "new_sha256": "1fb9caa53af78c28e9d23719729738bafe38a480cc13dd607a6949b74ba1ae00",
+      "historical_sha256": "1fb9caa53af78c28e9d23719729738bafe38a480cc13dd607a6949b74ba1ae00"
+    },
+    {
+      "tag": "round_8",
+      "match": true,
+      "new_sha256": "612849e0b542dba4b203ab2ab424a3de7d51069f864749272713c5de88f3425c",
+      "historical_sha256": "612849e0b542dba4b203ab2ab424a3de7d51069f864749272713c5de88f3425c"
+    },
+    {
+      "tag": "round_9",
+      "match": true,
+      "new_sha256": "1ff44a6b71747c4129c7739694e0af2641047780395010d7f50fc3554ee86943",
+      "historical_sha256": "1ff44a6b71747c4129c7739694e0af2641047780395010d7f50fc3554ee86943"
+    },
+    {
+      "tag": "round_10",
+      "match": true,
+      "new_sha256": "376ab50e2d4f36a8d423e7ff9932f391a68979894c04bcc7ed45b3989e9f1e99",
+      "historical_sha256": "376ab50e2d4f36a8d423e7ff9932f391a68979894c04bcc7ed45b3989e9f1e99"
+    },
+    {
+      "tag": "round_11",
+      "match": true,
+      "new_sha256": "3a2e4f05a89b7265be96d58f11224bdcdeb4410d2dc24c11fdbf80e0b8c1c4c3",
+      "historical_sha256": "3a2e4f05a89b7265be96d58f11224bdcdeb4410d2dc24c11fdbf80e0b8c1c4c3"
+    },
+    {
+      "tag": "round_12",
+      "match": true,
+      "new_sha256": "dcb480a1bb18ed8d9fecb42398ed6aa61b104dae01ffa8810ac37f770b7ce019",
+      "historical_sha256": "dcb480a1bb18ed8d9fecb42398ed6aa61b104dae01ffa8810ac37f770b7ce019"
+    },
+    {
+      "tag": "round_13",
+      "match": true,
+      "new_sha256": "28031e26ff4afb9c509c8acfbb3d82cd977ab959b7f94a0313fee1d0b2cc117f",
+      "historical_sha256": "28031e26ff4afb9c509c8acfbb3d82cd977ab959b7f94a0313fee1d0b2cc117f"
+    },
+    {
+      "tag": "round_14",
+      "match": true,
+      "new_sha256": "aa4726fafe6fc6ee83da02f87dc9117355b16525864ea9e1fd41633a5ba7ebf6",
+      "historical_sha256": "aa4726fafe6fc6ee83da02f87dc9117355b16525864ea9e1fd41633a5ba7ebf6"
+    },
+    {
+      "tag": "round_15",
+      "match": true,
+      "new_sha256": "307e615a23a101caf0fa9279b49e1dca0d7c96c047919ea48bf92524742e4896",
+      "historical_sha256": "307e615a23a101caf0fa9279b49e1dca0d7c96c047919ea48bf92524742e4896"
+    }
+  ]
+}

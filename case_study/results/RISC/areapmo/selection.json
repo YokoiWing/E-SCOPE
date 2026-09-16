@@ -1,0 +1,60 @@
+{
+  "case": "RISC",
+  "native_directory": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2",
+  "g0": {
+    "area": 3167.78,
+    "delay": 1304.74,
+    "gates": 32061
+  },
+  "r1": {
+    "area": 3147.31,
+    "cpu_sec": 53.726687,
+    "delay": 1303.48,
+    "gates": 31668,
+    "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2/round_1.blif",
+    "round": 1
+  },
+  "best_at_stop": {
+    "area": 3141.04,
+    "cpu_sec": 413.816199,
+    "delay": 1303.48,
+    "gates": 31487,
+    "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2/round_12.blif",
+    "round": 12
+  },
+  "terminal": {
+    "area": 3141.68,
+    "delay": 1303.48,
+    "gates": 31488
+  },
+  "rounds": 15,
+  "stop_reason": "area_stagnation",
+  "checks_scope": "selected best-at-stop only; intermediate rounds excluded",
+  "checks": [
+    {
+      "tag": "g0",
+      "actual": {
+        "area_exact_sum": 3167.7799999999415,
+        "area_author_rounding": 3167.78,
+        "delay": 1304.74,
+        "gates": 32061,
+        "author_hash_entries": 32061
+      },
+      "delay_feasible": true
+    },
+    {
+      "tag": "round_12",
+      "actual": {
+        "area_exact_sum": 3141.0399999999213,
+        "area_author_rounding": 3141.04,
+        "delay": 1303.48,
+        "gates": 31956,
+        "author_hash_entries": 31487
+      },
+      "delay_feasible": true,
+      "cec_pass": true
+    }
+  ],
+  "selected_cec_pass": true,
+  "optimizer_output_reused": false
+}

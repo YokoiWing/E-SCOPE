@@ -1,0 +1,115 @@
+{
+  "case": "aes_core",
+  "stage": "complete",
+  "native_wall_sec": 118.04860765195917,
+  "rounds": 13,
+  "best": {
+    "area": 1096.33,
+    "cpu_sec": 89.687483,
+    "delay": 424.59,
+    "gates": 11120,
+    "netlist": "/tmp/case_study_areapmo_queue_20260915/aes_core/native/round_10.blif",
+    "round": 10
+  },
+  "genlib_check": {
+    "area_exact_sum": 1096.3299999999883,
+    "area_author_rounding": 1096.33,
+    "delay": 424.59,
+    "gates": 11157,
+    "author_hash_entries": 11120
+  },
+  "cec_pass": true,
+  "g0_sha256": "c07a6b62565f2275912608e74a375e74873094e0ff5c6a65900a6cee7ff76c01",
+  "final_sha256": "d819b71b7be8750787efdd76215abe24810c608dcf241825882886a428f83e5d",
+  "g0_sha_match": true,
+  "final_sha_match": true,
+  "genus_evidence_reusable": true,
+  "genus_rerun": false,
+  "all_round_bindings_match": true,
+  "binding_checks": [
+    {
+      "tag": "g0",
+      "match": true,
+      "new_sha256": "a9bac0a2de2025d96e96e6b1c49526a1c1ddece6ffdc01b021aaf506a3e75a13",
+      "historical_sha256": "a9bac0a2de2025d96e96e6b1c49526a1c1ddece6ffdc01b021aaf506a3e75a13"
+    },
+    {
+      "tag": "round_1",
+      "match": true,
+      "new_sha256": "b603fc5b28e364a15c284215528f45197c77ecaee990c432b647a2937a14ab24",
+      "historical_sha256": "b603fc5b28e364a15c284215528f45197c77ecaee990c432b647a2937a14ab24"
+    },
+    {
+      "tag": "round_2",
+      "match": true,
+      "new_sha256": "5a16cea2a90c44ef892541c10d6ec59bd3f25a0ea2b45df6db29edddb24f5bf5",
+      "historical_sha256": "5a16cea2a90c44ef892541c10d6ec59bd3f25a0ea2b45df6db29edddb24f5bf5"
+    },
+    {
+      "tag": "round_3",
+      "match": true,
+      "new_sha256": "6af9e189f1591f43bda3af1520a40b56f22e2ac31d75daea06a6b3614aa03305",
+      "historical_sha256": "6af9e189f1591f43bda3af1520a40b56f22e2ac31d75daea06a6b3614aa03305"
+    },
+    {
+      "tag": "round_4",
+      "match": true,
+      "new_sha256": "d91e55d0a053c9f2103f7d24b4297ab2d3ffef46806a41708127f29506252cc6",
+      "historical_sha256": "d91e55d0a053c9f2103f7d24b4297ab2d3ffef46806a41708127f29506252cc6"
+    },
+    {
+      "tag": "round_5",
+      "match": true,
+      "new_sha256": "48f09077cabad29ab7ae3c4f39327a696e4dbe9922fbc84e38f1104a0c244b5d",
+      "historical_sha256": "48f09077cabad29ab7ae3c4f39327a696e4dbe9922fbc84e38f1104a0c244b5d"
+    },
+    {
+      "tag": "round_6",
+      "match": true,
+      "new_sha256": "abd8411b618e030c4d9553ad45f0514660ce279c2f5613232e1b35d12649cad2",
+      "historical_sha256": "abd8411b618e030c4d9553ad45f0514660ce279c2f5613232e1b35d12649cad2"
+    },
+    {
+      "tag": "round_7",
+      "match": true,
+      "new_sha256": "dcf33ba42a17536a07a071d6736a1f16ace9509c6dd538137d7c33bd2e3a1d7a",
+      "historical_sha256": "dcf33ba42a17536a07a071d6736a1f16ace9509c6dd538137d7c33bd2e3a1d7a"
+    },
+    {
+      "tag": "round_8",
+      "match": true,
+      "new_sha256": "120d26e94877129fb137c356fc6e7d953fd5a472bbb4208fe81cc6eb118ecad3",
+      "historical_sha256": "120d26e94877129fb137c356fc6e7d953fd5a472bbb4208fe81cc6eb118ecad3"
+    },
+    {
+      "tag": "round_9",
+      "match": true,
+      "new_sha256": "cab663a925f1f6ff8511f7b8625c6a457c0db75c12e4cbb5378ddf49f071e2fc",
+      "historical_sha256": "cab663a925f1f6ff8511f7b8625c6a457c0db75c12e4cbb5378ddf49f071e2fc"
+    },
+    {
+      "tag": "round_10",
+      "match": true,
+      "new_sha256": "5f85e32e4b428deeab2279cb8f090f33dcf132d73cad00f208a2430d1487f87d",
+      "historical_sha256": "5f85e32e4b428deeab2279cb8f090f33dcf132d73cad00f208a2430d1487f87d"
+    },
+    {
+      "tag": "round_11",
+      "match": true,
+      "new_sha256": "6afd3b1ea346bcea73ff4fab50a9353e5615663081f7e6a7c4a087d51b1377f4",
+      "historical_sha256": "6afd3b1ea346bcea73ff4fab50a9353e5615663081f7e6a7c4a087d51b1377f4"
+    },
+    {
+      "tag": "round_12",
+      "match": true,
+      "new_sha256": "5f85e32e4b428deeab2279cb8f090f33dcf132d73cad00f208a2430d1487f87d",
+      "historical_sha256": "5f85e32e4b428deeab2279cb8f090f33dcf132d73cad00f208a2430d1487f87d"
+    },
+    {
+      "tag": "round_13",
+      "match": true,
+      "new_sha256": "6afd3b1ea346bcea73ff4fab50a9353e5615663081f7e6a7c4a087d51b1377f4",
+      "historical_sha256": "6afd3b1ea346bcea73ff4fab50a9353e5615663081f7e6a7c4a087d51b1377f4"
+    }
+  ]
+}

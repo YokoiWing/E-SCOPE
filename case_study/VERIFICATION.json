@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-15",
+  "areapmo_fresh_execution": [
+    {
+      "case": "usb_phy",
+      "native_wall_sec": 2.0715793810086325,
+      "rounds": 10,
+      "g0_sha_match": true,
+      "final_sha_match": true,
+      "cec_pass": true,
+      "all_round_bindings_match": true
+    },
+    {
+      "case": "simple_spi",
+      "native_wall_sec": 2.4222022509784438,
+      "rounds": 10,
+      "g0_sha_match": true,
+      "final_sha_match": true,
+      "cec_pass": true,
+      "all_round_bindings_match": true
+    },
+    {
+      "case": "systemcdes",
+      "native_wall_sec": 4.528398619964719,
+      "rounds": 10,
+      "g0_sha_match": true,
+      "final_sha_match": true,
+      "cec_pass": true,
+      "all_round_bindings_match": true
+    },
+    {
+      "case": "usb_funct",
+      "native_wall_sec": 19.612546838005073,
+      "rounds": 10,
+      "g0_sha_match": true,
+      "final_sha_match": true,
+      "cec_pass": true,
+      "all_round_bindings_match": true
+    },
+    {
+      "case": "aes_core",
+      "native_wall_sec": 118.04860765195917,
+      "rounds": 13,
+      "g0_sha_match": true,
+      "final_sha_match": true,
+      "cec_pass": true,
+      "all_round_bindings_match": true
+    },
+    {
+      "case": "RISC",
+      "native_wall_sec": 335.9771058089682,
+      "rounds": 15,
+      "g0_sha_match": true,
+      "final_sha_match": true,
+      "cec_pass": true,
+      "all_round_bindings_match": true
+    }
+  ],
+  "areapmo_all_six_pass": true,
+  "areapmo_source_build": "PASS; exact frozen binary SHA reproduced",
+  "areapmo_binary_sha256": "c0bea003cdb995bd8f19cbce2ae21bfa46a9bbb17763db591f4a0a9c7fb27b5e",
+  "areapmo_build_binary_sha256": "c0bea003cdb995bd8f19cbce2ae21bfa46a9bbb17763db591f4a0a9c7fb27b5e",
+  "areapmo_rebuilt_usb_phy_binding_check": "G0 and selected final exactly match",
+  "iterative_relocated_plans_pass": 12,
+  "areapmo_plans_pass": 6,
+  "genus_input_sha_binding_checks": 18,
+  "table_rows": 24,
+  "iterative_full_search_rerun_in_this_packaging_task": false,
+  "iterative_existing_completed_paths": 12,
+  "iterative_against_legacy": {
+    "EXACT_TRAJECTORY_PASS": 7,
+    "FINAL_SHA_PASS": 3,
+    "new_netlist_with_new_cold_CEC_Genus": 2
+  },
+  "genus_rerun_in_this_packaging_task": false,
+  "paper_changes": {
+    "aes_core_genus_delay_delta_pct": -12.14,
+    "RISC_genus_area": 3069.95
+  },
+  "retained_failed_adapter_smoke": {
+    "directory": "/tmp/case_study_areapmo_usb_phy_20260915",
+    "reason": "ABC default matched PI names; restored original cec -n interface order, subsequent six complete runs pass"
+  },
+  "limitations": [
+    "Iterative repeated bit-identical search is not guaranteed: floating ties and original local rewrite timeout remain.",
+    "Six development cases and fitted frozen policy; no untouched-case generalization claim.",
+    "AreaPMO starts from frozen prepared AIG, reruns mapping G0 and search; high-effort ABC preprocessing not rerun."
+  ]
+}

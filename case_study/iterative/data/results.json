@@ -1,0 +1,172 @@
+[
+  {
+    "case": "usb_phy",
+    "guide": "genlib",
+    "final_sha256": "bb20aef8b15aa7c3a8f2f8a34bd4b57c55c5c16363f5c152525a4a60b100e083",
+    "evaluator": "GENLIB",
+    "metrics": {
+      "area": 21.06,
+      "delay_ps": 179.06
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 1428.480342631985,
+    "rounds": 15
+  },
+  {
+    "case": "usb_phy",
+    "guide": "internal_v3",
+    "final_sha256": "bb20aef8b15aa7c3a8f2f8a34bd4b57c55c5c16363f5c152525a4a60b100e083",
+    "evaluator": "Genus",
+    "metrics": {
+      "area": 20.90772,
+      "delay_ps": 316.5,
+      "power_W": 6.28419e-05
+    },
+    "validation_classification_against_legacy": "FINAL_SHA_PASS",
+    "search_seconds": 1239.5265463770484,
+    "rounds": 13
+  },
+  {
+    "case": "simple_spi",
+    "guide": "genlib",
+    "final_sha256": "0115bdc27c3a0989a12f656d202b5a3a7914e926738b2057abab79231da84673",
+    "evaluator": "GENLIB",
+    "metrics": {
+      "area": 37.58,
+      "delay_ps": 287.0
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 4884.488452277961,
+    "rounds": 22
+  },
+  {
+    "case": "simple_spi",
+    "guide": "internal_v3",
+    "final_sha256": "8c2061be808dd200d4d20ef58e63dc8faf372cf9687d885b121cd497e1753aab",
+    "evaluator": "Genus",
+    "metrics": {
+      "area": 37.13526,
+      "delay_ps": 433.3,
+      "power_W": 9.87224e-05
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 6018.794666907983,
+    "rounds": 25
+  },
+  {
+    "case": "systemcdes",
+    "guide": "genlib",
+    "final_sha256": "b5293aaf8c326f3d284d5faf2d1a31928881d24e3da999a473ac9f83d58e27f5",
+    "evaluator": "GENLIB",
+    "metrics": {
+      "area": 132.22,
+      "delay_ps": 515.35
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 37848.887403586996,
+    "rounds": 50
+  },
+  {
+    "case": "systemcdes",
+    "guide": "internal_v3",
+    "final_sha256": "0eac077c9f7407a57a48314ba613dfa1f78d396413235ee00b06c2176e3e612c",
+    "evaluator": "Genus",
+    "metrics": {
+      "area": 133.64028,
+      "delay_ps": 1327.4,
+      "power_W": 0.000285135
+    },
+    "validation_classification_against_legacy": "FINAL_SHA_PASS",
+    "search_seconds": 21852.725814029982,
+    "rounds": 26
+  },
+  {
+    "case": "usb_funct",
+    "guide": "genlib",
+    "final_sha256": "3c23997866c7cc77e99318327e9912978da31ab692f6eb16e2b1215688af70b7",
+    "evaluator": "GENLIB",
+    "metrics": {
+      "area": 671.57,
+      "delay_ps": 703.24
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 6315.538919284008,
+    "rounds": 128
+  },
+  {
+    "case": "usb_funct",
+    "guide": "internal_v3",
+    "final_sha256": "66e2d19c96ea70575967dbc49dd8557c1ae4239bff1bc298fae8f85f2bd701b9",
+    "evaluator": "Genus",
+    "metrics": {
+      "area": 679.72,
+      "delay_ps": 1471.6,
+      "power_W": 0.00165426
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 42388.44567638403,
+    "rounds": 75
+  },
+  {
+    "case": "aes_core",
+    "guide": "genlib",
+    "final_sha256": "2dbc48c455ca645b6bdf9010a75e4f625ac53d9153eb5b9c2a0b638ad1c3d0dd",
+    "evaluator": "GENLIB",
+    "metrics": {
+      "area": 1085.77,
+      "delay_ps": 434.52
+    },
+    "validation_classification_against_legacy": "FINAL_SHA_PASS",
+    "search_seconds": 4213.585186398006,
+    "rounds": 22
+  },
+  {
+    "case": "aes_core",
+    "guide": "internal_v3",
+    "final_sha256": "4d4cab0c4680036a6aa519b51ef5ce9f636376f75f28ff0312e62e9ecda79c45",
+    "evaluator": "Genus",
+    "metrics": {
+      "area": 1073.001,
+      "delay_ps": 1261.5,
+      "power_W": 0.0020047,
+      "instances": 10924,
+      "instances_identical": true,
+      "mapped_connectivity_identical": true,
+      "unresolved_zero": true
+    },
+    "validation_classification_against_legacy": "DIVERGED",
+    "search_seconds": 1154.5715540220262,
+    "rounds": 7
+  },
+  {
+    "case": "RISC",
+    "guide": "genlib",
+    "final_sha256": "880607c3430cc3bc906a142428711db5f1a98c5ccecf61d7849ba11523d0ce70",
+    "evaluator": "GENLIB",
+    "metrics": {
+      "area": 3095.13,
+      "delay_ps": 1291.57
+    },
+    "validation_classification_against_legacy": "EXACT_TRAJECTORY_PASS",
+    "search_seconds": 8184.6391936810105,
+    "rounds": 8
+  },
+  {
+    "case": "RISC",
+    "guide": "internal_v3",
+    "final_sha256": "d725acb2fcb6ac92d6dcbf48836d8d5da55e9d1b3cd1af1f6c9d74b33282a372",
+    "evaluator": "Genus",
+    "metrics": {
+      "area": 3069.95,
+      "delay_ps": 9347.7,
+      "power_W": 0.00804435,
+      "instances": 31118,
+      "instances_identical": true,
+      "mapped_connectivity_identical": true,
+      "unresolved_zero": true
+    },
+    "validation_classification_against_legacy": "DIVERGED",
+    "search_seconds": 5179.222806971986,
+    "rounds": 4
+  }
+]

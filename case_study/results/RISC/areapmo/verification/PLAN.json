@@ -1,0 +1,34 @@
+{
+  "case": "RISC",
+  "command": [
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/bin/areapmo_native",
+    "optimize",
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/asap7.genlib",
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/inputs/RISC.aig",
+    "/tmp/case_study_areapmo_queue_20260915/RISC/native",
+    "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/database/asap7"
+  ],
+  "input_scope": "frozen high-effort prepared AIG; native mapping G0 is rerun",
+  "timeout_sec": 3600,
+  "selection": "feasible delay <= G0 + 1e-9; min(area, round)",
+  "round_cap": 100,
+  "minimum_rounds": 10,
+  "stagnation_patience": 3,
+  "seed": 5,
+  "reference": {
+    "input": "assets/inputs/RISC.aig",
+    "prepared_input_source": "paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2/input.aig",
+    "g0_sha256": "3a570fbeea8f7a50f747f2d3c9b942f92002fa8df7c58325bd1c08c9d5d7d338",
+    "final_sha256": "e6813f996cc214d2b4df3f15a7f4b0526375ffb178c886a6753438f66aec0892",
+    "expected_best": {
+      "area": 3141.04,
+      "cpu_sec": 413.816199,
+      "delay": 1303.48,
+      "gates": 31487,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2/round_12.blif",
+      "round": 12
+    },
+    "expected_rounds": 15,
+    "historical_wall_sec": 489.577985387
+  }
+}

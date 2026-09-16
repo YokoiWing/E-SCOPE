@@ -1,0 +1,2 @@
+# Frozen generated netlists are reviewed by SHA; suppress enormous textual diffs.
+experiments/main28/g0/*.v -diff

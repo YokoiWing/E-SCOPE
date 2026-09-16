@@ -1,0 +1,315 @@
+{
+  "method": "module dependency closure; unused module declarations and unrelated registered extractors pruned; only one native executable target",
+  "source_units": [
+    {
+      "path": "source/D1-series/src/bin/evaluate_mapped_nldm_v2_shared_batch.rs",
+      "sha256": "f02166908dc52804a6f660c79ecbf8241b2b0a604e0d159c79a1146020c38901",
+      "origin": "D1-series/src/bin/evaluate_mapped_nldm_v2_shared_batch.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/bin/materialize_structural_macro_plan.rs",
+      "sha256": "63f6a95640523f0be194dee7a0f387a75d64686c0cd83c606e7b69644863f81e",
+      "origin": "D1-series/src/bin/materialize_structural_macro_plan.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/bin/rerank_dual_region_p3_fast.rs",
+      "sha256": "d52a11f97d10065a8ff054ed2f29e559f11949cf66f305551fca64b4675ef1aa",
+      "origin": "D1-series/src/bin/rerank_dual_region_p3_fast.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/bin/run_dual_region_planner.rs",
+      "sha256": "528b8aef172f118c25638154824aaa39319edb30ab44e88ed44507d9c00dfc64",
+      "origin": "D1-series/src/bin/run_dual_region_planner.rs",
+      "frozen_snapshot_match": true,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/bin/run_frozen_a2_fast.rs",
+      "sha256": "a981adafd7764f75c24185d8f5e80608ac6f6d313f2be494999bcf7878958631",
+      "origin": "D1-series/src/bin/run_frozen_a2_fast.rs",
+      "frozen_snapshot_match": true,
+      "current_original_match": false
+    },
+    {
+      "path": "source/D1-series/src/bin/run_generator_union_native.rs",
+      "sha256": "f20eee8fc893b3e31330aedc486a77021be666139b7aacce70367877254a8cfd",
+      "origin": "D1-series/src/bin/run_generator_union_native.rs",
+      "frozen_snapshot_match": true,
+      "current_original_match": false
+    },
+    {
+      "path": "source/D1-series/src/equivalence_candidate.rs",
+      "sha256": "7880703bb454271881aecbf5239230fdc03b9da7ee049b524ecf1e4f3e9791a2",
+      "origin": "D1-series/src/equivalence_candidate.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/generator_v2.rs",
+      "sha256": "83479dfe7e425232b8ac0a5ffc75ba811954393555a1b4bcf04086ba1fdfede6",
+      "origin": "D1-series/src/generator_v2.rs",
+      "frozen_snapshot_match": true,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/lib.rs",
+      "sha256": "950896ed04be07cb7441bdb888419488ed09297368bd8e39a21619599ce441d3",
+      "origin": "D1-series/src/lib.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/objective.rs",
+      "sha256": "02226f55b30fd2ce400ab084336cd3b946819693e312728441367266c15a95d0",
+      "origin": "D1-series/src/objective.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/phase_i.rs",
+      "sha256": "ca2f844b12b4ea035c6a880c99379361831c4b1394a8141362bc418a03d02d45",
+      "origin": "D1-series/src/phase_i.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/shared_load_v2.rs",
+      "sha256": "6b1e50194b98a6d754f6ea20e4b028765a05b9c7bf4b9c61207d131689968fc0",
+      "origin": "D1-series/src/shared_load_v2.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/topology_expr.rs",
+      "sha256": "5cb74f4d4826abcdfc699d3b0550a28b44fd2cb1336cb344bb09fb99d0981868",
+      "origin": "D1-series/src/topology_expr.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/topology_signature.rs",
+      "sha256": "7dabba6dab189eea5ea1c006c489b138a368f74a68cd8fe68ac0742bc926f5eb",
+      "origin": "D1-series/src/topology_signature.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/v8_potential.rs",
+      "sha256": "1f84a1049c3ea31bc083323627a0c729b1b851eb7fe5b5befff59aa1c7b8114a",
+      "origin": "D1-series/src/v8_potential.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/v8_pro.rs",
+      "sha256": "b15d6f0ca871dfd33946ad39fb275afced1cf569b5032ea624b8a6fd185893c9",
+      "origin": "D1-series/src/v8_pro.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/D1-series/src/v8_ultra.rs",
+      "sha256": "404160affc06e7405fb51e04c9e025ea9a51ac999aa16e2e3a113c77743bec2f",
+      "origin": "D1-series/src/v8_ultra.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/cost.rs",
+      "sha256": "fb0a37155b086db5bf8a41c8ce34fac07784f3d925bca053bb4a4e0149da6e81",
+      "origin": "mac_egg/extraction_gym/src/cost.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/egraph.rs",
+      "sha256": "9f77f60207a46304c2a43a2d721b796a6de979ae3bf9118df2538eb5df11e854",
+      "origin": "mac_egg/extraction_gym/src/egraph.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/circuit_adjoint.rs",
+      "sha256": "e1325b2782d833c867d4aefa21b604362ff981aa87a2de938f080a3eddc2471b",
+      "origin": "mac_egg/extraction_gym/src/extract/circuit_adjoint.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/mod.rs",
+      "sha256": "f887738604b407a77fd282fd663d570adc3ae351c284e10762b1aa6eae8c4aab",
+      "origin": "mac_egg/extraction_gym/src/extract/mod.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": false
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/prio_queue.rs",
+      "sha256": "170e0d5769d0d9ca6c425fcb57d59a351080093fabdc8a4b0468bd2e289e146b",
+      "origin": "mac_egg/extraction_gym/src/extract/prio_queue.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/region_boundary.rs",
+      "sha256": "6f5d1b1a1d9686c2850c0c18f06bce218cabdeabfb7c302edaed892c3cbe6ef9",
+      "origin": "mac_egg/extraction_gym/src/extract/region_boundary.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/soft_criticality.rs",
+      "sha256": "472ff9af33b65193152683493e559bf3e8151e152119235f8dfd36d3e0cc8a8f",
+      "origin": "mac_egg/extraction_gym/src/extract/soft_criticality.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/timing_trace.rs",
+      "sha256": "854bfb8a4a470c5a8ee31c8b450b24f5b35d524c2538ebad7b2ab5cfbb860606",
+      "origin": "mac_egg/extraction_gym/src/extract/timing_trace.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/extract/timing_v2.rs",
+      "sha256": "83baae4019aa9d71b5aa80be653f944610eb8511b71144e22b5d8bb4d9300528",
+      "origin": "mac_egg/extraction_gym/src/extract/timing_v2.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/lib.rs",
+      "sha256": "4831fdad9aa35fa1ae8d601745e5cc76f1b653b8d1811bc512124ca0c4a55754",
+      "origin": "mac_egg/extraction_gym/src/lib.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/extraction_gym/src/nldm.rs",
+      "sha256": "c1aeb9c6a10b7fbfe3e44f10df1a68fb455c7b056533cc16bb61fa6302d77813",
+      "origin": "mac_egg/extraction_gym/src/nldm.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/adaptive_region.rs",
+      "sha256": "5ae1c0f7f3deb0ac5014d5209088efe30b385ed8e77d9c49628ab37efe07f383",
+      "origin": "mac_egg/src/adaptive_region.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/d3_joint.rs",
+      "sha256": "515af42c8838d793996bc8c592d1b7ed87d950e4bac06ba24e4ccdc85c32c9a3",
+      "origin": "mac_egg/src/d3_joint.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/egraph_roots.rs",
+      "sha256": "3029f5608896bf90caccd662cc9962bb91f7b73292b89dc35d1a318515c1db58",
+      "origin": "mac_egg/src/egraph_roots.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/io/bench.rs",
+      "sha256": "7e3a1a88bf57029a51f33fabed9df9e50f82f9ad138ebfd57edac69c2a26c34c",
+      "origin": "mac_egg/src/io/bench.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/io/liberty.rs",
+      "sha256": "7618de30961a7ab5c52f928d93831ce8118513a4e70da745e61019a83136b1fc",
+      "origin": "mac_egg/src/io/liberty.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/io/mod.rs",
+      "sha256": "8a71c3f317fea42b107da1522e680b8971d59282f2f0e8e8c334939c0d8ff27d",
+      "origin": "mac_egg/src/io/mod.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": false
+    },
+    {
+      "path": "source/mac_egg/src/io/stdcell.rs",
+      "sha256": "326ac8255e33663dc867fea812015b76df6826909a338349de20a1c33364c09e",
+      "origin": "mac_egg/src/io/stdcell.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/io/verilog.rs",
+      "sha256": "2b0cdefbc7c6511b0342aa0dc46a28128b8067b40e5f2688296560b231b581e4",
+      "origin": "mac_egg/src/io/verilog.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/language.rs",
+      "sha256": "5b3b2a3bacc54af2eddc83d0ac248c7ee00acf05db090a67e9a953885c8bbfca",
+      "origin": "mac_egg/src/language.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/lib.rs",
+      "sha256": "c787aaff62d8c0c9bcb70f8e2e07cd1a9a21273bced6b27cb38bbafd450a0e9b",
+      "origin": "mac_egg/src/lib.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": false
+    },
+    {
+      "path": "source/mac_egg/src/netlist.rs",
+      "sha256": "1f9ae7f33c80e2344cf589a795a967010311c0977f3974655f0f0ca7a793cecb",
+      "origin": "mac_egg/src/netlist.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/physical_scale_egraph.rs",
+      "sha256": "5fe1352fc20717463a6e8844b82653f7a6d4bfcaa6fac71cb7a51e820ec25606",
+      "origin": "mac_egg/src/physical_scale_egraph.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/physical_topology_egraph.rs",
+      "sha256": "2b5243c08a5c431f3686d97808d8d55c641ec15ad24db4129eae83b2a6ac7c1b",
+      "origin": "mac_egg/src/physical_topology_egraph.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/region_local_evaluator.rs",
+      "sha256": "7266b0a9c895bdaac31bd95d45f8cc2ebeeb6376fc5d22c9e8abb27ebc441a91",
+      "origin": "mac_egg/src/region_local_evaluator.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/rule.rs",
+      "sha256": "9891bb94be33bf919d92744e1d3a1df7b328e792d8a129d46fd51cd642107542",
+      "origin": "mac_egg/src/rule.rs",
+      "frozen_snapshot_match": false,
+      "current_original_match": true
+    },
+    {
+      "path": "source/mac_egg/src/structural_realization.rs",
+      "sha256": "e82b7c484804519ef54fbb4a005f6183f636b91e103136c4f55a1b484ba588c1",
+      "origin": "mac_egg/src/structural_realization.rs",
+      "frozen_snapshot_match": true,
+      "current_original_match": true
+    }
+  ],
+  "frozen_binary_sha256": "706274462bbd3b8ac82d1d16d2222822c8262501a623558a85ae3d90fe78d04d",
+  "complete_historical_source_build_provenance": false
+}

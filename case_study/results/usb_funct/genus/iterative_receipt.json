@@ -1,0 +1,16 @@
+{
+  "area": 679.72,
+  "delay": 1471.6,
+  "power": 0.00165426,
+  "gates": 7049,
+  "instances_identical": true,
+  "mapped_connectivity_identical": true,
+  "unresolved_zero": true,
+  "evidence": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/genus_batches/usb_internal_final_v1/reports/usb_funct/usb_internal_feasible_portfolio_final",
+  "area_delta_g0_pct": -2.56027982453626,
+  "area_delta_areapmo_pct": -1.8050750128211668,
+  "delay_delta_g0_pct": 0.0,
+  "delay_delta_areapmo_pct": -4.1365383362647385,
+  "power_delta_g0_pct": -3.3184495979053708,
+  "power_delta_areapmo_pct": -2.995865951270993
+}

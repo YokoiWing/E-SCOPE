@@ -1,0 +1,7795 @@
+/* GENLIB STATIC TRANSPORT ONLY: no NLDM/power characterization. */
+library (author_genlib_static) {
+  delay_model : table_lookup;
+  time_unit : "1ps";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  pulling_resistance_unit : "1kohm";
+  capacitive_load_unit (1, ff);
+  leakage_power_unit : "1nW";
+  nom_voltage : 0.7;
+  nom_temperature : 25;
+  nom_process : 1;
+  lu_table_template (fixed) {
+    variable_1 : input_net_transition;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0, 1000"); index_2 ("0, 1000");
+  }
+cell (BUFx2_ASAP7_75t_R) {
+area : 0.07;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "A";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("19.78, 19.78", "19.78, 19.78");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("19.78, 19.78", "19.78, 19.78");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (INVx1_ASAP7_75t_R) {
+area : 0.04;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "!A";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("14.77, 14.77", "14.77, 14.77");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("14.77, 14.77", "14.77, 14.77");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AND2x2_ASAP7_75t_R) {
+area : 0.09;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * B)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.69, 22.69", "22.69, 22.69");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.69, 22.69", "22.69, 22.69");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.73, 22.73", "22.73, 22.73");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.73, 22.73", "22.73, 22.73");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OR2x4_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A) + (B)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.1, 25.1", "25.1, 25.1");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.1, 25.1", "25.1, 25.1");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.04, 25.04", "25.04, 25.04");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.04, 25.04", "25.04, 25.04");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (NAND2x1_ASAP7_75t_R) {
+area : 0.09;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A) + (!B)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.02, 23.02", "23.02, 23.02");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.02, 23.02", "23.02, 23.02");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.15, 22.15", "22.15, 22.15");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.15, 22.15", "22.15, 22.15");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (NOR2x1_ASAP7_75t_R) {
+area : 0.09;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A * !B)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.93, 23.93", "23.93, 23.93");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.93, 23.93", "23.93, 23.93");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.19, 23.19", "23.19, 23.19");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.19, 23.19", "23.19, 23.19");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (XNOR2x2_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * B) + (!A * !B)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.92, 36.92", "36.92, 36.92");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.92, 36.92", "36.92, 36.92");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.52, 36.52", "36.52, 36.52");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.52, 36.52", "36.52, 36.52");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (XOR2x2_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * !B) + (!A * B)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.91, 35.91", "35.91, 35.91");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.91, 35.91", "35.91, 35.91");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.34, 36.34", "36.34, 36.34");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.34, 36.34", "36.34, 36.34");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AND3x1_ASAP7_75t_R) {
+area : 0.09;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * B * C)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.64, 25.64", "25.64, 25.64");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.64, 25.64", "25.64, 25.64");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.02, 26.02", "26.02, 26.02");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.02, 26.02", "26.02, 26.02");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.48, 26.48", "26.48, 26.48");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.48, 26.48", "26.48, 26.48");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OR3x1_ASAP7_75t_R) {
+area : 0.09;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A) + (B) + (C)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.06, 28.06", "28.06, 28.06");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.06, 28.06", "28.06, 28.06");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.54, 28.54", "28.54, 28.54");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.54, 28.54", "28.54, 28.54");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.96, 28.96", "28.96, 28.96");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.96, 28.96", "28.96, 28.96");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO21x1_ASAP7_75t_R) {
+area : 0.09;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2) + (B)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.72, 21.72", "21.72, 21.72");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.72, 21.72", "21.72, 21.72");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.09, 22.09", "22.09, 22.09");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.09, 22.09", "22.09, 22.09");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.12, 21.12", "21.12, 21.12");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.12, 21.12", "21.12, 21.12");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA21x2_ASAP7_75t_R) {
+area : 0.10;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B) + (A2 * B)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.62, 21.62", "21.62, 21.62");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.62, 21.62", "21.62, 21.62");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.98, 21.98", "21.98, 21.98");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.98, 21.98", "21.98, 21.98");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("19.74, 19.74", "19.74, 19.74");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("19.74, 19.74", "19.74, 19.74");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (MAJx2_ASAP7_75t_R) {
+area : 0.13;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * B) + (A * C) + (B * C)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.7, 27.7", "27.7, 27.7");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.7, 27.7", "27.7, 27.7");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.12, 33.12", "33.12, 33.12");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.12, 33.12", "33.12, 33.12");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.34, 30.34", "30.34, 30.34");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.34, 30.34", "30.34, 30.34");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AOI21x1_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A1 * !B) + (!A2 * !B)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.04, 22.04", "22.04, 22.04");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.04, 22.04", "22.04, 22.04");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("20.15, 20.15", "20.15, 20.15");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("20.15, 20.15", "20.15, 20.15");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.67, 21.67", "21.67, 21.67");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.67, 21.67", "21.67, 21.67");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OAI21x1_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A1 * !A2) + (!B)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.73, 21.73", "21.73, 21.73");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.73, 21.73", "21.73, 21.73");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("19.93, 19.93", "19.93, 19.93");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("19.93, 19.93", "19.93, 19.93");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("18.7, 18.7", "18.7, 18.7");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("18.7, 18.7", "18.7, 18.7");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (NAND3x1_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A) + (!B) + (!C)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.57, 27.57", "27.57, 27.57");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.57, 27.57", "27.57, 27.57");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.89, 28.89", "28.89, 28.89");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.89, 28.89", "28.89, 28.89");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.89, 28.89", "28.89, 28.89");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.89, 28.89", "28.89, 28.89");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (NOR3x1_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A * !B * !C)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.14, 29.14", "29.14, 29.14");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.14, 29.14", "29.14, 29.14");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.56, 30.56", "30.56, 30.56");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.56, 30.56", "30.56, 30.56");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.61, 30.61", "30.61, 30.61");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.61, 30.61", "30.61, 30.61");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO22x1_ASAP7_75t_R) {
+area : 0.13;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2) + (B1 * B2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.74, 22.74", "22.74, 22.74");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.74, 22.74", "22.74, 22.74");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.52, 23.52", "23.52, 23.52");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.52, 23.52", "23.52, 23.52");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.75, 22.75", "22.75, 22.75");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.75, 22.75", "22.75, 22.75");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.43, 23.43", "23.43, 23.43");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.43, 23.43", "23.43, 23.43");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA211x2_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B * C) + (A2 * B * C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.27, 25.27", "25.27, 25.27");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.27, 25.27", "25.27, 25.27");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.73, 25.73", "25.73, 25.73");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.73, 25.73", "25.73, 25.73");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.7, 26.7", "26.7, 26.7");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.7, 26.7", "26.7, 26.7");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.18, 27.18", "27.18, 27.18");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.18, 27.18", "27.18, 27.18");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OR4x2_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A) + (B) + (C) + (D)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.01, 29.01", "29.01, 29.01");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.01, 29.01", "29.01, 29.01");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.94, 29.94", "29.94, 29.94");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.94, 29.94", "29.94, 29.94");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.77, 30.77", "30.77, 30.77");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.77, 30.77", "30.77, 30.77");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "D";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.34, 31.34", "31.34, 31.34");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.34, 31.34", "31.34, 31.34");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "D";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (D) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA22x2_ASAP7_75t_R) {
+area : 0.15;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1) + (A1 * B2) + (A2 * B1) + (A2 * B2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.39, 22.39", "22.39, 22.39");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.39, 22.39", "22.39, 22.39");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.79, 22.79", "22.79, 22.79");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.79, 22.79", "22.79, 22.79");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.22, 22.22", "22.22, 22.22");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.22, 22.22", "22.22, 22.22");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.72, 22.72", "22.72, 22.72");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.72, 22.72", "22.72, 22.72");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AND4x2_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * B * C * D)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.32, 27.32", "27.32, 27.32");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.32, 27.32", "27.32, 27.32");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.69, 27.69", "27.69, 27.69");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.69, 27.69", "27.69, 27.69");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.26, 28.26", "28.26, 28.26");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.26, 28.26", "28.26, 28.26");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "D";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.69, 28.69", "28.69, 28.69");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.69, 28.69", "28.69, 28.69");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "D";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (D) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA31x2_ASAP7_75t_R) {
+area : 0.22;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1) + (A2 * B1) + (A3 * B1)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.2, 26.2", "26.2, 26.2");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.2, 26.2", "26.2, 26.2");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.63, 25.63", "25.63, 25.63");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.63, 25.63", "25.63, 25.63");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.42, 26.42", "26.42, 26.42");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.42, 26.42", "26.42, 26.42");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.88, 24.88", "24.88, 24.88");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.88, 24.88", "24.88, 24.88");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO211x2_ASAP7_75t_R) {
+area : 0.23;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2) + (B) + (C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.03, 26.03", "26.03, 26.03");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.03, 26.03", "26.03, 26.03");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.03, 25.03", "25.03, 25.03");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.03, 25.03", "25.03, 25.03");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.32, 24.32", "24.32, 24.32");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.32, 24.32", "24.32, 24.32");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.78, 23.78", "23.78, 23.78");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.78, 23.78", "23.78, 23.78");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AOI211x1_ASAP7_75t_R) {
+area : 0.17;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A1 * !B * !C) + (!A2 * !B * !C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.78, 27.78", "27.78, 27.78");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.78, 27.78", "27.78, 27.78");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.08, 30.08", "30.08, 30.08");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.08, 30.08", "30.08, 30.08");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.58, 23.58", "23.58, 23.58");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.58, 23.58", "23.58, 23.58");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.33, 24.33", "24.33, 24.33");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.33, 24.33", "24.33, 24.33");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO31x2_ASAP7_75t_R) {
+area : 0.23;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.13, 23.13", "23.13, 23.13");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.13, 23.13", "23.13, 23.13");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.95, 22.95", "22.95, 22.95");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.95, 22.95", "22.95, 22.95");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.02, 23.02", "23.02, 23.02");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.02, 23.02", "23.02, 23.02");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.2, 24.2", "24.2, 24.2");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.2, 24.2", "24.2, 24.2");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OAI22x1_ASAP7_75t_R) {
+area : 0.15;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A1 * !A2) + (!B1 * !B2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.24, 22.24", "22.24, 22.24");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.24, 22.24", "22.24, 22.24");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.01, 24.01", "24.01, 24.01");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.01, 24.01", "24.01, 24.01");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.93, 21.93", "21.93, 21.93");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.93, 21.93", "21.93, 21.93");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.64, 23.64", "23.64, 23.64");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.64, 23.64", "23.64, 23.64");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AOI22x1_ASAP7_75t_R) {
+area : 0.15;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A1 * !B1) + (!A1 * !B2) + (!A2 * !B1) + (!A2 * !B2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.29, 22.29", "22.29, 22.29");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("22.29, 22.29", "22.29, 22.29");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.04, 24.04", "24.04, 24.04");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.04, 24.04", "24.04, 24.04");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.93, 21.93", "21.93, 21.93");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("21.93, 21.93", "21.93, 21.93");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.75, 23.75", "23.75, 23.75");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("23.75, 23.75", "23.75, 23.75");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO32x1_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B1 * B2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.5, 26.5", "26.5, 26.5");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.5, 26.5", "26.5, 26.5");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.92, 25.92", "25.92, 25.92");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.92, 25.92", "25.92, 25.92");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.83, 26.83", "26.83, 26.83");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.83, 26.83", "26.83, 26.83");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.2, 27.2", "27.2, 27.2");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.2, 27.2", "27.2, 27.2");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.24, 26.24", "26.24, 26.24");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.24, 26.24", "26.24, 26.24");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AND5x1_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A * B * C * D * E)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.93, 31.93", "31.93, 31.93");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.93, 31.93", "31.93, 31.93");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.5, 33.5", "33.5, 33.5");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.5, 33.5", "33.5, 33.5");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.2, 35.2", "35.2, 35.2");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.2, 35.2", "35.2, 35.2");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "D";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.22, 36.22", "36.22, 36.22");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.22, 36.22", "36.22, 36.22");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "D";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "E";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.85, 36.85", "36.85, 36.85");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.85, 36.85", "36.85, 36.85");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "E";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (D) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (E) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OR5x1_ASAP7_75t_R) {
+area : 0.12;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A) + (B) + (C) + (D) + (E)";
+timing () {
+related_pin : "A";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.79, 31.79", "31.79, 31.79");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.79, 31.79", "31.79, 31.79");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.27, 33.27", "33.27, 33.27");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.27, 33.27", "33.27, 33.27");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.82, 34.82", "34.82, 34.82");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.82, 34.82", "34.82, 34.82");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "D";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.85, 35.85", "35.85, 35.85");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.85, 35.85", "35.85, 35.85");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "D";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "E";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.64, 36.64", "36.64, 36.64");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.64, 36.64", "36.64, 36.64");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "E";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (D) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (E) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO221x2_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2) + (B1 * B2) + (C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.18, 28.18", "28.18, 28.18");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.18, 28.18", "28.18, 28.18");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.48, 27.48", "27.48, 27.48");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.48, 27.48", "27.48, 27.48");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.04, 27.04", "27.04, 27.04");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.04, 27.04", "27.04, 27.04");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.2, 26.2", "26.2, 26.2");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.2, 26.2", "26.2, 26.2");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.49, 25.49", "25.49, 25.49");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.49, 25.49", "25.49, 25.49");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AOI221x1_ASAP7_75t_R) {
+area : 0.20;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(!A1 * !B1 * !C) + (!A1 * !B2 * !C) + (!A2 * !B1 * !C) + (!A2 * !B2 * !C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.75, 30.75", "30.75, 30.75");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.75, 30.75", "30.75, 30.75");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.28, 29.28", "29.28, 29.28");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.28, 29.28", "29.28, 29.28");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.21, 29.21", "29.21, 29.21");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.21, 29.21", "29.21, 29.21");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.0, 28.0", "28.0, 28.0");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.0, 28.0", "28.0, 28.0");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.54, 26.54", "26.54, 26.54");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.54, 26.54", "26.54, 26.54");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA221x2_ASAP7_75t_R) {
+area : 0.23;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1 * C) + (A1 * B2 * C) + (A2 * B1 * C) + (A2 * B2 * C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.7, 27.7", "27.7, 27.7");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.7, 27.7", "27.7, 27.7");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.51, 28.51", "28.51, 28.51");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.51, 28.51", "28.51, 28.51");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.8, 25.8", "25.8, 25.8");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("25.8, 25.8", "25.8, 25.8");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.71, 26.71", "26.71, 26.71");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.71, 26.71", "26.71, 26.71");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.8, 24.8", "24.8, 24.8");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("24.8, 24.8", "24.8, 24.8");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO33x2_ASAP7_75t_R) {
+area : 0.15;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B1 * B2 * B3)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.44, 29.44", "29.44, 29.44");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.44, 29.44", "29.44, 29.44");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.25, 29.25", "29.25, 29.25");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.25, 29.25", "29.25, 29.25");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.95, 29.95", "29.95, 29.95");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.95, 29.95", "29.95, 29.95");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.21, 29.21", "29.21, 29.21");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.21, 29.21", "29.21, 29.21");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.06, 29.06", "29.06, 29.06");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.06, 29.06", "29.06, 29.06");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.5, 29.5", "29.5, 29.5");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.5, 29.5", "29.5, 29.5");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA33x2_ASAP7_75t_R) {
+area : 0.15;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1) + (A1 * B2) + (A1 * B3) + (A2 * B1) + (A2 * B2) + (A2 * B3) + (A3 * B1) + (A3 * B2) + (A3 * B3)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.59, 28.59", "28.59, 28.59");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.59, 28.59", "28.59, 28.59");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.13, 28.13", "28.13, 28.13");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.13, 28.13", "28.13, 28.13");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.11, 28.11", "28.11, 28.11");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.11, 28.11", "28.11, 28.11");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.3, 27.3", "27.3, 27.3");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.3, 27.3", "27.3, 27.3");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.03, 27.03", "27.03, 27.03");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.03, 27.03", "27.03, 27.03");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.06, 27.06", "27.06, 27.06");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.06, 27.06", "27.06, 27.06");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO222x2_ASAP7_75t_R) {
+area : 0.17;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2) + (B1 * B2) + (C1 * C2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.78, 29.78", "29.78, 29.78");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.78, 29.78", "29.78, 29.78");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.44, 29.44", "29.44, 29.44");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.44, 29.44", "29.44, 29.44");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.19, 29.19", "29.19, 29.19");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.19, 29.19", "29.19, 29.19");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.65, 28.65", "28.65, 28.65");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.65, 28.65", "28.65, 28.65");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.55, 28.55", "28.55, 28.55");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.55, 28.55", "28.55, 28.55");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.91, 27.91", "27.91, 27.91");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.91, 27.91", "27.91, 27.91");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA222x2_ASAP7_75t_R) {
+area : 0.17;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.68, 27.68", "27.68, 27.68");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.68, 27.68", "27.68, 27.68");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.25, 27.25", "27.25, 27.25");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.25, 27.25", "27.25, 27.25");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.04, 28.04", "28.04, 28.04");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.04, 28.04", "28.04, 28.04");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.7, 27.7", "27.7, 27.7");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.7, 27.7", "27.7, 27.7");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.54, 28.54", "28.54, 28.54");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.54, 28.54", "28.54, 28.54");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.48, 28.48", "28.48, 28.48");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.48, 28.48", "28.48, 28.48");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO322x2_ASAP7_75t_R) {
+area : 0.22;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B1 * B2) + (C1 * C2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.87, 32.87", "32.87, 32.87");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.87, 32.87", "32.87, 32.87");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.74, 32.74", "32.74, 32.74");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.74, 32.74", "32.74, 32.74");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.04, 33.04", "33.04, 33.04");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.04, 33.04", "33.04, 33.04");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.91, 32.91", "32.91, 32.91");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.91, 32.91", "32.91, 32.91");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.32, 32.32", "32.32, 32.32");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.32, 32.32", "32.32, 32.32");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.81, 31.81", "31.81, 31.81");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.81, 31.81", "31.81, 31.81");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.08, 31.08", "31.08, 31.08");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.08, 31.08", "31.08, 31.08");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA331x2_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1 * C1) + (A1 * B2 * C1) + (A1 * B3 * C1) + (A2 * B1 * C1) + (A2 * B2 * C1) + (A2 * B3 * C1) + (A3 * B1 * C1) + (A3 * B2 * C1) + (A3 * B3 * C1)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.21, 31.21", "31.21, 31.21");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.21, 31.21", "31.21, 31.21");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.21, 31.21", "31.21, 31.21");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.21, 31.21", "31.21, 31.21");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.81, 31.81", "31.81, 31.81");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.81, 31.81", "31.81, 31.81");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.56, 29.56", "29.56, 29.56");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.56, 29.56", "29.56, 29.56");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.45, 29.45", "29.45, 29.45");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.45, 29.45", "29.45, 29.45");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.89, 29.89", "29.89, 29.89");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.89, 29.89", "29.89, 29.89");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.0, 26.0", "26.0, 26.0");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("26.0, 26.0", "26.0, 26.0");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO331x2_ASAP7_75t_R) {
+area : 0.16;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B1 * B2 * B3) + (C)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.6, 31.6", "31.6, 31.6");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.6, 31.6", "31.6, 31.6");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.34, 31.34", "31.34, 31.34");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.34, 31.34", "31.34, 31.34");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.88, 31.88", "31.88, 31.88");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.88, 31.88", "31.88, 31.88");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.25, 30.25", "30.25, 30.25");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.25, 30.25", "30.25, 30.25");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.9, 29.9", "29.9, 29.9");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.9, 29.9", "29.9, 29.9");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.37, 30.37", "30.37, 30.37");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.37, 30.37", "30.37, 30.37");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.69, 27.69", "27.69, 27.69");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("27.69, 27.69", "27.69, 27.69");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO332x2_ASAP7_75t_R) {
+area : 0.17;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B1 * B2 * B3) + (C1 * C2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.87, 33.87", "33.87, 33.87");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.87, 33.87", "33.87, 33.87");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.6, 33.6", "33.6, 33.6");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.6, 33.6", "33.6, 33.6");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.2, 34.2", "34.2, 34.2");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.2, 34.2", "34.2, 34.2");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.47, 32.47", "32.47, 32.47");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.47, 32.47", "32.47, 32.47");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.13, 32.13", "32.13, 32.13");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.13, 32.13", "32.13, 32.13");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.58, 32.58", "32.58, 32.58");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.58, 32.58", "32.58, 32.58");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.49, 30.49", "30.49, 30.49");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("30.49, 30.49", "30.49, 30.49");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.71, 29.71", "29.71, 29.71");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.71, 29.71", "29.71, 29.71");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA332x2_ASAP7_75t_R) {
+area : 0.17;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A1 * B3 * C1) + (A1 * B3 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A2 * B3 * C1) + (A2 * B3 * C2) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B2 * C1) + (A3 * B2 * C2) + (A3 * B3 * C1) + (A3 * B3 * C2)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.5, 33.5", "33.5, 33.5");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.5, 33.5", "33.5, 33.5");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.52, 33.52", "33.52, 33.52");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.52, 33.52", "33.52, 33.52");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.1, 34.1", "34.1, 34.1");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.1, 34.1", "34.1, 34.1");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.75, 31.75", "31.75, 31.75");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.75, 31.75", "31.75, 31.75");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.65, 31.65", "31.65, 31.65");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("31.65, 31.65", "31.65, 31.65");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.12, 32.12", "32.12, 32.12");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.12, 32.12", "32.12, 32.12");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.21, 29.21", "29.21, 29.21");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("29.21, 29.21", "29.21, 29.21");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.55, 28.55", "28.55, 28.55");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("28.55, 28.55", "28.55, 28.55");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (AO333x1_ASAP7_75t_R) {
+area : 0.17;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * A2 * A3) + (B1 * B2 * B3) + (C1 * C2 * C3)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.79, 36.79", "36.79, 36.79");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.79, 36.79", "36.79, 36.79");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.47, 36.47", "36.47, 36.47");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.47, 36.47", "36.47, 36.47");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("37.11, 37.11", "37.11, 37.11");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("37.11, 37.11", "37.11, 37.11");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.46, 35.46", "35.46, 35.46");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.46, 35.46", "35.46, 35.46");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.94, 34.94", "34.94, 34.94");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.94, 34.94", "34.94, 34.94");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.34, 35.34", "35.34, 35.34");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("35.34, 35.34", "35.34, 35.34");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.77, 33.77", "33.77, 33.77");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.77, 33.77", "33.77, 33.77");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.3, 33.3", "33.3, 33.3");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.3, 33.3", "33.3, 33.3");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.75, 33.75", "33.75, 33.75");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.75, 33.75", "33.75, 33.75");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C3) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+cell (OA333x2_ASAP7_75t_R) {
+area : 0.19;
+cell_leakage_power : 0;
+pin (Y) {
+direction : output;
+max_capacitance : 100000;
+function : "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B1 * C3) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A1 * B2 * C3) + (A1 * B3 * C1) + (A1 * B3 * C2) + (A1 * B3 * C3) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B1 * C3) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A2 * B2 * C3) + (A2 * B3 * C1) + (A2 * B3 * C2) + (A2 * B3 * C3) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B1 * C3) + (A3 * B2 * C1) + (A3 * B2 * C2) + (A3 * B2 * C3) + (A3 * B3 * C1) + (A3 * B3 * C2) + (A3 * B3 * C3)";
+timing () {
+related_pin : "A1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.83, 32.83", "32.83, 32.83");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.83, 32.83", "32.83, 32.83");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.59, 32.59", "32.59, 32.59");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("32.59, 32.59", "32.59, 32.59");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "A3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.02, 33.02", "33.02, 33.02");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("33.02, 33.02", "33.02, 33.02");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "A3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.33, 34.33", "34.33, 34.33");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.33, 34.33", "34.33, 34.33");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.25, 34.25", "34.25, 34.25");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.25, 34.25", "34.25, 34.25");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "B3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.72, 34.72", "34.72, 34.72");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("34.72, 34.72", "34.72, 34.72");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "B3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C1";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.13, 36.13", "36.13, 36.13");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.13, 36.13", "36.13, 36.13");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C1";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C2";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.14, 36.14", "36.14, 36.14");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.14, 36.14", "36.14, 36.14");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C2";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+timing () {
+related_pin : "C3";
+timing_sense : non_unate;
+cell_rise (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.69, 36.69", "36.69, 36.69");
+    }
+cell_fall (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("36.69, 36.69", "36.69, 36.69");
+    }
+rise_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_transition (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+internal_power () {
+related_pin : "C3";
+rise_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+fall_power (fixed) {
+      index_1 ("0, 1000");
+      index_2 ("0, 1000");
+      values ("0, 0", "0, 0");
+    }
+}
+}
+pin (A1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (A3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (B3) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C1) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C2) { direction : input; capacitance : 0; max_transition : 100000; }
+pin (C3) { direction : input; capacitance : 0; max_transition : 100000; }
+}
+}

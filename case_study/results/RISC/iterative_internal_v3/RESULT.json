@@ -1,0 +1,16 @@
+{
+  "case": "RISC",
+  "guide": "internal_v3",
+  "search_seconds": 5179.222806971986,
+  "first_divergence": "stage 2 round 1: candidate_sha256 672aeb5da721f92db368090fb638b403f7736a515bda42cf6b13ada1a7ad0848 != 2934800cc48107ec1b3ae849ea5c1bf5f93a3d8f674cc44e4d1e8cdc02fd093e",
+  "schedule_divergence": null,
+  "continued_after_observer_divergence": true,
+  "trace_rounds": 4,
+  "reference_sha256": "cd005bc4c5664a66a10f7ee5b423509be57f4017449f7a46f5f7c3c4810aec65",
+  "evaluation_evidence_reused": false,
+  "final_sha256": "d725acb2fcb6ac92d6dcbf48836d8d5da55e9d1b3cd1af1f6c9d74b33282a372",
+  "status": "COMPLETE",
+  "classification": "DIVERGED",
+  "evaluation_note": "new validation: DIVERGED",
+  "validation": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_sixcase_frozen_flow_repro_v1/paths/RISC/internal_v3/six_internal_completion_v1/validation/RESULT.json"
+}

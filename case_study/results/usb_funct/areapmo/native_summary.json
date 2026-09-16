@@ -1,0 +1,98 @@
+{
+  "cpu_sec": 19.072154,
+  "final": {
+    "area": 697.3,
+    "delay": 702.87,
+    "gates": 7230
+  },
+  "g0": {
+    "area": 702.45,
+    "delay": 722.0,
+    "gates": 7334
+  },
+  "rounds": [
+    {
+      "area": 698.06,
+      "cpu_sec": 1.949307,
+      "delay": 702.87,
+      "gates": 7245,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_1.blif",
+      "round": 1
+    },
+    {
+      "area": 697.51,
+      "cpu_sec": 3.843132,
+      "delay": 702.87,
+      "gates": 7234,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_2.blif",
+      "round": 2
+    },
+    {
+      "area": 697.58,
+      "cpu_sec": 5.723006,
+      "delay": 702.87,
+      "gates": 7235,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_3.blif",
+      "round": 3
+    },
+    {
+      "area": 697.44,
+      "cpu_sec": 7.628134,
+      "delay": 702.87,
+      "gates": 7233,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_4.blif",
+      "round": 4
+    },
+    {
+      "area": 697.33,
+      "cpu_sec": 9.536418,
+      "delay": 702.87,
+      "gates": 7230,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_5.blif",
+      "round": 5
+    },
+    {
+      "area": 697.43,
+      "cpu_sec": 11.423809,
+      "delay": 702.87,
+      "gates": 7234,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_6.blif",
+      "round": 6
+    },
+    {
+      "area": 697.26,
+      "cpu_sec": 13.312772,
+      "delay": 702.87,
+      "gates": 7229,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_7.blif",
+      "round": 7
+    },
+    {
+      "area": 697.26,
+      "cpu_sec": 15.163925,
+      "delay": 702.87,
+      "gates": 7229,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_8.blif",
+      "round": 8
+    },
+    {
+      "area": 697.27,
+      "cpu_sec": 17.057172,
+      "delay": 702.87,
+      "gates": 7230,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_9.blif",
+      "round": 9
+    },
+    {
+      "area": 697.3,
+      "cpu_sec": 18.96522,
+      "delay": 702.87,
+      "gates": 7230,
+      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_10.blif",
+      "round": 10
+    }
+  ],
+  "stage": "complete",
+  "stop_reason": "area_stagnation",
+  "wall_sec": 19.076175976
+}

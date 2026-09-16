@@ -1,0 +1,30 @@
+{
+  "lane": "usb_internal_feasible_portfolio_final",
+  "case": "usb_funct",
+  "rounds_completed": 65,
+  "accepted_rounds": 65,
+  "search_elapsed_sec": 3941.164633608,
+  "internal_final": {
+    "delay": 1426.2771359336673,
+    "area": 679.7196000000298,
+    "power": 1906.026418349174,
+    "score": 2635521415688.107,
+    "internal_power_legacy": 1353.140904007559,
+    "leakage_power_legacy": 826.6599254386609,
+    "switched_capacitance_ff": 22918.235592999823,
+    "vectorless_internal_power_uw": 782.2062143667032,
+    "vectorless_switching_power_uw": 1122.9935440570323,
+    "vectorless_leakage_power_uw": 0.826659925438661,
+    "vectorless_power_uw": 1906.026418349174,
+    "vectorless_toggle_sum": 1066.9000000000917
+  },
+  "selection_policy": "minimum area among pre-Genus Internal-V3-feasible Iterative transit_pool members",
+  "cec_pass": true,
+  "gates": 7049,
+  "cold_replay_match": true,
+  "final_verilog": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/usb_internal_feasible_portfolio_final/final.v",
+  "source_lanes": [
+    "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/usb_internal_feasible_portfolio",
+    "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/usb_internal_feasible_portfolio_fast128"
+  ]
+}

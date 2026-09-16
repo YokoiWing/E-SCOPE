@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "paper_location": "Figure 8 and Section IV-D",
+  "scope": "28 main-table benchmarks using each benchmark's frozen selected flow",
+  "source_sha256": {
+    "phase_attribution_csv": "aa551601f954999d65bdbb22a214c40fb350459785395a74684b4f727e265bbb",
+    "published_plot_data_csv": "9554feb4da120738918c2581e25e9beed33591a99429bc6e44321919791f4d12"
+  },
+  "geometric_means": {
+    "full_over_phase_i_only": 0.8662293894640778,
+    "full_reduction_vs_phase_i_only_percent": 13.377061053592222,
+    "full_over_phase_ii_only_exact": 0.9535440731030251,
+    "full_reduction_vs_phase_ii_only_percent": 4.645592689697486,
+    "full_over_without_drive": 0.9926907841772776,
+    "full_reduction_vs_without_drive_percent": 0.730921582272237
+  },
+  "discrepancies": [
+    {
+      "benchmark": "epfl_i2c",
+      "field": "full_over_phase_ii_only",
+      "exact": 1.0708307702363498,
+      "figure8_bar_value": 1.035,
+      "cause": "plot.py applies min(1.035, full / phase_ii)",
+      "effect": "the plotted bar and generated plot-data CSV are clipped; the paper's approximately 4.6% aggregate statement agrees with the exact, unclipped ratios"
+    }
+  ],
+  "replay_classification": "saved external evidence recomputation; no optimization or Genus executed"
+}
