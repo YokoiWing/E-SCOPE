@@ -71,13 +71,13 @@
     {
       "id": "table-iii-main28",
       "paper_location": "Table III",
-      "status": "evidence_replay_verified_with_adder_version_replacement",
+      "status": "evidence_replay_and_fresh_search_entry_verified_with_adder_version_replacement",
       "benchmarks": 28,
       "objective": "D^2 x A x P",
       "raw_ppa": "evidence/main28/table_iii_figure6_original_precision.csv",
       "g0_manifest": "experiments/main28/manifest.json",
       "g0_inputs": "experiments/main28/g0/<benchmark>__<anchor>.v",
-      "g0_verification": "python3 experiments/main28/verify.py",
+      "g0_verification": "python3 experiments/main28/run.py evidence --output reproduced/main28",
       "method_policy": "experiments/main28/policy.py",
       "small_policy_verification": "python3 experiments/main28/verify.py --small",
       "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
@@ -85,9 +85,16 @@
       "selection_boundary": "27 rows use the frozen Iterative/Conquer selections; current-PDF adder uses the later p0800 D x A archive_000 result",
       "policy_boundary": "The retrospective in-sample policy matches all 28 method labels; 27 use the same anchor, while epfl_adder/p0800 is a method-only transfer from an older adder anchor. Saved policy observations use external PPA whose latency is excluded from search-only runtime.",
       "missing_or_limited": [
-        "All 28 G0 netlists are packaged, but the compact layer does not yet package every selected output netlist or formal receipt.",
-        "Fresh 28-point optimization and Genus evaluation are intentionally not run during packaging."
-      ]
+        "Fresh 28-point optimization and Genus evaluation are intentionally not run during packaging.",
+        "The packaged source builds and passed small fresh-search smoke tests, but rebuilt executables are not claimed byte-identical to historical canonical binaries.",
+        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user."
+      ],
+      "selected_outputs": "experiments/main28/expected/<benchmark>__<anchor>.v",
+      "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs",
+      "runner": "experiments/main28/run.py",
+      "source_provenance": "experiments/main28/source/source_provenance.json",
+      "optimization_replay": "python3 experiments/main28/run.py run-one or run-all; see experiments/main28/README.md",
+      "external_validation": "user-provided licensed Genus and formal tools; reuse saved PPA only on exact output-SHA match"
     },
     {
       "id": "figure-6-runtime",
@@ -96,7 +103,12 @@
       "raw_runtime": "evidence/main28/table_iii_figure6_original_precision.csv",
       "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
       "aggregate": "geometric mean E-SCOPE search / Genus mapping wall ratio 1.4583649253561954",
-      "adder_tuple": {"anchor": "p0800", "g0_gates": 1942, "genus_wall_sec": 301.06, "escope_wall_sec": 303.351},
+      "adder_tuple": {
+        "anchor": "p0800",
+        "g0_gates": 1942,
+        "genus_wall_sec": 301.06,
+        "escope_wall_sec": 303.351
+      },
       "resource_limit": "Saved wall times are machine-specific. Internal worker settings in the records require separate reconciliation with the paper's one-CPU-core wording."
     },
     {
@@ -105,8 +117,16 @@
       "status": "evidence_replay_verified",
       "g0_points": 20,
       "frozen_anchors": 13,
-      "objectives": ["D x A", "D^2 x A x P", "D x P^2"],
-      "candidate_counts": {"D x A": 86, "D^2 x A x P": 113, "D x P^2": 64},
+      "objectives": [
+        "D x A",
+        "D^2 x A x P",
+        "D x P^2"
+      ],
+      "candidate_counts": {
+        "D x A": 86,
+        "D^2 x A x P": 113,
+        "D x P^2": 64
+      },
       "raw_ppa": "evidence/figure7/epfl_adder_three_objectives_original_precision.csv",
       "source_receipt": "evidence/figure7/source_receipt.json",
       "evidence_replay": "python3 scripts/replay_figure7.py --output-dir reproduced/figure7",

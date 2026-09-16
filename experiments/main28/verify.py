@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify all packaged G0 files and replay the frozen method-choice policy."""
+"""Verify packaged inputs/outputs and replay the frozen method-choice policy."""
 
 from __future__ import annotations
 
@@ -39,6 +39,12 @@ def main() -> None:
         actual = digest(path)
         if actual != point["g0_sha256"]:
             raise RuntimeError(f"G0 SHA mismatch for {point['benchmark']}: {actual}")
+        output = ROOT / point["optimized_path"]
+        actual_output = digest(output)
+        if actual_output != point["optimized_sha256"]:
+            raise RuntimeError(
+                f"optimized-netlist SHA mismatch for {point['benchmark']}: {actual_output}"
+            )
 
     selected = [p for p in points if not args.small or p["benchmark"] in SMALL_CASES]
     decisions = []
@@ -62,6 +68,7 @@ def main() -> None:
     result = {
         "status": "PASS",
         "g0_files_verified": len(points),
+        "optimized_netlists_verified": len(points),
         "policy_cases_verified": len(decisions),
         "scope": "small" if args.small else "all",
         "same_anchor_policy_records": sum(

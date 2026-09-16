@@ -21,7 +21,7 @@ compact original-precision results and replay scripts for Table III and Figures
 python3 scripts/preflight.py
 python3 scripts/verify_release.py
 python3 case_study/verify.py
-python3 experiments/main28/verify.py --small
+python3 experiments/main28/run.py evidence --output reproduced/main28
 ```
 
 ## Recompute Table IV from saved evidence
@@ -49,18 +49,20 @@ README that start with `final_paper/case_study/` should use `case_study/` here.
 References to development archives outside this package are historical provenance,
 not runtime dependencies.
 
-## Verify the Table III inputs and method choice
+## Reproduce Table III and Figure 6
 
 ```bash
-python3 experiments/main28/verify.py --small
-python3 experiments/main28/verify.py
+python3 experiments/main28/run.py evidence --output reproduced/main28
 ```
 
-The first command checks all 28 packaged G0 hashes and replays six small
-Iterative/Conquer choices. The second replays all saved choices. This policy
-validation does not rerun either optimizer.
+This single entry checks all 28 G0 and 28 selected-output hashes, replays every
+Iterative/Conquer choice, recomputes the original-precision aggregates, and
+redraws the runtime figure. The same entry also provides `build`, `preflight`,
+`plan`, `run-one`, `select`, and resumable `run-all` subcommands for fresh
+search. See [`experiments/main28/README.md`](experiments/main28/README.md).
 
-Genus and its license are not included. Internal estimates and external Genus
+Genus, its license, and the main experiment's full-combinational Liberty file
+are not included. Internal estimates and external Genus
 measurements are distinct. The frozen scheduling policy was fitted on these six
 development circuits; the artifact does not establish untouched-case
 generalization or guarantee bit-identical repeated search. Existing third-party

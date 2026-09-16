@@ -1,0 +1,616 @@
+{
+  "rewrites": [
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx10_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx10_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx12_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx12_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx12q_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx12q_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx16q_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx16q_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx24_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx24_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx3_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx3_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx4_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx4_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx4q_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx4q_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx5_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx5_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx6q_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx6q_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_BUFx8_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(BUFx8_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_HB1x1_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(HB1x1_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_HB2x1_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(HB2x1_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_HB3x1_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(HB3x1_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_BUFx2_ASAP7_6t_L_HB4x1_ASAP7_6t_L",
+      "searcher": "(BUFx2_ASAP7_6t_L ?A)",
+      "applier": "(HB4x1_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx11_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx11_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx13_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx13_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx2_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx2_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx3_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx3_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx4_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx4_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx5_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx5_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx6_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx6_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVx8_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVx8_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_INVx1_ASAP7_6t_L_INVxp5_ASAP7_6t_L",
+      "searcher": "(INVx1_ASAP7_6t_L ?A)",
+      "applier": "(INVxp5_ASAP7_6t_L ?A)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AND2x2_ASAP7_6t_L_AND2x4_ASAP7_6t_L",
+      "searcher": "(AND2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(AND2x4_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AND2x2_ASAP7_6t_L_AND2x6_ASAP7_6t_L",
+      "searcher": "(AND2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(AND2x6_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_XOR2x2_ASAP7_6t_L_XOR2xp5_ASAP7_6t_L",
+      "searcher": "(XOR2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(XOR2xp5_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_XOR2x2_ASAP7_6t_L_XOR2xp5r_ASAP7_6t_L",
+      "searcher": "(XOR2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(XOR2xp5r_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OR2x2_ASAP7_6t_L_OR2x3R_ASAP7_6t_L",
+      "searcher": "(OR2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(OR2x3R_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OR2x2_ASAP7_6t_L_OR2x4_ASAP7_6t_L",
+      "searcher": "(OR2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(OR2x4_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR2x1_ASAP7_6t_L_NOR2x2R_ASAP7_6t_L",
+      "searcher": "(NOR2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NOR2x2R_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR2x1_ASAP7_6t_L_NOR2x2_ASAP7_6t_L",
+      "searcher": "(NOR2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NOR2x2_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR2x1_ASAP7_6t_L_NOR2xp5_ASAP7_6t_L",
+      "searcher": "(NOR2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NOR2xp5_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_XNOR2x2_ASAP7_6t_L_XNOR2xp5_ASAP7_6t_L",
+      "searcher": "(XNOR2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(XNOR2xp5_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_XNOR2x2_ASAP7_6t_L_XNOR2xp5f_ASAP7_6t_L",
+      "searcher": "(XNOR2x2_ASAP7_6t_L ?A ?B)",
+      "applier": "(XNOR2xp5f_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND2x1_ASAP7_6t_L_NAND2x1p5_ASAP7_6t_L",
+      "searcher": "(NAND2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NAND2x1p5_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND2x1_ASAP7_6t_L_NAND2x2_ASAP7_6t_L",
+      "searcher": "(NAND2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NAND2x2_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND2x1_ASAP7_6t_L_NAND2xp5R_ASAP7_6t_L",
+      "searcher": "(NAND2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NAND2xp5R_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND2x1_ASAP7_6t_L_NAND2xp5_ASAP7_6t_L",
+      "searcher": "(NAND2x1_ASAP7_6t_L ?A ?B)",
+      "applier": "(NAND2xp5_ASAP7_6t_L ?A ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AND3x1_ASAP7_6t_L_AND3x2_ASAP7_6t_L",
+      "searcher": "(AND3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(AND3x2_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AND3x1_ASAP7_6t_L_AND3x4_ASAP7_6t_L",
+      "searcher": "(AND3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(AND3x4_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_MAJx1_ASAP7_6t_L_MAJx2_ASAP7_6t_L",
+      "searcher": "(MAJx1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(MAJx2_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_MAJx1_ASAP7_6t_L_MAJx3_ASAP7_6t_L",
+      "searcher": "(MAJx1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(MAJx3_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OR3x1_ASAP7_6t_L_OR3x2_ASAP7_6t_L",
+      "searcher": "(OR3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(OR3x2_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OR3x1_ASAP7_6t_L_OR3x4_ASAP7_6t_L",
+      "searcher": "(OR3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(OR3x4_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR3x1_ASAP7_6t_L_NOR3x1f_ASAP7_6t_L",
+      "searcher": "(NOR3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(NOR3x1f_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR3x1_ASAP7_6t_L_NOR3x2_ASAP7_6t_L",
+      "searcher": "(NOR3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(NOR3x2_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR3x1_ASAP7_6t_L_NOR3xp33_ASAP7_6t_L",
+      "searcher": "(NOR3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(NOR3xp33_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND3x1_ASAP7_6t_L_NAND3x2_ASAP7_6t_L",
+      "searcher": "(NAND3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(NAND3x2_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND3x1_ASAP7_6t_L_NAND3xp33R_ASAP7_6t_L",
+      "searcher": "(NAND3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(NAND3xp33R_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND3x1_ASAP7_6t_L_NAND3xp33_ASAP7_6t_L",
+      "searcher": "(NAND3x1_ASAP7_6t_L ?A ?B ?C)",
+      "applier": "(NAND3xp33_ASAP7_6t_L ?A ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AND4x1_ASAP7_6t_L_AND4x2_ASAP7_6t_L",
+      "searcher": "(AND4x1_ASAP7_6t_L ?A ?B ?C ?D)",
+      "applier": "(AND4x2_ASAP7_6t_L ?A ?B ?C ?D)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OR4x1_ASAP7_6t_L_OR4x2_ASAP7_6t_L",
+      "searcher": "(OR4x1_ASAP7_6t_L ?A ?B ?C ?D)",
+      "applier": "(OR4x2_ASAP7_6t_L ?A ?B ?C ?D)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR4x3f_ASAP7_6t_L_NOR4xp25_ASAP7_6t_L",
+      "searcher": "(NOR4x3f_ASAP7_6t_L ?A ?B ?C ?D)",
+      "applier": "(NOR4xp25_ASAP7_6t_L ?A ?B ?C ?D)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND4xp25_ASAP7_6t_L_NAND4xp25R_ASAP7_6t_L",
+      "searcher": "(NAND4xp25_ASAP7_6t_L ?A ?B ?C ?D)",
+      "applier": "(NAND4xp25R_ASAP7_6t_L ?A ?B ?C ?D)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND4xp25_ASAP7_6t_L_NAND4xp75_ASAP7_6t_L",
+      "searcher": "(NAND4xp25_ASAP7_6t_L ?A ?B ?C ?D)",
+      "applier": "(NAND4xp75_ASAP7_6t_L ?A ?B ?C ?D)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AND5x1_ASAP7_6t_L_AND5x2_ASAP7_6t_L",
+      "searcher": "(AND5x1_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "applier": "(AND5x2_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OR5x1_ASAP7_6t_L_OR5x2_ASAP7_6t_L",
+      "searcher": "(OR5x1_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "applier": "(OR5x2_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NOR5x1f_ASAP7_6t_L_NOR5xp2_ASAP7_6t_L",
+      "searcher": "(NOR5x1f_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "applier": "(NOR5xp2_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_NAND5xp2_ASAP7_6t_L_NAND5xp2R_ASAP7_6t_L",
+      "searcher": "(NAND5xp2_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "applier": "(NAND5xp2R_ASAP7_6t_L ?A ?B ?C ?D ?E)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA31x1_ASAP7_6t_L_OA31x2_ASAP7_6t_L",
+      "searcher": "(OA31x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "applier": "(OA31x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO31x1_ASAP7_6t_L_AO31x2_ASAP7_6t_L",
+      "searcher": "(AO31x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "applier": "(AO31x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AOI31xp33_ASAP7_6t_L_AOI31xp67_ASAP7_6t_L",
+      "searcher": "(AOI31xp33_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "applier": "(AOI31xp67_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OAI31x1f_ASAP7_6t_L_OAI31xp5f_ASAP7_6t_L",
+      "searcher": "(OAI31x1f_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "applier": "(OAI31xp5f_ASAP7_6t_L ?A1 ?A2 ?A3 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA311x1_ASAP7_6t_L_OA311x2_ASAP7_6t_L",
+      "searcher": "(OA311x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B ?C)",
+      "applier": "(OA311x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO311x1_ASAP7_6t_L_AO311x2_ASAP7_6t_L",
+      "searcher": "(AO311x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B ?C)",
+      "applier": "(AO311x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA32x1_ASAP7_6t_L_OA32x2_ASAP7_6t_L",
+      "searcher": "(OA32x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2)",
+      "applier": "(OA32x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO32x1_ASAP7_6t_L_AO32x2_ASAP7_6t_L",
+      "searcher": "(AO32x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2)",
+      "applier": "(AO32x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA33x1_ASAP7_6t_L_OA33x2_ASAP7_6t_L",
+      "searcher": "(OA33x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3)",
+      "applier": "(OA33x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO33x1_ASAP7_6t_L_AO33x2_ASAP7_6t_L",
+      "searcher": "(AO33x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3)",
+      "applier": "(AO33x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA331x1_ASAP7_6t_L_OA331x2_ASAP7_6t_L",
+      "searcher": "(OA331x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C)",
+      "applier": "(OA331x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO331x1_ASAP7_6t_L_AO331x2_ASAP7_6t_L",
+      "searcher": "(AO331x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C)",
+      "applier": "(AO331x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA332x1_ASAP7_6t_L_OA332x2_ASAP7_6t_L",
+      "searcher": "(OA332x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2)",
+      "applier": "(OA332x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO332x1_ASAP7_6t_L_AO332x2_ASAP7_6t_L",
+      "searcher": "(AO332x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2)",
+      "applier": "(AO332x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA333x1_ASAP7_6t_L_OA333x2_ASAP7_6t_L",
+      "searcher": "(OA333x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2 ?C3)",
+      "applier": "(OA333x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2 ?C3)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO333x1_ASAP7_6t_L_AO333x2_ASAP7_6t_L",
+      "searcher": "(AO333x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2 ?C3)",
+      "applier": "(AO333x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?B3 ?C1 ?C2 ?C3)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA321x1_ASAP7_6t_L_OA321x2_ASAP7_6t_L",
+      "searcher": "(OA321x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C)",
+      "applier": "(OA321x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO321x1_ASAP7_6t_L_AO321x2_ASAP7_6t_L",
+      "searcher": "(AO321x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C)",
+      "applier": "(AO321x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA322x1_ASAP7_6t_L_OA322x2_ASAP7_6t_L",
+      "searcher": "(OA322x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C1 ?C2)",
+      "applier": "(OA322x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C1 ?C2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO322x1_ASAP7_6t_L_AO322x2_ASAP7_6t_L",
+      "searcher": "(AO322x1_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C1 ?C2)",
+      "applier": "(AO322x2_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C1 ?C2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OAI322xp33_ASAP7_6t_L_OAI322xp33b_ASAP7_6t_L",
+      "searcher": "(OAI322xp33_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C1 ?C2)",
+      "applier": "(OAI322xp33b_ASAP7_6t_L ?A1 ?A2 ?A3 ?B1 ?B2 ?C1 ?C2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA21x1_ASAP7_6t_L_OA21x2_ASAP7_6t_L",
+      "searcher": "(OA21x1_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "applier": "(OA21x2_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO21x1_ASAP7_6t_L_AO21x2_ASAP7_6t_L",
+      "searcher": "(AO21x1_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "applier": "(AO21x2_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AOI21x1_ASAP7_6t_L_AOI21xp25_ASAP7_6t_L",
+      "searcher": "(AOI21x1_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "applier": "(AOI21xp25_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AOI21x1_ASAP7_6t_L_AOI21xp5_ASAP7_6t_L",
+      "searcher": "(AOI21x1_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "applier": "(AOI21xp5_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OAI21xp5_ASAP7_6t_L_OAI21xp25_ASAP7_6t_L",
+      "searcher": "(OAI21xp5_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "applier": "(OAI21xp25_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OAI21xp5_ASAP7_6t_L_OAI21xp5b_ASAP7_6t_L",
+      "searcher": "(OAI21xp5_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "applier": "(OAI21xp5b_ASAP7_6t_L ?A1 ?A2 ?B)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA211x1_ASAP7_6t_L_OA211x2_ASAP7_6t_L",
+      "searcher": "(OA211x1_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "applier": "(OA211x2_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO211x1_ASAP7_6t_L_AO211x2_ASAP7_6t_L",
+      "searcher": "(AO211x1_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "applier": "(AO211x2_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AOI211xp5_ASAP7_6t_L_AOI211xp25_ASAP7_6t_L",
+      "searcher": "(AOI211xp5_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "applier": "(AOI211xp25_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_O2A1O1Ixp5_ASAP7_6t_L_O2A1O1Ixp33_ASAP7_6t_L",
+      "searcher": "(O2A1O1Ixp5_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "applier": "(O2A1O1Ixp33_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_A2O1A1Ixp5_ASAP7_6t_L_A2O1A1Ixp33_ASAP7_6t_L",
+      "searcher": "(A2O1A1Ixp5_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "applier": "(A2O1A1Ixp33_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OAI211xp33_ASAP7_6t_L_OAI211xp67b_ASAP7_6t_L",
+      "searcher": "(OAI211xp33_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "applier": "(OAI211xp67b_ASAP7_6t_L ?A1 ?A2 ?B ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA22x1_ASAP7_6t_L_OA22x2_ASAP7_6t_L",
+      "searcher": "(OA22x1_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2)",
+      "applier": "(OA22x2_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO22x1_ASAP7_6t_L_AO22x2_ASAP7_6t_L",
+      "searcher": "(AO22x1_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2)",
+      "applier": "(AO22x2_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AOI22xp5_ASAP7_6t_L_AOI22xp25_ASAP7_6t_L",
+      "searcher": "(AOI22xp5_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2)",
+      "applier": "(AOI22xp25_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA221x1_ASAP7_6t_L_OA221x2_ASAP7_6t_L",
+      "searcher": "(OA221x1_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "applier": "(OA221x2_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO221x1_ASAP7_6t_L_AO221x2_ASAP7_6t_L",
+      "searcher": "(AO221x1_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "applier": "(AO221x2_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AOI221xp5_ASAP7_6t_L_AOI221xp25_ASAP7_6t_L",
+      "searcher": "(AOI221xp5_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "applier": "(AOI221xp25_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OAI221xp33_ASAP7_6t_L_OAI221xp33f_ASAP7_6t_L",
+      "searcher": "(OAI221xp33_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "applier": "(OAI221xp33f_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_OA222x1_ASAP7_6t_L_OA222x2_ASAP7_6t_L",
+      "searcher": "(OA222x1_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C1 ?C2)",
+      "applier": "(OA222x2_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C1 ?C2)",
+      "bidirectional": true
+    },
+    {
+      "name": "FULL6T_SCALE_AO222x1_ASAP7_6t_L_AO222x2_ASAP7_6t_L",
+      "searcher": "(AO222x1_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C1 ?C2)",
+      "applier": "(AO222x2_ASAP7_6t_L ?A1 ?A2 ?B1 ?B2 ?C1 ?C2)",
+      "bidirectional": true
+    }
+  ]
+}

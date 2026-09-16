@@ -1,0 +1,31 @@
+{
+  "schema": "escope-main28-source-provenance-v1",
+  "status": "fresh-run source reconstruction",
+  "components": {
+    "D1-series": "current Iterative/Conquer runner, materializer, and Internal-NLDM-V3 state dumper source units",
+    "mac_egg": "Rust netlist, Liberty, e-graph, extraction, and I/O dependency source",
+    "runtime/scripts": "Python orchestration and Conquer candidate-generation dependency closure"
+  },
+  "packaging_changes": [
+    "public method terminology normalized to Iterative and Conquer",
+    "Cargo manifest restricted to the four binaries used by the main experiment",
+    "runtime paths made repository-relative or command-line supplied",
+    "commercial tools and the main-experiment Liberty file omitted"
+  ],
+  "historical_canonical_binary_sha256": {
+    "dump_mapped_nldm_v3_state": "ef3c6a7d798f1824e5cd3565b1820e7553ef649a9ccf15e8021ebd2f1ef1345f",
+    "materialize_structural_macro_plan": "6cdab853de639160aeb1b0e86fc5473760ff5f1bf490c298a616dd08f7256cfe",
+    "run_frozen_a2_fast": "8012f6ecf8c8fad63d128769ba2d4da79bbf6076703cfc656fa7eceb65dbfbb3",
+    "run_generator_union_native": "a230f398d4669f82b29acd00279b8bdcb201145fca6f7d6684d7975c639dc795"
+  },
+  "guarantees": [
+    "the packaged source builds the four required binaries with Cargo --release --locked",
+    "a fresh one-round Iterative smoke and a fresh Conquer search-only smoke completed from the packaged epfl_ctrl G0",
+    "all reported paper outputs are separately preserved and verified by their historical SHA-256"
+  ],
+  "limitations": [
+    "the rebuilt executables are not claimed to be byte-identical to the historical canonical executables",
+    "fresh search can vary with toolchain, host scheduling, and stochastic execution",
+    "only output-SHA identity permits reuse of saved external measurements; otherwise external PPA and formal must be rerun"
+  ]
+}

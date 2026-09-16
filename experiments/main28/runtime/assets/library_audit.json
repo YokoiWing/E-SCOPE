@@ -1,0 +1,4041 @@
+{
+  "schema": "asap7_6t_full_comb_v1",
+  "upstream": {
+    "repository": "https://github.com/The-OpenROAD-Project/asap7sc6t_26",
+    "groups": [
+      "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib"
+    ],
+    "select_anchor_sha256": "babb2289b66696c67d889a4a7bbc12d1a7d975068d0bf4ab003fc6c1ebb74f46",
+    "overlapping_cells_preserved_from_select": 28,
+    "lef_sha256": "0e7d675610d2ef13cfb24df427a63e4d44f7e4f03e96811f280687571b0ceaee"
+  },
+  "constraints": {
+    "logical_outputs": 1,
+    "combinational_only": true,
+    "explicitly_excluded_prefixes": [
+      "HA",
+      "FA"
+    ],
+    "max_struct_inputs": 9,
+    "max_struct_nodes": 31
+  },
+  "source_cell_count": 188,
+  "included_cell_count": 186,
+  "excluded_cell_count": 2,
+  "included_cells": [
+    {
+      "cell": "A2O1A1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B) + (!C)"
+    },
+    {
+      "cell": "A2O1A1Ixp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B) + (!C)"
+    },
+    {
+      "cell": "A2O1A1O1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B * !D) + (!A2 * !B * !D) + (!C * !D)"
+    },
+    {
+      "cell": "AND2x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B)"
+    },
+    {
+      "cell": "AND2x4_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B)"
+    },
+    {
+      "cell": "AND2x6_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B)"
+    },
+    {
+      "cell": "AND3x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C)"
+    },
+    {
+      "cell": "AND3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C)"
+    },
+    {
+      "cell": "AND3x4_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C)"
+    },
+    {
+      "cell": "AND4x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C * D)"
+    },
+    {
+      "cell": "AND4x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C * D)"
+    },
+    {
+      "cell": "AND5x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C * D * E)"
+    },
+    {
+      "cell": "AND5x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B * C * D * E)"
+    },
+    {
+      "cell": "AO211x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B) + (C)"
+    },
+    {
+      "cell": "AO211x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B) + (C)"
+    },
+    {
+      "cell": "AO21x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B)"
+    },
+    {
+      "cell": "AO21x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B)"
+    },
+    {
+      "cell": "AO221x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B1 * B2) + (C)"
+    },
+    {
+      "cell": "AO221x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B1 * B2) + (C)"
+    },
+    {
+      "cell": "AO222x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B1 * B2) + (C1 * C2)"
+    },
+    {
+      "cell": "AO222x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B1 * B2) + (C1 * C2)"
+    },
+    {
+      "cell": "AO22x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B1 * B2)"
+    },
+    {
+      "cell": "AO22x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2) + (B1 * B2)"
+    },
+    {
+      "cell": "AO311x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B) + (C)"
+    },
+    {
+      "cell": "AO311x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B) + (C)"
+    },
+    {
+      "cell": "AO31x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B)"
+    },
+    {
+      "cell": "AO31x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B)"
+    },
+    {
+      "cell": "AO321x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2) + (C)"
+    },
+    {
+      "cell": "AO321x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2) + (C)"
+    },
+    {
+      "cell": "AO322x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2) + (C1 * C2)"
+    },
+    {
+      "cell": "AO322x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2) + (C1 * C2)"
+    },
+    {
+      "cell": "AO32x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2)"
+    },
+    {
+      "cell": "AO32x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2)"
+    },
+    {
+      "cell": "AO331x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3) + (C)"
+    },
+    {
+      "cell": "AO331x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3) + (C)"
+    },
+    {
+      "cell": "AO332x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3) + (C1 * C2)"
+    },
+    {
+      "cell": "AO332x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3) + (C1 * C2)"
+    },
+    {
+      "cell": "AO333x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3) + (C1 * C2 * C3)"
+    },
+    {
+      "cell": "AO333x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3) + (C1 * C2 * C3)"
+    },
+    {
+      "cell": "AO33x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3)"
+    },
+    {
+      "cell": "AO33x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * A2 * A3) + (B1 * B2 * B3)"
+    },
+    {
+      "cell": "AOI211xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B * !C) + (!A2 * !B * !C)"
+    },
+    {
+      "cell": "AOI211xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B * !C) + (!A2 * !B * !C)"
+    },
+    {
+      "cell": "AOI21x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B)"
+    },
+    {
+      "cell": "AOI21xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B)"
+    },
+    {
+      "cell": "AOI21xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B)"
+    },
+    {
+      "cell": "AOI221xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C) + (!A1 * !B2 * !C) + (!A2 * !B1 * !C) + (!A2 * !B2 * !C)"
+    },
+    {
+      "cell": "AOI221xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C) + (!A1 * !B2 * !C) + (!A2 * !B1 * !C) + (!A2 * !B2 * !C)"
+    },
+    {
+      "cell": "AOI222xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C1) + (!A1 * !B1 * !C2) + (!A1 * !B2 * !C1) + (!A1 * !B2 * !C2) + (!A2 * !B1 * !C1) + (!A2 * !B1 * !C2) + (!A2 * !B2 * !C1) + (!A2 * !B2 * !C2)"
+    },
+    {
+      "cell": "AOI22xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1) + (!A1 * !B2) + (!A2 * !B1) + (!A2 * !B2)"
+    },
+    {
+      "cell": "AOI22xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1) + (!A1 * !B2) + (!A2 * !B1) + (!A2 * !B2)"
+    },
+    {
+      "cell": "AOI311xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B * !C) + (!A2 * !B * !C) + (!A3 * !B * !C)"
+    },
+    {
+      "cell": "AOI31xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B) + (!A3 * !B)"
+    },
+    {
+      "cell": "AOI31xp67_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B) + (!A2 * !B) + (!A3 * !B)"
+    },
+    {
+      "cell": "AOI321xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C) + (!A1 * !B2 * !C) + (!A2 * !B1 * !C) + (!A2 * !B2 * !C) + (!A3 * !B1 * !C) + (!A3 * !B2 * !C)"
+    },
+    {
+      "cell": "AOI322xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C1) + (!A1 * !B1 * !C2) + (!A1 * !B2 * !C1) + (!A1 * !B2 * !C2) + (!A2 * !B1 * !C1) + (!A2 * !B1 * !C2) + (!A2 * !B2 * !C1) + (!A2 * !B2 * !C2) + (!A3 * !B1 * !C1) + (!A3 * !B1 * !C2) + (!A3 * !B2 * !C1) + (!A3 * !B2 * !C2)"
+    },
+    {
+      "cell": "AOI32xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1) + (!A1 * !B2) + (!A2 * !B1) + (!A2 * !B2) + (!A3 * !B1) + (!A3 * !B2)"
+    },
+    {
+      "cell": "AOI331xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C) + (!A1 * !B2 * !C) + (!A1 * !B3 * !C) + (!A2 * !B1 * !C) + (!A2 * !B2 * !C) + (!A2 * !B3 * !C) + (!A3 * !B1 * !C) + (!A3 * !B2 * !C) + (!A3 * !B3 * !C)"
+    },
+    {
+      "cell": "AOI332xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C1) + (!A1 * !B1 * !C2) + (!A1 * !B2 * !C1) + (!A1 * !B2 * !C2) + (!A1 * !B3 * !C1) + (!A1 * !B3 * !C2) + (!A2 * !B1 * !C1) + (!A2 * !B1 * !C2) + (!A2 * !B2 * !C1) + (!A2 * !B2 * !C2) + (!A2 * !B3 * !C1) + (!A2 * !B3 * !C2) + (!A3 * !B1 * !C1) + (!A3 * !B1 * !C2) + (!A3 * !B2 * !C1) + (!A3 * !B2 * !C2) + (!A3 * !B3 * !C1) + (!A3 * !B3 * !C2)"
+    },
+    {
+      "cell": "AOI333xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1 * !C1) + (!A1 * !B1 * !C2) + (!A1 * !B1 * !C3) + (!A1 * !B2 * !C1) + (!A1 * !B2 * !C2) + (!A1 * !B2 * !C3) + (!A1 * !B3 * !C1) + (!A1 * !B3 * !C2) + (!A1 * !B3 * !C3) + (!A2 * !B1 * !C1) + (!A2 * !B1 * !C2) + (!A2 * !B1 * !C3) + (!A2 * !B2 * !C1) + (!A2 * !B2 * !C2) + (!A2 * !B2 * !C3) + (!A2 * !B3 * !C1) + (!A2 * !B3 * !C2) + (!A2 * !B3 * !C3) + (!A3 * !B1 * !C1) + (!A3 * !B1 * !C2) + (!A3 * !B1 * !C3) + (!A3 * !B2 * !C1) + (!A3 * !B2 * !C2) + (!A3 * !B2 * !C3) + (!A3 * !B3 * !C1) + (!A3 * !B3 * !C2) + (!A3 * !B3 * !C3)"
+    },
+    {
+      "cell": "AOI33xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !B1) + (!A1 * !B2) + (!A1 * !B3) + (!A2 * !B1) + (!A2 * !B2) + (!A2 * !B3) + (!A3 * !B1) + (!A3 * !B2) + (!A3 * !B3)"
+    },
+    {
+      "cell": "BUFx10_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx12_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx12q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx16q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx24_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx3_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx4_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx4q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx5_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx6q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "BUFx8_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "HB1x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "HB2x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "HB3x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "HB4x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "A"
+    },
+    {
+      "cell": "INVx11_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx13_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx3_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx4_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx5_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx6_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVx8_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "INVxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "!A"
+    },
+    {
+      "cell": "MAJIxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B) + (!A * !C) + (!B * !C)"
+    },
+    {
+      "cell": "MAJx1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B) + (A * C) + (B * C)"
+    },
+    {
+      "cell": "MAJx2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B) + (A * C) + (B * C)"
+    },
+    {
+      "cell": "MAJx3_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B) + (A * C) + (B * C)"
+    },
+    {
+      "cell": "NAND2x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B)"
+    },
+    {
+      "cell": "NAND2x1p5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B)"
+    },
+    {
+      "cell": "NAND2x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B)"
+    },
+    {
+      "cell": "NAND2xp5R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B)"
+    },
+    {
+      "cell": "NAND2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B)"
+    },
+    {
+      "cell": "NAND3x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C)"
+    },
+    {
+      "cell": "NAND3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C)"
+    },
+    {
+      "cell": "NAND3xp33R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C)"
+    },
+    {
+      "cell": "NAND3xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C)"
+    },
+    {
+      "cell": "NAND4xp25R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C) + (!D)"
+    },
+    {
+      "cell": "NAND4xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C) + (!D)"
+    },
+    {
+      "cell": "NAND4xp75_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C) + (!D)"
+    },
+    {
+      "cell": "NAND5xp2R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C) + (!D) + (!E)"
+    },
+    {
+      "cell": "NAND5xp2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A) + (!B) + (!C) + (!D) + (!E)"
+    },
+    {
+      "cell": "NOR2x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B)"
+    },
+    {
+      "cell": "NOR2x2R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B)"
+    },
+    {
+      "cell": "NOR2x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B)"
+    },
+    {
+      "cell": "NOR2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B)"
+    },
+    {
+      "cell": "NOR3x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C)"
+    },
+    {
+      "cell": "NOR3x1f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C)"
+    },
+    {
+      "cell": "NOR3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C)"
+    },
+    {
+      "cell": "NOR3xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C)"
+    },
+    {
+      "cell": "NOR4x3f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C * !D)"
+    },
+    {
+      "cell": "NOR4xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C * !D)"
+    },
+    {
+      "cell": "NOR5x1f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C * !D * !E)"
+    },
+    {
+      "cell": "NOR5xp2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A * !B * !C * !D * !E)"
+    },
+    {
+      "cell": "O2A1O1A1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !C) + (!B * !C) + (!D)"
+    },
+    {
+      "cell": "O2A1O1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !C) + (!B * !C)"
+    },
+    {
+      "cell": "O2A1O1Ixp5_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !C) + (!B * !C)"
+    },
+    {
+      "cell": "OA211x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B * C) + (A2 * B * C)"
+    },
+    {
+      "cell": "OA211x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B * C) + (A2 * B * C)"
+    },
+    {
+      "cell": "OA21x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B) + (A2 * B)"
+    },
+    {
+      "cell": "OA21x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B) + (A2 * B)"
+    },
+    {
+      "cell": "OA221x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C) + (A1 * B2 * C) + (A2 * B1 * C) + (A2 * B2 * C)"
+    },
+    {
+      "cell": "OA221x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C) + (A1 * B2 * C) + (A2 * B1 * C) + (A2 * B2 * C)"
+    },
+    {
+      "cell": "OA222x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2)"
+    },
+    {
+      "cell": "OA222x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2)"
+    },
+    {
+      "cell": "OA22x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1) + (A1 * B2) + (A2 * B1) + (A2 * B2)"
+    },
+    {
+      "cell": "OA22x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1) + (A1 * B2) + (A2 * B1) + (A2 * B2)"
+    },
+    {
+      "cell": "OA311x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B * C) + (A2 * B * C) + (A3 * B * C)"
+    },
+    {
+      "cell": "OA311x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B * C) + (A2 * B * C) + (A3 * B * C)"
+    },
+    {
+      "cell": "OA31x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B) + (A2 * B) + (A3 * B)"
+    },
+    {
+      "cell": "OA31x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B) + (A2 * B) + (A3 * B)"
+    },
+    {
+      "cell": "OA321x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C) + (A1 * B2 * C) + (A2 * B1 * C) + (A2 * B2 * C) + (A3 * B1 * C) + (A3 * B2 * C)"
+    },
+    {
+      "cell": "OA321x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C) + (A1 * B2 * C) + (A2 * B1 * C) + (A2 * B2 * C) + (A3 * B1 * C) + (A3 * B2 * C)"
+    },
+    {
+      "cell": "OA322x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B2 * C1) + (A3 * B2 * C2)"
+    },
+    {
+      "cell": "OA322x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B2 * C1) + (A3 * B2 * C2)"
+    },
+    {
+      "cell": "OA32x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1) + (A1 * B2) + (A2 * B1) + (A2 * B2) + (A3 * B1) + (A3 * B2)"
+    },
+    {
+      "cell": "OA32x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1) + (A1 * B2) + (A2 * B1) + (A2 * B2) + (A3 * B1) + (A3 * B2)"
+    },
+    {
+      "cell": "OA331x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C) + (A1 * B2 * C) + (A1 * B3 * C) + (A2 * B1 * C) + (A2 * B2 * C) + (A2 * B3 * C) + (A3 * B1 * C) + (A3 * B2 * C) + (A3 * B3 * C)"
+    },
+    {
+      "cell": "OA331x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C) + (A1 * B2 * C) + (A1 * B3 * C) + (A2 * B1 * C) + (A2 * B2 * C) + (A2 * B3 * C) + (A3 * B1 * C) + (A3 * B2 * C) + (A3 * B3 * C)"
+    },
+    {
+      "cell": "OA332x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A1 * B3 * C1) + (A1 * B3 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A2 * B3 * C1) + (A2 * B3 * C2) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B2 * C1) + (A3 * B2 * C2) + (A3 * B3 * C1) + (A3 * B3 * C2)"
+    },
+    {
+      "cell": "OA332x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A1 * B3 * C1) + (A1 * B3 * C2) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A2 * B3 * C1) + (A2 * B3 * C2) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B2 * C1) + (A3 * B2 * C2) + (A3 * B3 * C1) + (A3 * B3 * C2)"
+    },
+    {
+      "cell": "OA333x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B1 * C3) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A1 * B2 * C3) + (A1 * B3 * C1) + (A1 * B3 * C2) + (A1 * B3 * C3) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B1 * C3) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A2 * B2 * C3) + (A2 * B3 * C1) + (A2 * B3 * C2) + (A2 * B3 * C3) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B1 * C3) + (A3 * B2 * C1) + (A3 * B2 * C2) + (A3 * B2 * C3) + (A3 * B3 * C1) + (A3 * B3 * C2) + (A3 * B3 * C3)"
+    },
+    {
+      "cell": "OA333x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1 * C1) + (A1 * B1 * C2) + (A1 * B1 * C3) + (A1 * B2 * C1) + (A1 * B2 * C2) + (A1 * B2 * C3) + (A1 * B3 * C1) + (A1 * B3 * C2) + (A1 * B3 * C3) + (A2 * B1 * C1) + (A2 * B1 * C2) + (A2 * B1 * C3) + (A2 * B2 * C1) + (A2 * B2 * C2) + (A2 * B2 * C3) + (A2 * B3 * C1) + (A2 * B3 * C2) + (A2 * B3 * C3) + (A3 * B1 * C1) + (A3 * B1 * C2) + (A3 * B1 * C3) + (A3 * B2 * C1) + (A3 * B2 * C2) + (A3 * B2 * C3) + (A3 * B3 * C1) + (A3 * B3 * C2) + (A3 * B3 * C3)"
+    },
+    {
+      "cell": "OA33x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1) + (A1 * B2) + (A1 * B3) + (A2 * B1) + (A2 * B2) + (A2 * B3) + (A3 * B1) + (A3 * B2) + (A3 * B3)"
+    },
+    {
+      "cell": "OA33x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A1 * B1) + (A1 * B2) + (A1 * B3) + (A2 * B1) + (A2 * B2) + (A2 * B3) + (A3 * B1) + (A3 * B2) + (A3 * B3)"
+    },
+    {
+      "cell": "OAI211xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B) + (!C)"
+    },
+    {
+      "cell": "OAI211xp67b_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B) + (!C)"
+    },
+    {
+      "cell": "OAI21xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B)"
+    },
+    {
+      "cell": "OAI21xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B)"
+    },
+    {
+      "cell": "OAI21xp5b_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B)"
+    },
+    {
+      "cell": "OAI221xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B1 * !B2) + (!C)"
+    },
+    {
+      "cell": "OAI221xp33f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B1 * !B2) + (!C)"
+    },
+    {
+      "cell": "OAI222xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B1 * !B2) + (!C1 * !C2)"
+    },
+    {
+      "cell": "OAI22xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2) + (!B1 * !B2)"
+    },
+    {
+      "cell": "OAI311xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B) + (!C)"
+    },
+    {
+      "cell": "OAI31x1f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B)"
+    },
+    {
+      "cell": "OAI31xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B)"
+    },
+    {
+      "cell": "OAI321xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2) + (!C)"
+    },
+    {
+      "cell": "OAI322xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2) + (!C1 * !C2)"
+    },
+    {
+      "cell": "OAI322xp33b_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2) + (!C1 * !C2)"
+    },
+    {
+      "cell": "OAI32xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2)"
+    },
+    {
+      "cell": "OAI331xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2 * !B3) + (!C)"
+    },
+    {
+      "cell": "OAI332xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2 * !B3) + (!C1 * !C2)"
+    },
+    {
+      "cell": "OAI333xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2 * !B3) + (!C1 * !C2 * !C3)"
+    },
+    {
+      "cell": "OAI33xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(!A1 * !A2 * !A3) + (!B1 * !B2 * !B3)"
+    },
+    {
+      "cell": "OR2x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B)"
+    },
+    {
+      "cell": "OR2x3R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B)"
+    },
+    {
+      "cell": "OR2x4_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B)"
+    },
+    {
+      "cell": "OR3x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C)"
+    },
+    {
+      "cell": "OR3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C)"
+    },
+    {
+      "cell": "OR3x4_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C)"
+    },
+    {
+      "cell": "OR4x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C) + (D)"
+    },
+    {
+      "cell": "OR4x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C) + (D)"
+    },
+    {
+      "cell": "OR5x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C) + (D) + (E)"
+    },
+    {
+      "cell": "OR5x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A) + (B) + (C) + (D) + (E)"
+    },
+    {
+      "cell": "TIEHIxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [],
+      "outputs": [
+        "H"
+      ],
+      "function": "1"
+    },
+    {
+      "cell": "TIELOxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [],
+      "outputs": [
+        "L"
+      ],
+      "function": "0"
+    },
+    {
+      "cell": "XNOR2x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B) + (!A * !B)"
+    },
+    {
+      "cell": "XNOR2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B) + (!A * !B)"
+    },
+    {
+      "cell": "XNOR2xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * B) + (!A * !B)"
+    },
+    {
+      "cell": "XOR2x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SELECT_LVT_TT_nldm.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * !B) + (!A * B)"
+    },
+    {
+      "cell": "XOR2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * !B) + (!A * B)"
+    },
+    {
+      "cell": "XOR2xp5r_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Y"
+      ],
+      "function": "(A * !B) + (!A * B)"
+    }
+  ],
+  "excluded_cells": [
+    {
+      "cell": "FAxp33_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B",
+        "CI"
+      ],
+      "outputs": [
+        "CON",
+        "SN"
+      ],
+      "reasons": [
+        "explicit_multi_output_arithmetic_exclusion",
+        "logical_output_count_2",
+        "missing_single_output_function"
+      ]
+    },
+    {
+      "cell": "HAxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "CON",
+        "SN"
+      ],
+      "reasons": [
+        "explicit_multi_output_arithmetic_exclusion",
+        "logical_output_count_2",
+        "missing_single_output_function"
+      ]
+    }
+  ],
+  "recovered_missing_areas_from_lef": [
+    {
+      "cell": "NOR3x1f_ASAP7_6t_L",
+      "source_condition": "non_positive_liberty_area_0",
+      "lef_width_times_height": 0.058320000000000004,
+      "inserted_liberty_area": 0.05832
+    },
+    {
+      "cell": "XOR2xp5r_ASAP7_6t_L",
+      "source_condition": "non_positive_liberty_area_0",
+      "lef_width_times_height": 0.104976,
+      "inserted_liberty_area": 0.104976
+    }
+  ],
+  "recovered_missing_cell_leakage_power": [
+    {
+      "cell": "A2O1A1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 140.76479411764706,
+      "inserted_cell_leakage_power": 140.764794,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "A2O1A1Ixp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 132.47476470588234,
+      "inserted_cell_leakage_power": 132.474765,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "A2O1A1O1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 145.16984242424243,
+      "inserted_cell_leakage_power": 145.169842,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO211x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 221.86423529411763,
+      "inserted_cell_leakage_power": 221.864235,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AO211x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 332.1851176470588,
+      "inserted_cell_leakage_power": 332.185118,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AO21x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 342.20944444444444,
+      "inserted_cell_leakage_power": 342.209444,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "AO221x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 254.4109696969697,
+      "inserted_cell_leakage_power": 254.41097,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO221x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 361.7477272727273,
+      "inserted_cell_leakage_power": 361.747727,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO222x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 295.2797076923077,
+      "inserted_cell_leakage_power": 295.279708,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AO222x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 398.14024615384614,
+      "inserted_cell_leakage_power": 398.140246,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AO22x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 364.77776470588236,
+      "inserted_cell_leakage_power": 364.777765,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AO311x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 229.89996969696972,
+      "inserted_cell_leakage_power": 229.89997,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO311x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 339.2258484848485,
+      "inserted_cell_leakage_power": 339.225848,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO31x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 240.45429411764707,
+      "inserted_cell_leakage_power": 240.454294,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AO31x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 342.8135882352941,
+      "inserted_cell_leakage_power": 342.813588,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AO321x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 227.39883076923078,
+      "inserted_cell_leakage_power": 227.398831,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AO321x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 320.84190769230764,
+      "inserted_cell_leakage_power": 320.841908,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AO322x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 303.83753488372093,
+      "inserted_cell_leakage_power": 303.837535,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "AO322x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 404.45948062015503,
+      "inserted_cell_leakage_power": 404.459481,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "AO32x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 264.74863636363636,
+      "inserted_cell_leakage_power": 264.748636,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO32x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 305.91709090909086,
+      "inserted_cell_leakage_power": 305.917091,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AO331x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 218.82681395348837,
+      "inserted_cell_leakage_power": 218.826814,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "AO331x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 322.9296666666667,
+      "inserted_cell_leakage_power": 322.929667,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "AO332x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 302.4345291828794,
+      "inserted_cell_leakage_power": 302.434529,
+      "vdd_state_count": 257
+    },
+    {
+      "cell": "AO332x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 400.4446926070039,
+      "inserted_cell_leakage_power": 400.444693,
+      "vdd_state_count": 257
+    },
+    {
+      "cell": "AO333x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 305.41084405458093,
+      "inserted_cell_leakage_power": 305.410844,
+      "vdd_state_count": 513
+    },
+    {
+      "cell": "AO333x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 400.37379142300193,
+      "inserted_cell_leakage_power": 400.373791,
+      "vdd_state_count": 513
+    },
+    {
+      "cell": "AO33x1_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 202.5797846153846,
+      "inserted_cell_leakage_power": 202.579785,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AO33x2_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 294.4926923076923,
+      "inserted_cell_leakage_power": 294.492692,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AOI211xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 80.25862352941176,
+      "inserted_cell_leakage_power": 80.2586235,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AOI211xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 163.41980588235293,
+      "inserted_cell_leakage_power": 163.419806,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AOI21xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 67.3575,
+      "inserted_cell_leakage_power": 67.3575,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "AOI21xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 134.70527777777778,
+      "inserted_cell_leakage_power": 134.705278,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "AOI221xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 103.99973333333332,
+      "inserted_cell_leakage_power": 103.999733,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AOI221xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 147.07427272727273,
+      "inserted_cell_leakage_power": 147.074273,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AOI222xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 133.58650923076925,
+      "inserted_cell_leakage_power": 133.586509,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AOI22xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 116.07214705882353,
+      "inserted_cell_leakage_power": 116.072147,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AOI22xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 168.0176764705882,
+      "inserted_cell_leakage_power": 168.017676,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AOI311xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 120.57410303030304,
+      "inserted_cell_leakage_power": 120.574103,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AOI31xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 138.09488235294117,
+      "inserted_cell_leakage_power": 138.094882,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AOI31xp67_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 224.9086588235294,
+      "inserted_cell_leakage_power": 224.908659,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AOI321xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 109.15402461538461,
+      "inserted_cell_leakage_power": 109.154025,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AOI322xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 139.04226744186047,
+      "inserted_cell_leakage_power": 139.042267,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "AOI32xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 169.35403636363637,
+      "inserted_cell_leakage_power": 169.354036,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AOI331xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 114.72403023255814,
+      "inserted_cell_leakage_power": 114.72403,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "AOI332xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 204.4245692607004,
+      "inserted_cell_leakage_power": 204.424569,
+      "vdd_state_count": 257
+    },
+    {
+      "cell": "AOI333xp17_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 219.37260935672515,
+      "inserted_cell_leakage_power": 219.372609,
+      "vdd_state_count": 513
+    },
+    {
+      "cell": "AOI33xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_AO_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 166.43623076923078,
+      "inserted_cell_leakage_power": 166.436231,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "BUFx10_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 4024.8933333333334,
+      "inserted_cell_leakage_power": 4024.89333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx12_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 4695.716666666667,
+      "inserted_cell_leakage_power": 4695.71667,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx12q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 5366.5,
+      "inserted_cell_leakage_power": 5366.5,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx16q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 6708.1466666666665,
+      "inserted_cell_leakage_power": 6708.14667,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx24_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 9391.423333333334,
+      "inserted_cell_leakage_power": 9391.42333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx3_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1341.6233333333332,
+      "inserted_cell_leakage_power": 1341.62333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx4q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1844.7333333333333,
+      "inserted_cell_leakage_power": 1844.73333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx5_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 2012.4466666666667,
+      "inserted_cell_leakage_power": 2012.44667,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "BUFx6q_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 2683.2533333333336,
+      "inserted_cell_leakage_power": 2683.25333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "HB1x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 503.109,
+      "inserted_cell_leakage_power": 503.109,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "HB2x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 391.19433333333336,
+      "inserted_cell_leakage_power": 391.194333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "HB3x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 370.34999999999997,
+      "inserted_cell_leakage_power": 370.35,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "HB4x1_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 361.6886666666667,
+      "inserted_cell_leakage_power": 361.688667,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "INVx11_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 3689.3133333333335,
+      "inserted_cell_leakage_power": 3689.31333,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "INVx13_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 4360.096666666667,
+      "inserted_cell_leakage_power": 4360.09667,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "INVx3_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1006.177,
+      "inserted_cell_leakage_power": 1006.177,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "INVx5_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1676.96,
+      "inserted_cell_leakage_power": 1676.96,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "INVx6_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 2012.3499999999997,
+      "inserted_cell_leakage_power": 2012.35,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "INVxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_INVBUF_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 167.69866666666667,
+      "inserted_cell_leakage_power": 167.698667,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "O2A1O1A1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 147.00134545454546,
+      "inserted_cell_leakage_power": 147.001345,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "O2A1O1Ixp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 136.55215294117647,
+      "inserted_cell_leakage_power": 136.552153,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "O2A1O1Ixp5_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 110.09068823529412,
+      "inserted_cell_leakage_power": 110.090688,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OA211x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 214.86617647058824,
+      "inserted_cell_leakage_power": 214.866176,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OA211x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 305.2831764705883,
+      "inserted_cell_leakage_power": 305.283176,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OA21x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 331.0161111111111,
+      "inserted_cell_leakage_power": 331.016111,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "OA221x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 248.16975757575756,
+      "inserted_cell_leakage_power": 248.169758,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OA221x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 341.57378787878787,
+      "inserted_cell_leakage_power": 341.573788,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OA222x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 291.73255384615385,
+      "inserted_cell_leakage_power": 291.732554,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OA222x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 389.6166153846154,
+      "inserted_cell_leakage_power": 389.616615,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OA22x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 369.267,
+      "inserted_cell_leakage_power": 369.267,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OA311x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 216.35263636363635,
+      "inserted_cell_leakage_power": 216.352636,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OA311x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 307.7649393939394,
+      "inserted_cell_leakage_power": 307.764939,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OA31x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 233.48005882352942,
+      "inserted_cell_leakage_power": 233.480059,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OA31x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 331.8587058823529,
+      "inserted_cell_leakage_power": 331.858706,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OA321x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 223.14681538461537,
+      "inserted_cell_leakage_power": 223.146815,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OA321x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 318.0449538461538,
+      "inserted_cell_leakage_power": 318.044954,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OA322x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 298.68684496124035,
+      "inserted_cell_leakage_power": 298.686845,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OA322x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 398.8106744186046,
+      "inserted_cell_leakage_power": 398.810674,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OA32x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 229.65412121212123,
+      "inserted_cell_leakage_power": 229.654121,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OA32x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 335.0030303030303,
+      "inserted_cell_leakage_power": 335.00303,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OA331x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 224.55333333333334,
+      "inserted_cell_leakage_power": 224.553333,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OA331x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 321.19352713178296,
+      "inserted_cell_leakage_power": 321.193527,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OA332x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 300.51878210116735,
+      "inserted_cell_leakage_power": 300.518782,
+      "vdd_state_count": 257
+    },
+    {
+      "cell": "OA332x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 403.2559610894942,
+      "inserted_cell_leakage_power": 403.255961,
+      "vdd_state_count": 257
+    },
+    {
+      "cell": "OA333x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 307.2007680311891,
+      "inserted_cell_leakage_power": 307.200768,
+      "vdd_state_count": 513
+    },
+    {
+      "cell": "OA333x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 412.98660038986355,
+      "inserted_cell_leakage_power": 412.9866,
+      "vdd_state_count": 513
+    },
+    {
+      "cell": "OA33x1_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 225.90255384615384,
+      "inserted_cell_leakage_power": 225.902554,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OA33x2_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 334.7356,
+      "inserted_cell_leakage_power": 334.7356,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OAI211xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 102.73540588235294,
+      "inserted_cell_leakage_power": 102.735406,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OAI211xp67b_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 196.0123705882353,
+      "inserted_cell_leakage_power": 196.012371,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OAI21xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 67.6661,
+      "inserted_cell_leakage_power": 67.6661,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "OAI21xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 135.32272222222224,
+      "inserted_cell_leakage_power": 135.322722,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "OAI21xp5b_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 138.24013333333335,
+      "inserted_cell_leakage_power": 138.240133,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "OAI221xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 154.76607575757575,
+      "inserted_cell_leakage_power": 154.766076,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OAI221xp33f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 125.28488181818182,
+      "inserted_cell_leakage_power": 125.284882,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OAI222xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 154.26082153846156,
+      "inserted_cell_leakage_power": 154.260822,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OAI22xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 164.54567647058823,
+      "inserted_cell_leakage_power": 164.545676,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OAI311xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 124.94043333333335,
+      "inserted_cell_leakage_power": 124.940433,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OAI31x1f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 233.58176470588234,
+      "inserted_cell_leakage_power": 233.581765,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OAI31xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 135.10166470588237,
+      "inserted_cell_leakage_power": 135.101665,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OAI321xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 128.24868307692307,
+      "inserted_cell_leakage_power": 128.248683,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "OAI322xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 157.8938527131783,
+      "inserted_cell_leakage_power": 157.893853,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OAI322xp33b_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 157.8938527131783,
+      "inserted_cell_leakage_power": 157.893853,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OAI32xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 160.06099393939394,
+      "inserted_cell_leakage_power": 160.060994,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OAI331xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 127.91317286821705,
+      "inserted_cell_leakage_power": 127.913173,
+      "vdd_state_count": 129
+    },
+    {
+      "cell": "OAI332xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 197.78171284046695,
+      "inserted_cell_leakage_power": 197.781713,
+      "vdd_state_count": 257
+    },
+    {
+      "cell": "OAI333xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 205.0477311890838,
+      "inserted_cell_leakage_power": 205.047731,
+      "vdd_state_count": 513
+    },
+    {
+      "cell": "OAI33xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_OA_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 152.71310153846153,
+      "inserted_cell_leakage_power": 152.713102,
+      "vdd_state_count": 65
+    },
+    {
+      "cell": "AND2x6_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 2707.82,
+      "inserted_cell_leakage_power": 2707.82,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "AND3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 960.1683333333333,
+      "inserted_cell_leakage_power": 960.168333,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "AND3x4_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1798.9,
+      "inserted_cell_leakage_power": 1798.9,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "AND4x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 562.5314117647058,
+      "inserted_cell_leakage_power": 562.531412,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AND4x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 887.833,
+      "inserted_cell_leakage_power": 887.833,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "AND5x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 504.1122424242425,
+      "inserted_cell_leakage_power": 504.112242,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "AND5x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 828.6856666666666,
+      "inserted_cell_leakage_power": 828.685667,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "FAxp33_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1343.191111111111,
+      "inserted_cell_leakage_power": 1343.19111,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "HAxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 939.6229999999999,
+      "inserted_cell_leakage_power": 939.623,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "MAJIxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 774.7045555555555,
+      "inserted_cell_leakage_power": 774.704556,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "MAJx3_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1668.788888888889,
+      "inserted_cell_leakage_power": 1668.78889,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NAND2x1p5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 771.7826,
+      "inserted_cell_leakage_power": 771.7826,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "NAND2xp5R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 364.9902,
+      "inserted_cell_leakage_power": 364.9902,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "NAND2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 284.1948,
+      "inserted_cell_leakage_power": 284.1948,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "NAND3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1354.2416666666666,
+      "inserted_cell_leakage_power": 1354.24167,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NAND3xp33R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 306.66836666666666,
+      "inserted_cell_leakage_power": 306.668367,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NAND3xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 245.94860000000003,
+      "inserted_cell_leakage_power": 245.9486,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NAND4xp25R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 237.23073529411766,
+      "inserted_cell_leakage_power": 237.230735,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "NAND4xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 196.58637647058822,
+      "inserted_cell_leakage_power": 196.586376,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "NAND4xp75_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 711.6910588235294,
+      "inserted_cell_leakage_power": 711.691059,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "NAND5xp2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 153.93042424242424,
+      "inserted_cell_leakage_power": 153.930424,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "NOR2x2R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 894.0577999999999,
+      "inserted_cell_leakage_power": 894.0578,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "NOR2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 268.91822,
+      "inserted_cell_leakage_power": 268.91822,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "NOR3x1f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 291.251,
+      "inserted_cell_leakage_power": 291.251,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NOR3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1219.746,
+      "inserted_cell_leakage_power": 1219.746,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NOR3xp33_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 225.2823111111111,
+      "inserted_cell_leakage_power": 225.282311,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "NOR4x3f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 654.983,
+      "inserted_cell_leakage_power": 654.983,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "NOR4xp25_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 173.69693529411765,
+      "inserted_cell_leakage_power": 173.696935,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "NOR5x1f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 159.50476060606061,
+      "inserted_cell_leakage_power": 159.504761,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "NOR5xp2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 130.7949,
+      "inserted_cell_leakage_power": 130.7949,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OR2x3R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1804.114,
+      "inserted_cell_leakage_power": 1804.114,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "OR3x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 979.4350000000001,
+      "inserted_cell_leakage_power": 979.435,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "OR3x4_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 1667.62,
+      "inserted_cell_leakage_power": 1667.62,
+      "vdd_state_count": 9
+    },
+    {
+      "cell": "OR4x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 563.8607058823529,
+      "inserted_cell_leakage_power": 563.860706,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OR4x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 909.3928823529412,
+      "inserted_cell_leakage_power": 909.392882,
+      "vdd_state_count": 17
+    },
+    {
+      "cell": "OR5x1_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 505.75336363636364,
+      "inserted_cell_leakage_power": 505.753364,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "OR5x2_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 852.0023636363637,
+      "inserted_cell_leakage_power": 852.002364,
+      "vdd_state_count": 33
+    },
+    {
+      "cell": "TIEHIxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 0.8182329999999999,
+      "inserted_cell_leakage_power": 0.818233,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "TIELOxp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 0.8182329999999999,
+      "inserted_cell_leakage_power": 0.818233,
+      "vdd_state_count": 3
+    },
+    {
+      "cell": "XNOR2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 858.8302,
+      "inserted_cell_leakage_power": 858.8302,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "XNOR2xp5f_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 939.6229999999999,
+      "inserted_cell_leakage_power": 939.623,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "XOR2xp5_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 847.1034,
+      "inserted_cell_leakage_power": 847.1034,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "XOR2xp5r_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 934.4136000000001,
+      "inserted_cell_leakage_power": 934.4136,
+      "vdd_state_count": 5
+    },
+    {
+      "cell": "NAND5xp2R_ASAP7_6t_L",
+      "source": "asap7sc6t_SIMPLE_LVT_TT_nldm_211010.lib",
+      "conditional_vdd_mean": 179.53921515151515,
+      "inserted_cell_leakage_power": 179.539215,
+      "vdd_state_count": 33
+    }
+  ],
+  "included_recovered_cell_leakage_power_count": 158,
+  "excluded_recovered_cell_leakage_power_count": 2,
+  "cell_leakage_power_calibration": {
+    "cells": [
+      {
+        "cell": "AO21x1_ASAP7_6t_L",
+        "existing_scalar": 237.86,
+        "conditional_vdd_mean": 237.8598888888889,
+        "relative_error": 4.671281893520174e-07,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "AO22x1_ASAP7_6t_L",
+        "existing_scalar": 266.398,
+        "conditional_vdd_mean": 266.3979411764706,
+        "relative_error": 2.208107020562622e-07,
+        "vdd_state_count": 17
+      },
+      {
+        "cell": "AOI21x1_ASAP7_6t_L",
+        "existing_scalar": 269.411,
+        "conditional_vdd_mean": 269.4107111111111,
+        "relative_error": 1.0722980461341791e-06,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "BUFx2_ASAP7_6t_L",
+        "existing_scalar": 838.52,
+        "conditional_vdd_mean": 838.5203333333333,
+        "relative_error": 3.975257993893422e-07,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "BUFx4_ASAP7_6t_L",
+        "existing_scalar": 1677.04,
+        "conditional_vdd_mean": 1677.0366666666666,
+        "relative_error": 1.9876289971687555e-06,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "BUFx8_ASAP7_6t_L",
+        "existing_scalar": 3354.07,
+        "conditional_vdd_mean": 3354.0733333333337,
+        "relative_error": 9.938174616586082e-07,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "INVx1_ASAP7_6t_L",
+        "existing_scalar": 335.392,
+        "conditional_vdd_mean": 335.39233333333334,
+        "relative_error": 9.938619089933098e-07,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "INVx2_ASAP7_6t_L",
+        "existing_scalar": 670.785,
+        "conditional_vdd_mean": 670.7846666666667,
+        "relative_error": 4.969302135338083e-07,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "INVx4_ASAP7_6t_L",
+        "existing_scalar": 1341.57,
+        "conditional_vdd_mean": 1341.5666666666666,
+        "relative_error": 2.4846510680021083e-06,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "INVx8_ASAP7_6t_L",
+        "existing_scalar": 2683.14,
+        "conditional_vdd_mean": 2683.14,
+        "relative_error": 0.0,
+        "vdd_state_count": 3
+      },
+      {
+        "cell": "OA21x1_ASAP7_6t_L",
+        "existing_scalar": 234.628,
+        "conditional_vdd_mean": 234.62822222222223,
+        "relative_error": 9.471257575999203e-07,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "OA22x1_ASAP7_6t_L",
+        "existing_scalar": 266.906,
+        "conditional_vdd_mean": 266.90629411764706,
+        "relative_error": 1.1019521743982352e-06,
+        "vdd_state_count": 17
+      },
+      {
+        "cell": "AND2x2_ASAP7_6t_L",
+        "existing_scalar": 943.483,
+        "conditional_vdd_mean": 943.4833999999998,
+        "relative_error": 4.23961003859219e-07,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "AND2x4_ASAP7_6t_L",
+        "existing_scalar": 2048.54,
+        "conditional_vdd_mean": 2048.54,
+        "relative_error": 0.0,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "AND3x1_ASAP7_6t_L",
+        "existing_scalar": 633.418,
+        "conditional_vdd_mean": 633.418,
+        "relative_error": 0.0,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "MAJx1_ASAP7_6t_L",
+        "existing_scalar": 997.874,
+        "conditional_vdd_mean": 997.874,
+        "relative_error": 0.0,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "MAJx2_ASAP7_6t_L",
+        "existing_scalar": 1333.33,
+        "conditional_vdd_mean": 1333.3291111111112,
+        "relative_error": 6.666683332046119e-07,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "NAND2x1_ASAP7_6t_L",
+        "existing_scalar": 568.386,
+        "conditional_vdd_mean": 568.3862,
+        "relative_error": 3.5187355074128845e-07,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "NAND2x2_ASAP7_6t_L",
+        "existing_scalar": 1136.77,
+        "conditional_vdd_mean": 1136.7732,
+        "relative_error": 2.814993358413176e-06,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "NAND3x1_ASAP7_6t_L",
+        "existing_scalar": 677.12,
+        "conditional_vdd_mean": 677.1198888888889,
+        "relative_error": 1.6409367775693795e-07,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "NOR2x1_ASAP7_6t_L",
+        "existing_scalar": 537.834,
+        "conditional_vdd_mean": 537.8338,
+        "relative_error": 3.7186194989935473e-07,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "NOR2x2_ASAP7_6t_L",
+        "existing_scalar": 1075.67,
+        "conditional_vdd_mean": 1075.6680000000001,
+        "relative_error": 1.8593062928173865e-06,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "NOR3x1_ASAP7_6t_L",
+        "existing_scalar": 609.873,
+        "conditional_vdd_mean": 609.8726666666666,
+        "relative_error": 5.465618799771477e-07,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "OR2x2_ASAP7_6t_L",
+        "existing_scalar": 951.314,
+        "conditional_vdd_mean": 951.3142,
+        "relative_error": 2.102355269872902e-07,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "OR2x4_ASAP7_6t_L",
+        "existing_scalar": 1721.03,
+        "conditional_vdd_mean": 1721.03,
+        "relative_error": 0.0,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "OR3x1_ASAP7_6t_L",
+        "existing_scalar": 635.343,
+        "conditional_vdd_mean": 635.3433333333334,
+        "relative_error": 5.24650989097708e-07,
+        "vdd_state_count": 9
+      },
+      {
+        "cell": "XNOR2x2_ASAP7_6t_L",
+        "existing_scalar": 1605.32,
+        "conditional_vdd_mean": 1605.318,
+        "relative_error": 1.2458575237017655e-06,
+        "vdd_state_count": 5
+      },
+      {
+        "cell": "XOR2x2_ASAP7_6t_L",
+        "existing_scalar": 1610.52,
+        "conditional_vdd_mean": 1610.52,
+        "relative_error": 0.0,
+        "vdd_state_count": 5
+      }
+    ],
+    "max_relative_error": 2.814993358413176e-06
+  },
+  "boolean_parse_failures": [],
+  "rewrite_count": 505,
+  "scale_rule_count": 102,
+  "structural_rule_count": 79,
+  "symmetry_rule_count": 324,
+  "structural_skips": [
+    {
+      "cell": "TIELOxp5_ASAP7_6t_L",
+      "reason": "constant_cell"
+    },
+    {
+      "cell": "TIEHIxp5_ASAP7_6t_L",
+      "reason": "constant_cell"
+    },
+    {
+      "cell": "INVx1_ASAP7_6t_L",
+      "reason": "canonical_primitive"
+    },
+    {
+      "cell": "AND2x2_ASAP7_6t_L",
+      "reason": "canonical_primitive"
+    },
+    {
+      "cell": "OR2x2_ASAP7_6t_L",
+      "reason": "canonical_primitive"
+    }
+  ],
+  "library_sha256": "48f3f7f1ae6ff4a6c50da7ac8ea2cb5dca3fc0e9763321d726583f17b3e659dd",
+  "rules_sha256": "83e0d23783d25614e0918c4d03bf8813ec699ef7cb173b646ee123f758e35b19",
+  "scale_rules_sha256": "8d52350af06dc18f9147b1a987b7643f3af02dfa7a9087ed7e15837b2d2d0fb3"
+}

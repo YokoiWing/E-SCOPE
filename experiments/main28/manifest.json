@@ -45,7 +45,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_already_strong",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_ctrl__t2_1.05x.v",
+      "optimized_sha256": "91d41f1ee50a7bad43ed73ab578cc88e8a5c24803e987c83267c5170b4884683",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_router",
@@ -76,7 +81,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_distinct_candidate",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_router__t0_0.95x.v",
+      "optimized_sha256": "b7c0b507a1beadefdf3d9e70a86d4396dfc7882d0aec1f58ec09f2d46e9d86b4",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c432",
@@ -107,7 +117,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "iterative_continuation_affordable",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c432__t4_1.20x.v",
+      "optimized_sha256": "bea86d4d4ad5c08e87746a824a2fea129410ec2146d4a9efea0392658ae85918",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_int2float",
@@ -138,7 +153,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_already_strong",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_int2float__t4_1.20x.v",
+      "optimized_sha256": "c908df57c1e063e6196da6527dadc5e234e78dc54907847b2da927b4ddcd34b3",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c880",
@@ -169,7 +189,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_materially_better",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c880__t1_1.00x.v",
+      "optimized_sha256": "64572874858a0591af180cb9e8270a95b9ad94de81f668107e9a9c080f790e26",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c1908",
@@ -200,7 +225,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_distinct_candidate",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c1908__t0_0.95x.v",
+      "optimized_sha256": "47e66e7825ee35d6cde0014ed362be588a81e8cc2031ec819865446c64a73d07",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c2670",
@@ -231,7 +261,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_already_strong",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c2670__t3_1.10x.v",
+      "optimized_sha256": "444225b0911aeb7a95ee5b1414f1dabfba5ad13808e5d1edb4f031d82b60e3c7",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c499",
@@ -262,7 +297,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_distinct_candidate",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c499__t0_0.95x.v",
+      "optimized_sha256": "59ef9fa653eb1b2cc7071538334ac5cc21fedd6de4b40dac99287c6b282763cc",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_dec",
@@ -293,7 +333,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "iterative_continuation_affordable",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_dec__t3_1.10x.v",
+      "optimized_sha256": "d8ee41a7b6f60fe7f586f7230042735189ead5336827016e7cea61bb513cb854",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_priority",
@@ -324,7 +369,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "iterative_materially_better",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_priority__t0_0.95x.v",
+      "optimized_sha256": "4cee3686bdb1919b4e26c80150e7be76ef15dbe41277eb80f72eefc9d116759f",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_cavlc",
@@ -355,7 +405,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_materially_better",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_cavlc__t4_1.20x.v",
+      "optimized_sha256": "d11c9452de2daf8da71a8fdf37967f5a5328c61a1730b27a3adabd47ecf80e01",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c3540",
@@ -386,7 +441,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "iterative_continuation_expensive_small_design",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c3540__t1_1.00x.v",
+      "optimized_sha256": "e6c4c3443b8243cb22cc7229a89ef4985e80a13facefbfbefc544c7a1f892a2b",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_i2c",
@@ -417,7 +477,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_already_strong",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_i2c__t4_1.20x.v",
+      "optimized_sha256": "b9fc70b5ab0954d9acd8140661e1c78fb90dff55fddbe5e7809b4edb7c8aa4ef",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c5315",
@@ -448,7 +513,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_already_strong",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c5315__t4_1.20x.v",
+      "optimized_sha256": "87a401a8f866a453fa11bb622634585854fb68e3d4a030e3846fb585a9454c92",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_bar",
@@ -479,7 +549,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_already_strong",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_bar__t4_1.20x.v",
+      "optimized_sha256": "944a1d250d81b50f52bed008860368014aa07e4294c67cd1534f8eef435061d8",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "c6288",
@@ -510,7 +585,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/c6288__t4_1.20x.v",
+      "optimized_sha256": "8dfaef91b9876afde4fd5ff3e4642111ef2d7e4a1a618c4e9a8576914ad437a3",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_max",
@@ -541,7 +621,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_max__t2_1.05x.v",
+      "optimized_sha256": "f62d23ca19bfe42693f63e182f4be7364b3f28be75e2233c6aceba2762409138",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_adder",
@@ -553,7 +638,7 @@
       "g0_area_um2": 117.188,
       "g0_power_uw": 191.903,
       "paper_selected_method": "Iterative",
-      "paper_selected_flow": "Iterative D×A objective",
+      "paper_selected_flow": "Iterative D\u00d7A objective",
       "paper_selected_candidate": "archive_000",
       "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s04_p800/g0.v",
       "policy_replay": {
@@ -572,7 +657,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "iterative_continuation_affordable",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_adder__p0800.v",
+      "optimized_sha256": "a033549a68f4a2a6fe9e569b2c78e8d8fa79652a3df5a6d5786627a9727db471",
+      "objective": "DA",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_arbiter",
@@ -603,7 +693,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_arbiter__t2_1.05x.v",
+      "optimized_sha256": "3634a33b72683a40b76e6540d3b7db027e945baf8f885c658af22e0012d5ef73",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_sin",
@@ -634,7 +729,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_distinct_candidate",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_sin__t4_1.20x.v",
+      "optimized_sha256": "d408c5b51ea69f4b5cfa11448bcc4303bbe7ada23cb9fcfb66516c91779f5b11",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_voter",
@@ -665,7 +765,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_voter__t4_1.20x.v",
+      "optimized_sha256": "73ddf78b47ad98ccb951f0202a9f206b3130e256059053a1c42907c13794177c",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_sqrt",
@@ -696,7 +801,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_sqrt__t4_1.20x.v",
+      "optimized_sha256": "be9a80e1f4795f502bb4d7d1e386ede0c6786b6154980122808b1759b1029791",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_square",
@@ -727,7 +837,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_distinct_candidate",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_square__t4_1.20x.v",
+      "optimized_sha256": "23127a6f364d2b3a3a8fd912db5b1444b65fa378c4637cf9b19c942333d729e4",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_mem_ctrl",
@@ -758,7 +873,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_mem_ctrl__t4_1.20x.v",
+      "optimized_sha256": "01bada27af8a01ed31275ae12a1ef9a60b4f1d555ae5b973d4bbe46f4530f3c7",
+      "objective": "D2AP",
+      "iterative_round_cap": 2,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_multiplier",
@@ -789,7 +909,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_materially_better",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_multiplier__t3_1.10x.v",
+      "optimized_sha256": "ccd6bf5d22354294be37f5e67d5fd05bd83a44bd3d6c4839b95379bb8e5e7704",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_log2",
@@ -820,7 +945,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "conquer_distinct_candidate",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_log2__t3_1.10x.v",
+      "optimized_sha256": "aad8f77ea9d3b8272ee0ba1ef00cb4adaf0486f5253c87f29a9bcb1a67cc9989",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_div",
@@ -851,7 +981,12 @@
         "action": "CONTINUE_ITERATIVE",
         "clause": "large_design_wait_one_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_div__t4_1.20x.v",
+      "optimized_sha256": "711b6849749a32e2c2dc1c74c2482f873f033ef36f6a5e1bd5b0ffd17c36e882",
+      "objective": "D2AP",
+      "iterative_round_cap": 5,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
       "benchmark": "epfl_hyp",
@@ -882,7 +1017,12 @@
         "action": "STOP_WITH_CONQUER",
         "clause": "no_iterative_checkpoint",
         "matches_paper_method": true
-      }
+      },
+      "optimized_path": "expected/epfl_hyp__t1_1.00x.v",
+      "optimized_sha256": "159c75e993344f028c849267fa3cc42f28791a07d088308ca8f714df9a477825",
+      "objective": "D2AP",
+      "iterative_round_cap": 1,
+      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     }
   ]
 }

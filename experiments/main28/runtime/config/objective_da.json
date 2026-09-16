@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "main28_adder_da",
+  "objective": {
+    "kind": "product",
+    "exponents": {
+      "delay": 1.0,
+      "area": 1.0,
+      "power": 0.0
+    }
+  },
+  "constraints": []
+}

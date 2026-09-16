@@ -23,12 +23,12 @@ The machine-readable coverage record is
 
 ## Table III and Figure 6
 
-The 28 byte-identical G0 netlists, their SHA-256 values and the frozen
-Iterative/Conquer selection policy are packaged under `experiments/main28/`.
-Verify all G0 inputs and six small policy cases with:
+The 28 byte-identical G0 netlists, 28 selected paper outputs, their SHA-256
+values, source/configuration, and frozen Iterative/Conquer selection policy are
+packaged under `experiments/main28/`. Reproduce the saved result with:
 
 ```bash
-python3 experiments/main28/verify.py --small
+python3 experiments/main28/run.py evidence --output reproduced/main28
 ```
 
 The saved policy reproduces the paper method on all 28 listed points. Twenty-seven
@@ -85,8 +85,10 @@ display choice; use `--plot exact` for the unmodified evidence.
 
 ## Fresh optimization
 
-The case-study component READMEs describe the saved configurations and fresh
-run entry points. A fresh run produces new evidence. Historical external PPA
+The case-study component READMEs describe their fresh-run entry points. The
+main 28-point experiment uses `experiments/main28/run.py` for an isolated build,
+complete execution plan, one-point smoke, or point-level resumable queue. A
+fresh run produces new evidence. Historical external PPA
 may be reused only when the resulting final netlist SHA-256 matches the
 packaged netlist; any other output requires fresh legality, equivalence, and
 mapped-as-is evaluation.
@@ -102,11 +104,14 @@ available.
 ## Validation performed during packaging
 
 - Case-study checksum/evidence verification: PASS after identity-neutral path
-  rewriting and checksum regeneration (998 files).
+  rewriting and checksum regeneration (1,000 checksums).
 - Table IV evidence replay: 24/24 rows PASS.
 - Table III/Figure 6, Figure 7, and Figure 8 evidence replays and plots: PASS.
-- Main-28 G0 inputs: 28/28 byte SHA-256 PASS; independent workspace extraction
-  by content hash PASS. Six small policy cases and the full 28-method replay PASS.
+- Main-28 inputs and selected outputs: 28/28 G0 and 28/28 optimized netlist byte
+  SHA-256 PASS. Six small policy cases and the full 28-method replay PASS.
+- Main-28 execution: isolated offline Cargo Release build of four binaries PASS;
+  `epfl_ctrl` one-round Iterative smoke and Conquer search-only smoke PASS. The
+  smoke establishes a working fresh-search path, not paper-output identity.
 - AreaPMO: isolated Release build PASS; `usb_phy` real 10-round smoke and CEC
   PASS (2.071 s native wall on this machine).
 - Iterative: isolated offline Cargo Release build and `cargo fmt --check` PASS;
