@@ -16,6 +16,8 @@ compact original-precision results and replay scripts for Table III and Figures
 6--8. Current coverage and limitations are recorded in
 [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) and the machine-readable
 [`reproducibility/manifest.json`](reproducibility/manifest.json).
+The clean-checkout, experiment-by-experiment strict audit is recorded in
+[`reproducibility/STRICT_AUDIT.md`](reproducibility/STRICT_AUDIT.md).
 
 ## Verify the artifact
 
