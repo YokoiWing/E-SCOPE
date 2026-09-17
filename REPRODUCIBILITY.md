@@ -89,6 +89,15 @@ the search method fixed, so the main experiment's Iterative/Conquer scheduler
 would introduce an additional variable. A default plan has 39 sequential
 trajectories; packaging did not launch that expensive queue.
 
+The same entry now has a complete `reproduce` command. After the 39 searches
+it reconstructs and freezes the exact Internal-NLDM-V3 delay-area/delay-power
+front union before any external evaluation, evaluates all G0 and frozen
+candidates with user-provided Genus, checks every candidate against its G0
+with user-provided Yosys and ABC, and writes fresh Figure 7 CSV/PNG/SVG files.
+The freezer exactly reproduced the historical ordered 86/113/64 SHA lists;
+the complete path was exercised on a real one-round p0800 D×A run without
+launching the expensive full queue.
+
 ## Figure 8 ablation
 
 Recompute the three 28-point geometric means and redraw the chart from compact
@@ -128,9 +137,11 @@ mapped-as-is evaluation.
 
 Cadence Genus and its license are not distributed. A licensed local
 installation can be connected to the packaged mapped-as-is Tcl flow described
-in `case_study/evaluation/README.md`. Saved `PASS` records describe historical
-runs. A skipped local rerun remains `SKIPPED`, even when historical evidence is
-available.
+in `case_study/evaluation/README.md`. Figure 7 instead accepts the local Genus,
+Yosys, and ABC executable paths through
+`experiments/pareto_adder/run.py reproduce`, then binds every fresh result to
+its netlist SHA-256. Saved `PASS` records describe historical runs. A skipped
+local rerun remains `SKIPPED`, even when historical evidence is available.
 
 ## Validation performed during packaging
 
@@ -145,7 +156,11 @@ available.
   smoke establishes a working fresh-search path, not paper-output identity.
 - Figure 7 fresh-search entry: 20/20 G0 hashes PASS; 13 frozen anchors and all
   three objective specifications validate; a 39-task paper plan is generated.
-  One p0800/D×A one-round Iterative smoke PASS. The complete queue was not run.
+  One p0800/D×A one-round Iterative smoke PASS. Its seven frozen candidates
+  and all 20 G0 completed fresh Genus; 7/7 legality/cold-read/whole-network
+  CEC PASS; fresh CSV/PNG/SVG generation PASS. Historical full-tree freezing
+  reproduced the exact ordered 86/113/64 SHA lists, and the parser matched
+  263/263 historical candidate reports. The complete queue was not run.
 - Figure 8 fresh-search entry: 28/28 selected methods match Table III; all G0
   hashes PASS; the 84-task selected-method plan is generated. Full fresh
   ablation search was not run during packaging.

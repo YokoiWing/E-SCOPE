@@ -116,7 +116,7 @@
     {
       "id": "figure-7-pareto",
       "paper_location": "Figure 7",
-      "status": "evidence_replay_and_fresh_iterative_entry_verified",
+      "status": "evidence_replay_and_fresh_end_to_end_entry_verified",
       "g0_points": 20,
       "frozen_anchors": 13,
       "objectives": [
@@ -140,15 +140,16 @@
       "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs",
       "runner": "experiments/pareto_adder/run.py",
       "objective_specs": "experiments/pareto_adder/objectives/",
-      "optimization_replay": "python3 experiments/pareto_adder/run.py run-one or run-all; see experiments/pareto_adder/README.md",
+      "optimization_replay": "python3 experiments/pareto_adder/run.py reproduce; see experiments/pareto_adder/README.md",
       "method": "Iterative",
       "method_rationale": "The experiment varies the objective while holding the search method fixed; direct Iterative matches the preserved Figure 7 runs and avoids adding the main method scheduler as a confounding variable.",
-      "fresh_validation": "20/20 G0 hashes, 13 anchors, three objectives, 39-task plan, and one-round p0800/D x A Iterative smoke PASS; complete queue not run",
+      "fresh_validation": "Historical full-tree freeze replay selected the exact ordered 86/113/64 SHA lists; parser matched 263/263 historical candidate Genus reports; real p0800/D x A closure evaluated 20 G0 plus 7 fresh candidates in Genus, passed 7/7 formal, and generated the figure",
       "missing_or_limited": [
-        "Fresh full 39-trajectory optimization and external evaluation are intentionally not run during packaging.",
-        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user.",
-        "A fresh netlist needs fresh formal and mapped-as-is external evaluation before replacing saved evidence."
-      ]
+        "The expensive fresh full 39-trajectory queue was intentionally not run during packaging.",
+        "The exact full-combinational Liberty and licensed Genus installation must be supplied by the user.",
+        "Yosys and Berkeley ABC executables must be supplied by the user."
+      ],
+      "fresh_pipeline": "39 searches -> exact Internal DA/DP-front union freeze -> mapped-as-is Genus -> Yosys/ABC legality and equivalence -> fresh Figure 7 CSV/PNG/SVG"
     },
     {
       "id": "figure-8-ablation",

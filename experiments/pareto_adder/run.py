@@ -423,6 +423,39 @@ def run_all(args) -> None:
     print(json.dumps(result, indent=2))
 
 
+def freeze_fresh(args) -> None:
+    from pipeline import freeze
+    objectives = [row["label"] for row in resolve_objectives(args.objective)]
+    print(json.dumps(freeze(args.output, objectives, require_complete=True), indent=2))
+
+
+def finalize_fresh(args) -> None:
+    from pipeline import finalize
+    objectives = [row["label"] for row in resolve_objectives(args.objective)]
+    result = finalize(
+        args.output, objectives, args.liberty, args.genus_bin, args.yosys_bin,
+        args.abc_bin, args.genus_chunk, args.genus_timeout, args.formal_jobs,
+        args.formal_timeout, args.yosys_datdir,
+    )
+    print(json.dumps(result, indent=2))
+
+
+def reproduce(args) -> None:
+    run_all(args)
+    finalize_fresh(args)
+
+
+def add_validation_arguments(p) -> None:
+    p.add_argument("--genus-bin", type=Path, required=True)
+    p.add_argument("--yosys-bin", type=Path, required=True)
+    p.add_argument("--abc-bin", type=Path, required=True)
+    p.add_argument("--yosys-datdir", type=Path)
+    p.add_argument("--genus-chunk", type=int, default=60)
+    p.add_argument("--genus-timeout", type=int, default=7200)
+    p.add_argument("--formal-jobs", type=int, default=2)
+    p.add_argument("--formal-timeout", type=int, default=1800)
+
+
 def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(description=__doc__)
     sub = value.add_subparsers(dest="command", required=True)
@@ -468,12 +501,33 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--timeout", type=int, default=7200)
     p.add_argument("--continue-on-failure", action="store_true")
     p.set_defaults(func=run_all)
+    p = sub.add_parser("freeze", help="freeze the Internal DA/DP-front union before external evaluation")
+    p.add_argument("--output", type=Path, required=True, help="completed fresh-search root")
+    p.add_argument("--objective", action="append")
+    p.set_defaults(func=freeze_fresh)
+    p = sub.add_parser("finalize", help="freeze, run Genus/formal, and generate fresh Figure 7")
+    p.add_argument("--output", type=Path, required=True, help="completed fresh-search root")
+    p.add_argument("--objective", action="append")
+    p.add_argument("--liberty", type=Path, required=True)
+    add_validation_arguments(p)
+    p.set_defaults(func=finalize_fresh)
+    p = sub.add_parser("reproduce", help="run all searches, validate them, and generate fresh Figure 7")
+    p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--objective", action="append")
+    p.add_argument("--liberty", type=Path, required=True)
+    p.add_argument("--bin-dir", type=Path, required=True)
+    p.add_argument("--rounds", type=int, default=5)
+    p.add_argument("--jobs", type=int, default=2)
+    p.add_argument("--timeout", type=int, default=7200)
+    p.add_argument("--continue-on-failure", action="store_true")
+    add_validation_arguments(p)
+    p.set_defaults(func=reproduce)
     return value
 
 
 def main() -> None:
     args = parser().parse_args()
-    for name in ("rounds", "jobs", "timeout"):
+    for name in ("rounds", "jobs", "timeout", "genus_chunk", "genus_timeout", "formal_jobs", "formal_timeout"):
         if hasattr(args, name) and getattr(args, name) <= 0:
             raise SystemExit(f"--{name} must be positive")
     try:

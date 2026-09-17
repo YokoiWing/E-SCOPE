@@ -79,8 +79,55 @@ python3 experiments/pareto_adder/run.py run-one \
 ```
 
 `run-all` is a resumable sequential queue. No full queue starts unless that
-subcommand is explicitly called. A fresh output requires fresh formal and
-mapped-as-is external evaluation before it can replace saved Figure 7 data.
+subcommand is explicitly called.
+
+## Complete fresh Figure 7 reproduction
+
+The `reproduce` command connects the whole experiment:
+
+1. run the 39 Iterative trajectories;
+2. collect every saved progressive-sizing candidate;
+3. deduplicate by netlist SHA-256 and freeze the union of the exact internal
+   delay-area and delay-power fronts **before** starting Genus;
+4. evaluate all 20 G0 netlists and every frozen candidate with mapped-as-is
+   Genus;
+5. check library legality, cold re-read, and G0-to-candidate whole-network
+   equivalence with Yosys and ABC;
+6. write fresh CSV, PNG, and SVG versions of Figure 7.
+
+Genus, Yosys, ABC, and the exact full-combinational Liberty are user-provided;
+the repository does not redistribute their executables. Run outputs stay
+outside the checkout:
+
+```bash
+python3 experiments/pareto_adder/run.py reproduce \
+  --output /data/escope-pareto-fresh \
+  --liberty /path/to/asap7sc6t_FULL_COMB_LVT_TT_nldm_211010.lib \
+  --bin-dir /tmp/escope-pareto-build/release \
+  --genus-bin /path/to/genus \
+  --yosys-bin /path/to/yosys \
+  --abc-bin /path/to/abc
+```
+
+If a local Yosys installation needs an explicit data directory, add
+`--yosys-datdir /path/to/share/yosys`. Search, Genus batches, and formal
+checks are resumable from their SHA-bound receipts. The final files are:
+
+```text
+/data/escope-pareto-fresh/frozen/FREEZE_RECEIPT.json
+/data/escope-pareto-fresh/external/results.json
+/data/escope-pareto-fresh/formal/results.json
+/data/escope-pareto-fresh/figure7/figure7_data.csv
+/data/escope-pareto-fresh/figure7/figure7.png
+/data/escope-pareto-fresh/figure7/figure7.svg
+/data/escope-pareto-fresh/REPRODUCTION.json
+```
+
+For an already completed `run-all` directory, run only the back half with
+`finalize` and the same Liberty/tool arguments. `freeze` is also available as
+a read-only-to-search diagnostic step. Both commands require all 13 anchors
+for each selected objective, so a partial smoke cannot be mistaken for the
+paper experiment.
 
 ## Objective interface
 

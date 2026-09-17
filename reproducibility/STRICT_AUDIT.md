@@ -14,13 +14,13 @@ from a saved CSV is recorded separately as **saved-evidence replay**.
 | Paper experiment | Saved-evidence replay | Fresh search entry | Strict fresh end-to-end reproduction |
 |---|---:|---:|---:|
 | Table III and Figure 6, 28-point main result | PASS | PARTIAL PASS | NO |
-| Figure 7, `epfl_adder` Pareto fronts | PASS | PARTIAL PASS | NO |
+| Figure 7, `epfl_adder` Pareto fronts | PASS | PASS | READY; full queue not rerun |
 | Figure 8, selected-method ablation | PASS | PARTIAL PASS | NO |
 | Table IV, six-circuit case study | PASS | PARTIAL PASS | NO |
 
-The artifact is therefore suitable for checking the reported numbers and for
-running the packaged optimization code. It is not yet a strict, push-to-result
-reproduction of any complete paper experiment.
+The original audit found no complete fresh path. The Figure 7 row was closed
+afterward by adding a single search→freeze→Genus→formal→plot entry. Its full
+39-trajectory queue remains intentionally unlaunched during packaging.
 
 ## Checks performed from a clean checkout
 
@@ -81,18 +81,20 @@ internal jobs. Saved runtime evidence therefore reproduces the plotted 1.46×
 number, but the current runner does not establish a fresh one-core runtime
 reproduction.
 
-## Why the Pareto experiment is not strict end-to-end
+## Pareto experiment closure added after the audit
 
-The package correctly provides the 20 G0 netlists, 13 preselected anchors,
-three objective specifications, and a resumable 39-trajectory Iterative queue.
-The fresh runner stops after each trajectory. It does not reconstruct the
-cross-round Internal-NLDM frontier union, freeze the exact external candidate
-pool, run mapped-as-is Genus and formal, or rebuild Figure 7 from those fresh
-outputs.
+`experiments/pareto_adder/run.py reproduce` now executes the resumable
+39-trajectory queue, reconstructs the cross-round Internal-NLDM frontier
+union, freezes it before external evaluation, runs mapped-as-is Genus and
+Yosys/ABC validation, and generates fresh Figure 7 CSV/PNG/SVG outputs.
 
-The saved 86/113/64 candidate rows are sufficient to verify the published
-empirical fronts. They are not a substitute for code that regenerates and
-freezes those pools from new trajectories.
+The freezer was replayed against the complete historical search trees and
+selected exactly the same ordered 86/113/64 netlist SHA lists. The Genus parser
+matched all 263 historical candidate reports. A real one-round p0800 D×A test
+then froze seven candidates; all 20 G0 plus seven candidates completed fresh
+Genus, all seven candidates passed legality/cold-read/whole-network CEC, and
+the fresh figure was generated. This validates the full code path without
+claiming that the expensive 39 trajectories were rerun during packaging.
 
 ## Why the ablation is not strict end-to-end
 
@@ -126,15 +128,13 @@ without a fresh external run.
 
 ## Work needed for a strict claim
 
-1. Package a common, tool-parameterized external validation command for the
-   6-track experiments: candidate staging, mapped-as-is Genus, legality,
-   whole-network equivalence, SHA-bound receipts, and result parsing.
+1. Extend the new tool-parameterized Figure 7 validation path to the main and
+   ablation experiments.
 2. Implement the Section III-E online controller and reconcile its worker
    count with the paper's one-core runtime statement.
-3. Package Pareto candidate-pool reconstruction and pre-Genus freezing.
-4. Complete the Conquer Phase-I ablation pairing/selection path, add a
+3. Complete the Conquer Phase-I ablation pairing/selection path, add a
    resumable 84-task queue, and package fresh-output formal bindings.
-5. Resolve the Figure 8 adder-anchor version difference or state in the paper
+4. Resolve the Figure 8 adder-anchor version difference or state in the paper
    that the ablation uses the earlier G0.
-6. For Table IV, either package the original pre-AIG preparation command and
+5. For Table IV, either package the original pre-AIG preparation command and
    input or define the prepared AIG as the experiment's public starting point.

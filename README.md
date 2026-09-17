@@ -84,7 +84,9 @@ python3 experiments/pareto_adder/run.py plan \
 Figure 7 uses Iterative directly because it isolates objective choice while
 holding the search method and all other settings fixed. See
 [`experiments/pareto_adder/README.md`](experiments/pareto_adder/README.md) for
-the rationale and fresh-run commands.
+the rationale and the `reproduce` command that connects all 39 searches,
+pre-Genus candidate freezing, mapped-as-is Genus, Yosys/ABC formal checks, and
+fresh figure generation.
 
 ## Reproduce the Figure 8 ablation
 
