@@ -181,6 +181,7 @@ def commands_for(point: dict, output: Path, liberty: Path, binary_dir: Path, smo
 def terminate_owned() -> None:
     for process in OWNED:
         if process.poll() is None:
+            os.killpg(process.pid, signal.SIGCONT)
             os.killpg(process.pid, signal.SIGTERM)
     deadline = time.monotonic() + 10
     for process in OWNED:
@@ -190,6 +191,28 @@ def terminate_owned() -> None:
             except subprocess.TimeoutExpired:
                 os.killpg(process.pid, signal.SIGKILL)
                 process.wait()
+
+
+def terminate_process(process: subprocess.Popen) -> None:
+    if process.poll() is not None:
+        return
+    os.killpg(process.pid, signal.SIGCONT)
+    os.killpg(process.pid, signal.SIGTERM)
+    try:
+        process.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGKILL)
+        process.wait()
+
+
+def pause_process(process: subprocess.Popen) -> None:
+    if process.poll() is None:
+        os.killpg(process.pid, signal.SIGSTOP)
+
+
+def resume_process(process: subprocess.Popen) -> None:
+    if process.poll() is None:
+        os.killpg(process.pid, signal.SIGCONT)
 
 
 def launch(label: str, command: list[str], output: Path, env: dict[str, str]) -> subprocess.Popen:
@@ -213,6 +236,10 @@ def run_one(args) -> dict:
     point = point_for(args.benchmark)
     liberty = ensure_library(args.liberty)
     binary_dir = ensure_binaries(args.bin_dir)
+    if args.method == "online":
+        required_executable(args.genus_bin, "genus_bin")
+        required_executable(args.yosys_bin, "yosys_bin")
+        required_executable(args.abc_bin, "abc_bin")
     output = args.output.resolve()
     if output.exists():
         raise RuntimeError(f"refusing existing output directory: {output}")
@@ -231,15 +258,25 @@ def run_one(args) -> dict:
         "commands": {key: value for key, value in plan.items() if key in ("iterative", "conquer")},
         "objective": plan["objective"],
         "rounds": plan["rounds"],
-        "external_selection": "PENDING; fresh searches do not read saved winners",
+        "external_selection": (
+            "online checkpoint validation and policy decision"
+            if args.method == "online" else
+            "PENDING; fresh searches do not read saved winners"
+        ),
     }
     dump(output / "PLAN.json", plan_record)
-    labels = ("iterative", "conquer") if args.method == "both" else (args.method,)
+    labels = ("iterative", "conquer") if args.method in ("both", "online") else (args.method,)
     started = time.time()
     processes = {label: launch(label, plan[label], output, env) for label in labels}
     dump(output / "status.json", {"status": "running", "pids": {k: p.pid for k, p in processes.items()}})
     deadline = time.monotonic() + args.timeout
     try:
+        if args.method == "online":
+            result = run_online_controller(
+                args, point, output, liberty, processes, started, deadline
+            )
+            print(json.dumps(result, indent=2))
+            return result
         while any(process.poll() is None for process in processes.values()):
             if time.monotonic() >= deadline:
                 raise TimeoutError(f"run exceeded {args.timeout}s")
@@ -247,9 +284,12 @@ def run_one(args) -> dict:
         returncodes = {label: process.returncode for label, process in processes.items()}
         if any(returncodes.values()):
             raise RuntimeError(f"child failure: {returncodes}")
-    except BaseException:
+    except BaseException as error:
         terminate_owned()
-        dump(output / "status.json", {"status": "failed", "elapsed_sec": time.time() - started})
+        dump(output / "status.json", {
+            "status": "failed", "elapsed_sec": time.time() - started,
+            "error": f"{type(error).__name__}: {error}",
+        })
         raise
     finally:
         for process in processes.values():
@@ -266,6 +306,105 @@ def run_one(args) -> dict:
     }
     dump(output / "status.json", result)
     print(json.dumps(result, indent=2))
+    return result
+
+
+def required_executable(path: Path | None, name: str) -> Path:
+    if path is None:
+        raise RuntimeError(f"--{name.replace('_', '-')} is required for --method online")
+    value = path.expanduser().resolve()
+    if not value.is_file():
+        raise RuntimeError(f"missing {name}: {value}")
+    return value
+
+
+def wait_process(process: subprocess.Popen, deadline: float, label: str) -> None:
+    while process.poll() is None:
+        if time.monotonic() >= deadline:
+            raise TimeoutError(f"online run exceeded its timeout while waiting for {label}")
+        time.sleep(0.5)
+    if process.returncode:
+        raise RuntimeError(f"{label} failed with return code {process.returncode}")
+
+
+def run_online_controller(args, point: dict, output: Path, liberty: Path,
+                          processes: dict[str, subprocess.Popen], started: float,
+                          deadline: float) -> dict:
+    """Implement the Section III-E decision at Conquer completion."""
+    genus = required_executable(args.genus_bin, "genus_bin")
+    yosys = required_executable(args.yosys_bin, "yosys_bin")
+    abc = required_executable(args.abc_bin, "abc_bin")
+    sys.path.insert(0, str(HERE))
+    import online
+    from policy import decide
+
+    wait_process(processes["conquer"], deadline, "Conquer")
+    # status.json is the last durable completion marker written by Conquer.
+    # Its timestamp is a tighter boundary than the controller's polling time.
+    conquer_status = output / "conquer/status.json"
+    if not conquer_status.is_file() or load(conquer_status).get("status") != "complete":
+        raise RuntimeError("Conquer exited without a complete status receipt")
+    conquer_finished = conquer_status.stat().st_mtime_ns / 1_000_000_000
+    pause_process(processes["iterative"])
+    dump(output / "status.json", {
+        "status": "freezing_checkpoint", "conquer_finished_unix": conquer_finished,
+        "iterative_state": "paused_pending_decision",
+        "iterative_pid": processes["iterative"].pid,
+    })
+    snapshot = online.freeze_decision_snapshot(
+        output, (HERE / point["g0_path"]).resolve(), point, conquer_finished
+    )
+    dump(output / "status.json", {
+        "status": "validating_frozen_checkpoint",
+        "iterative_completed_rounds_at_checkpoint": snapshot["iterative_completed_rounds"],
+    })
+    measured = online.validate_snapshot(
+        output, point, liberty, genus, yosys, abc,
+        args.genus_timeout, args.formal_timeout, args.yosys_datdir,
+    )
+    selected_method, clause = decide(measured["features"])
+    decision = {
+        "schema": "escope-main28-online-decision-v1",
+        "decision_time": "after Conquer completion and validation of the frozen checkpoint",
+        "future_iterative_rounds_visible_to_decision": False,
+        "selected_method": selected_method, "policy_clause": clause,
+        "features": measured["features"],
+        "iterative_action": "terminate" if selected_method == "Conquer" else "continue",
+    }
+    dump(output / "DECISION.json", decision)
+
+    if selected_method == "Conquer":
+        terminate_process(processes["iterative"])
+        selected = measured["conquer"]
+    else:
+        dump(output / "status.json", {"status": "continuing_iterative", "decision": decision})
+        resume_process(processes["iterative"])
+        wait_process(processes["iterative"], deadline, "Iterative")
+        online.freeze_final_iterative(output, (HERE / point["g0_path"]).resolve(), point)
+        selected = online.validate_final_iterative(
+            output, point, liberty, genus, yosys, abc,
+            args.genus_timeout, args.formal_timeout, args.yosys_datdir,
+        )
+    destination = output / "selected/mapped.v"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(selected["netlist"], destination)
+    selected_receipt = {
+        "method": selected_method, "candidate_id": selected["candidate_id"],
+        "source_sha256": selected["sha256"], "selected_sha256": sha(destination),
+        "paper_expected_sha256": point["optimized_sha256"],
+        "paper_output_sha_match": sha(destination) == point["optimized_sha256"],
+        "ppa": selected["ppa"],
+    }
+    dump(output / "selected/receipt.json", selected_receipt)
+    result = {
+        "status": "complete", "benchmark": point["benchmark"], "anchor": point["anchor"],
+        "selected_method": selected_method, "policy_clause": clause,
+        "iterative_completed_rounds_at_checkpoint": snapshot["iterative_completed_rounds"],
+        "elapsed_end_to_end_wall_sec": time.time() - started,
+        "external_validation": "PASS", "formal_guard": "PASS",
+        "selected": selected_receipt,
+    }
+    dump(output / "status.json", result)
     return result
 
 
@@ -329,6 +468,9 @@ def plan(args) -> None:
         raise RuntimeError(f"refusing existing plan: {output}")
     liberty = args.liberty.resolve() if args.liberty else Path("/path/to/asap7sc6t_FULL_COMB_LVT_TT_nldm_211010.lib")
     binary_dir = args.bin_dir.resolve() if args.bin_dir else Path("/path/to/escope-main28-build/release")
+    genus = args.genus_bin.resolve() if args.genus_bin else Path("/path/to/genus")
+    yosys = args.yosys_bin.resolve() if args.yosys_bin else Path("/path/to/yosys")
+    abc = args.abc_bin.resolve() if args.abc_bin else Path("/path/to/abc")
     rows = []
     for point in points():
         base = Path("RUN_ROOT") / f"{point['benchmark']}__{point['anchor']}"
@@ -341,8 +483,8 @@ def plan(args) -> None:
             "paper_selected_method": point["paper_selected_method"],
             "paper_output": point["optimized_path"],
             "paper_output_sha256": point["optimized_sha256"],
-            "fresh_command": ["python3", "experiments/main28/run.py", "run-one", "--benchmark", point["benchmark"], "--method", "both", "--output", str(base), "--liberty", str(liberty), "--bin-dir", str(binary_dir)],
-            "external_status": "required after fresh search",
+            "fresh_command": ["python3", "experiments/main28/run.py", "run-one", "--benchmark", point["benchmark"], "--method", "online", "--output", str(base), "--liberty", str(liberty), "--bin-dir", str(binary_dir), "--genus-bin", str(genus), "--yosys-bin", str(yosys), "--abc-bin", str(abc)],
+            "external_status": "performed online before the stop/continue decision",
         })
     dump(output, {"schema": "main28-execution-plan-v1", "points": rows, "count": len(rows), "automatic_execution": False})
     print(output)
@@ -376,8 +518,13 @@ def run_all(args) -> None:
             attempt += 1
             child_output = root / f"{stem}__attempt_{attempt:02d}"
         command = [sys.executable, str(HERE / "run.py"), "run-one", "--benchmark", name,
-                   "--method", "both", "--output", str(child_output), "--liberty", str(liberty),
-                   "--bin-dir", str(binary_dir), "--jobs", str(args.jobs), "--timeout", str(args.point_timeout)]
+                   "--method", "online", "--output", str(child_output), "--liberty", str(liberty),
+                   "--bin-dir", str(binary_dir), "--jobs", str(args.jobs), "--timeout", str(args.point_timeout),
+                   "--genus-bin", str(args.genus_bin), "--yosys-bin", str(args.yosys_bin),
+                   "--abc-bin", str(args.abc_bin), "--genus-timeout", str(args.genus_timeout),
+                   "--formal-timeout", str(args.formal_timeout)]
+        if args.yosys_datdir:
+            command += ["--yosys-datdir", str(args.yosys_datdir)]
         dump(queue, {"status": "running", "current": name, "index": index, "completed": sorted(completed), "failures": failures, "command": command})
         result = subprocess.run(command, cwd=REPO)
         if result.returncode:
@@ -387,7 +534,8 @@ def run_all(args) -> None:
                 raise SystemExit(result.returncode)
         else:
             completed.add(name)
-    result = {"status": "search_complete", "completed": sorted(completed), "failures": failures, "external_validation": "PENDING"}
+    result = {"status": "complete", "completed": sorted(completed), "failures": failures,
+              "online_selection_and_external_validation": "PASS" if not failures else "PARTIAL"}
     dump(queue, result)
     print(json.dumps(result, indent=2))
 
@@ -402,15 +550,21 @@ def parser() -> argparse.ArgumentParser:
     p = sub.add_parser("build", help="build the four required Rust binaries")
     p.add_argument("--target-dir", type=Path, required=True); p.set_defaults(func=build)
     p = sub.add_parser("plan", help="write the complete 28-point execution plan")
-    p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.set_defaults(func=plan)
-    p = sub.add_parser("run-one", help="run fresh Iterative, Conquer, or both from one packaged G0")
-    p.add_argument("--benchmark", required=True); p.add_argument("--method", choices=("iterative", "conquer", "both"), default="both")
+    p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path)
+    p.add_argument("--genus-bin", type=Path); p.add_argument("--yosys-bin", type=Path); p.add_argument("--abc-bin", type=Path); p.set_defaults(func=plan)
+    p = sub.add_parser("run-one", help="run fresh Iterative, Conquer, both, or the III-E online flow")
+    p.add_argument("--benchmark", required=True); p.add_argument("--method", choices=("iterative", "conquer", "both", "online"), default="online")
     p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True)
-    p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.add_argument("--smoke", action="store_true"); p.set_defaults(func=run_one)
+    p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.add_argument("--smoke", action="store_true")
+    p.add_argument("--genus-bin", type=Path); p.add_argument("--yosys-bin", type=Path); p.add_argument("--abc-bin", type=Path)
+    p.add_argument("--yosys-datdir", type=Path); p.add_argument("--genus-timeout", type=int, default=3600); p.add_argument("--formal-timeout", type=int, default=1800)
+    p.set_defaults(func=run_one)
     p = sub.add_parser("select", help="apply the frozen runtime policy to measured features")
     p.add_argument("--features", type=Path, required=True); p.set_defaults(func=select)
     p = sub.add_parser("run-all", help="run a resumable 28-point fresh-search queue")
     p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True)
+    p.add_argument("--genus-bin", type=Path, required=True); p.add_argument("--yosys-bin", type=Path, required=True); p.add_argument("--abc-bin", type=Path, required=True)
+    p.add_argument("--yosys-datdir", type=Path); p.add_argument("--genus-timeout", type=int, default=3600); p.add_argument("--formal-timeout", type=int, default=1800)
     p.add_argument("--jobs", type=int, default=2); p.add_argument("--point-timeout", type=int, default=43200); p.add_argument("--continue-on-failure", action="store_true"); p.set_defaults(func=run_all)
     return value
 
