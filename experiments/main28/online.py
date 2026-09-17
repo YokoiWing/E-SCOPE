@@ -249,8 +249,8 @@ def run_formal(root: Path, rows: list[dict], g0: Path, liberty: Path, yosys: Pat
 def objective_value(row: dict, objective: str) -> float:
     ppa = row["ppa"]
     if objective == "DA":
-        return ppa["boundary_delay_ps"] * ppa["area_um2"]
-    return ppa["boundary_delay_ps"] ** 2 * ppa["area_um2"] * ppa["power_uw"]
+        return ppa["data_path_ps"] * ppa["area_um2"]
+    return ppa["data_path_ps"] ** 2 * ppa["area_um2"] * ppa["power_uw"]
 
 
 def select_best(rows: list[dict], method: str, objective: str, valid: dict[str, bool]) -> dict:

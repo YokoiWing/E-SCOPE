@@ -126,6 +126,10 @@ do not load a generic ObjectiveSpec: doing so would activate candidate families
 that were absent from the Table III trajectories. Only `epfl_adder/p0800`
 enables the generic objective engine with `objective_da.json`.
 
+The online policy evaluates external objectives with the Genus data-path delay
+reported in Table III. The separately recorded BUFx2 driver adjustment is kept
+for boundary auditing and is not added to the Table III objective value.
+
 After an Iterative continuation, ordinary points externally compare the
 completed round checkpoints. The adder follows its paper experiment: before
 external feedback, the controller freezes the union of its exact internal

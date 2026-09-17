@@ -1,6 +1,5 @@
 {
   "gate_threshold": 1000,
-  "d1_p1_use_timing_boundary": true,
   "active_instance_cap": 32,
   "timing_share_percent": 50,
   "area_share_percent": 25,

@@ -15,6 +15,7 @@ from policy import decide
 
 ROOT = Path(__file__).resolve().parent
 SMALL_CASES = ("c432", "epfl_dec", "epfl_ctrl", "c1908", "c880", "epfl_router")
+ITERATIVE_CONFIG_SHA256 = "0e9d50d4f4c95435bee9d7772906e196a8fe35cd5eef344e05e3c5e709ea0597"
 
 
 def digest(path: Path) -> str:
@@ -33,6 +34,9 @@ def main() -> None:
     points = manifest["points"]
     if len(points) != 28 or len({p["benchmark"] for p in points}) != 28:
         raise RuntimeError("manifest must contain 28 unique benchmarks")
+    iterative_config = ROOT / "runtime/config/iterative_search.json"
+    if digest(iterative_config) != ITERATIVE_CONFIG_SHA256:
+        raise RuntimeError("Iterative config does not match the historical RUN_MANIFEST")
 
     for point in points:
         path = ROOT / point["g0_path"]
