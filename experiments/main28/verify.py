@@ -16,6 +16,7 @@ from policy import decide
 ROOT = Path(__file__).resolve().parent
 SMALL_CASES = ("c432", "epfl_dec", "epfl_ctrl", "c1908", "c880", "epfl_router")
 ITERATIVE_CONFIG_SHA256 = "0e9d50d4f4c95435bee9d7772906e196a8fe35cd5eef344e05e3c5e709ea0597"
+TIMING_BOUNDARY_CONFIG_SHA256 = "c74fcf97016dffda862341a5fc4c14ce510f8d2f28742936b37a13665ceda4ca"
 
 
 def digest(path: Path) -> str:
@@ -37,6 +38,9 @@ def main() -> None:
     iterative_config = ROOT / "runtime/config/iterative_search.json"
     if digest(iterative_config) != ITERATIVE_CONFIG_SHA256:
         raise RuntimeError("Iterative config does not match the historical RUN_MANIFEST")
+    timing_boundary_config = ROOT / "runtime/config/timing_boundary_search.json"
+    if digest(timing_boundary_config) != TIMING_BOUNDARY_CONFIG_SHA256:
+        raise RuntimeError("Conquer/adder config does not match the historical record")
 
     for point in points:
         path = ROOT / point["g0_path"]

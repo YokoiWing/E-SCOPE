@@ -126,6 +126,12 @@ do not load a generic ObjectiveSpec: doing so would activate candidate families
 that were absent from the Table III trajectories. Only `epfl_adder/p0800`
 enables the generic objective engine with `objective_da.json`.
 
+Ordinary Iterative trajectories use `iterative_search.json`. Conquer's internal
+normal lane and the newer `epfl_adder/p0800` trajectory use
+`timing_boundary_search.json`, matching their separate historical receipts.
+The files differ only in the Phase-I timing-boundary switch, but sharing one
+configuration changes candidate identities on some benchmarks.
+
 The online policy evaluates external objectives with the Genus data-path delay
 reported in Table III. The separately recorded BUFx2 driver adjustment is kept
 for boundary auditing and is not added to the Table III objective value.

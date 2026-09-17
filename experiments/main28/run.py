@@ -272,7 +272,15 @@ def run_one(args) -> dict:
     dump(output / "PLAN.json", plan_record)
     labels = ("iterative", "conquer") if args.method in ("both", "online") else (args.method,)
     started = time.time()
-    processes = {label: launch(label, plan[label], output, env) for label in labels}
+    branch_env = {label: env.copy() for label in labels}
+    timing_boundary_config = str(RUNTIME / "config/timing_boundary_search.json")
+    if "conquer" in branch_env:
+        branch_env["conquer"]["EGG_V8_ULTRA_CONFIG"] = timing_boundary_config
+    if "iterative" in branch_env and point["benchmark"] == "epfl_adder":
+        branch_env["iterative"]["EGG_V8_ULTRA_CONFIG"] = timing_boundary_config
+    processes = {
+        label: launch(label, plan[label], output, branch_env[label]) for label in labels
+    }
     dump(output / "status.json", {"status": "running", "pids": {k: p.pid for k, p in processes.items()}})
     deadline = time.monotonic() + args.timeout
     try:

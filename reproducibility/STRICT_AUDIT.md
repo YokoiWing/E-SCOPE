@@ -16,7 +16,7 @@ from a saved CSV is recorded separately as **saved-evidence replay**.
 
 | Paper experiment | Saved-evidence replay | Fresh search entry | Strict fresh end-to-end reproduction |
 |---|---:|---:|---:|
-| Table III and Figure 6, 28-point main result | PASS | PASS | READY; 10/28 freshly checked |
+| Table III and Figure 6, 28-point main result | PASS | PASS | READY; 20/28 freshly checked |
 | Figure 7, `epfl_adder` Pareto fronts | PASS | PASS | READY; full queue not rerun |
 | Figure 8, selected-method ablation | PASS | PASS | READY; full queue not rerun |
 | Table IV, six-circuit case study | PASS | PARTIAL PASS | NO |
@@ -75,8 +75,8 @@ Yosys/ABC validation, applies the frozen policy, and stops or resumes Iterative.
 The historical native D2AP mode, Iterative configuration hash, and Table III
 data-path-delay objective were restored and guarded during verification.
 
-Ten non-hyper points were exercised with isolated branch CPU sets. All ten
-recovered the paper method and selected-netlist SHA. The remaining 18 points
+Twenty points were exercised with isolated branch CPU sets. All twenty
+recovered the paper method and selected-netlist SHA. The remaining eight points
 were not freshly rerun, so the full 28-point queue remains a ready execution
 path rather than a completed independent rerun. The policy is retrospective
 and in-sample, and `epfl_adder/p0800` remains a method-only transfer from the
@@ -133,7 +133,7 @@ without a fresh external run.
 
 ## Work needed for a strict claim
 
-1. Run the remaining 18 main points through the fresh online controller and
+1. Run the remaining eight main points through the fresh online controller and
    reconcile its worker count with the paper's one-core runtime statement.
 2. Resolve the Figure 8 adder-anchor version difference or state in the paper
    that the ablation uses the earlier G0.

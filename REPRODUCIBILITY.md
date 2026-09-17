@@ -59,13 +59,16 @@ Genus and formal validation, applies the frozen QoR--runtime policy, and either
 stops or resumes Iterative. Ordinary points use the historical native `d2ap`
 mode and historical Iterative configuration SHA-256
 `0e9d50d4f4c95435bee9d7772906e196a8fe35cd5eef344e05e3c5e709ea0597`;
-the current adder point alone uses its D×A ObjectiveSpec. External objectives
+Conquer's normal lane and the current adder point use the separately preserved
+timing-boundary configuration SHA-256
+`c74fcf97016dffda862341a5fc4c14ce510f8d2f28742936b37a13665ceda4ca`.
+The current adder point alone uses its D×A ObjectiveSpec. External objectives
 use the Table III data-path delay rather than adding the separately reported
 driver adjustment.
 
-Ten non-hyper points were exercised with isolated branch CPU sets after these
+Twenty points were exercised with isolated branch CPU sets after these
 settings were restored. Their method choices and paper-selected netlist hashes
-matched 10/10. The other 18 points have saved-evidence and policy replay but
+matched 20/20. The other eight points have saved-evidence and policy replay but
 have not been rerun through the fresh online controller during packaging. The
 wrapper defaults to two internal workers, while the PDF states a one-CPU-core
 runtime setup; saved Figure 6 timing therefore remains machine-specific and is
@@ -169,10 +172,10 @@ even when historical evidence is available.
 - Main-28 inputs and selected outputs: 28/28 G0 and 28/28 optimized netlist byte
   SHA-256 PASS. Six small policy cases and the full 28-method replay PASS.
 - Main-28 execution: isolated offline Cargo Release build of four binaries PASS;
-  the online stop/continue, Genus, and formal path completed on ten non-hyper
-  points with 10/10 paper method choices and selected-netlist identities after
+  the online stop/continue, Genus, and formal path completed on twenty points
+  with 20/20 paper method choices and selected-netlist identities after
   restoration of the historical objective, delay, and Iterative settings. The
-  remaining 18 points were not freshly rerun.
+  remaining eight points were not freshly rerun.
 - Figure 7 fresh-search entry: 20/20 G0 hashes PASS; 13 frozen anchors and all
   three objective specifications validate; a 39-task paper plan is generated.
   One p0800/D×A one-round Iterative smoke PASS. Its seven frozen candidates
