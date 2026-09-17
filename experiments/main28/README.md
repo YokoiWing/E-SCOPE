@@ -121,6 +121,11 @@ Iterative rounds. `runtime/config/` contains the search configurations;
 `runtime/assets/` contains the exact rewrite rules and the sanitized Liberty
 audit.
 
+The ordinary D²×A×P points use the historical native `d2ap` search mode. They
+do not load a generic ObjectiveSpec: doing so would activate candidate families
+that were absent from the Table III trajectories. Only `epfl_adder/p0800`
+enables the generic objective engine with `objective_da.json`.
+
 After an Iterative continuation, ordinary points externally compare the
 completed round checkpoints. The adder follows its paper experiment: before
 external feedback, the controller freezes the union of its exact internal

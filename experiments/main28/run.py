@@ -126,15 +126,20 @@ def clean_env(liberty: Path, binary_dir: Path, objective: Path, jobs: int) -> di
             "EGG_POWER_VOLTAGE_V": "0.7",
             "EGG_PI_TOGGLE_PER_CYCLE": "0.1",
             "EGG_INTERNAL_TRANSITION_FACTOR": "1.78",
-            "EGG_OBJECTIVE_ENGINE": "v8-pareto",
             "EGG_OBJECTIVE_LOCAL_REWRITE_CLOSURE": "0",
             "EGG_OBJECTIVE_MAPPED_WINDOW_REWRITE": "1",
             "EGG_OBJECTIVE_COMPATIBLE_CLOSURE": "1",
             "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
-            "EGG_OBJECTIVE_SPEC": str(objective),
         }
     )
     env.pop("EGG_EXPERIMENTAL_OBJECTIVE", None)
+    # The historical Table III trajectories used the native D2AP path.  The
+    # generic ObjectiveSpec engine enables additional candidate families and
+    # therefore is not trajectory-equivalent even with 2/1/1 exponents.  Only
+    # the replacement epfl_adder/p0800 experiment used the D x A spec.
+    if objective.name == "objective_da.json":
+        env["EGG_OBJECTIVE_ENGINE"] = "v8-pareto"
+        env["EGG_OBJECTIVE_SPEC"] = str(objective)
     return env
 
 
