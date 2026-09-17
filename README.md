@@ -108,9 +108,9 @@ fresh ratio calculation, and exact/paper Figure 8 generation.
 
 Genus, its license, and the main experiment's full-combinational Liberty file
 are not included. Internal estimates and external Genus
-measurements are distinct. The frozen scheduling policy was fitted on these six
-development circuits; the artifact does not establish untouched-case
-generalization or guarantee bit-identical repeated search. Existing third-party
+measurements are distinct. The frozen scheduling policy was fitted in sample
+on the saved main-experiment records; the artifact does not establish
+untouched-case generalization or guarantee bit-identical repeated search. Existing third-party
 license notices remain in the package. See [`THIRD_PARTY.md`](THIRD_PARTY.md)
 before redistribution; prepared benchmark rights and the license for the
 authors' E-SCOPE code remain unresolved.

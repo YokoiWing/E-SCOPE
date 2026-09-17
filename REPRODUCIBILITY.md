@@ -52,17 +52,24 @@ explicit. Saved wall times are machine-specific. The available records do not
 by themselves establish the paper's one-CPU-core wording because the search
 configuration also records internal resource workers.
 
-The packaged source contains the main algorithmic pieces described in Section
-III-E: topology candidate generation, conditional sizing, whole-circuit PPA,
-strict acceptance, cold reconstruction, and regional composition. The current
-`main28/run.py` wrapper is not yet a faithful replay of the paper's online
-controller. It starts both branches and waits for both searches to finish; the
-saved method policy is then replayed separately from historical externally
-measured features. It does not stop or continue Iterative at the moment
-Conquer finishes, and its Conquer command is search-only. The wrapper also
-defaults to two internal workers. These are execution-layer gaps, so the
-packaged evidence and method-choice replay must not be described as a fresh
-end-to-end reproduction of the Section III-E runtime controller.
+The packaged source and `main28/run.py` now implement the Section III-E online
+controller. Iterative and Conquer start from the same G0; at Conquer completion
+the controller freezes completed Iterative checkpoints, performs mapped-as-is
+Genus and formal validation, applies the frozen QoR--runtime policy, and either
+stops or resumes Iterative. Ordinary points use the historical native `d2ap`
+mode and historical Iterative configuration SHA-256
+`0e9d50d4f4c95435bee9d7772906e196a8fe35cd5eef344e05e3c5e709ea0597`;
+the current adder point alone uses its D×A ObjectiveSpec. External objectives
+use the Table III data-path delay rather than adding the separately reported
+driver adjustment.
+
+Ten non-hyper points were exercised with isolated branch CPU sets after these
+settings were restored. Their method choices and paper-selected netlist hashes
+matched 10/10. The other 18 points have saved-evidence and policy replay but
+have not been rerun through the fresh online controller during packaging. The
+wrapper defaults to two internal workers, while the PDF states a one-CPU-core
+runtime setup; saved Figure 6 timing therefore remains machine-specific and is
+not re-established by this partial fresh validation.
 
 ## Figure 7 Pareto experiment
 
@@ -162,8 +169,10 @@ even when historical evidence is available.
 - Main-28 inputs and selected outputs: 28/28 G0 and 28/28 optimized netlist byte
   SHA-256 PASS. Six small policy cases and the full 28-method replay PASS.
 - Main-28 execution: isolated offline Cargo Release build of four binaries PASS;
-  `epfl_ctrl` one-round Iterative smoke and Conquer search-only smoke PASS. The
-  smoke establishes a working fresh-search path, not paper-output identity.
+  the online stop/continue, Genus, and formal path completed on ten non-hyper
+  points with 10/10 paper method choices and selected-netlist identities after
+  restoration of the historical objective, delay, and Iterative settings. The
+  remaining 18 points were not freshly rerun.
 - Figure 7 fresh-search entry: 20/20 G0 hashes PASS; 13 frozen anchors and all
   three objective specifications validate; a 39-task paper plan is generated.
   One p0800/D×A one-round Iterative smoke PASS. Its seven frozen candidates

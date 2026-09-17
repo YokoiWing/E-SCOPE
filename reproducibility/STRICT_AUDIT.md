@@ -1,7 +1,10 @@
 # Strict reproducibility audit
 
-Audit date: 2026-09-16  
-Audited pushed commit: `5c47a662c84378bbf3e78ba17687c4c303cce811`
+Original audit date: 2026-09-16
+
+Original audited commit: `5c47a662c84378bbf3e78ba17687c4c303cce811`
+
+Post-audit closure status updated: 2026-09-17
 
 This audit uses **strict reproduction** to mean that a reader can start from
 the packaged experimental inputs, run the documented code, regenerate the
@@ -13,14 +16,15 @@ from a saved CSV is recorded separately as **saved-evidence replay**.
 
 | Paper experiment | Saved-evidence replay | Fresh search entry | Strict fresh end-to-end reproduction |
 |---|---:|---:|---:|
-| Table III and Figure 6, 28-point main result | PASS | PARTIAL PASS | NO |
+| Table III and Figure 6, 28-point main result | PASS | PASS | READY; 10/28 freshly checked |
 | Figure 7, `epfl_adder` Pareto fronts | PASS | PASS | READY; full queue not rerun |
 | Figure 8, selected-method ablation | PASS | PASS | READY; full queue not rerun |
 | Table IV, six-circuit case study | PASS | PARTIAL PASS | NO |
 
-The original audit found no complete fresh path. The Figure 7 row was closed
-afterward by adding a single search→freeze→Genus→formal→plot entry. Its full
-39-trajectory queue remains intentionally unlaunched during packaging.
+The original audit found no complete fresh path. Figure 7, Figure 8, and the
+main experiment were closed afterward with unified search→freeze→Genus→formal
+entries. Their expensive full queues remain intentionally unlaunched during
+packaging.
 
 ## Checks performed from a clean checkout
 
@@ -63,23 +67,24 @@ The full queues were deliberately not run. Cadence Genus was unavailable in
 the clean audit environment, and the commercial program is correctly absent
 from the repository.
 
-## Why the main experiment is not strict end-to-end
+## Main experiment closure added after the audit
 
-`experiments/main28/run.py` builds and runs both algorithm branches, but its
-fresh queue stops after search. It does not invoke a packaged mapped-as-is
-Genus/formal stage or generate the measured feature record consumed by
-`select`. The wrapper also waits for both branches to finish; it does not
-implement the Section III-E checkpoint decision when Conquer completes.
+`experiments/main28/run.py` now starts both branches from the same G0, freezes
+the Iterative checkpoint at Conquer completion, runs mapped-as-is Genus and
+Yosys/ABC validation, applies the frozen policy, and stops or resumes Iterative.
+The historical native D2AP mode, Iterative configuration hash, and Table III
+data-path-delay objective were restored and guarded during verification.
 
-The frozen policy is retrospective and in-sample. Its saved features include
-external PPA, while Figure 6 excludes that evaluation latency. Twenty-seven
-decisions are same-anchor replays. `epfl_adder/p0800` only transfers the
-Iterative method label from an older anchor.
+Ten non-hyper points were exercised with isolated branch CPU sets. All ten
+recovered the paper method and selected-netlist SHA. The remaining 18 points
+were not freshly rerun, so the full 28-point queue remains a ready execution
+path rather than a completed independent rerun. The policy is retrospective
+and in-sample, and `epfl_adder/p0800` remains a method-only transfer from the
+older adder anchor.
 
 The paper says one CPU core, while the public full-run entry defaults to two
-internal jobs. Saved runtime evidence therefore reproduces the plotted 1.46×
-number, but the current runner does not establish a fresh one-core runtime
-reproduction.
+internal jobs. Saved runtime evidence reproduces the plotted 1.46× number, but
+the partial fresh run does not establish a new one-core runtime measurement.
 
 ## Pareto experiment closure added after the audit
 
@@ -128,10 +133,9 @@ without a fresh external run.
 
 ## Work needed for a strict claim
 
-1. Extend the new tool-parameterized validation path to the main experiment.
-2. Implement the Section III-E online controller and reconcile its worker
-   count with the paper's one-core runtime statement.
-3. Resolve the Figure 8 adder-anchor version difference or state in the paper
+1. Run the remaining 18 main points through the fresh online controller and
+   reconcile its worker count with the paper's one-core runtime statement.
+2. Resolve the Figure 8 adder-anchor version difference or state in the paper
    that the ablation uses the earlier G0.
-4. For Table IV, either package the original pre-AIG preparation command and
+3. For Table IV, either package the original pre-AIG preparation command and
    input or define the prepared AIG as the experiment's public starting point.
