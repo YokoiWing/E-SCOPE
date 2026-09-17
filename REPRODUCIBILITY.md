@@ -123,6 +123,16 @@ Phase-I drive expansion are executed inside that selected branch. The plan has
 current main anchor; `epfl_adder` retains the older `t0_0.95x` Figure 8 anchor,
 which selected Iterative just as the current p0800 point does.
 
+The same entry now provides a resumable `reproduce` command for all 84
+ablations. It freezes Iterative checkpoints and Conquer finalist pools before
+external evaluation, performs mapped-as-is Genus and Yosys/ABC validation,
+selects the formal-clean result under the saved policy, and generates fresh
+CSV plus exact and paper-rendered Figure 8 files. A real three-mode c432 run
+completed 13/13 Genus evaluations and 12/12 non-G0 formal checks. Historical
+complete-tree staging and policy replay selected every one of the 79 saved
+nonblank result SHAs; five historical SHA fields were blank and cannot be
+identity-checked.
+
 ## Fresh optimization
 
 The case-study component READMEs describe their fresh-run entry points. The
@@ -137,11 +147,11 @@ mapped-as-is evaluation.
 
 Cadence Genus and its license are not distributed. A licensed local
 installation can be connected to the packaged mapped-as-is Tcl flow described
-in `case_study/evaluation/README.md`. Figure 7 instead accepts the local Genus,
-Yosys, and ABC executable paths through
-`experiments/pareto_adder/run.py reproduce`, then binds every fresh result to
-its netlist SHA-256. Saved `PASS` records describe historical runs. A skipped
-local rerun remains `SKIPPED`, even when historical evidence is available.
+in `case_study/evaluation/README.md`. Figures 7 and 8 instead accept local
+Genus, Yosys, and ABC executable paths through their respective `reproduce`
+commands, then bind every fresh result to its netlist SHA-256. Saved `PASS`
+records describe historical runs. A skipped local rerun remains `SKIPPED`,
+even when historical evidence is available.
 
 ## Validation performed during packaging
 
@@ -162,8 +172,10 @@ local rerun remains `SKIPPED`, even when historical evidence is available.
   reproduced the exact ordered 86/113/64 SHA lists, and the parser matched
   263/263 historical candidate reports. The complete queue was not run.
 - Figure 8 fresh-search entry: 28/28 selected methods match Table III; all G0
-  hashes PASS; the 84-task selected-method plan is generated. Full fresh
-  ablation search was not run during packaging.
+  hashes PASS; the 84-task selected-method plan is generated. Historical
+  complete-tree selection replay matched 79/79 saved nonblank result SHAs. A real
+  c432 three-mode search completed 13/13 Genus and 12/12 formal checks and
+  generated both figures. The full 84-task queue was not run during packaging.
 - AreaPMO: isolated Release build PASS; `usb_phy` real 10-round smoke and CEC
   PASS (2.071 s native wall on this machine).
 - Iterative: isolated offline Cargo Release build and `cargo fmt --check` PASS;

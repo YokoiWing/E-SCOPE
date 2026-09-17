@@ -113,6 +113,7 @@ def evidence(args) -> None:
     for point in points():
         benchmark = point["benchmark"]
         actual = sha256(g0_path(point))
+        full_reference = (HERE / point["full_reference_path"]).resolve()
         checks.append({
             "benchmark": benchmark,
             "method": point["selected_method"],
@@ -120,8 +121,16 @@ def evidence(args) -> None:
             "anchor_matches_main": point["anchor"] == main[benchmark]["anchor"],
             "evidence_method_matches": point["selected_method"] == evidence_rows[benchmark]["selected_flow"],
             "g0_hash_matches": actual == point["g0_sha256"],
+            "full_reference_hash_matches": full_reference.is_file()
+            and sha256(full_reference) == point["full_reference_sha256"],
         })
-    if len(checks) != 28 or any(not row["method_matches_main"] or not row["evidence_method_matches"] or not row["g0_hash_matches"] for row in checks):
+    if len(checks) != 28 or any(
+        not row["method_matches_main"]
+        or not row["evidence_method_matches"]
+        or not row["g0_hash_matches"]
+        or not row["full_reference_hash_matches"]
+        for row in checks
+    ):
         raise RuntimeError("ablation selection or G0 verification failed")
     anchor_mismatches = [row["benchmark"] for row in checks if not row["anchor_matches_main"]]
     if anchor_mismatches != ["epfl_adder"]:
@@ -133,6 +142,7 @@ def evidence(args) -> None:
         "status": "PASS", "rows": 28,
         "method_counts": load(MANIFEST)["method_counts"],
         "selection_matches_main": 28,
+        "full_reference_hashes": 28,
         "same_anchor_as_current_main": 27,
         "method_only_anchor_transfer": ["epfl_adder"],
         "figure8": load(output / "figure8_recomputed.json"),
@@ -249,6 +259,81 @@ def run_one(args) -> None:
     print(json.dumps(result, indent=2))
 
 
+def run_all(args) -> None:
+    root = args.output.resolve()
+    root.mkdir(parents=True, exist_ok=True)
+    tasks = [(point, mode) for point in points() for mode in MODES]
+    completed, failures = [], []
+    for ordinal, (point, mode) in enumerate(tasks, 1):
+        output = root / point["benchmark"] / mode
+        status_path = output / "status.json"
+        if status_path.is_file() and load(status_path).get("status") in {
+            "search_complete", "candidate_pool_complete"
+        }:
+            completed.append({"benchmark": point["benchmark"], "mode": mode, "resumed": True})
+            continue
+        if output.exists():
+            failures.append({"benchmark": point["benchmark"], "mode": mode,
+                             "error": f"incomplete existing output: {output}"})
+            if not args.continue_on_failure:
+                break
+            continue
+        command = cli_command(point, mode, output, args.liberty.resolve(),
+                              args.bin_dir.resolve(), args.jobs, args.timeout)
+        result = subprocess.run(command, cwd=REPO)
+        if result.returncode:
+            failures.append({"benchmark": point["benchmark"], "mode": mode,
+                             "returncode": result.returncode})
+            if not args.continue_on_failure:
+                break
+        else:
+            completed.append({"benchmark": point["benchmark"], "mode": mode,
+                              "resumed": False, "ordinal": ordinal})
+        dump(root / "queue_status.json", {
+            "schema": "escope-selected-method-ablation-queue-v1",
+            "total": len(tasks), "completed": completed, "failures": failures,
+        })
+    result = {"status": "PASS" if len(completed) == len(tasks) and not failures else "INCOMPLETE",
+              "total": len(tasks), "completed_count": len(completed), "failures": failures}
+    dump(root / "queue_status.json", result)
+    if result["status"] != "PASS":
+        raise RuntimeError(f"ablation queue incomplete: {len(completed)}/{len(tasks)}")
+    print(json.dumps(result, indent=2))
+
+
+def finalize_fresh(args) -> None:
+    from pipeline import finalize
+    result = finalize(args.output, args.liberty, args.genus_bin, args.yosys_bin,
+                      args.abc_bin, args.genus_chunk, args.genus_timeout,
+                      args.formal_jobs, args.formal_timeout, args.yosys_datdir)
+    print(json.dumps(result, indent=2))
+
+
+def reproduce(args) -> None:
+    run_all(args)
+    finalize_fresh(args)
+
+
+def add_search_arguments(p) -> None:
+    p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--liberty", type=Path, required=True)
+    p.add_argument("--bin-dir", type=Path, required=True)
+    p.add_argument("--jobs", type=int, default=2)
+    p.add_argument("--timeout", type=int, default=43200)
+    p.add_argument("--continue-on-failure", action="store_true")
+
+
+def add_validation_arguments(p) -> None:
+    p.add_argument("--genus-bin", type=Path, required=True)
+    p.add_argument("--yosys-bin", type=Path, required=True)
+    p.add_argument("--abc-bin", type=Path, required=True)
+    p.add_argument("--yosys-datdir", type=Path)
+    p.add_argument("--genus-chunk", type=int, default=60)
+    p.add_argument("--genus-timeout", type=int, default=7200)
+    p.add_argument("--formal-jobs", type=int, default=2)
+    p.add_argument("--formal-timeout", type=int, default=1800)
+
+
 def build(args) -> None:
     subprocess.run([sys.executable, str(MAIN28 / "run.py"), "build", "--target-dir", str(args.target_dir.resolve())], cwd=REPO, check=True)
 
@@ -260,11 +345,17 @@ def parser() -> argparse.ArgumentParser:
     p = sub.add_parser("build"); p.add_argument("--target-dir", type=Path, required=True); p.set_defaults(func=build)
     p = sub.add_parser("plan"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=plan)
     p = sub.add_parser("run-one"); p.add_argument("--benchmark", required=True); p.add_argument("--mode", choices=MODES, required=True); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=run_one)
+    p = sub.add_parser("run-all", help="run or resume all 84 selected-method ablations"); add_search_arguments(p); p.set_defaults(func=run_all)
+    p = sub.add_parser("finalize", help="stage, run Genus/formal, and generate fresh Figure 8"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); add_validation_arguments(p); p.set_defaults(func=finalize_fresh)
+    p = sub.add_parser("reproduce", help="run all searches, validate them, and generate fresh Figure 8"); add_search_arguments(p); add_validation_arguments(p); p.set_defaults(func=reproduce)
     return value
 
 
 def main() -> None:
     args = parser().parse_args()
+    for name in ("jobs", "timeout", "genus_chunk", "genus_timeout", "formal_jobs", "formal_timeout"):
+        if hasattr(args, name) and getattr(args, name) <= 0:
+            raise SystemExit(f"--{name.replace('_', '-')} must be positive")
     try:
         args.func(args)
     except KeyboardInterrupt:

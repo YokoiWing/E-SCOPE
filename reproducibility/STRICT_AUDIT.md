@@ -15,7 +15,7 @@ from a saved CSV is recorded separately as **saved-evidence replay**.
 |---|---:|---:|---:|
 | Table III and Figure 6, 28-point main result | PASS | PARTIAL PASS | NO |
 | Figure 7, `epfl_adder` Pareto fronts | PASS | PASS | READY; full queue not rerun |
-| Figure 8, selected-method ablation | PASS | PARTIAL PASS | NO |
+| Figure 8, selected-method ablation | PASS | PASS | READY; full queue not rerun |
 | Table IV, six-circuit case study | PASS | PARTIAL PASS | NO |
 
 The original audit found no complete fresh path. The Figure 7 row was closed
@@ -96,21 +96,21 @@ Genus, all seven candidates passed legality/cold-read/whole-network CEC, and
 the fresh figure was generated. This validates the full code path without
 claiming that the expensive 39 trajectories were rerun during packaging.
 
-## Why the ablation is not strict end-to-end
+## Ablation experiment closure added after the audit
 
-The runner enforces the main experiment's 11 Iterative / 17 Conquer method
-selection and exposes all three ablation modes. Its plan contains 84 tasks,
-but there is no resumable `run-all` command. More substantively, Conquer
-Phase-I-only ends with a candidate pool and a prose instruction to externally
-select the pre-sizing member paired with the full winner. That selection,
-mapped-as-is evaluation, and formal verification are not automated by the
-release.
+`experiments/ablation/run.py reproduce` now runs or resumes all 84 tasks,
+freezes Iterative checkpoints and Conquer finalist pools, automatically pairs
+the Conquer Phase-I implementation, invokes mapped-as-is Genus and Yosys/ABC
+validation, selects formal-clean outputs, and generates fresh Figure 8
+CSV/PNG/SVG/PDF files.
 
-The compact evidence does not include every ablation netlist and formal
-receipt. Figure 8 also uses the older `epfl_adder/t0_0.95x` G0, whereas the
-current Table III uses `epfl_adder/p0800`; only the chosen method agrees. One
-paper bar for `epfl_i2c` is clipped to `1.035` although the exact ratio is
-`1.0708307702363498`; the aggregate text uses the exact values.
+Historical complete-tree staging and policy replay selected all 79 nonblank
+result SHAs in the saved Figure 8 table. A real fresh c432 three-mode run then
+completed 13/13 Genus points and 12/12 non-G0 formal checks; its selected Phase-I-only and
+Phase-II-only SHAs exactly matched the saved experiment. The expensive full
+84-task queue was not rerun. Figure 8 still intentionally uses the older
+`epfl_adder/t0_0.95x` G0/full reference, and the exact/paper plot split records
+the `epfl_i2c` display clipping instead of hiding it.
 
 ## Why the case study is not strict end-to-end
 
@@ -128,13 +128,10 @@ without a fresh external run.
 
 ## Work needed for a strict claim
 
-1. Extend the new tool-parameterized Figure 7 validation path to the main and
-   ablation experiments.
+1. Extend the new tool-parameterized validation path to the main experiment.
 2. Implement the Section III-E online controller and reconcile its worker
    count with the paper's one-core runtime statement.
-3. Complete the Conquer Phase-I ablation pairing/selection path, add a
-   resumable 84-task queue, and package fresh-output formal bindings.
-4. Resolve the Figure 8 adder-anchor version difference or state in the paper
+3. Resolve the Figure 8 adder-anchor version difference or state in the paper
    that the ablation uses the earlier G0.
-5. For Table IV, either package the original pre-AIG preparation command and
+4. For Table IV, either package the original pre-AIG preparation command and
    input or define the prepared AIG as the experiment's public starting point.

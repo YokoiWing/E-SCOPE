@@ -154,26 +154,28 @@
     {
       "id": "figure-8-ablation",
       "paper_location": "Figure 8",
-      "status": "evidence_replay_and_selected_method_fresh_entry_verified",
+      "status": "evidence_replay_and_fresh_end_to_end_entry_verified",
       "benchmarks": 28,
       "selection": "each benchmark uses the Iterative or Conquer branch frozen by the Table III main-result selection",
       "raw_ppa": "evidence/figure8/selected_flow_ablation_original_precision.csv",
       "evidence_replay": "python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot exact",
       "paper_figure_replay": "python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot paper",
-      "external_validation": "saved mapped-as-is Genus evidence; no Genus is run by the replay",
-      "formal_status": "referenced historical outputs only; formal receipts are not yet included in this compact Figure 8 layer",
+      "external_validation": "fresh reproduce path runs mapped-as-is Genus and SHA-bound Yosys/ABC validation; saved evidence replay runs neither",
+      "formal_status": "fresh outputs require legality, cold-read, and whole-network CEC PASS before Figure 8 selection",
       "discrepancy": "the current paper plotting script clips epfl_i2c full/Phase-II-only from 1.0708307702363498 to 1.035; aggregate 4.6% text uses the exact ratios",
       "missing_or_limited": [
-        "Figure 8's source selection still uses the older epfl_adder t0_0.95x point, while current PDF Table III and Figure 6 use p0800.",
-        "The compact evidence table records output SHA-256 values but does not yet package every ablation netlist and formal receipt.",
-        "Fresh 28-point optimization is intentionally not run during packaging."
+        "Figure 8 intentionally uses the older epfl_adder t0_0.95x G0/full reference, while current Table III and Figure 6 use p0800.",
+        "Five rows in the historical compact evidence omit one or both full/Phase-I SHA fields; fresh runs produce complete SHA-bound receipts.",
+        "The expensive fresh full 84-task queue was intentionally not run during packaging.",
+        "The exact Liberty and Genus, Yosys, and Berkeley ABC executables must be supplied by the user."
       ],
       "experiment_manifest": "experiments/ablation/manifest.json",
       "runner": "experiments/ablation/run.py",
       "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs and experiments/main28/runtime/scripts/run_conquer_recall_v3.py",
       "method_selection": "11 Iterative and 17 Conquer, inherited from Table III before considering ablation results",
-      "optimization_replay": "python3 experiments/ablation/run.py run-one; see experiments/ablation/README.md",
-      "fresh_validation": "28/28 method labels and G0 hashes PASS; 84-task plan generated; full fresh search not run"
+      "optimization_replay": "python3 experiments/ablation/run.py reproduce; see experiments/ablation/README.md",
+      "fresh_validation": "Historical complete-tree policy replay selected the exact 79/79 nonblank saved result SHAs; real c432 three-mode closure completed 13/13 Genus, 12/12 formal, and fresh exact/paper figures; full 84-task queue not run",
+      "fresh_pipeline": "84 selected-method searches -> pre-Genus checkpoint/finalist freeze -> mapped-as-is Genus -> Yosys/ABC legality and equivalence -> policy selection -> fresh Figure 8 CSV/PNG/SVG/PDF"
     }
   ]
 }

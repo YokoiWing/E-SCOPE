@@ -102,6 +102,10 @@ python3 experiments/ablation/run.py plan \
   --output /tmp/escope-ablation-plan.json
 ```
 
+The ablation README also documents one `reproduce` command connecting all 84
+searches, checkpoint/finalist freezing, mapped-as-is Genus, Yosys/ABC checks,
+fresh ratio calculation, and exact/paper Figure 8 generation.
+
 Genus, its license, and the main experiment's full-combinational Liberty file
 are not included. Internal estimates and external Genus
 measurements are distinct. The frozen scheduling policy was fitted on these six

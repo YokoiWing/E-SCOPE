@@ -27,7 +27,8 @@ For a Conquer `phase1-only` fresh run, the entry generates and freezes the
 Conquer candidate pool. External evaluation must select the full candidate,
 after which the paired pre-sizing implementation is the Phase-I-only result.
 For Conquer `no-pi-drive-expansion`, the same frozen policy runs with the
-drive-expansion filter enabled. The entry stops before Genus and formal checks.
+drive-expansion filter enabled. All finalists are frozen before Genus; the
+formal-clean minimum external D²AP result is selected with G0 fallback.
 
 ## Saved evidence
 
@@ -79,3 +80,55 @@ SHA-256 is
 `configs/` contains the four frozen Conquer policy classes. The shared Rust and
 Python implementation remains under `experiments/main28/` to avoid duplicating
 the source tree.
+
+## Complete fresh Figure 8 reproduction
+
+The unified `reproduce` command performs the complete experiment:
+
+1. run or resume the 84 selected-method ablation searches;
+2. freeze every Iterative checkpoint and every Conquer no-drive finalist;
+3. pair each Conquer Phase-I-only run with the sizing-free implementation of
+   the candidate selected by the frozen main-method configuration;
+4. evaluate the 28 G0, 28 full-method references, and all frozen ablation
+   candidates with mapped-as-is Genus;
+5. run Yosys legality/cold-read checks and whole-network ABC CEC;
+6. select the externally best formal-clean result under the documented policy;
+7. calculate fresh D²AP ratios and write exact and paper-rendered Figure 8.
+
+The full-method netlists are SHA-fixed reference inputs for the ablation, just
+as G0 is a fixed reference input. Twenty-seven reuse the packaged Table III
+outputs. Figure 8's older `epfl_adder/t0_0.95x` reference is included locally
+under `full_reference/`.
+
+```bash
+python3 experiments/ablation/run.py reproduce \
+  --output /data/escope-ablation-fresh \
+  --liberty /path/to/asap7sc6t_FULL_COMB_LVT_TT_nldm_211010.lib \
+  --bin-dir /tmp/escope-ablation-build/release \
+  --genus-bin /path/to/genus \
+  --yosys-bin /path/to/yosys \
+  --abc-bin /path/to/abc
+```
+
+Genus, Yosys, ABC, and the exact full-combinational Liberty are supplied by the
+user. Add `--yosys-datdir /path/to/share/yosys` when required by a local Yosys
+installation. Search, Genus, and formal stages resume from SHA-bound receipts.
+For an already completed 84-task search root, use `finalize` with the same
+Liberty and tool arguments.
+
+The principal fresh outputs are:
+
+```text
+/data/escope-ablation-fresh/frozen/FREEZE_RECEIPT.json
+/data/escope-ablation-fresh/external/results.json
+/data/escope-ablation-fresh/formal/results.json
+/data/escope-ablation-fresh/selection/results.json
+/data/escope-ablation-fresh/figure8/figure8_data.csv
+/data/escope-ablation-fresh/figure8/figure8_exact_values.{png,svg,pdf}
+/data/escope-ablation-fresh/figure8/figure8_paper_values.{png,svg,pdf}
+/data/escope-ablation-fresh/REPRODUCTION.json
+```
+
+The exact plot uses every measured value. The paper-rendered plot preserves the
+documented `epfl_i2c` display clipping while aggregate statistics always use
+the exact value.
