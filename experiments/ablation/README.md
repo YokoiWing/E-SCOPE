@@ -38,9 +38,8 @@ python3 experiments/ablation/run.py evidence \
 ```
 
 This checks that all 28 method labels equal the Table III selections, verifies
-the G0 hashes, recomputes the three geometric means, and redraws Figure 8. The
-paper plot clips one `epfl_i2c` Phase-II bar to `1.035`; `--plot exact` keeps
-the measured `1.0708307702363498` ratio.
+the G0 hashes, recomputes the three geometric means, and redraws Figure 8 from
+the measured ratios. The `epfl_i2c` Phase-II bar is `1.0708307702363498`.
 
 The updated paper-rendered Figure 8 is packaged as
 `evidence/figure8/figure8_paper_values.{png,svg,pdf}`.
@@ -134,6 +133,5 @@ The principal fresh outputs are:
 /data/escope-ablation-fresh/REPRODUCTION.json
 ```
 
-The exact plot uses every measured value. The paper-rendered plot preserves the
-documented `epfl_i2c` display clipping while aggregate statistics always use
-the exact value.
+Both plot modes use every measured value; they differ only in their output
+filename convention.

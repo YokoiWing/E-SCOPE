@@ -132,12 +132,9 @@ python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot exact
 ```
 
 With the p0800 adder and current three-round sqrt updates, the exact ratios are
-13.58%, 4.57%, and 0.70% for the three controls. The current paper plotting
-script clips the `epfl_i2c`
-full/Phase-II-only ratio from `1.0708307702363498` to `1.035`. This affects one
-displayed bar and the plot-generated CSV, while the aggregate statement agrees
-with the unclipped evidence. Use `--plot paper` to reproduce that documented
-display choice; use `--plot exact` for the unmodified evidence.
+13.58%, 4.57%, and 0.70% for the three controls. The Figure 8 source now plots
+the measured `epfl_i2c` full/Phase-II-only ratio of `1.0708307702363498`
+directly; both plot modes use unmodified evidence.
 
 Fresh ablation code is under
 [`experiments/ablation/`](experiments/ablation/README.md). It verifies the

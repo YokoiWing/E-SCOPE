@@ -379,8 +379,8 @@ def write_figure(root: Path) -> dict:
             "full_over_phase_i_only": phase_i_ratio,
             "full_over_phase_ii_only_exact": phase_ii_ratio,
             "full_over_without_drive": no_drive_ratio,
-            "figure8_phase_ii_bar_value": 1.035 if entry["benchmark"] == "epfl_i2c" else phase_ii_ratio,
-            "figure8_phase_ii_bar_clipped": entry["benchmark"] == "epfl_i2c",
+            "figure8_phase_ii_bar_value": phase_ii_ratio,
+            "figure8_phase_ii_bar_clipped": False,
             "full_sha256": entry["full"]["sha256"],
             "phase_i_sha256": entry["modes"]["phase1-only"]["sha256"],
             "phase_ii_sha256": entry["modes"]["phase2-only"]["sha256"],
@@ -423,7 +423,7 @@ def write_figure(root: Path) -> dict:
         handles = [axis.bar(x + offset, [float(row[key]) for row in rows], width=width,
                             label=label, color=color, edgecolor="#646A73", linewidth=0.72)
                    for key, label, color, offset in series]
-        baseline = axis.axhline(1.005, color="#9A0000", linewidth=3, linestyle="--")
+        baseline = axis.axhline(1.0, color="#9A0000", linewidth=3, linestyle="--")
         axis.set_xlim(-0.55, x[-1] + 0.55); axis.set_ylim(0.5, 1.16)
         axis.set_ylabel(r"Full $D^2AP$ / ablated $D^2AP$")
         axis.set_xticks(x)

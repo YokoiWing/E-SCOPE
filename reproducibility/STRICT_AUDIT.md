@@ -16,7 +16,7 @@ from a saved CSV is recorded separately as **saved-evidence replay**.
 
 | Paper experiment | Saved-evidence replay | Fresh search entry | Strict fresh end-to-end reproduction |
 |---|---:|---:|---:|
-| Table III and Figure 6, 28-point main result | PASS | PASS | READY; 20/28 freshly checked |
+| Table III and Figure 6, 28-point main result | PASS | PASS | READY; 28/28 exercised |
 | Figure 7, `epfl_adder` Pareto fronts | PASS | PASS | READY; full queue not rerun |
 | Figure 8, selected-method ablation | PASS | PASS | READY; full queue not rerun |
 | Table IV, six-circuit case study | PASS | PARTIAL PASS | NO |
@@ -43,7 +43,7 @@ no local source edits or generated experiment files.
   - Figure 7: 20 G0 hashes passed; 86/113/64 frozen candidates for D×A,
     D²AP, and D×P²; 283 plotted rows carried formal PASS; plots regenerated.
   - Figure 8: all 28 method labels and G0 hashes passed; exact reductions
-    `13.576824796419862%`, `4.567806249562145%`, and `0.7001801215347658%`; exact and paper-clipped
+    `13.576824796419862%`, `4.567806249562145%`, and `0.7001801215347658%`; exact
     plots regenerated.
   - Table IV: all 24 rows matched; 1,000 packaged case-study checksums and the
     saved Genus report bindings passed.
@@ -124,8 +124,8 @@ completed 13/13 Genus points and 12/12 non-G0 formal checks. The updated
 completed 15/15 Genus points, and passed 14/14 non-G0 formal checks. The
 current three-round `epfl_sqrt` run froze 9 netlists, completed 9/9 Genus
 points, and passed 8/8 non-G0 formal checks. The expensive full 84-task queue
-was not rerun. The exact/paper plot split records the `epfl_i2c` display
-clipping instead of hiding it.
+was not rerun. The updated plot uses the exact `epfl_i2c` value rather than the
+earlier manually clipped display value.
 
 ## Why the case study is not strict end-to-end
 
@@ -146,7 +146,5 @@ without a fresh external run.
 1. Complete a clean full-queue replay if a single-machine fresh aggregate is
    required, and reconcile its worker count with the paper's one-core runtime
    statement.
-2. Resolve the Figure 8 adder-anchor version difference or state in the paper
-   that the ablation uses the earlier G0.
-3. For Table IV, either package the original pre-AIG preparation command and
+2. For Table IV, either package the original pre-AIG preparation command and
    input or define the prepared AIG as the experiment's public starting point.

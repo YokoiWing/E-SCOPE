@@ -160,7 +160,7 @@
       "paper_figure_replay": "python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot paper",
       "external_validation": "fresh reproduce path runs mapped-as-is Genus and SHA-bound Yosys/ABC validation; saved evidence replay runs neither",
       "formal_status": "fresh outputs require legality, cold-read, and whole-network CEC PASS before Figure 8 selection",
-      "discrepancy": "the current paper plotting script clips epfl_i2c full/Phase-II-only from 1.0708307702363498 to 1.035; aggregate 4.6% text uses the exact ratios",
+      "discrepancy": null,
       "missing_or_limited": [
         "The expensive full 84-task queue was not rerun; current adder and sqrt rows were freshly rerun end to end.",
         "Five rows in the historical compact evidence omit one or both full/Phase-I SHA fields; fresh runs produce complete SHA-bound receipts.",

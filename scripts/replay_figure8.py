@@ -70,7 +70,7 @@ def plot(rows, output_dir, paper_values):
                 linewidth=0.72,
             )
         )
-    baseline = ax.axhline(1.005, color="#9A0000", linewidth=3, linestyle="--")
+    baseline = ax.axhline(1.0, color="#9A0000", linewidth=3, linestyle="--")
     ax.set_xlim(-0.55, x[-1] + 0.55)
     ax.set_ylim(0.5, 1.16)
     ax.set_ylabel(r"Full $D^2AP$ / ablated $D^2AP$")
@@ -104,7 +104,7 @@ def main():
         "--plot",
         choices=("none", "exact", "paper"),
         default="none",
-        help="paper reproduces the documented clipped bar; exact uses original ratios",
+        help="draw the exact evidence using the requested output filename convention",
     )
     args = parser.parse_args()
     rows = list(csv.DictReader(EVIDENCE.open()))
