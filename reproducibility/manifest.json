@@ -71,7 +71,7 @@
     {
       "id": "table-iii-main28",
       "paper_location": "Table III",
-      "status": "evidence_replay_and_fresh_search_entry_verified_with_adder_version_replacement",
+      "status": "evidence_replay_and_fresh_search_entry_verified_with_current_result_updates",
       "benchmarks": 28,
       "objective": "D^2 x A x P",
       "raw_ppa": "evidence/main28/table_iii_figure6_original_precision.csv",
@@ -81,11 +81,11 @@
       "method_policy": "experiments/main28/policy.py",
       "small_policy_verification": "python3 experiments/main28/verify.py --small",
       "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
-      "aggregate": "D2AP geometric-mean ratio 0.8240760907489141 (17.592390925108592% reduction)",
-      "selection_boundary": "All 28 rows use D2AP; epfl_adder/p0800 is the fresh native-D2AP Iterative R5 result.",
+      "aggregate": "D2AP geometric-mean ratio 0.8239835782983282 (17.601642170167175% reduction)",
+      "selection_boundary": "All 28 rows use D2AP; epfl_adder/p0800 is the fresh native-D2AP Iterative R5 result and epfl_sqrt uses the fresh native-D2AP Iterative R3 result.",
       "policy_boundary": "The retrospective in-sample policy matches all 28 method labels on the same anchors. Saved policy observations use external PPA whose latency is excluded from search-only runtime.",
       "missing_or_limited": [
-        "Fresh 28-point optimization and Genus evaluation are intentionally not run during packaging.",
+        "All 28 points were exercised with current objectives and round caps, but runtime-sensitive method labels and netlist identities are not claimed bit-identical across machines.",
         "The packaged source builds and passed small fresh-search smoke tests, but rebuilt executables are not claimed byte-identical to historical canonical binaries.",
         "The main full-combinational Liberty and commercial Genus installation must be supplied by the user."
       ],
@@ -162,7 +162,7 @@
       "formal_status": "fresh outputs require legality, cold-read, and whole-network CEC PASS before Figure 8 selection",
       "discrepancy": "the current paper plotting script clips epfl_i2c full/Phase-II-only from 1.0708307702363498 to 1.035; aggregate 4.6% text uses the exact ratios",
       "missing_or_limited": [
-        "Figure 8 intentionally uses the older epfl_adder t0_0.95x G0/full reference, while current Table III and Figure 6 use p0800.",
+        "The saved epfl_sqrt ablation branches remain paired with their earlier full reference; the later Table III R3 result is kept separate.",
         "Five rows in the historical compact evidence omit one or both full/Phase-I SHA fields; fresh runs produce complete SHA-bound receipts.",
         "The expensive fresh full 84-task queue was intentionally not run during packaging.",
         "The exact Liberty and Genus, Yosys, and Berkeley ABC executables must be supplied by the user."
@@ -172,7 +172,7 @@
       "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs and experiments/main28/runtime/scripts/run_conquer_recall_v3.py",
       "method_selection": "11 Iterative and 17 Conquer, inherited from Table III before considering ablation results",
       "optimization_replay": "python3 experiments/ablation/run.py reproduce; see experiments/ablation/README.md",
-      "fresh_validation": "Historical complete-tree policy replay selected the exact 79/79 nonblank saved result SHAs; real c432 three-mode closure completed 13/13 Genus, 12/12 formal, and fresh exact/paper figures; full 84-task queue not run",
+      "fresh_validation": "Historical complete-tree policy replay selected the exact 79/79 nonblank saved result SHAs; real c432 closure completed 13/13 Genus and 12/12 formal; fresh epfl_adder/p0800 closure completed 15/15 Genus and 14/14 formal; full 84-task queue not run",
       "fresh_pipeline": "84 selected-method searches -> pre-Genus checkpoint/finalist freeze -> mapped-as-is Genus -> Yosys/ABC legality and equivalence -> policy selection -> fresh Figure 8 CSV/PNG/SVG/PDF"
     }
   ]

@@ -37,17 +37,18 @@ from its fresh native-D²AP rerun. The thresholds were fitted in sample, and the
 features use external PPA while the reported search runtime excludes that
 evaluation latency.
 
-Recompute all 28 D²AP ratios, the 17.59% geometric-mean reduction, the 1.46×
+Recompute all 28 D²AP ratios, the 17.60% geometric-mean reduction, the 1.46×
 runtime ratio, and redraw the runtime figure:
 
 ```bash
 python3 scripts/replay_main28.py --output-dir reproduced/main28
 ```
 
-The current PDF uses the `adder` p0800 point: 1942 G0 gates, 301.06 s Genus,
-and 341.932352107 s E-SCOPE. The bottom selected table and the current Figure 8 input
-still use the older `t0_0.95x` adder point. The replay CSV makes this replacement
-explicit. Saved wall times are machine-specific. The available records do not
+The current main result and Figure 8 both use the `adder` p0800 point: 1942 G0
+gates, 301.06 s Genus, and 341.932352107 s E-SCOPE for the main run. The fresh
+three-round `sqrt` R3 result is also packaged; Figure 6 retains its saved
+machine runtime, while the fresh runtime is recorded separately in its receipt.
+Saved wall times are machine-specific. The available records do not
 by themselves establish the paper's one-CPU-core wording because the search
 configuration also records internal resource workers.
 
@@ -130,8 +131,8 @@ original-precision evidence:
 python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot exact
 ```
 
-The exact ratios reproduce the paper's approximately 13.4% and 4.6% aggregate
-statements. The current paper plotting script clips the `epfl_i2c`
+With the p0800 adder update, the exact ratios are 13.54%, 4.56%, and 0.69% for
+the three controls. The current paper plotting script clips the `epfl_i2c`
 full/Phase-II-only ratio from `1.0708307702363498` to `1.035`. This affects one
 displayed bar and the plot-generated CSV, while the aggregate statement agrees
 with the unclipped evidence. Use `--plot paper` to reproduce that documented
@@ -142,9 +143,9 @@ Fresh ablation code is under
 Figure 8 method label against the main-result manifest before running: 11 rows
 use Iterative and 17 use Conquer. Phase-I-only, Phase-II-only, and removal of
 Phase-I drive expansion are executed inside that selected branch. The plan has
-84 tasks and cannot override the selected method. Twenty-seven rows share the
-current main anchor; `epfl_adder` retains the older `t0_0.95x` Figure 8 anchor,
-which selected Iterative just as the current p0800 point does.
+84 tasks and cannot override the selected method. All 28 rows share the current
+main anchor. The p0800 adder update completed 15/15 Genus evaluations and 14/14
+non-G0 formal checks; its compact receipt is packaged with Figure 8 evidence.
 
 The same entry now provides a resumable `reproduce` command for all 84
 ablations. It freezes Iterative checkpoints and Conquer finalist pools before
@@ -185,10 +186,10 @@ even when historical evidence is available.
 - Main-28 inputs and selected outputs: 28/28 G0 and 28/28 optimized netlist byte
   SHA-256 PASS. Six small policy cases and the full 28-method replay PASS.
 - Main-28 execution: isolated offline Cargo Release build of four binaries PASS;
-  the online stop/continue, Genus, and formal path completed on twenty points
-  with 20/20 paper method choices and selected-netlist identities after
-  restoration of the historical objective, delay, and Iterative settings. The
-  remaining eight points were not freshly rerun.
+  all 28 points were exercised under their current objective and round caps.
+  Fresh outputs passed mapped-as-is Genus/formal acceptance; exact method labels
+  and netlist identities can vary on runtime-sensitive points, as documented in
+  the main experiment README. The fresh `sqrt` R3 PPA/formal receipt is packaged.
 - Figure 7 fresh-search entry: 20/20 G0 hashes PASS; 13 frozen anchors and all
   three objective specifications validate; a 39-task paper plan is generated.
   One p0800/D×A one-round Iterative smoke PASS. Its seven frozen candidates
@@ -200,13 +201,17 @@ even when historical evidence is available.
   hashes PASS; the 84-task selected-method plan is generated. Historical
   complete-tree selection replay matched 79/79 saved nonblank result SHAs. A real
   c432 three-mode search completed 13/13 Genus and 12/12 formal checks and
-  generated both figures. The full 84-task queue was not run during packaging.
+  generated both figures. The updated p0800 adder run froze 15 netlists before
+  evaluation, completed 15/15 Genus measurements and 14/14 non-G0 formal checks,
+  and regenerated the aggregate evidence. The full 84-task queue was not run.
 - AreaPMO: isolated Release build PASS; `usb_phy` real 10-round smoke and CEC
   PASS (2.071 s native wall on this machine).
 - Iterative: isolated offline Cargo Release build and `cargo fmt --check` PASS;
   `usb_phy` one-round functional smoke PASS. This smoke is not a paper-result
   trajectory replay.
-- Genus rerun: SKIPPED; the commercial tool is not distributed.
+- Genus rerun: targeted main and ablation validations were completed locally;
+  the complete full-suite external rerun was not performed. The commercial tool
+  is not distributed.
 
 ## Current release blockers
 

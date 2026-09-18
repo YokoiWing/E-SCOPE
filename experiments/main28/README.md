@@ -36,7 +36,7 @@ optimization or EDA.
 
 The expected aggregate values are:
 
-- D²AP geometric-mean ratio: `0.8240760907489141` (17.5924% reduction);
+- D²AP geometric-mean ratio: `0.8239835782983282` (17.6016% reduction);
 - geometric-mean E-SCOPE search / Genus mapping wall ratio:
   `1.4646139505859852`, reported as `1.46x`;
 - current adder point: `epfl_adder/p0800`, D²×A×P objective, five Iterative rounds,
@@ -192,7 +192,7 @@ still improved on G0:
 
 | benchmark | saved D²AP/G0 | fresh D²AP/G0 | saved reduction | fresh reduction |
 |---|---:|---:|---:|---:|
-| `epfl_sqrt` | 0.950965015 | 0.969743865 | 4.9035% | 3.0256% |
+| `epfl_sqrt` | 0.947980337 | 0.969743865 | 5.2020% | 3.0256% |
 | `epfl_div` | 0.950942015 | 0.966125130 | 4.9058% | 3.3875% |
 
 For `epfl_sqrt`, no Iterative round had completed when Conquer returned. For

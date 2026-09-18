@@ -1,0 +1,89 @@
+{
+  "schema": "escope-figure8-point-fresh-reproduction-v1",
+  "benchmark": "epfl_adder",
+  "anchor": "p0800",
+  "objective": "D2AP",
+  "method": "Iterative",
+  "round_cap": 5,
+  "selection_frozen_before_external_evaluation": true,
+  "frozen_manifest_sha256": "e86ec3b29c4fa0d80d6432c1d93dd4c60820978e068e283528de8541e9133d97",
+  "frozen_netlists": 15,
+  "genus_pass": 15,
+  "formal_pass": 14,
+  "g0": {
+    "candidate_id": "G0",
+    "round": 0,
+    "sha256": "6df8e5b22319adcfd5fc03608cffb32d943ee7324e698583de388f201a051945",
+    "ppa": {
+      "area_um2": 117.188,
+      "boundary_delay_ps": 799.1,
+      "data_path_ps": 795.9,
+      "driver_adjust_ps": 3.2,
+      "power_uw": 191.903
+    },
+    "formal_equivalence": "PASS"
+  },
+  "full": {
+    "candidate_id": "FULL",
+    "round": 0,
+    "sha256": "95bb321cbc56dbc1357575ef5ce9296cbf7a4c16be6295f859f7804b6ecac274",
+    "ppa": {
+      "area_um2": 118.32,
+      "boundary_delay_ps": 700.4,
+      "data_path_ps": 697.8,
+      "driver_adjust_ps": 2.6,
+      "power_uw": 193.866
+    },
+    "formal_equivalence": "PASS"
+  },
+  "ablations": {
+    "no-pi-drive-expansion": {
+      "candidate_id": "R4",
+      "round": 4,
+      "sha256": "5a4dde318e11d621211f2572cf1b8c298af77c9e38f14e92a5715185343ba887",
+      "ppa": {
+        "area_um2": 118.448,
+        "boundary_delay_ps": 704.9,
+        "data_path_ps": 702.9,
+        "driver_adjust_ps": 2.0,
+        "power_uw": 194.08
+      },
+      "formal_equivalence": "PASS"
+    },
+    "phase1-only": {
+      "candidate_id": "R5",
+      "round": 5,
+      "sha256": "8ed2c18128d82ad9600c3fb710260456d4031e534a096f318e5142639cec49f2",
+      "ppa": {
+        "area_um2": 117.538,
+        "boundary_delay_ps": 765.9000000000001,
+        "data_path_ps": 762.7,
+        "driver_adjust_ps": 3.2,
+        "power_uw": 192.458
+      },
+      "formal_equivalence": "PASS"
+    },
+    "phase2-only": {
+      "candidate_id": "R4",
+      "round": 4,
+      "sha256": "847921dece84033e86a230f3a5e2d66457985b1d7638c702fe1f1fd1d06f804d",
+      "ppa": {
+        "area_um2": 118.436,
+        "boundary_delay_ps": 713.4,
+        "data_path_ps": 711.4,
+        "driver_adjust_ps": 2.0,
+        "power_uw": 194.23
+      },
+      "formal_equivalence": "PASS"
+    }
+  },
+  "ratios": {
+    "full_d2ap_over_g0": "0.7835828419153834",
+    "phase_i_only_d2ap_over_g0": "0.9240409888236686",
+    "phase_ii_only_d2ap_over_g0": "0.8152655361050796",
+    "without_drive_d2ap_over_g0": "0.7954197476789898",
+    "full_over_phase_i_only": "0.8479957614357643",
+    "full_over_phase_ii_only_exact": "0.9611381902133875",
+    "full_over_without_drive": "0.9851186674731849"
+  }
+}

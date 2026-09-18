@@ -801,10 +801,10 @@
         "matches_paper_method": true
       },
       "optimized_path": "expected/epfl_sqrt__t4_1.20x.v",
-      "optimized_sha256": "be9a80e1f4795f502bb4d7d1e386ede0c6786b6154980122808b1759b1029791",
+      "optimized_sha256": "32251b2e8f6e1ebc089dfc36c3d47fb0f63ccab788167b18f61dda39cd2d9051",
       "objective": "D2AP",
       "iterative_round_cap": 3,
-      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
+      "paper_output_source_note": "fresh three-round native-D2AP rerun; mapped-as-is Genus/formal PASS"
     },
     {
       "benchmark": "epfl_square",

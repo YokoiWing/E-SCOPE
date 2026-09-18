@@ -4,15 +4,16 @@
   "scope": "28 main-table benchmarks using each benchmark's frozen selected flow",
   "source_sha256": {
     "phase_attribution_csv": "aa551601f954999d65bdbb22a214c40fb350459785395a74684b4f727e265bbb",
-    "published_plot_data_csv": "9554feb4da120738918c2581e25e9beed33591a99429bc6e44321919791f4d12"
+    "published_plot_data_csv": "9554feb4da120738918c2581e25e9beed33591a99429bc6e44321919791f4d12",
+    "fresh_adder_p0800_receipt": "990d3dfa190e8dd40a524ddba7f9c7ca51d90dd848e9beef70da2aa5ea0aa443"
   },
   "geometric_means": {
-    "full_over_phase_i_only": 0.8662293894640778,
-    "full_reduction_vs_phase_i_only_percent": 13.377061053592222,
-    "full_over_phase_ii_only_exact": 0.9535440731030251,
-    "full_reduction_vs_phase_ii_only_percent": 4.645592689697486,
-    "full_over_without_drive": 0.9926907841772776,
-    "full_reduction_vs_without_drive_percent": 0.730921582272237
+    "full_over_phase_i_only": 0.8646443225283692,
+    "full_over_phase_ii_only_exact": 0.9544284577216106,
+    "full_over_without_drive": 0.9931096785806502,
+    "full_reduction_vs_phase_i_only_percent": 13.53556774716308,
+    "full_reduction_vs_phase_ii_only_percent": 4.557154227838945,
+    "full_reduction_vs_without_drive_percent": 0.6890321419349754
   },
   "discrepancies": [
     {
@@ -24,5 +25,6 @@
       "effect": "the plotted bar and generated plot-data CSV are clipped; the paper's approximately 4.6% aggregate statement agrees with the exact, unclipped ratios"
     }
   ],
-  "replay_classification": "saved external evidence recomputation; no optimization or Genus executed"
+  "replay_classification": "saved external evidence recomputation; no optimization or Genus executed",
+  "adder_version_note": "The adder row was freshly rerun on the current p0800 main anchor with native D2AP; 15/15 frozen netlists passed Genus measurement and 14/14 non-G0 candidates passed formal validation."
 }

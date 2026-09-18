@@ -27,6 +27,7 @@ python3 scripts/verify_release.py
 python3 case_study/verify.py
 python3 experiments/main28/run.py evidence --output reproduced/main28
 python3 experiments/pareto_adder/run.py evidence --output reproduced/figure7
+python3 experiments/ablation/run.py evidence --output reproduced/figure8 --plot exact
 ```
 
 ## Recompute Table IV from saved evidence

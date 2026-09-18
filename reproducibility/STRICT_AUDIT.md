@@ -31,19 +31,19 @@ packaging.
 The audit used a no-hardlink clone of the pushed tree. The checkout contained
 no local source edits or generated experiment files.
 
-- Release inventory: 915/915 files passed `scripts/verify_release.py`.
+- Release inventory: 928/928 files passed `scripts/verify_release.py`.
 - Identity/path scan: no absolute local home path, former internal method name,
   author account, or local username was found in tracked release content.
 - Python syntax: all Python under `scripts/`, `experiments/`, and `case_study/`
   compiled successfully.
 - Saved evidence and plots:
   - Table III/Figure 6: 28 G0 and 28 selected-netlist hashes passed; D²AP
-    geometric mean `0.8240760907489141`; runtime ratio
+    geometric mean `0.8239835782983282`; runtime ratio
     `1.4646139505859852`.
   - Figure 7: 20 G0 hashes passed; 86/113/64 frozen candidates for D×A,
     D²AP, and D×P²; 283 plotted rows carried formal PASS; plots regenerated.
   - Figure 8: all 28 method labels and G0 hashes passed; exact reductions
-    `13.377061053592222%` and `4.645592689697486%`; exact and paper-clipped
+    `13.53556774716308%`, `4.557154227838945%`, and `0.6890321419349754%`; exact and paper-clipped
     plots regenerated.
   - Table IV: all 24 rows matched; 1,000 packaged case-study checksums and the
     saved Genus report bindings passed.
@@ -119,11 +119,13 @@ CSV/PNG/SVG/PDF files.
 
 Historical complete-tree staging and policy replay selected all 79 nonblank
 result SHAs in the saved Figure 8 table. A real fresh c432 three-mode run then
-completed 13/13 Genus points and 12/12 non-G0 formal checks; its selected Phase-I-only and
-Phase-II-only SHAs exactly matched the saved experiment. The expensive full
-84-task queue was not rerun. Figure 8 still intentionally uses the older
-`epfl_adder/t0_0.95x` G0/full reference, and the exact/paper plot split records
-the `epfl_i2c` display clipping instead of hiding it.
+completed 13/13 Genus points and 12/12 non-G0 formal checks. The updated
+`epfl_adder/p0800` three-mode run froze 15 netlists before external evaluation,
+completed 15/15 Genus points, and passed 14/14 non-G0 formal checks. The
+expensive full 84-task queue was not rerun. The exact/paper plot split records
+the `epfl_i2c` display clipping instead of hiding it. The saved `epfl_sqrt`
+ablation branches remain paired with their earlier full reference rather than
+being mixed with the later Table III R3 rerun.
 
 ## Why the case study is not strict end-to-end
 

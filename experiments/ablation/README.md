@@ -42,9 +42,12 @@ the G0 hashes, recomputes the three geometric means, and redraws Figure 8. The
 paper plot clips one `epfl_i2c` Phase-II bar to `1.035`; `--plot exact` keeps
 the measured `1.0708307702363498` ratio.
 
-Twenty-seven rows use the current main-table anchor. Figure 8 retains the older
-`epfl_adder/t0_0.95x` evidence while current Table III uses `p0800`; both select
-Iterative. This is an explicit version difference, not a same-anchor replay.
+All 28 rows now use the current main-table anchor. The `epfl_adder` row was
+freshly rerun on `p0800` with native D²AP: all 15 frozen netlists completed
+mapped-as-is Genus evaluation and all 14 non-G0 candidates passed formal.
+`epfl_sqrt` keeps its earlier, internally consistent full/ablation result in
+`full_reference/`; its later Table III R3 rerun is a separate main-result
+update and is not mixed with the older ablation branches.
 
 ## Fresh search
 
@@ -97,8 +100,8 @@ The unified `reproduce` command performs the complete experiment:
 
 The full-method netlists are SHA-fixed reference inputs for the ablation, just
 as G0 is a fixed reference input. Twenty-seven reuse the packaged Table III
-outputs. Figure 8's older `epfl_adder/t0_0.95x` reference is included locally
-under `full_reference/`.
+outputs. The earlier `epfl_sqrt` full result paired with its saved ablation
+branches is included locally under `full_reference/`.
 
 ```bash
 python3 experiments/ablation/run.py reproduce \

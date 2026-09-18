@@ -133,7 +133,7 @@ def evidence(args) -> None:
     ):
         raise RuntimeError("ablation selection or G0 verification failed")
     anchor_mismatches = [row["benchmark"] for row in checks if not row["anchor_matches_main"]]
-    if anchor_mismatches != ["epfl_adder"]:
+    if anchor_mismatches:
         raise RuntimeError(f"unexpected main-anchor differences: {anchor_mismatches}")
     output = args.output.resolve()
     command = [sys.executable, str(REPO / "scripts/replay_figure8.py"), "--output-dir", str(output), "--plot", args.plot]
@@ -143,8 +143,8 @@ def evidence(args) -> None:
         "method_counts": load(MANIFEST)["method_counts"],
         "selection_matches_main": 28,
         "full_reference_hashes": 28,
-        "same_anchor_as_current_main": 27,
-        "method_only_anchor_transfer": ["epfl_adder"],
+        "same_anchor_as_current_main": 28,
+        "method_only_anchor_transfer": [],
         "figure8": load(output / "figure8_recomputed.json"),
     }
     dump(output / "ablation_evidence.json", result)
