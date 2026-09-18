@@ -35,6 +35,16 @@ def main() -> None:
     points = manifest["points"]
     if len(points) != 28 or len({p["benchmark"] for p in points}) != 28:
         raise RuntimeError("manifest must contain 28 unique benchmarks")
+    non_d2ap = [f"{p['benchmark']}/{p['anchor']}" for p in points if p["objective"] != "D2AP"]
+    if non_d2ap:
+        raise RuntimeError(f"main28 contains non-D2AP objectives: {non_d2ap}")
+    objective = json.loads((ROOT / "runtime/config/objective_d2ap.json").read_text())
+    if objective.get("objective", {}).get("exponents") != {
+        "delay": 2.0,
+        "area": 1.0,
+        "power": 1.0,
+    }:
+        raise RuntimeError("main28 D2AP objective specification changed")
     iterative_config = ROOT / "runtime/config/iterative_search.json"
     if digest(iterative_config) != ITERATIVE_CONFIG_SHA256:
         raise RuntimeError("Iterative config does not match the historical RUN_MANIFEST")

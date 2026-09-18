@@ -126,13 +126,13 @@ def clean_env(liberty: Path, binary_dir: Path, objective: Path, jobs: int) -> di
             "EGG_OBJECTIVE_BOUNDED_FUNCTIONAL_WINDOW": "0",
         }
     )
-    env.pop("EGG_EXPERIMENTAL_OBJECTIVE", None)
+    for key in ("EGG_EXPERIMENTAL_OBJECTIVE", "EGG_OBJECTIVE_ENGINE", "EGG_OBJECTIVE_SPEC"):
+        env.pop(key, None)
     # The historical Table III trajectories used the native D2AP path.  The
     # generic ObjectiveSpec engine enables additional candidate families and
     # therefore is not trajectory-equivalent even with 2/1/1 exponents.
-    if objective.name == "objective_da.json":
-        env["EGG_OBJECTIVE_ENGINE"] = "v8-pareto"
-        env["EGG_OBJECTIVE_SPEC"] = str(objective)
+    if objective.name != "objective_d2ap.json":
+        raise RuntimeError(f"main28 requires the native D2AP objective, got {objective}")
     return env
 
 
@@ -486,7 +486,7 @@ def plan(args) -> None:
         rows.append({
             "benchmark": point["benchmark"], "anchor": point["anchor"],
             "g0": point["g0_path"], "g0_sha256": point["g0_sha256"],
-            "objective": "DA" if point["benchmark"] == "epfl_adder" else "D2AP",
+            "objective": point["objective"],
             "iterative_round_cap": commands["rounds"],
             "paper_selected_method": point["paper_selected_method"],
             "paper_output": point["optimized_path"],

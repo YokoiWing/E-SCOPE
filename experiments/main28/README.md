@@ -134,7 +134,10 @@ audit.
 
 All 28 D²×A×P points use the historical native `d2ap` search mode. They
 do not load a generic ObjectiveSpec: doing so would activate candidate families
-that were absent from the Table III trajectories.
+that were absent from the Table III trajectories. The runner removes inherited
+generic-objective environment variables and rejects any main28 objective other
+than native D²×A×P; `verify.py` independently checks all 28 manifest rows and
+the `2/1/1` exponent file.
 
 Ordinary Iterative trajectories use `iterative_search.json`. Conquer's internal
 normal lane uses `timing_boundary_search.json`, matching its separate
