@@ -166,9 +166,29 @@ The actual online choice is runtime-dependent. CPU contention, tool versions,
 and machine load can change how many Iterative rounds have completed when
 Conquer returns. `evidence` replays the paper machine's saved checkpoint and
 PPA observations and verifies all 28 reported choices; a fresh run reports its
-own decision without forcing it to match. All 28 saved policy records now use
-the same anchor as their main-table row; `epfl_adder/p0800` comes from the
-fresh native-D²AP rerun.
+own decision without forcing it to match. An exact method-label replay is
+therefore not the fresh-run acceptance criterion. The selected netlist must
+instead pass mapped-as-is Genus and formal validation, and the run must report
+its own measured PPA. Historical PPA may not be substituted when the selected
+netlist SHA differs. All 28 saved policy records use the same anchor as their
+main-table row; `epfl_adder/p0800` comes from the fresh native-D²AP rerun.
+
+A clean three-round rerun illustrates this machine-speed sensitivity. The
+saved run selected Iterative for both `epfl_sqrt` and `epfl_div`; the fresh run
+selected Conquer, because Conquer returned before the same Iterative progress
+was available to the policy. Both fresh outputs passed Genus and formal and
+still improved on G0:
+
+| benchmark | saved D²AP/G0 | fresh D²AP/G0 | saved reduction | fresh reduction |
+|---|---:|---:|---:|---:|
+| `epfl_sqrt` | 0.950965015 | 0.969743865 | 4.9035% | 3.0256% |
+| `epfl_div` | 0.950942015 | 0.966125130 | 4.9058% | 3.3875% |
+
+For `epfl_sqrt`, no Iterative round had completed when Conquer returned. For
+`epfl_div`, the fresh projected runtime ratio was 2.719 instead of the saved
+3.902, so the same policy chose Conquer as materially better. These are
+outcomes of the general online rule; the implementation contains no
+benchmark-specific method override.
 
 `expected/` contains the exact selected netlist for every paper row. These are
 especially useful for independent Genus/formal reevaluation without rerunning

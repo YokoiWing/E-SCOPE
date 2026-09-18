@@ -67,18 +67,22 @@ the Table III data-path delay rather than adding the separately reported driver
 adjustment.
 
 All 27 non-hyper points were exercised at least once through the fresh online
-controller. A later configuration audit found that five R3 points (`c6288`,
-`epfl_dec`, `epfl_div`, `epfl_sqrt`, and `epfl_voter`) had been allowed five
-rounds in those validation runs; they therefore do not count as strict
-paper-configuration reruns. Fresh `epfl_mem_ctrl` and `epfl_sqrt` selections
-also differed from the paper row, while the saved same-anchor policy replay
-still selects the paper method. `epfl_adder/p0800` was then rerun with native
-D²AP and the corrected five-round cap and passed mapped-as-is Genus and formal.
-The corrected one-round hyper search reached its frozen checkpoint, but its
-full external formal pass was not completed. These checks support the entry
-point without claiming a complete independent 28/28 rerun. The wrapper defaults
-to two internal workers, while the PDF states a one-CPU-core runtime setup;
-saved Figure 6 timing therefore remains machine-specific.
+controller. The five R3 points (`c6288`, `epfl_dec`, `epfl_div`, `epfl_sqrt`,
+and `epfl_voter`) were subsequently rerun with their correct three-round cap.
+Three reproduced the saved selection exactly. `epfl_sqrt` and `epfl_div`
+selected a different, formal-clean Conquer result because their runtime
+checkpoints differed on the fresh machine; both still improved G0. Their exact
+fresh and saved objective values are recorded in `experiments/main28/README.md`.
+The controller intentionally makes this decision online, so a fresh run must
+report its own selected SHA and PPA rather than force the saved method label.
+
+`epfl_adder/p0800` was rerun with native D²AP and the corrected five-round cap
+and passed mapped-as-is Genus and formal. The corrected one-round hyper search
+also completed its selected-winner formal validation and reproduced the saved
+PPA, although its regenerated netlist SHA was different. These checks support
+the entry point without claiming a bit-identical independent 28/28 rerun. The
+wrapper defaults to two internal workers, while the PDF states a one-CPU-core
+runtime setup; saved Figure 6 timing therefore remains machine-specific.
 
 ## Figure 7 Pareto experiment
 

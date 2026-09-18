@@ -75,16 +75,20 @@ Yosys/ABC validation, applies the frozen policy, and stops or resumes Iterative.
 The historical native D2AP mode, Iterative configuration hash, and Table III
 data-path-delay objective were restored and guarded during verification.
 
-All 27 non-hyper points were exercised at least once. Five R3 points were later
-found to have used an incorrect five-round validation cap, so those runs are not
-strict paper-configuration reruns. Fresh `epfl_mem_ctrl` and `epfl_sqrt`
-selected a different method than their paper rows. The corrected
-`epfl_adder/p0800` native-D²AP run selected Iterative/R5 and passed Genus and
-formal. The corrected one-round hyper search reached its frozen checkpoint, but
-its full external formal pass did not complete. The full queue therefore remains
-a ready execution path rather than a claimed independent 28/28 rerun. The saved
-policy is retrospective and in sample and reproduces all 28 same-anchor method
-labels.
+All 27 non-hyper points were exercised at least once. The five R3 points were
+then rerun with the correct three-round cap: `c6288`, `epfl_dec`, and
+`epfl_voter` reproduced their saved selections; `epfl_sqrt` and `epfl_div`
+selected formal-clean Conquer outputs because the fresh runtime checkpoints
+differed. Both alternate outputs still improved G0. The exact comparison and
+policy observations are documented in `experiments/main28/README.md`.
+
+The corrected `epfl_adder/p0800` native-D²AP run selected Iterative/R5 and
+passed Genus and formal. The corrected one-round hyper run completed selected
+winner formal validation and reproduced the saved PPA, although its generated
+netlist SHA differed. The full queue therefore remains a ready execution path
+rather than a claimed bit-identical independent 28/28 rerun. The saved policy
+is retrospective and in sample and reproduces all 28 same-anchor method labels;
+fresh online runs report their actual machine-dependent decision.
 
 The paper says one CPU core, while the public full-run entry defaults to two
 internal jobs. Saved runtime evidence reproduces the plotted 1.46× number, but
@@ -137,8 +141,9 @@ without a fresh external run.
 
 ## Work needed for a strict claim
 
-1. Run the remaining eight main points through the fresh online controller and
-   reconcile its worker count with the paper's one-core runtime statement.
+1. Complete a clean full-queue replay if a single-machine fresh aggregate is
+   required, and reconcile its worker count with the paper's one-core runtime
+   statement.
 2. Resolve the Figure 8 adder-anchor version difference or state in the paper
    that the ablation uses the earlier G0.
 3. For Table IV, either package the original pre-AIG preparation command and
