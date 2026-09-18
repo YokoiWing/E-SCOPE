@@ -43,7 +43,7 @@ no local source edits or generated experiment files.
   - Figure 7: 20 G0 hashes passed; 86/113/64 frozen candidates for D×A,
     D²AP, and D×P²; 283 plotted rows carried formal PASS; plots regenerated.
   - Figure 8: all 28 method labels and G0 hashes passed; exact reductions
-    `13.53556774716308%`, `4.557154227838945%`, and `0.6890321419349754%`; exact and paper-clipped
+    `13.576824796419862%`, `4.567806249562145%`, and `0.7001801215347658%`; exact and paper-clipped
     plots regenerated.
   - Table IV: all 24 rows matched; 1,000 packaged case-study checksums and the
     saved Genus report bindings passed.
@@ -122,10 +122,10 @@ result SHAs in the saved Figure 8 table. A real fresh c432 three-mode run then
 completed 13/13 Genus points and 12/12 non-G0 formal checks. The updated
 `epfl_adder/p0800` three-mode run froze 15 netlists before external evaluation,
 completed 15/15 Genus points, and passed 14/14 non-G0 formal checks. The
-expensive full 84-task queue was not rerun. The exact/paper plot split records
-the `epfl_i2c` display clipping instead of hiding it. The saved `epfl_sqrt`
-ablation branches remain paired with their earlier full reference rather than
-being mixed with the later Table III R3 rerun.
+current three-round `epfl_sqrt` run froze 9 netlists, completed 9/9 Genus
+points, and passed 8/8 non-G0 formal checks. The expensive full 84-task queue
+was not rerun. The exact/paper plot split records the `epfl_i2c` display
+clipping instead of hiding it.
 
 ## Why the case study is not strict end-to-end
 

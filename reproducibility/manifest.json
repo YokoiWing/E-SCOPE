@@ -162,9 +162,8 @@
       "formal_status": "fresh outputs require legality, cold-read, and whole-network CEC PASS before Figure 8 selection",
       "discrepancy": "the current paper plotting script clips epfl_i2c full/Phase-II-only from 1.0708307702363498 to 1.035; aggregate 4.6% text uses the exact ratios",
       "missing_or_limited": [
-        "The saved epfl_sqrt ablation branches remain paired with their earlier full reference; the later Table III R3 result is kept separate.",
+        "The expensive full 84-task queue was not rerun; current adder and sqrt rows were freshly rerun end to end.",
         "Five rows in the historical compact evidence omit one or both full/Phase-I SHA fields; fresh runs produce complete SHA-bound receipts.",
-        "The expensive fresh full 84-task queue was intentionally not run during packaging.",
         "The exact Liberty and Genus, Yosys, and Berkeley ABC executables must be supplied by the user."
       ],
       "experiment_manifest": "experiments/ablation/manifest.json",
@@ -172,7 +171,7 @@
       "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs and experiments/main28/runtime/scripts/run_conquer_recall_v3.py",
       "method_selection": "11 Iterative and 17 Conquer, inherited from Table III before considering ablation results",
       "optimization_replay": "python3 experiments/ablation/run.py reproduce; see experiments/ablation/README.md",
-      "fresh_validation": "Historical complete-tree policy replay selected the exact 79/79 nonblank saved result SHAs; real c432 closure completed 13/13 Genus and 12/12 formal; fresh epfl_adder/p0800 closure completed 15/15 Genus and 14/14 formal; full 84-task queue not run",
+      "fresh_validation": "Historical complete-tree policy replay selected the exact 79/79 nonblank saved result SHAs; c432 completed 13/13 Genus and 12/12 formal; epfl_adder/p0800 completed 15/15 Genus and 14/14 formal; current three-round epfl_sqrt completed 9/9 Genus and 8/8 formal; full 84-task queue not run",
       "fresh_pipeline": "84 selected-method searches -> pre-Genus checkpoint/finalist freeze -> mapped-as-is Genus -> Yosys/ABC legality and equivalence -> policy selection -> fresh Figure 8 CSV/PNG/SVG/PDF"
     }
   ]

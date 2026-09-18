@@ -12,7 +12,7 @@
     "no-pi-drive-expansion"
   ],
   "selection": "Each row inherits the frozen method selected for the main result; methods are never reselected from ablation outcomes.",
-  "anchor_note": "All 28 rows use the current main anchor. epfl_sqrt retains its internally consistent earlier Figure 8 full/ablation result while Table III uses the later fresh R3 rerun.",
+  "anchor_note": "All 28 rows use the current main anchor and current full-method reference.",
   "points": [
     {
       "benchmark": "epfl_ctrl",
@@ -439,15 +439,15 @@
       "g0_sha256": "9b06c8717ada80cf4cd439d4395917bbd2cf30ecf78e8f09b7e07300f82ec271",
       "main_anchor": "t4_1.20x",
       "same_anchor_as_current_main": true,
-      "round_cap": 5,
+      "round_cap": 3,
       "evidence": {
-        "full_sha256": "be9a80e1f4795f502bb4d7d1e386ede0c6786b6154980122808b1759b1029791",
-        "phase_i_sha256": "d24ab61a88d759aae6d8717fda4aace7ece4d3e1751c3509cc141deee58c038f",
+        "full_sha256": "32251b2e8f6e1ebc089dfc36c3d47fb0f63ccab788167b18f61dda39cd2d9051",
+        "phase_i_sha256": "b4ffb7cb3048ed38375ee39319c91961c782c300cc4e009e20c3e9fe694f9591",
         "phase_ii_sha256": "8dcea7454549c792924b2c9306f0d4fd25489523a039e86097b4077a7f821394",
         "without_drive_sha256": "e8cb1d08ed52ccacd64cc1fea45e96672dd4dac4a7f771daa7874b4f781f9988"
       },
-      "full_reference_path": "full_reference/epfl_sqrt__t4_1.20x.v",
-      "full_reference_sha256": "be9a80e1f4795f502bb4d7d1e386ede0c6786b6154980122808b1759b1029791"
+      "full_reference_path": "../main28/expected/epfl_sqrt__t4_1.20x.v",
+      "full_reference_sha256": "32251b2e8f6e1ebc089dfc36c3d47fb0f63ccab788167b18f61dda39cd2d9051"
     },
     {
       "benchmark": "epfl_square",

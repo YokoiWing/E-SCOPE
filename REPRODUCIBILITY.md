@@ -131,8 +131,9 @@ original-precision evidence:
 python3 scripts/replay_figure8.py --output-dir reproduced/figure8 --plot exact
 ```
 
-With the p0800 adder update, the exact ratios are 13.54%, 4.56%, and 0.69% for
-the three controls. The current paper plotting script clips the `epfl_i2c`
+With the p0800 adder and current three-round sqrt updates, the exact ratios are
+13.58%, 4.57%, and 0.70% for the three controls. The current paper plotting
+script clips the `epfl_i2c`
 full/Phase-II-only ratio from `1.0708307702363498` to `1.035`. This affects one
 displayed bar and the plot-generated CSV, while the aggregate statement agrees
 with the unclipped evidence. Use `--plot paper` to reproduce that documented
@@ -145,7 +146,8 @@ use Iterative and 17 use Conquer. Phase-I-only, Phase-II-only, and removal of
 Phase-I drive expansion are executed inside that selected branch. The plan has
 84 tasks and cannot override the selected method. All 28 rows share the current
 main anchor. The p0800 adder update completed 15/15 Genus evaluations and 14/14
-non-G0 formal checks; its compact receipt is packaged with Figure 8 evidence.
+non-G0 formal checks. The sqrt update completed 9/9 Genus evaluations and 8/8
+non-G0 formal checks. Both compact receipts are packaged with Figure 8 evidence.
 
 The same entry now provides a resumable `reproduce` command for all 84
 ablations. It freezes Iterative checkpoints and Conquer finalist pools before
@@ -203,7 +205,9 @@ even when historical evidence is available.
   c432 three-mode search completed 13/13 Genus and 12/12 formal checks and
   generated both figures. The updated p0800 adder run froze 15 netlists before
   evaluation, completed 15/15 Genus measurements and 14/14 non-G0 formal checks,
-  and regenerated the aggregate evidence. The full 84-task queue was not run.
+  while the current sqrt run completed 9/9 Genus measurements and 8/8 non-G0
+  formal checks. Both regenerated the aggregate evidence. The full 84-task
+  queue was not run.
 - AreaPMO: isolated Release build PASS; `usb_phy` real 10-round smoke and CEC
   PASS (2.071 s native wall on this machine).
 - Iterative: isolated offline Cargo Release build and `cargo fmt --check` PASS;

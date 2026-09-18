@@ -48,9 +48,9 @@ The updated paper-rendered Figure 8 is packaged as
 All 28 rows now use the current main-table anchor. The `epfl_adder` row was
 freshly rerun on `p0800` with native D²AP: all 15 frozen netlists completed
 mapped-as-is Genus evaluation and all 14 non-G0 candidates passed formal.
-`epfl_sqrt` keeps its earlier, internally consistent full/ablation result in
-`full_reference/`; its later Table III R3 rerun is a separate main-result
-update and is not mixed with the older ablation branches.
+The `epfl_sqrt` row was also freshly rerun with its current three-round cap:
+all 9 frozen netlists completed Genus evaluation and all 8 non-G0 candidates
+passed formal.
 
 ## Fresh search
 
@@ -102,9 +102,8 @@ The unified `reproduce` command performs the complete experiment:
 7. calculate fresh D²AP ratios and write exact and paper-rendered Figure 8.
 
 The full-method netlists are SHA-fixed reference inputs for the ablation, just
-as G0 is a fixed reference input. Twenty-seven reuse the packaged Table III
-outputs. The earlier `epfl_sqrt` full result paired with its saved ablation
-branches is included locally under `full_reference/`.
+as G0 is a fixed reference input. All 28 reuse the packaged current Table III
+outputs.
 
 ```bash
 python3 experiments/ablation/run.py reproduce \
