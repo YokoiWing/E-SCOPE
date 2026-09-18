@@ -1,98 +1,20 @@
 {
   "usb_phy": {
-    "input": "assets/inputs/usb_phy.aig",
-    "prepared_input_source": "paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_phy/areapmo_release/input.aig",
-    "g0_sha256": "6e401fd04f9847a4c1f8d0e04e456a8fc657d56c492aeab3f179a16e44441901",
-    "final_sha256": "91fbf0309a9693dd9b7a62df503c43f3e2335c69fde563bac6e7364826f3aa5a",
-    "expected_best": {
-      "area": 23.69,
-      "cpu_sec": 0.173405,
-      "delay": 165.12,
-      "gates": 276,
-      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_phy/areapmo_release/round_1.blif",
-      "round": 1
-    },
-    "expected_rounds": 10,
-    "historical_wall_sec": 1.71564745
+    "input": "assets/inputs/usb_phy.aig"
   },
   "simple_spi": {
-    "input": "assets/inputs/simple_spi.aig",
-    "prepared_input_source": "paper_results_v8/areapmo_iterative_smallcases_convergence_v1/simple_spi/areapmo_release/input.aig",
-    "g0_sha256": "9f9e5e3c0138f37927779ef75a6c5036d02451d0abe3bc3a06027991207e7ae8",
-    "final_sha256": "24184977c3e1fe65ffd59a93aaae6470c6db8e1a4ad0301c83aeca7ccd1debbe",
-    "expected_best": {
-      "area": 41.0,
-      "cpu_sec": 0.408035,
-      "delay": 287.0,
-      "gates": 436,
-      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/simple_spi/areapmo_release/round_2.blif",
-      "round": 2
-    },
-    "expected_rounds": 10,
-    "historical_wall_sec": 2.03937858
+    "input": "assets/inputs/simple_spi.aig"
   },
   "systemcdes": {
-    "input": "assets/inputs/systemcdes.aig",
-    "prepared_input_source": "paper_results_v8/areapmo_iterative_smallcases_convergence_v1/systemcdes/areapmo_release/input.aig",
-    "g0_sha256": "ee58eb25cea47333d04efc6d67196d4ae229c5cfb825947f7e6dd627fcd533e5",
-    "final_sha256": "5cc43c85e9f295728b0e7872394ba3bf6ac092320283c9ba9a959d4fd0689bbb",
-    "expected_best": {
-      "area": 141.01,
-      "cpu_sec": 1.246823,
-      "delay": 530.29,
-      "gates": 1458,
-      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/systemcdes/areapmo_release/round_3.blif",
-      "round": 3
-    },
-    "expected_rounds": 10,
-    "historical_wall_sec": 4.124215636
+    "input": "assets/inputs/systemcdes.aig"
   },
   "usb_funct": {
-    "input": "assets/inputs/usb_funct.aig",
-    "prepared_input_source": "paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/input.aig",
-    "g0_sha256": "68a1c58d192efb3254a587ff851f721ea01dda7547253c1bfdf238118f3d34f2",
-    "final_sha256": "4211bb9ce1a5a3b67fb6a0378aecd8db3cdbd32ee22803b80dbd50b87e01cd4f",
-    "expected_best": {
-      "area": 697.26,
-      "cpu_sec": 13.312772,
-      "delay": 702.87,
-      "gates": 7229,
-      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/round_7.blif",
-      "round": 7
-    },
-    "expected_rounds": 10,
-    "historical_wall_sec": 19.076175976
+    "input": "assets/inputs/usb_funct.aig"
   },
   "aes_core": {
-    "input": "assets/inputs/aes_core.aig",
-    "prepared_input_source": "paper_results_v8/areapmo_table1_genus_reversal_v1/aes_core/areapmo_release/input.aig",
-    "g0_sha256": "c07a6b62565f2275912608e74a375e74873094e0ff5c6a65900a6cee7ff76c01",
-    "final_sha256": "d819b71b7be8750787efdd76215abe24810c608dcf241825882886a428f83e5d",
-    "expected_best": {
-      "area": 1096.33,
-      "cpu_sec": 127.04378,
-      "delay": 424.59,
-      "gates": 11120,
-      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/aes_core/areapmo_release/round_10.blif",
-      "round": 10
-    },
-    "expected_rounds": 13,
-    "historical_wall_sec": 165.159139156
+    "input": "assets/inputs/aes_core.aig"
   },
   "RISC": {
-    "input": "assets/inputs/RISC.aig",
-    "prepared_input_source": "paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2/input.aig",
-    "g0_sha256": "3a570fbeea8f7a50f747f2d3c9b942f92002fa8df7c58325bd1c08c9d5d7d338",
-    "final_sha256": "e6813f996cc214d2b4df3f15a7f4b0526375ffb178c886a6753438f66aec0892",
-    "expected_best": {
-      "area": 3141.04,
-      "cpu_sec": 413.816199,
-      "delay": 1303.48,
-      "gates": 31487,
-      "netlist": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/RISC/areapmo_timing_only_retry_v2/round_12.blif",
-      "round": 12
-    },
-    "expected_rounds": 15,
-    "historical_wall_sec": 489.577985387
+    "input": "assets/inputs/RISC.aig"
   }
 }

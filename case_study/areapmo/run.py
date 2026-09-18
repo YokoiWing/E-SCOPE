@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Frozen AreaPMO: prepared AIG -> native mapping G0 -> optimization -> feasible best."""
+"""AreaPMO: prepared AIG -> native mapping G0 -> optimization -> feasible best."""
 import argparse, hashlib, json, math, os, shutil, signal, subprocess, time
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
@@ -94,7 +94,7 @@ def main():
     if args.mode=='execute' and not (abc_bin.is_file() or shutil.which(str(abc_bin))):
         raise RuntimeError(f'ABC executable not found: {abc_bin}; pass --abc-bin or set ABC_BIN')
     cmd=[areapmo_bin,'optimize',GENLIB,ROOT/route['input'],out/'native',ROOT/'assets/database/asap7']
-    save(out/'PLAN.json',{'case':args.case,'command':list(map(str,cmd)),'input_scope':'frozen high-effort prepared AIG; native mapping G0 is rerun','timeout_sec':args.timeout_sec,'selection':'feasible delay <= G0 + 1e-9; min(area, round)','round_cap':100,'minimum_rounds':10,'stagnation_patience':3,'seed':5,'reference':route})
+    save(out/'PLAN.json',{'case':args.case,'command':list(map(str,cmd)),'input_scope':'prepared AIG; native mapping G0 is rerun','timeout_sec':args.timeout_sec,'selection':'feasible delay <= G0 + 1e-9; min(area, round)','round_cap':100,'minimum_rounds':10,'stagnation_patience':3,'seed':5})
     if args.mode=='plan':return
     try:
         wall=run(cmd,out,out/'native.log',args.timeout_sec)
@@ -114,7 +114,7 @@ def main():
             run([abc_bin,'-c',abc],out,out/f'{name}.cec.log',args.timeout_sec)
             assert 'Networks are equivalent' in (out/f'{name}.cec.log').read_text()
         g0sha=sha(out/'G0.v'); finalsha=sha(out/'final.v')
-        result={'case':args.case,'stage':'complete','native_wall_sec':wall,'rounds':len(summary['rounds']),'best':best,'genlib_check':actual,'cec_pass':True,'g0_sha256':g0sha,'final_sha256':finalsha,'g0_sha_match':g0sha==route['g0_sha256'],'final_sha_match':finalsha==route['final_sha256'],'genus_evidence_reusable':g0sha==route['g0_sha256'] and finalsha==route['final_sha256'],'genus_rerun':False}
+        result={'case':args.case,'stage':'complete','native_wall_sec':wall,'rounds':len(summary['rounds']),'best':best,'genlib_check':actual,'cec_pass':True,'g0_sha256':g0sha,'final_sha256':finalsha,'external_validation':'PENDING'}
         save(out/'RESULT.json',result);save(out/'status.json',result);print(json.dumps(result),flush=True)
     except BaseException as e:
         save(out/'status.json',{'stage':'failed','error':str(e)});raise

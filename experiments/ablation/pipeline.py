@@ -112,7 +112,7 @@ def iterative_checkpoints(root: Path, point: dict, mode: str) -> list[tuple[Path
     return list(unique.values())
 
 
-def stage(root: Path) -> dict:
+def stage(root: Path, full_results: Path) -> dict:
     """Freeze all externally evaluated netlists before reading Genus output."""
     root = root.resolve()
     verify_searches(root)
@@ -121,13 +121,15 @@ def stage(root: Path) -> dict:
     for point in experiment["points"]:
         benchmark = point["benchmark"]
         g0 = (HERE / point["g0_path"]).resolve()
-        full = (HERE / point["full_reference_path"]).resolve()
+        full = (full_results / f"{benchmark}__{point['anchor']}" / "selected/mapped.v").resolve()
+        if not full.is_file():
+            raise RuntimeError(f"missing fresh full-method result: {full}")
         for kind, mode, candidate_id, path, expected in [
             ("g0", "g0", "G0", g0, point["g0_sha256"]),
-            ("full", "full", "FULL", full, point["full_reference_sha256"]),
+            ("full", "full", "FULL", full, None),
         ]:
             actual = sha256(path)
-            if actual != expected:
+            if expected is not None and actual != expected:
                 raise RuntimeError(f"{kind} SHA mismatch for {benchmark}: {actual}")
             rows.append({"kind": kind, "benchmark": benchmark, "anchor": point["anchor"],
                          "method": point["selected_method"], "mode": mode,
@@ -379,8 +381,6 @@ def write_figure(root: Path) -> dict:
             "full_over_phase_i_only": phase_i_ratio,
             "full_over_phase_ii_only_exact": phase_ii_ratio,
             "full_over_without_drive": no_drive_ratio,
-            "figure8_phase_ii_bar_value": phase_ii_ratio,
-            "figure8_phase_ii_bar_clipped": False,
             "full_sha256": entry["full"]["sha256"],
             "phase_i_sha256": entry["modes"]["phase1-only"]["sha256"],
             "phase_ii_sha256": entry["modes"]["phase2-only"]["sha256"],
@@ -411,43 +411,39 @@ def write_figure(root: Path) -> dict:
         raise RuntimeError("matplotlib and numpy are required to generate Figure 8") from error
     x = np.arange(len(rows), dtype=float) * 0.82
     width = 0.21
-    for paper in (False, True):
-        fig, axis = plt.subplots(figsize=(16.2, 4.75))
-        fig.subplots_adjust(left=0.075, right=0.992, bottom=0.34, top=0.90)
-        phase_ii_key = "figure8_phase_ii_bar_value" if paper else "full_over_phase_ii_only_exact"
-        series = [
-            ("full_over_phase_i_only", "Without Phase-II sizing", "#7CC9F0", -width),
-            (phase_ii_key, "Without Phase-I exploration", "#FFB870", 0.0),
-            ("full_over_without_drive", "Logic only in Phase I", "#8ED97B", width),
-        ]
-        handles = [axis.bar(x + offset, [float(row[key]) for row in rows], width=width,
-                            label=label, color=color, edgecolor="#646A73", linewidth=0.72)
-                   for key, label, color, offset in series]
-        baseline = axis.axhline(1.0, color="#9A0000", linewidth=3, linestyle="--")
-        axis.set_xlim(-0.55, x[-1] + 0.55); axis.set_ylim(0.5, 1.16)
-        axis.set_ylabel(r"Full $D^2AP$ / ablated $D^2AP$")
-        axis.set_xticks(x)
-        axis.set_xticklabels([row["benchmark"].removeprefix("epfl_") for row in rows],
-                             rotation=30, ha="right")
-        axis.set_yticks(np.arange(0.5, 1.11, 0.1)); axis.yaxis.grid(True, color="#D9DDE3",
-                                                                    linewidth=0.65, linestyle="--")
-        axis.spines[["top", "right"]].set_visible(False)
-        axis.legend([baseline, *handles], ["Full E-SCOPE", *[item[1] for item in series]],
-                    loc="upper center", ncol=4, frameon=True, bbox_to_anchor=(0.5, 0.995))
-        stem = "figure8_paper_values" if paper else "figure8_exact_values"
-        for suffix in ("pdf", "svg", "png"):
-            fig.savefig(output / f"{stem}.{suffix}", dpi=300)
-        plt.close(fig)
+    fig, axis = plt.subplots(figsize=(16.2, 4.75))
+    fig.subplots_adjust(left=0.075, right=0.992, bottom=0.34, top=0.90)
+    series = [
+        ("full_over_phase_i_only", "Without Phase-II sizing", "#7CC9F0", -width),
+        ("full_over_phase_ii_only_exact", "Without Phase-I exploration", "#FFB870", 0.0),
+        ("full_over_without_drive", "Logic only in Phase I", "#8ED97B", width),
+    ]
+    handles = [axis.bar(x + offset, [float(row[key]) for row in rows], width=width,
+                        label=label, color=color, edgecolor="#646A73", linewidth=0.72)
+               for key, label, color, offset in series]
+    baseline = axis.axhline(1.0, color="#9A0000", linewidth=3, linestyle="--")
+    axis.set_xlim(-0.55, x[-1] + 0.55); axis.set_ylim(0.5, 1.16)
+    axis.set_ylabel(r"Full $D^2AP$ / ablated $D^2AP$")
+    axis.set_xticks(x)
+    axis.set_xticklabels([row["benchmark"].removeprefix("epfl_") for row in rows],
+                         rotation=30, ha="right")
+    axis.set_yticks(np.arange(0.5, 1.11, 0.1)); axis.yaxis.grid(True, color="#D9DDE3",
+                                                                linewidth=0.65, linestyle="--")
+    axis.spines[["top", "right"]].set_visible(False)
+    axis.legend([baseline, *handles], ["Full E-SCOPE", *[item[1] for item in series]],
+                loc="upper center", ncol=4, frameon=True, bbox_to_anchor=(0.5, 0.995))
+    for suffix in ("pdf", "svg", "png"):
+        fig.savefig(output / f"figure8.{suffix}", dpi=300)
+    plt.close(fig)
     summary = {"status": "PASS", "rows": len(rows), "geometric_means": exact,
                "formal_pass": sum(1 for row in rows if row["formal"] == "PASS"),
                "data_csv": "figure8/figure8_data.csv",
-               "exact_plot": "figure8/figure8_exact_values.png",
-               "paper_plot": "figure8/figure8_paper_values.png"}
+               "plot": "figure8/figure8.png"}
     dump(output / "summary.json", summary)
     return summary
 
 
-def finalize(root: Path, liberty: Path, genus: Path, yosys: Path, abc: Path,
+def finalize(root: Path, full_results: Path, liberty: Path, genus: Path, yosys: Path, abc: Path,
              genus_chunk: int, genus_timeout: int, formal_jobs: int,
              formal_timeout: int, yosys_datdir: Path | None = None) -> dict:
     root = root.resolve(); liberty = liberty.resolve()
@@ -456,7 +452,7 @@ def finalize(root: Path, liberty: Path, genus: Path, yosys: Path, abc: Path,
     executables = [path.expanduser().resolve() for path in (genus, yosys, abc)]
     if any(not path.is_file() for path in executables):
         raise RuntimeError("Genus, Yosys, and ABC executable paths must exist")
-    frozen = stage(root)
+    frozen = stage(root, full_results.resolve())
     external = run_genus(root, liberty, executables[0], genus_chunk, genus_timeout)
     formal = run_formal(root, liberty, executables[1], executables[2], formal_jobs,
                         formal_timeout, yosys_datdir)

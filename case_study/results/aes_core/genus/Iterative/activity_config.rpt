@@ -1,6 +1,0 @@
-primary_input_duty 0.5
-primary_input_frequency_hz 1.0e8
-comb_output_default_duty 0.5
-comb_output_default_frequency_hz 1.0e8
-virtual_clock_period_ps 1000
-transitions_per_cycle 0.1

@@ -1,3 +1,0 @@
-ABC command line: "cec -n ${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_table1_genus_reversal_v1/aes_core/areapmo_release/g0.blif ${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_risc_tv80_iterative_polish_v1/aes_genlib_area/final.blif".
-
-Networks are equivalent.  Time =     1.02 sec

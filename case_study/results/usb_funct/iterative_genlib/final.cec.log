@@ -1,3 +1,0 @@
-ABC command line: "cec -n ${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_funct/areapmo_release/g0.blif ${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/usb_genlib_area/final.blif".
-
-Networks are equivalent.  Time =     0.81 sec

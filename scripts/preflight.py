@@ -2,7 +2,6 @@
 """Report tools available for each reproduction layer without running them."""
 
 import json
-import importlib.util
 import os
 import shutil
 import sys
@@ -15,11 +14,6 @@ def tool(name):
 def main():
     report = {
         "python": {"status": "PASS" if sys.version_info >= (3, 10) else "FAIL", "version": sys.version.split()[0]},
-        "evidence_replay": {
-            "status": "PASS",
-            "matplotlib": "AVAILABLE" if importlib.util.find_spec("matplotlib") else "MISSING",
-            "note": "matplotlib is required only when plots are requested",
-        },
         "optimization_build": {
             "cmake": tool("cmake") or "MISSING",
             "cxx": tool("c++") or tool("g++") or "MISSING",

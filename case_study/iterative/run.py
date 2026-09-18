@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Minimal frozen Iterative execution. No imports from the original repository."""
+"""Minimal Iterative execution from packaged source, inputs, and policy."""
 import argparse
 import hashlib
 import json
@@ -11,7 +11,7 @@ import subprocess
 import time
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
-POLICY_FROZEN = HERE / "data/policy.json"
+POLICY = HERE / "data/policy.json"
 INSTANCE_RE = re.compile(r"^\s*\w+_ASAP7_75t_R\s+\w+\s*\(", re.M)
 OWNED = []
 def read(path, retries=0):
@@ -73,22 +73,6 @@ def base_features(case, guide, g0):
             "current_instances": count, "stage_index": -1, "stage_round": 0,
             "total_round": 0, "rules": 0, "candidate_cap": 0, "accepted": 0,
             "stagnation": 0, "area_gain_fraction": 0.0}
-
-def compare_round(actual, expected, portfolio=False):
-    fields = ["parent_sha256"]
-    if portfolio:
-        fields += ["candidate_sha256"]
-    else:
-        fields += ["candidate_sha256", "strict_improvement", "parent_action", "accepted_sha256"]
-        actual_transit, expected_transit = actual.get("transit"), expected.get("transit")
-        if bool(actual_transit) != bool(expected_transit):
-            return "transit presence differs"
-        if actual_transit and actual_transit.get("sha256") != expected_transit.get("sha256"):
-            return f"transit.sha256 {actual_transit.get('sha256')} != {expected_transit.get('sha256')}"
-    for field in fields:
-        if actual.get(field) != expected.get(field):
-            return f"{field} {actual.get(field)} != {expected.get(field)}"
-    return None
 
 def clean_env(profile, config_path, objective_path, assets):
     env = {k: v for k, v in os.environ.items() if not k.startswith("EGG_")}
@@ -155,14 +139,13 @@ def objective_for(profile, initial_cap, previous_delay, name):
     return {"schema_version": 1, "name": name, "objective": profile["objective"],
             "constraints": [{"metric": "delay", "relation": "at_most", "bound": bound}]}
 
-def execute_route(plan, continue_after_observer_divergence=True):
+def execute_route(plan):
     path_dir = Path(plan["output_directory"])
     if path_dir.exists():
         raise RuntimeError(f"refusing to overwrite existing execution directory: {path_dir}")
     path_dir.mkdir(parents=True)
     write(path_dir / "PLAN.json", plan)
-    row, manifest_stages, _ = route_data(plan["case"], plan["guide"])
-    policy = read(POLICY_FROZEN)
+    policy = read(POLICY)
     features = base_features(plan["case"], plan["guide"], plan["g0"])
     action = predict(policy["initialization"], features)
     if action != plan["initial_policy_action"]:
@@ -174,17 +157,14 @@ def execute_route(plan, continue_after_observer_divergence=True):
     total_round = 0
     route_started = time.monotonic()
     trace = []
-    first_divergence = None
     schedule_divergence = None
-    final_native = None
     start_stage = 0
     prefix_seconds = 0.0
     for si in range(start_stage, len(plan["stages"])):
         stage_plan = plan["stages"][si]
-        expected = expected_rounds(row, si)
         profile_name = action.removeprefix("ENTER_")
         if profile_name != stage_plan["profile"]:
-            schedule_divergence = f"stage {si+1} policy entered {profile_name}, but the frozen execution archive has no matching next-stage boundary"
+            schedule_divergence = f"stage {si+1} policy entered {profile_name}, but the route has no matching next stage"
             break
         profile = policy["profiles"][profile_name]
         stage_dir = Path(stage_plan["output_directory"])
@@ -192,10 +172,10 @@ def execute_route(plan, continue_after_observer_divergence=True):
         config_path, objective_path = stage_dir / "config.json", stage_dir / "objective.json"
         write(config_path, profile["config"])
         objective = objective_for(profile, initial_cap, previous_delay,
-                                  f"frozen_repro_{plan['guide']}_stage_{si+1}")
+                                  f"iterative_{plan['guide']}_stage_{si+1}")
         write(objective_path, objective)
         env = clean_env(profile, config_path, objective_path, stage_plan["assets"])
-        if si == 0 or row["links"][si - 1]["check"] == "byte_identical":
+        if si == 0:
             stage_input = current
         else:
             stage_input = stage_dir / "input.v"
@@ -204,8 +184,8 @@ def execute_route(plan, continue_after_observer_divergence=True):
         previous_area = None
         stagnation = 0
         selection = stage_plan["selection_policy"]
-        portfolio = selection == "saved_internal_feasible_portfolio_selection"
-        iterations = stage_plan["historical_observer_rounds"] if portfolio else 1
+        portfolio = selection == "internal_feasible_portfolio_selection"
+        iterations = stage_plan["iteration_cap"] if portfolio else 1
         stage_last_point = previous_stage_point
         for iteration in range(iterations):
             search_dir = stage_dir / (f"iteration_{iteration:02d}/search" if portfolio else "search")
@@ -234,7 +214,7 @@ def execute_route(plan, continue_after_observer_divergence=True):
                     summary = wait_for_summary_round(process, search_dir / "summary.json", raw_round + 1, deadline)
                     if portfolio:
                         pool = read(search_dir / f"round_{raw_round:02d}/progressive/summary.json", retries=5)["transit_pool"]
-                        # Historical policy requires strict improvement against this run's parent.
+                        # The portfolio policy requires strict improvement against this run's parent.
                         if stage_last_point is None:
                             terminate_owned(process)
                             raise RuntimeError("portfolio stage lacks the preceding online parent point")
@@ -252,12 +232,10 @@ def execute_route(plan, continue_after_observer_divergence=True):
                         actual = {"parent_sha256": digest(process_input), "candidate_sha256": digest(accepted),
                                   "accepted_path": str(accepted), "point": chosen["point"],
                                   "candidate_id": chosen["candidate_id"], "status": "accepted_feasible_portfolio"}
-                        mismatch = compare_round(actual, expected[iteration], portfolio=True)
                         terminate_owned(process)
                         round_row = actual
                     else:
                         round_row = receipt
-                        mismatch = compare_round(receipt, expected[stage_round]) if stage_round < len(expected) else "extra online round"
                     stage_round += 1; total_round += 1
                     accepted_flag = bool(round_row.get("strict_improvement", str(round_row.get("status", "")).startswith("accepted")))
                     stagnation = 0 if accepted_flag else stagnation + 1
@@ -272,47 +250,28 @@ def execute_route(plan, continue_after_observer_divergence=True):
                                     candidate_cap=profile["config"]["pre_materialization_candidate_cap"],
                                     accepted=int(accepted_flag), stagnation=stagnation, area_gain_fraction=gain)
                     action = predict(policy["after_round"], features)
-                    historical_action = ("CONTINUE" if stage_round < len(expected) else
-                                         ("ENTER_" + plan["stages"][si+1]["profile"] if si+1 < len(plan["stages"]) else "STOP"))
                     trace.append({"stage": si+1, "stage_round": stage_round, "total_round": total_round,
                                   "features": features, "policy_action": action,
-                                  "historical_observer_action": historical_action,
-                                  "observer_mismatch": mismatch, "parent_sha256": round_row.get("parent_sha256"),
+                                  "parent_sha256": round_row.get("parent_sha256"),
                                   "candidate_sha256": round_row.get("candidate_sha256"),
                                   "accepted_sha256": round_row.get("accepted_sha256"),
                                   "parent_action": round_row.get("parent_action"),
                                   "elapsed_search_sec": time.monotonic() - route_started})
                     write(path_dir / "TRACE.json", trace)
-                    observed_divergence = None
-                    if mismatch:
-                        observed_divergence = f"stage {si+1} round {stage_round}: {mismatch}"
-                    elif action != historical_action:
-                        observed_divergence = (f"stage {si+1} round {stage_round}: policy action {action} "
-                                               f"!= observer action {historical_action}")
-                    if observed_divergence and first_divergence is None:
-                        first_divergence = observed_divergence
-                    stop_for_observer = bool(observed_divergence and not continue_after_observer_divergence)
-                    if stop_for_observer or action != "CONTINUE" or portfolio:
+                    if action != "CONTINUE" or portfolio:
                         terminate_owned(process)
                         break
                     raw_round += 1
-                if first_divergence and not continue_after_observer_divergence:
-                    break
                 if portfolio:
                     current = Path(round_row["accepted_path"])
                     stage_last_point = point(round_row)
                 else:
-                    final_native = Path(summary["incumbent_path"])
-                    current = final_native
+                    current = Path(summary["incumbent_path"])
                     stage_last_point = summary["incumbent_ppa"]
                 if action != "CONTINUE" and not portfolio:
                     break
-            if first_divergence and not continue_after_observer_divergence:
-                break
             if portfolio and action != "CONTINUE" and iteration + 1 < iterations:
                 break
-        if first_divergence and not continue_after_observer_divergence:
-            break
         if action not in ("STOP",) and not action.startswith("ENTER_"):
             schedule_divergence = f"stage {si+1} ended with invalid action {action}"
             break
@@ -322,41 +281,18 @@ def execute_route(plan, continue_after_observer_divergence=True):
             break
     elapsed = prefix_seconds + time.monotonic() - route_started
     result = {"case": plan["case"], "guide": plan["guide"], "search_seconds": elapsed,
-              "first_divergence": first_divergence, "schedule_divergence": schedule_divergence,
-              "continued_after_observer_divergence": continue_after_observer_divergence,
-              "trace_rounds": len(trace),
-              "reference_sha256": plan["final_reference_sha256"], "evaluation_evidence_reused": False}
-    if schedule_divergence or (first_divergence and not continue_after_observer_divergence):
-        terminal_reason = schedule_divergence or first_divergence
-        result["first_divergence"] = terminal_reason
+              "schedule_divergence": schedule_divergence,
+              "trace_rounds": len(trace), "external_validation": "PENDING"}
+    if schedule_divergence:
         result.update(status="DIVERGED", classification="DIVERGED", final_sha256="")
     else:
         final = path_dir / "final.v"
-        if row["links"][-1]["check"] == "byte_identical":
-            shutil.copyfile(current, final)
-        else:
-            restore_interface(current, final, plan["g0"], plan["case"])
-        final_sha = digest(final)
-        result["final_sha256"] = final_sha
-        if final_sha == plan["final_reference_sha256"]:
-            classification = "FINAL_SHA_PASS" if first_divergence else "EXACT_TRAJECTORY_PASS"
-            result.update(status="COMPLETE", classification=classification,
-                          evaluation_evidence_reused=True,
-                          evaluation_note="matches packaged final SHA; packaged result metrics reused, no new EDA")
-        else:
-            result.update(status="COMPLETE_PENDING_VALIDATION", classification="FINAL_SHA_MISMATCH",
-                          evaluation_note="new cold replay, legality/CEC and mapped-as-is evaluation required")
+        restore_interface(current, final, plan["g0"], plan["case"])
+        result["final_sha256"] = digest(final)
+        result.update(status="COMPLETE_PENDING_VALIDATION",
+                      evaluation_note="fresh legality, CEC, and mapped-as-is evaluation required")
     write(path_dir / "RESULT.json", result)
     return result
-def route_data(case, guide):
-    route = read(HERE / "data/routes.json")[case + "/" + guide]
-    return {"links": route["links"], "stages": route["observer_rounds"]}, None, None
-
-
-def expected_rounds(row, stage_index):
-    return row["stages"][stage_index]
-
-
 def verify():
     records = read(HERE / "CHECKSUMS.json")
     for relative, expected in records.items():
@@ -376,9 +312,9 @@ def build_plan(case, guide, output, binary=None):
         stage["output_directory"] = str(output.resolve() / f"stage_{stage['stage']:02d}")
         for record in stage["assets"].values():
             record["path"] = str((HERE / record["path"]).resolve())
-    action = predict(read(POLICY_FROZEN)["initialization"], base_features(case, guide, plan["g0"]))
+    action = predict(read(POLICY)["initialization"], base_features(case, guide, plan["g0"]))
     if action != plan["initial_policy_action"]:
-        raise RuntimeError("initialization does not match frozen execution contract")
+        raise RuntimeError("initialization does not match the packaged policy")
     return plan
 
 

@@ -191,43 +191,6 @@ def terminate_owned() -> None:
                 process.wait()
 
 
-def evidence(args) -> None:
-    checks = []
-    for point in manifest()["points"]:
-        path = HERE / point["g0_path"]
-        actual = sha256(path) if path.is_file() else None
-        checks.append(
-            {
-                "point_id": point["point_id"],
-                "anchor": point["anchor"],
-                "expected": point["g0_sha256"],
-                "actual": actual,
-                "status": "PASS" if actual == point["g0_sha256"] else "FAIL",
-            }
-        )
-    if len(checks) != 20 or len(anchors()) != 13 or any(row["status"] != "PASS" for row in checks):
-        raise RuntimeError("G0 manifest verification failed")
-    output = args.output.resolve()
-    command = [sys.executable, str(REPO / "scripts/replay_figure7.py"), "--output-dir", str(output)]
-    if args.no_plot:
-        command.append("--no-plot")
-    subprocess.run(command, cwd=REPO, check=True)
-    replay = load(output / "replay.json")
-    result = {
-        "status": "PASS",
-        "classification": "saved-evidence replay",
-        "g0_hashes": checks,
-        "g0_count": len(checks),
-        "search_anchor_count": len(anchors()),
-        "figure7_replay": replay,
-        "fresh_optimization": "NOT_RUN",
-    }
-    if not result["g0_hashes"]:
-        result["status"] = "FAIL"
-    dump(output / "pareto_adder_evidence.json", result)
-    print(json.dumps(result, indent=2))
-
-
 def preflight(args) -> None:
     result = {
         "status": "PASS",
@@ -459,10 +422,6 @@ def add_validation_arguments(p) -> None:
 def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(description=__doc__)
     sub = value.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("evidence", help="verify all 20 G0 hashes and replay Figure 7")
-    p.add_argument("--output", type=Path, default=Path("reproduced/figure7"))
-    p.add_argument("--no-plot", action="store_true")
-    p.set_defaults(func=evidence)
     p = sub.add_parser("preflight", help="validate inputs, objectives, and optional runtime dependencies")
     p.add_argument("--objective", action="append")
     p.add_argument("--liberty", type=Path)

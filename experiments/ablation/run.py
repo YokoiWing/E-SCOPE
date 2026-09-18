@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import json
 import os
@@ -21,7 +20,6 @@ REPO = HERE.parents[1]
 MAIN28 = HERE.parent / "main28"
 RUNTIME = MAIN28 / "runtime"
 MANIFEST = HERE / "manifest.json"
-EVIDENCE = REPO / "evidence/figure8/selected_flow_ablation_original_precision.csv"
 LIB_SHA256 = "48f3f7f1ae6ff4a6c50da7ac8ea2cb5dca3fc0e9763321d726583f17b3e659dd"
 BINARIES = ("run_generator_union_native", "run_frozen_a2_fast", "materialize_structural_macro_plan", "dump_mapped_nldm_v3_state")
 MODES = ("phase1-only", "phase2-only", "no-pi-drive-expansion")
@@ -68,6 +66,37 @@ def ensure_runtime(liberty: Path, binary_dir: Path) -> tuple[Path, Path]:
     return liberty, binary_dir
 
 
+def preflight(args) -> None:
+    rows = points()
+    hashes_ok = all(g0_path(row).is_file() and sha256(g0_path(row)) == row["g0_sha256"]
+                    for row in rows)
+    configs_ok = all(
+        row["selected_method"] == "Iterative" or all(
+            (HERE / row[key]).is_file()
+            for key in ("conquer_config", "conquer_phase2_policy")
+        )
+        for row in rows
+    )
+    result = {
+        "status": "PASS" if hashes_ok and configs_ok else "FAIL",
+        "points": len(rows),
+        "g0_hashes": hashes_ok,
+        "configs": configs_ok,
+        "liberty": "NOT_CHECKED",
+        "binaries": "NOT_CHECKED",
+    }
+    if args.liberty and args.bin_dir:
+        try:
+            liberty, binary_dir = ensure_runtime(args.liberty, args.bin_dir)
+            result["liberty"] = str(liberty)
+            result["binaries"] = str(binary_dir)
+        except RuntimeError as error:
+            result.update(status="FAIL", runtime_error=str(error))
+    print(json.dumps(result, indent=2))
+    if result["status"] != "PASS":
+        raise SystemExit(1)
+
+
 def base_env(liberty: Path, binary_dir: Path, jobs: int) -> dict[str, str]:
     env = {key: value for key, value in os.environ.items() if not key.startswith("EGG_")}
     env.update({
@@ -106,51 +135,6 @@ def terminate_owned() -> None:
             os.killpg(process.pid, signal.SIGTERM)
 
 
-def evidence(args) -> None:
-    main = {row["benchmark"]: row for row in load(MAIN28 / "manifest.json")["points"]}
-    evidence_rows = {row["benchmark"]: row for row in csv.DictReader(EVIDENCE.open())}
-    checks = []
-    for point in points():
-        benchmark = point["benchmark"]
-        actual = sha256(g0_path(point))
-        full_reference = (HERE / point["full_reference_path"]).resolve()
-        checks.append({
-            "benchmark": benchmark,
-            "method": point["selected_method"],
-            "method_matches_main": point["selected_method"] == main[benchmark]["paper_selected_method"],
-            "anchor_matches_main": point["anchor"] == main[benchmark]["anchor"],
-            "evidence_method_matches": point["selected_method"] == evidence_rows[benchmark]["selected_flow"],
-            "g0_hash_matches": actual == point["g0_sha256"],
-            "full_reference_hash_matches": full_reference.is_file()
-            and sha256(full_reference) == point["full_reference_sha256"],
-        })
-    if len(checks) != 28 or any(
-        not row["method_matches_main"]
-        or not row["evidence_method_matches"]
-        or not row["g0_hash_matches"]
-        or not row["full_reference_hash_matches"]
-        for row in checks
-    ):
-        raise RuntimeError("ablation selection or G0 verification failed")
-    anchor_mismatches = [row["benchmark"] for row in checks if not row["anchor_matches_main"]]
-    if anchor_mismatches:
-        raise RuntimeError(f"unexpected main-anchor differences: {anchor_mismatches}")
-    output = args.output.resolve()
-    command = [sys.executable, str(REPO / "scripts/replay_figure8.py"), "--output-dir", str(output), "--plot", args.plot]
-    subprocess.run(command, cwd=REPO, check=True)
-    result = {
-        "status": "PASS", "rows": 28,
-        "method_counts": load(MANIFEST)["method_counts"],
-        "selection_matches_main": 28,
-        "full_reference_hashes": 28,
-        "same_anchor_as_current_main": 28,
-        "method_only_anchor_transfer": [],
-        "figure8": load(output / "figure8_recomputed.json"),
-    }
-    dump(output / "ablation_evidence.json", result)
-    print(json.dumps(result, indent=2))
-
-
 def task_kind(point: dict, mode: str) -> str:
     if point["selected_method"] == "Iterative":
         return "native_iterative_ablation"
@@ -183,8 +167,10 @@ def plan(args) -> None:
                 "command": cli_command(point, mode, Path("RUN_ROOT") / point["benchmark"] / mode, liberty, binary_dir, args.jobs, args.timeout),
                 "external_validation": "required",
             })
+    counts = {name: sum(p["selected_method"] == name for p in points())
+              for name in ("Iterative", "Conquer")}
     dump(output, {"schema": "escope-selected-method-ablation-plan-v1", "task_count": len(tasks),
-                  "method_counts": load(MANIFEST)["method_counts"], "tasks": tasks})
+                  "method_counts": counts, "tasks": tasks})
     print(output)
 
 
@@ -303,7 +289,7 @@ def run_all(args) -> None:
 
 def finalize_fresh(args) -> None:
     from pipeline import finalize
-    result = finalize(args.output, args.liberty, args.genus_bin, args.yosys_bin,
+    result = finalize(args.output, args.full_results, args.liberty, args.genus_bin, args.yosys_bin,
                       args.abc_bin, args.genus_chunk, args.genus_timeout,
                       args.formal_jobs, args.formal_timeout, args.yosys_datdir)
     print(json.dumps(result, indent=2))
@@ -324,6 +310,8 @@ def add_search_arguments(p) -> None:
 
 
 def add_validation_arguments(p) -> None:
+    p.add_argument("--full-results", type=Path, required=True,
+                   help="main28 run-all output containing <benchmark>__<anchor>/selected/mapped.v")
     p.add_argument("--genus-bin", type=Path, required=True)
     p.add_argument("--yosys-bin", type=Path, required=True)
     p.add_argument("--abc-bin", type=Path, required=True)
@@ -341,10 +329,10 @@ def build(args) -> None:
 def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(description=__doc__)
     sub = value.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("evidence"); p.add_argument("--output", type=Path, default=Path("reproduced/figure8")); p.add_argument("--plot", choices=("none", "exact", "paper"), default="exact"); p.set_defaults(func=evidence)
-    p = sub.add_parser("build"); p.add_argument("--target-dir", type=Path, required=True); p.set_defaults(func=build)
-    p = sub.add_parser("plan"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=plan)
-    p = sub.add_parser("run-one"); p.add_argument("--benchmark", required=True); p.add_argument("--mode", choices=MODES, required=True); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=run_one)
+    p = sub.add_parser("preflight", help="validate inputs and optional runtime dependencies"); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.set_defaults(func=preflight)
+    p = sub.add_parser("build", help="build the shared implementation"); p.add_argument("--target-dir", type=Path, required=True); p.set_defaults(func=build)
+    p = sub.add_parser("plan", help="write all 84 ablation tasks without running them"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=plan)
+    p = sub.add_parser("run-one", help="run one benchmark and ablation mode"); p.add_argument("--benchmark", required=True); p.add_argument("--mode", choices=MODES, required=True); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=run_one)
     p = sub.add_parser("run-all", help="run or resume all 84 selected-method ablations"); add_search_arguments(p); p.set_defaults(func=run_all)
     p = sub.add_parser("finalize", help="stage, run Genus/formal, and generate fresh Figure 8"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); add_validation_arguments(p); p.set_defaults(func=finalize_fresh)
     p = sub.add_parser("reproduce", help="run all searches, validate them, and generate fresh Figure 8"); add_search_arguments(p); add_validation_arguments(p); p.set_defaults(func=reproduce)

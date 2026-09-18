@@ -260,7 +260,7 @@ def run_one(args) -> dict:
         "benchmark": point["benchmark"],
         "anchor": point["anchor"],
         "g0_sha256": point["g0_sha256"],
-        "paper_selected_method": point["paper_selected_method"],
+        "selected_method_for_ablation": point["selected_method"],
         "mode": args.method,
         "smoke": args.smoke,
         "commands": {key: value for key, value in plan.items() if key in ("iterative", "conquer")},
@@ -315,7 +315,6 @@ def run_one(args) -> dict:
         "completed_methods": list(labels),
         "elapsed_concurrent_wall_sec": time.time() - started,
         "external_validation": "PENDING",
-        "paper_result_reproduced": False,
         "next_step": "evaluate fresh checkpoints/finalists, then apply policy.py to measured features",
     }
     dump(output / "status.json", result)
@@ -405,8 +404,6 @@ def run_online_controller(args, point: dict, output: Path, liberty: Path,
     selected_receipt = {
         "method": selected_method, "candidate_id": selected["candidate_id"],
         "source_sha256": selected["sha256"], "selected_sha256": sha(destination),
-        "paper_expected_sha256": point["optimized_sha256"],
-        "paper_output_sha_match": sha(destination) == point["optimized_sha256"],
         "ppa": selected["ppa"],
     }
     dump(output / "selected/receipt.json", selected_receipt)
@@ -422,25 +419,11 @@ def run_online_controller(args, point: dict, output: Path, liberty: Path,
     return result
 
 
-def evidence(args) -> None:
-    commands = [
-        [sys.executable, str(HERE / "verify.py")],
-        [sys.executable, str(REPO / "scripts/replay_main28.py"), "--output-dir", str(args.output.resolve())],
-    ]
-    if args.no_plot:
-        commands[1].append("--no-plot")
-    for command in commands:
-        subprocess.run(command, cwd=REPO, check=True)
-
-
 def preflight(args) -> None:
     checks = {}
     for executable in ("python3", "cargo", "rustc"):
         checks[executable] = shutil.which(executable)
     checks["g0_hashes"] = all(sha(HERE / p["g0_path"]) == p["g0_sha256"] for p in points())
-    checks["optimized_netlist_hashes"] = all(
-        sha(HERE / p["optimized_path"]) == p["optimized_sha256"] for p in points()
-    )
     if args.liberty:
         try:
             ensure_library(args.liberty)
@@ -457,7 +440,7 @@ def preflight(args) -> None:
             checks["binaries"] = {"status": "FAIL", "error": str(error)}
     else:
         checks["binaries"] = {"status": "NOT_CHECKED", "build_command": "python3 experiments/main28/run.py build --target-dir /tmp/escope-main28-build"}
-    failed = not checks["g0_hashes"] or not checks["optimized_netlist_hashes"]
+    failed = not checks["g0_hashes"]
     failed |= any(checks[x] is None for x in ("python3", "cargo", "rustc"))
     failed |= any(checks[key].get("status") == "FAIL" for key in ("liberty", "binaries"))
     result = {"status": "FAIL" if failed else "PASS", "checks": checks}
@@ -494,9 +477,7 @@ def plan(args) -> None:
             "g0": point["g0_path"], "g0_sha256": point["g0_sha256"],
             "objective": point["objective"],
             "iterative_round_cap": commands["rounds"],
-            "paper_selected_method": point["paper_selected_method"],
-            "paper_output": point["optimized_path"],
-            "paper_output_sha256": point["optimized_sha256"],
+            "selected_method_for_ablation": point["selected_method"],
             "fresh_command": ["python3", "experiments/main28/run.py", "run-one", "--benchmark", point["benchmark"], "--method", "online", "--output", str(base), "--liberty", str(liberty), "--bin-dir", str(binary_dir), "--genus-bin", str(genus), "--yosys-bin", str(yosys), "--abc-bin", str(abc)],
             "external_status": "performed online before the stop/continue decision",
         })
@@ -557,8 +538,6 @@ def run_all(args) -> None:
 def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(description=__doc__)
     sub = value.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("evidence", help="verify inputs and recompute Table III/Figure 6")
-    p.add_argument("--output", type=Path, default=Path("reproduced/main28")); p.add_argument("--no-plot", action="store_true"); p.set_defaults(func=evidence)
     p = sub.add_parser("preflight", help="check dependencies without running optimization")
     p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.set_defaults(func=preflight)
     p = sub.add_parser("build", help="build the four required Rust binaries")

@@ -1,9 +1,8 @@
 {
-  "schema_version": 1,
-  "experiment": "E-SCOPE Section IV-C epfl_adder Pareto experiment",
+  "schema_version": 2,
+  "experiment": "adder Pareto fresh reproduction",
   "g0_count": 20,
   "search_anchor_count": 13,
-  "g0_selection": "20 high-effort Genus mappings; search anchors are the union of the G0-only external delay-area and delay-power fronts, frozen before Iterative search",
   "method": "Iterative",
   "round_cap": 5,
   "trajectory_parallelism": 1,
@@ -16,263 +15,163 @@
   "points": [
     {
       "point_id": "orig_t0",
-      "origin": "original five",
       "period_ps": 946.865,
       "g0_path": "g0/orig_t0.v",
       "g0_sha256": "8b90bf6dc57389a185d9a671f16abb2d7c5abaebff3faf7edc4711443db02ab2",
-      "boundary_delay_ps": 946.6,
-      "area_um2": 108.825,
-      "power_uw": 180.375,
       "search_anchor": true,
-      "anchor": "p0946p865",
-      "source_workspace_path": "paper_results_v8/strong_genus/epfl_adder/t0_0.95x/g0.v"
+      "anchor": "p0946p865"
     },
     {
       "point_id": "orig_t1",
-      "origin": "original five",
       "period_ps": 1010.0,
       "g0_path": "g0/orig_t1.v",
       "g0_sha256": "cdd7d34a8a2b9a20f999e6633c8a656a724d51e025e409e2fa37017aa7f7e7fe",
-      "boundary_delay_ps": 1010.0,
-      "area_um2": 107.379,
-      "power_uw": 178.299,
       "search_anchor": true,
-      "anchor": "p1010",
-      "source_workspace_path": "paper_results_v8/baseline_recovery_v1/strong_genus/epfl_adder/t1_adder_frontier_p1010/g0.v"
+      "anchor": "p1010"
     },
     {
       "point_id": "orig_t2",
-      "origin": "original five",
       "period_ps": 1046.535,
       "g0_path": "g0/orig_t2.v",
       "g0_sha256": "500f08449633b535cbf5b429db199bb03b92cdcb0b08da00a615241b36fa7f3a",
-      "boundary_delay_ps": 1045.5,
-      "area_um2": 106.411,
-      "power_uw": 178.391,
       "search_anchor": true,
-      "anchor": "p1046p535",
-      "source_workspace_path": "paper_results_v8/strong_genus/epfl_adder/t2_1.05x/g0.v"
+      "anchor": "p1046p535"
     },
     {
       "point_id": "orig_t3",
-      "origin": "original five",
       "period_ps": 1096.3700000000001,
       "g0_path": "g0/orig_t3.v",
       "g0_sha256": "2b1cb92e4d66fdf16758b6a735e196fa7be928f18a8f72b79aecf21c58abf2ad",
-      "boundary_delay_ps": 1096.4,
-      "area_um2": 103.833,
-      "power_uw": 174.69,
       "search_anchor": true,
-      "anchor": "p1096p37",
-      "source_workspace_path": "paper_results_v8/strong_genus/epfl_adder/t3_1.10x/g0.v"
+      "anchor": "p1096p37"
     },
     {
       "point_id": "orig_t4",
-      "origin": "original five",
       "period_ps": 1146.205,
       "g0_path": "g0/orig_t4.v",
       "g0_sha256": "f7a1ae0d962b1152152aadfe8cfb5f7f4b0858a71be927018448778ebdc696e6",
-      "boundary_delay_ps": 1146.2,
-      "area_um2": 97.499,
-      "power_uw": 165.057,
       "search_anchor": true,
-      "anchor": "p1146p205",
-      "source_workspace_path": "paper_results_v8/baseline_recovery_v1/strong_genus/epfl_adder/t4_recovery_bisect1_p1146p205/g0.v"
+      "anchor": "p1146p205"
     },
     {
       "point_id": "s00_p875",
-      "origin": "additional high-effort sweep",
       "period_ps": 875.0,
       "g0_path": "g0/s00_p875.v",
       "g0_sha256": "f010c86c2b6ad7142d73a4112b009b863018d2ef8126faf39145e94fc58ab262",
-      "boundary_delay_ps": 874.4,
-      "area_um2": 114.272,
-      "power_uw": 188.892,
       "search_anchor": true,
-      "anchor": "p0875",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s00_p875/g0.v"
+      "anchor": "p0875"
     },
     {
       "point_id": "s01_p900",
-      "origin": "additional high-effort sweep",
       "period_ps": 900.0,
       "g0_path": "g0/s01_p900.v",
       "g0_sha256": "5c049145dc3ec179ab9609c743b0963b553b466bbed5c608acbd252014f373f6",
-      "boundary_delay_ps": 897.7,
-      "area_um2": 114.575,
-      "power_uw": 188.869,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s01_p900/g0.v"
+      "anchor": null
     },
     {
       "point_id": "s02_p920",
-      "origin": "additional high-effort sweep",
       "period_ps": 920.0,
       "g0_path": "g0/s02_p920.v",
       "g0_sha256": "f9266d4215974d7d27cb7daba171cc80bd4636d25ab17a139b6f973fd0fcee6d",
-      "boundary_delay_ps": 917.3,
-      "area_um2": 115.007,
-      "power_uw": 189.154,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s02_p920/g0.v"
+      "anchor": null
     },
     {
       "point_id": "s03_p935",
-      "origin": "additional high-effort sweep",
       "period_ps": 935.0,
       "g0_path": "g0/s03_p935.v",
       "g0_sha256": "48747275a947c6c82c704052e13df08e1b327553c8fc73432db668cae477f1a6",
-      "boundary_delay_ps": 932.0,
-      "area_um2": 112.686,
-      "power_uw": 186.586,
       "search_anchor": true,
-      "anchor": "p0935",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s03_p935/g0.v"
+      "anchor": "p0935"
     },
     {
       "point_id": "s04_p800",
-      "origin": "additional high-effort sweep",
       "period_ps": 800.0,
       "g0_path": "g0/s04_p800.v",
       "g0_sha256": "6df8e5b22319adcfd5fc03608cffb32d943ee7324e698583de388f201a051945",
-      "boundary_delay_ps": 799.1,
-      "area_um2": 117.188,
-      "power_uw": 191.903,
       "search_anchor": true,
-      "anchor": "p0800",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s04_p800/g0.v"
+      "anchor": "p0800"
     },
     {
       "point_id": "s05_p825",
-      "origin": "additional high-effort sweep",
       "period_ps": 825.0,
       "g0_path": "g0/s05_p825.v",
       "g0_sha256": "fdbc6280cfe5e4076d729ac286b914d1a2e0dc8dad171efbfcf41ea4b42f4fa2",
-      "boundary_delay_ps": 824.7,
-      "area_um2": 116.162,
-      "power_uw": 192.03,
       "search_anchor": true,
-      "anchor": "p0825",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s05_p825/g0.v"
+      "anchor": "p0825"
     },
     {
       "point_id": "s06_p850",
-      "origin": "additional high-effort sweep",
       "period_ps": 850.0,
       "g0_path": "g0/s06_p850.v",
       "g0_sha256": "3eb72c380954fc09ffb320f306d7b04ea10d54d228ff84020f20f4bf6112ca2f",
-      "boundary_delay_ps": 849.7,
-      "area_um2": 114.377,
-      "power_uw": 187.763,
       "search_anchor": true,
-      "anchor": "p0850",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s06_p850/g0.v"
+      "anchor": "p0850"
     },
     {
       "point_id": "s07_p860",
-      "origin": "additional high-effort sweep",
       "period_ps": 860.0,
       "g0_path": "g0/s07_p860.v",
       "g0_sha256": "ee5f00808c520d36d2d759b4570157b4fbed6aa89b3266c180b81e9827781931",
-      "boundary_delay_ps": 859.2,
-      "area_um2": 116.185,
-      "power_uw": 191.744,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s07_p860/g0.v"
+      "anchor": null
     },
     {
       "point_id": "s08_p960",
-      "origin": "additional high-effort sweep",
       "period_ps": 960.0,
       "g0_path": "g0/s08_p960.v",
       "g0_sha256": "8f5f816976d755df8a9b5f22c8898af655f7fbb261f9fbba066abee400c97c48",
-      "boundary_delay_ps": 959.3,
-      "area_um2": 111.741,
-      "power_uw": 184.466,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s08_p960/g0.v"
+      "anchor": null
     },
     {
       "point_id": "s09_p985",
-      "origin": "additional high-effort sweep",
       "period_ps": 985.0,
       "g0_path": "g0/s09_p985.v",
       "g0_sha256": "6d1af852fda32739de86459921c1c0eef9025a8e8e9c572c8734b52d12f91e77",
-      "boundary_delay_ps": 982.4,
-      "area_um2": 109.747,
-      "power_uw": 181.767,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s09_p985/g0.v"
+      "anchor": null
     },
     {
       "point_id": "s10_p1025",
-      "origin": "additional high-effort sweep",
       "period_ps": 1025.0,
       "g0_path": "g0/s10_p1025.v",
       "g0_sha256": "9e5d0bae971454a0bb2179e25e3dd98b7142fd5bf705de777e5e9fedd84c8a6f",
-      "boundary_delay_ps": 1022.3,
-      "area_um2": 107.122,
-      "power_uw": 178.611,
       "search_anchor": true,
-      "anchor": "p1025",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s10_p1025/g0.v"
+      "anchor": "p1025"
     },
     {
       "point_id": "s11_p1070",
-      "origin": "additional high-effort sweep",
       "period_ps": 1070.0,
       "g0_path": "g0/s11_p1070.v",
       "g0_sha256": "a22613ef28442130a8f47e851cff9a8083d8bfc457b06a861aae52e38f8fdef4",
-      "boundary_delay_ps": 1068.7,
-      "area_um2": 105.862,
-      "power_uw": 176.573,
       "search_anchor": true,
-      "anchor": "p1070",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s11_p1070/g0.v"
+      "anchor": "p1070"
     },
     {
       "point_id": "s12_p1120",
-      "origin": "additional high-effort sweep",
       "period_ps": 1120.0,
       "g0_path": "g0/s12_p1120.v",
       "g0_sha256": "2dbabfe3bc0feb872bbf0f01ee53569b419ef2de5216b9ee3831cd09ef0f5b2a",
-      "boundary_delay_ps": 1119.7,
-      "area_um2": 101.372,
-      "power_uw": 169.691,
       "search_anchor": true,
-      "anchor": "p1120",
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s12_p1120/g0.v"
+      "anchor": "p1120"
     },
     {
       "point_id": "s13_p1190",
-      "origin": "additional high-effort sweep",
       "period_ps": 1190.0,
       "g0_path": "g0/s13_p1190.v",
       "g0_sha256": "fa60e51f4f1b7baa52329fc46f256582b722de63f3502071d5acea8e10dc55d4",
-      "boundary_delay_ps": 1154.7,
-      "area_um2": 104.894,
-      "power_uw": 176.21,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s13_p1190/g0.v"
+      "anchor": null
     },
     {
       "point_id": "s14_p1250",
-      "origin": "additional high-effort sweep",
       "period_ps": 1250.0,
       "g0_path": "g0/s14_p1250.v",
       "g0_sha256": "7c3b73abd000455ed09508e98b1319d376a9b3ddd58fd2f91a15c4a4d42aff04",
-      "boundary_delay_ps": 1229.2,
-      "area_um2": 108.953,
-      "power_uw": 182.644,
       "search_anchor": false,
-      "anchor": null,
-      "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s14_p1250/g0.v"
+      "anchor": null
     }
   ]
 }

@@ -374,7 +374,7 @@
       "rule_count": 1435,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P01": {
       "config": {
@@ -432,7 +432,7 @@
       "rule_count": 1435,
       "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P02": {
       "config": {
@@ -496,7 +496,7 @@
       "rule_count": 290,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P03": {
       "config": {
@@ -560,7 +560,7 @@
       "rule_count": 290,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P04": {
       "config": {
@@ -624,7 +624,7 @@
       "rule_count": 290,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P05": {
       "config": {
@@ -688,7 +688,7 @@
       "rule_count": 290,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P06": {
       "config": {
@@ -752,7 +752,7 @@
       "rule_count": 290,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P07": {
       "config": {
@@ -816,7 +816,7 @@
       "rule_count": 290,
       "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P08": {
       "config": {
@@ -880,7 +880,7 @@
       "rule_count": 290,
       "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P09": {
       "config": {
@@ -944,7 +944,7 @@
       "rule_count": 290,
       "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P10": {
       "config": {
@@ -1008,7 +1008,7 @@
       "rule_count": 290,
       "lib_sha256": "6de38efe063721bd371c7d9522073da9529d32ab19fbaedeeadd73832571413b",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "native_saved_incumbent"
+      "selection_policy": "native_incumbent"
     },
     "P11": {
       "config": {
@@ -1072,7 +1072,7 @@
       "rule_count": 290,
       "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "saved_internal_feasible_portfolio_selection"
+      "selection_policy": "internal_feasible_portfolio_selection"
     },
     "P12": {
       "config": {
@@ -1136,7 +1136,7 @@
       "rule_count": 290,
       "lib_sha256": "8559382a1b3f22a49d12410207dbe5cd15ee5abdd94f81f8402069021a431aba",
       "scale_sha256": "f2059e16f5f868963c00d3ceb5aa3a2bcf76d2cea632488b9de6445fbbd90230",
-      "selection_policy": "saved_internal_feasible_portfolio_selection"
+      "selection_policy": "internal_feasible_portfolio_selection"
     }
   },
   "limits": [

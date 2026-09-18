@@ -1,8 +1,0 @@
-{
-  "netlist": "results/usb_funct/iterative_internal_v3/final.v",
-  "sha256": "66e2d19c96ea70575967dbc49dd8557c1ae4239bff1bc298fae8f85f2bd701b9",
-  "original_evaluated_input": "${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_usb_funct_iterative_polish_v1/genus_batches/usb_internal_final_v1/frozen_inputs/usb_funct/usb_internal_feasible_portfolio_final.v",
-  "original_command_record": "paper_results_v8/areapmo_usb_funct_iterative_polish_v1/genus_batches/usb_internal_final_v1/frozen_inputs.json",
-  "script_sha256": "c92d5becf6e48f1f0cfbe7af334ce19f75cecc1dfe3c5b22ad9621861804cd24",
-  "environment": null
-}

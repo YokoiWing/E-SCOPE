@@ -1,3 +1,0 @@
-ABC command line: "cec -n ${E_SCOPE_SOURCE_ROOT}/aspdac25/aspdac25_pmo/experiments/benchmarks/usb_phy.aig ${E_SCOPE_SOURCE_ROOT}/paper_results_v8/areapmo_iterative_smallcases_convergence_v1/usb_phy/areapmo_release/g0.blif".
-
-Networks are equivalent.  Time =     0.01 sec

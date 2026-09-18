@@ -1,4 +1,0 @@
-ABC command line: "read_library "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/asap7.genlib"; cec -n "/tmp/case_study_areapmo_queue_20260915/aes_core/native/g0.blif" "/tmp/case_study_areapmo_queue_20260915/aes_core/native/round_10.blif"".
-
-Entered genlib library with 47 gates from file "${E_SCOPE_SOURCE_ROOT}/final_paper/case_study/areapmo/assets/asap7.genlib".
-Networks are equivalent.  Time =     0.70 sec
