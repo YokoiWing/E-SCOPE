@@ -15,18 +15,15 @@ python3 experiments/ablation/run.py run-one \
   --bin-dir /tmp/escope-build/release
 ```
 
-The complete `reproduce` command first runs all three ablations. During
-finalization it takes fresh full-method netlists from a completed main28
-`run-all` directory:
+Run all three ablations with:
 
 ```bash
-python3 experiments/ablation/run.py reproduce \
+python3 experiments/ablation/run.py run-all \
   --output /tmp/ablation-all \
-  --full-results /tmp/main28-all \
   --liberty /path/to/asap7_full_comb.lib \
-  --bin-dir /tmp/escope-build/release \
-  --genus-bin /path/to/genus \
-  --yosys-bin /path/to/yosys --abc-bin /path/to/abc
+  --bin-dir /tmp/escope-build/release
 ```
 
-The generated Figure 8 uses only fresh PPA and formal results.
+Each task writes its fresh search result and selected netlist beneath the
+output directory. Plotting and saved expected-result comparison are outside
+this minimal release.

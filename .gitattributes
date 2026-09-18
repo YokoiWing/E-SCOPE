@@ -1,4 +1,3 @@
 # Frozen generated netlists are reviewed by SHA; suppress enormous textual diffs.
 experiments/main28/g0/*.v -diff
-experiments/main28/expected/*.v -diff
 experiments/pareto_adder/g0/*.v -diff

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Entry point for the Figure 8 selected-method ablation."""
+"""Entry point for the selected-method ablation searches."""
 
 from __future__ import annotations
 
@@ -287,19 +287,6 @@ def run_all(args) -> None:
     print(json.dumps(result, indent=2))
 
 
-def finalize_fresh(args) -> None:
-    from pipeline import finalize
-    result = finalize(args.output, args.full_results, args.liberty, args.genus_bin, args.yosys_bin,
-                      args.abc_bin, args.genus_chunk, args.genus_timeout,
-                      args.formal_jobs, args.formal_timeout, args.yosys_datdir)
-    print(json.dumps(result, indent=2))
-
-
-def reproduce(args) -> None:
-    run_all(args)
-    finalize_fresh(args)
-
-
 def add_search_arguments(p) -> None:
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--liberty", type=Path, required=True)
@@ -307,19 +294,6 @@ def add_search_arguments(p) -> None:
     p.add_argument("--jobs", type=int, default=2)
     p.add_argument("--timeout", type=int, default=43200)
     p.add_argument("--continue-on-failure", action="store_true")
-
-
-def add_validation_arguments(p) -> None:
-    p.add_argument("--full-results", type=Path, required=True,
-                   help="main28 run-all output containing <benchmark>__<anchor>/selected/mapped.v")
-    p.add_argument("--genus-bin", type=Path, required=True)
-    p.add_argument("--yosys-bin", type=Path, required=True)
-    p.add_argument("--abc-bin", type=Path, required=True)
-    p.add_argument("--yosys-datdir", type=Path)
-    p.add_argument("--genus-chunk", type=int, default=60)
-    p.add_argument("--genus-timeout", type=int, default=7200)
-    p.add_argument("--formal-jobs", type=int, default=2)
-    p.add_argument("--formal-timeout", type=int, default=1800)
 
 
 def build(args) -> None:
@@ -334,14 +308,12 @@ def parser() -> argparse.ArgumentParser:
     p = sub.add_parser("plan", help="write all 84 ablation tasks without running them"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=plan)
     p = sub.add_parser("run-one", help="run one benchmark and ablation mode"); p.add_argument("--benchmark", required=True); p.add_argument("--mode", choices=MODES, required=True); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=run_one)
     p = sub.add_parser("run-all", help="run or resume all 84 selected-method ablations"); add_search_arguments(p); p.set_defaults(func=run_all)
-    p = sub.add_parser("finalize", help="stage, run Genus/formal, and generate fresh Figure 8"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); add_validation_arguments(p); p.set_defaults(func=finalize_fresh)
-    p = sub.add_parser("reproduce", help="run all searches, validate them, and generate fresh Figure 8"); add_search_arguments(p); add_validation_arguments(p); p.set_defaults(func=reproduce)
     return value
 
 
 def main() -> None:
     args = parser().parse_args()
-    for name in ("jobs", "timeout", "genus_chunk", "genus_timeout", "formal_jobs", "formal_timeout"):
+    for name in ("jobs", "timeout"):
         if hasattr(args, name) and getattr(args, name) <= 0:
             raise SystemExit(f"--{name.replace('_', '-')} must be positive")
     try:
