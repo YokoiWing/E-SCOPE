@@ -29,6 +29,12 @@ BINARIES = (
     "materialize_structural_macro_plan",
     "dump_mapped_nldm_v3_state",
 )
+SEARCH_JOBS_HELP = (
+    "internal search workers (default: 2, recommended for paper reproduction); "
+    "using one worker can delay Iterative checkpoints and change the online "
+    "Iterative/Conquer choice on runtime-sensitive cases such as c432, "
+    "epfl_priority, epfl_sqrt, epfl_div, and epfl_mem_ctrl"
+)
 OWNED: list[subprocess.Popen] = []
 
 
@@ -563,7 +569,7 @@ def parser() -> argparse.ArgumentParser:
     p = sub.add_parser("run-one", help="run fresh Iterative, Conquer, both, or the III-E online flow")
     p.add_argument("--benchmark", required=True); p.add_argument("--method", choices=("iterative", "conquer", "both", "online"), default="online")
     p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True)
-    p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.add_argument("--smoke", action="store_true")
+    p.add_argument("--jobs", type=int, default=2, help=SEARCH_JOBS_HELP); p.add_argument("--timeout", type=int, default=43200); p.add_argument("--smoke", action="store_true")
     p.add_argument("--genus-bin", type=Path); p.add_argument("--yosys-bin", type=Path); p.add_argument("--abc-bin", type=Path)
     p.add_argument("--yosys-datdir", type=Path); p.add_argument("--genus-timeout", type=int, default=3600); p.add_argument("--formal-timeout", type=int, default=1800)
     p.set_defaults(func=run_one)
@@ -573,7 +579,7 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True)
     p.add_argument("--genus-bin", type=Path, required=True); p.add_argument("--yosys-bin", type=Path, required=True); p.add_argument("--abc-bin", type=Path, required=True)
     p.add_argument("--yosys-datdir", type=Path); p.add_argument("--genus-timeout", type=int, default=3600); p.add_argument("--formal-timeout", type=int, default=1800)
-    p.add_argument("--jobs", type=int, default=2); p.add_argument("--point-timeout", type=int, default=43200); p.add_argument("--continue-on-failure", action="store_true"); p.set_defaults(func=run_all)
+    p.add_argument("--jobs", type=int, default=2, help=SEARCH_JOBS_HELP); p.add_argument("--point-timeout", type=int, default=43200); p.add_argument("--continue-on-failure", action="store_true"); p.set_defaults(func=run_all)
     return value
 
 

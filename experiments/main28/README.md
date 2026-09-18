@@ -173,6 +173,17 @@ its own measured PPA. Historical PPA may not be substituted when the selected
 netlist SHA differs. All 28 saved policy records use the same anchor as their
 main-table row; `epfl_adder/p0800` comes from the fresh native-D²AP rerun.
 
+Use the default `--jobs 2` for a paper reproduction run. One internal worker
+is supported for resource-constrained machines, but it can make the Iterative
+branch substantially slower and move the checkpoint observed when Conquer
+finishes. This effect was observed on `c432`, `epfl_priority`, `epfl_sqrt`,
+`epfl_div`, and `epfl_mem_ctrl`; the larger `sqrt`, `div`, and `mem_ctrl`
+Iterative branches are especially sensitive because each round evaluates many
+exact candidates. Two workers reduce this timing skew but do not guarantee an
+identical method label across machines. The flow does not contain a
+benchmark-specific override: `--jobs` controls resources uniformly for every
+point.
+
 A clean three-round rerun illustrates this machine-speed sensitivity. The
 saved run selected Iterative for both `epfl_sqrt` and `epfl_div`; the fresh run
 selected Conquer, because Conquer returned before the same Iterative progress

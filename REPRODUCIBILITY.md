@@ -82,7 +82,10 @@ also completed its selected-winner formal validation and reproduced the saved
 PPA, although its regenerated netlist SHA was different. These checks support
 the entry point without claiming a bit-identical independent 28/28 rerun. The
 wrapper defaults to two internal workers, while the PDF states a one-CPU-core
-runtime setup; saved Figure 6 timing therefore remains machine-specific.
+runtime setup; saved Figure 6 timing therefore remains machine-specific. Two
+workers are recommended for fresh reproduction because one worker can delay
+Iterative checkpoints enough to change the online method choice on the
+runtime-sensitive cases listed in `experiments/main28/README.md`.
 
 ## Figure 7 Pareto experiment
 
