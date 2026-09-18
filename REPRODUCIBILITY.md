@@ -32,13 +32,12 @@ python3 experiments/main28/run.py evidence --output reproduced/main28
 ```
 
 The saved policy reproduces the paper method on all 28 listed points. Twenty-seven
-records use the same anchor. The current `epfl_adder/p0800` result replaced the
-policy record's older adder anchor, so that point establishes only that both
-select Iterative. The thresholds were fitted in sample, and the historical policy
+records use the same anchor. The current `epfl_adder/p0800` policy record comes
+from its fresh native-D²AP rerun. The thresholds were fitted in sample, and the historical policy
 features use external PPA while the reported search runtime excludes that
 evaluation latency.
 
-Recompute all 28 D²AP ratios, the 17.90% geometric-mean reduction, the 1.46×
+Recompute all 28 D²AP ratios, the 17.59% geometric-mean reduction, the 1.46×
 runtime ratio, and redraw the runtime figure:
 
 ```bash
@@ -46,7 +45,7 @@ python3 scripts/replay_main28.py --output-dir reproduced/main28
 ```
 
 The current PDF uses the `adder` p0800 point: 1942 G0 gates, 301.06 s Genus,
-and 303.351 s E-SCOPE. The bottom selected table and the current Figure 8 input
+and 341.932352107 s E-SCOPE. The bottom selected table and the current Figure 8 input
 still use the older `t0_0.95x` adder point. The replay CSV makes this replacement
 explicit. Saved wall times are machine-specific. The available records do not
 by themselves establish the paper's one-CPU-core wording because the search
@@ -59,20 +58,27 @@ Genus and formal validation, applies the frozen QoR--runtime policy, and either
 stops or resumes Iterative. Ordinary points use the historical native `d2ap`
 mode and historical Iterative configuration SHA-256
 `0e9d50d4f4c95435bee9d7772906e196a8fe35cd5eef344e05e3c5e709ea0597`;
-Conquer's normal lane and the current adder point use the separately preserved
+Conquer's normal lane uses the separately preserved
 timing-boundary configuration SHA-256
 `c74fcf97016dffda862341a5fc4c14ce510f8d2f28742936b37a13665ceda4ca`.
-The current adder point alone uses its D×A ObjectiveSpec. External objectives
-use the Table III data-path delay rather than adding the separately reported
-driver adjustment.
+The current adder point uses the same native D²AP objective and ordinary
+Iterative configuration as the other main-table points. External objectives use
+the Table III data-path delay rather than adding the separately reported driver
+adjustment.
 
-Twenty points were exercised with isolated branch CPU sets after these
-settings were restored. Their method choices and paper-selected netlist hashes
-matched 20/20. The other eight points have saved-evidence and policy replay but
-have not been rerun through the fresh online controller during packaging. The
-wrapper defaults to two internal workers, while the PDF states a one-CPU-core
-runtime setup; saved Figure 6 timing therefore remains machine-specific and is
-not re-established by this partial fresh validation.
+All 27 non-hyper points were exercised at least once through the fresh online
+controller. A later configuration audit found that five R3 points (`c6288`,
+`epfl_dec`, `epfl_div`, `epfl_sqrt`, and `epfl_voter`) had been allowed five
+rounds in those validation runs; they therefore do not count as strict
+paper-configuration reruns. Fresh `epfl_mem_ctrl` and `epfl_sqrt` selections
+also differed from the paper row, while the saved same-anchor policy replay
+still selects the paper method. `epfl_adder/p0800` was then rerun with native
+D²AP and the corrected five-round cap and passed mapped-as-is Genus and formal.
+The corrected one-round hyper search reached its frozen checkpoint, but its
+full external formal pass was not completed. These checks support the entry
+point without claiming a complete independent 28/28 rerun. The wrapper defaults
+to two internal workers, while the PDF states a one-CPU-core runtime setup;
+saved Figure 6 timing therefore remains machine-specific.
 
 ## Figure 7 Pareto experiment
 

@@ -38,8 +38,8 @@ no local source edits or generated experiment files.
   compiled successfully.
 - Saved evidence and plots:
   - Table III/Figure 6: 28 G0 and 28 selected-netlist hashes passed; D²AP
-    geometric mean `0.8210095475250041`; runtime ratio
-    `1.4583649253561954`.
+    geometric mean `0.8240760907489141`; runtime ratio
+    `1.4646139505859852`.
   - Figure 7: 20 G0 hashes passed; 86/113/64 frozen candidates for D×A,
     D²AP, and D×P²; 283 plotted rows carried formal PASS; plots regenerated.
   - Figure 8: all 28 method labels and G0 hashes passed; exact reductions
@@ -75,12 +75,16 @@ Yosys/ABC validation, applies the frozen policy, and stops or resumes Iterative.
 The historical native D2AP mode, Iterative configuration hash, and Table III
 data-path-delay objective were restored and guarded during verification.
 
-Twenty points were exercised with isolated branch CPU sets. All twenty
-recovered the paper method and selected-netlist SHA. The remaining eight points
-were not freshly rerun, so the full 28-point queue remains a ready execution
-path rather than a completed independent rerun. The policy is retrospective
-and in-sample, and `epfl_adder/p0800` remains a method-only transfer from the
-older adder anchor.
+All 27 non-hyper points were exercised at least once. Five R3 points were later
+found to have used an incorrect five-round validation cap, so those runs are not
+strict paper-configuration reruns. Fresh `epfl_mem_ctrl` and `epfl_sqrt`
+selected a different method than their paper rows. The corrected
+`epfl_adder/p0800` native-D²AP run selected Iterative/R5 and passed Genus and
+formal. The corrected one-round hyper search reached its frozen checkpoint, but
+its full external formal pass did not complete. The full queue therefore remains
+a ready execution path rather than a claimed independent 28/28 rerun. The saved
+policy is retrospective and in sample and reproduces all 28 same-anchor method
+labels.
 
 The paper says one CPU core, while the public full-run entry defaults to two
 internal jobs. Saved runtime evidence reproduces the plotted 1.46× number, but

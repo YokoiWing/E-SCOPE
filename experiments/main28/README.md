@@ -36,11 +36,14 @@ optimization or EDA.
 
 The expected aggregate values are:
 
-- D²AP geometric-mean ratio: `0.8210095475250041` (17.8990% reduction);
+- D²AP geometric-mean ratio: `0.8240760907489141` (17.5924% reduction);
 - geometric-mean E-SCOPE search / Genus mapping wall ratio:
-  `1.4583649253561954`, reported as `1.46x`;
-- current adder point: `epfl_adder/p0800`, D×A objective, five Iterative rounds,
-  301.06 s Genus mapping and 303.351 s E-SCOPE search.
+  `1.4646139505859852`, reported as `1.46x`;
+- current adder point: `epfl_adder/p0800`, D²×A×P objective, five Iterative rounds,
+  301.06 s Genus mapping and 341.932352107 s E-SCOPE search.
+
+The sanitized fresh-run receipt is
+`../../evidence/main28/epfl_adder_p0800_d2ap_fresh_receipt.json`.
 
 ## Build and inspect a fresh run
 
@@ -108,27 +111,34 @@ each attempt in a separate directory. For diagnostics, `--method iterative`,
 `conquer`, or `both` still runs search without online selection. A separately
 measured feature record can be checked with:
 
+`epfl_hyp` uses the paper experiment's fixed G0-only fusion/composition
+profile: its Conquer normal V8/A2 lane is disabled, and profiling uses eight
+jobs with a 5400-second stage guard. The exact settings are in
+`runtime/config/conquer_hyp.json`; enabling the normal lane changes both the
+experiment and its runtime substantially.
+
 ```bash
 python3 experiments/main28/run.py select --features measured_features.json
 ```
 
 ## Configuration and selection boundary
 
-All ordinary points use D²×A×P and a five-round Iterative cap.
-`epfl_mem_ctrl` uses its recorded two-round cap, `epfl_hyp` its recorded
-one-round cap, and the current `epfl_adder/p0800` point uses D×A for five
-Iterative rounds. `runtime/config/` contains the search configurations;
+Ordinary points use D²×A×P and the per-point Iterative cap recorded in
+`manifest.json`: five rounds for the R5 points, three rounds for `c6288`,
+`epfl_dec`, `epfl_div`, `epfl_sqrt`, and `epfl_voter`, two rounds for
+`epfl_mem_ctrl`, and one round for `epfl_hyp`. The current
+`epfl_adder/p0800` point also uses D²×A×P for five Iterative rounds.
+`runtime/config/` contains the search configurations;
 `runtime/assets/` contains the exact rewrite rules and the sanitized Liberty
 audit.
 
-The ordinary D²×A×P points use the historical native `d2ap` search mode. They
+All 28 D²×A×P points use the historical native `d2ap` search mode. They
 do not load a generic ObjectiveSpec: doing so would activate candidate families
-that were absent from the Table III trajectories. Only `epfl_adder/p0800`
-enables the generic objective engine with `objective_da.json`.
+that were absent from the Table III trajectories.
 
 Ordinary Iterative trajectories use `iterative_search.json`. Conquer's internal
-normal lane and the newer `epfl_adder/p0800` trajectory use
-`timing_boundary_search.json`, matching their separate historical receipts.
+normal lane uses `timing_boundary_search.json`, matching its separate
+historical receipt.
 The files differ only in the Phase-I timing-boundary switch, but sharing one
 configuration changes candidate identities on some benchmarks.
 
@@ -136,12 +146,10 @@ The online policy evaluates external objectives with the Genus data-path delay
 reported in Table III. The separately recorded BUFx2 driver adjustment is kept
 for boundary auditing and is not added to the Table III objective value.
 
-After an Iterative continuation, ordinary points externally compare the
-completed round checkpoints. The adder follows its paper experiment: before
-external feedback, the controller freezes the union of its exact internal
-Delay–Area and Delay–Power fronts, then applies Genus/formal and selects by
-D×A. This includes the progressive candidate class that produced the reported
-`archive_000`; treating only `accepted.v` as the adder result would omit it.
+After an Iterative continuation, ordinary points externally compare the paper's
+R1/R3/R5 checkpoints; when search stops between them, the final accepted round
+provides the next checkpoint's compatibility alias. `epfl_mem_ctrl` retains its
+special R1/R2 evidence.
 
 The policy is a retrospective, in-sample rule. Its saved observations use
 external PPA for the best completed Iterative checkpoint and the frozen
@@ -155,9 +163,9 @@ The actual online choice is runtime-dependent. CPU contention, tool versions,
 and machine load can change how many Iterative rounds have completed when
 Conquer returns. `evidence` replays the paper machine's saved checkpoint and
 PPA observations and verifies all 28 reported choices; a fresh run reports its
-own decision without forcing it to match. For 27 points the saved policy record
-and paper row use the same anchor. The new `epfl_adder/p0800` row confirms only
-the same method choice, Iterative, and is not a same-anchor policy validation.
+own decision without forcing it to match. All 28 saved policy records now use
+the same anchor as their main-table row; `epfl_adder/p0800` comes from the
+fresh native-D²AP rerun.
 
 `expected/` contains the exact selected netlist for every paper row. These are
 especially useful for independent Genus/formal reevaluation without rerunning

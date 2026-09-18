@@ -1,0 +1,79 @@
+{
+  "anchor": "p0800",
+  "benchmark": "epfl_adder",
+  "g0": {
+    "area_um2": 117.188,
+    "data_path_ps": 795.9,
+    "genus_mapping_wall_sec": 301.06,
+    "power_uw": 191.903,
+    "sha256": "6df8e5b22319adcfd5fc03608cffb32d943ee7324e698583de388f201a051945"
+  },
+  "iterative_round_cap": 5,
+  "objective": "D2AP",
+  "online_policy": {
+    "decision_time": "after Conquer completion and validation of the frozen checkpoint",
+    "features": {
+      "conquer_normal_lane": true,
+      "conquer_qor_delta_percent": -17.813876148452813,
+      "instances": 1942,
+      "iterative_completed_rounds": 1,
+      "iterative_current_qor_delta_percent": -17.813876148452813,
+      "projected_iterative_to_conquer_ratio": 2.6490124447544123,
+      "qor_gap_pp": 0.0
+    },
+    "future_iterative_rounds_visible_to_decision": false,
+    "iterative_action": "continue",
+    "policy_clause": "iterative_continuation_affordable",
+    "schema": "escope-main28-online-decision-v1",
+    "selected_method": "Iterative"
+  },
+  "provenance_note": "Fresh native-D2AP online rerun. Paths and licensed-tool logs are intentionally omitted from the release receipt.",
+  "schema": "escope-main28-fresh-run-receipt-v1",
+  "search": {
+    "iterative_search_wall_sec": 341.932352107,
+    "rounds": [
+      {
+        "accepted_sha256": "aab9dd1e2221073602eb484ccfd6469a0dbaae64a6e4e00c770173fc8b9b729e",
+        "elapsed_sec": 48.02353532,
+        "round": 1
+      },
+      {
+        "accepted_sha256": "1dbd4975f7b11b809821b334d00d7d5b947d422cb5361015a80f92aa68c07bed",
+        "elapsed_sec": 151.031616757,
+        "round": 2
+      },
+      {
+        "accepted_sha256": "50178656d01e27578454c922aeaec445916a454e1cc050ebcba92c5726ba7d97",
+        "elapsed_sec": 47.472337411,
+        "round": 3
+      },
+      {
+        "accepted_sha256": "d13b423d71b8618ad4dbf24245568afa938d33af6dfb46fff35ada7c3cabe69f",
+        "elapsed_sec": 50.867360337,
+        "round": 4
+      },
+      {
+        "accepted_sha256": "95bb321cbc56dbc1357575ef5ce9296cbf7a4c16be6295f859f7804b6ecac274",
+        "elapsed_sec": 44.537502282,
+        "round": 5
+      }
+    ]
+  },
+  "selected_external": {
+    "area_um2": 118.32,
+    "boundary_delay_ps": 700.4,
+    "d2ap_over_g0": 0.7840428975890972,
+    "data_path_ps": 697.8,
+    "driver_adjust_ps": 2.6,
+    "power_uw": 193.866
+  },
+  "selection": {
+    "candidate": "R5",
+    "method": "Iterative",
+    "sha256": "95bb321cbc56dbc1357575ef5ce9296cbf7a4c16be6295f859f7804b6ecac274"
+  },
+  "validation": {
+    "formal_legality": "PASS",
+    "mapped_as_is_genus": "PASS"
+  }
+}

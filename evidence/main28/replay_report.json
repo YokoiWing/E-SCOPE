@@ -6,16 +6,18 @@
     "Section IV-B"
   ],
   "rows": 28,
-  "d2ap_geometric_mean_ratio": 0.8210095475250041,
-  "d2ap_geometric_mean_reduction_percent": 17.89904524749959,
-  "runtime_ratio_geometric_mean": 1.4583649253561954,
+  "d2ap_geometric_mean_ratio": 0.8240760907489141,
+  "d2ap_geometric_mean_reduction_percent": 17.592390925108592,
+  "runtime_ratio_geometric_mean": 1.4646139505859852,
   "source_sha256": {
     "selected_table": "a4c6474eda42cc1a8886710ed7bf4f7e7bffc0fc0b78584338113f1273c29e8c",
     "phase_attribution": "aa551601f954999d65bdbb22a214c40fb350459785395a74684b4f727e265bbb",
     "phase_run_manifest": "bda3fd65acdcd71ff897274de5952ec8a2fa80e1a3b5bd3c73ac0bb9da7f0432",
-    "pareto_plot_data": "c475b4d4834f13ba9d87e13e18d12b1bb74d17e1617f1b76d8747199491c9409"
+    "pareto_plot_data": "c475b4d4834f13ba9d87e13e18d12b1bb74d17e1617f1b76d8747199491c9409",
+    "fresh_adder_receipt": "e6846ed7ed075a42476856ec80e2e91733fe63151a6323bd25e74aa5b35028a3"
   },
-  "adder_version_note": "Current PDF Table III/Figure 6 use p0800 (1942 gates, 301.06 s Genus, 303.351 s E-SCOPE); the bottom selected table and Figure 8 evidence still use the older t0_0.95x adder point.",
+  "adder_version_note": "Current main-28 adder row uses fresh p0800 native D2AP: 1942 gates, 301.06 s Genus, 341.932352107 s Iterative search; Genus/formal PASS.",
   "runtime_limit": "Saved wall times are machine-specific. The compact evidence does not prove the paper's one-CPU-core claim; original runs used internal worker settings that require a separate resource audit.",
-  "replay_classification": "saved external evidence recomputation; no optimization, formal tool, or Genus executed"
+  "replay_classification": "saved external evidence recomputation; no optimization, formal tool, or Genus executed",
+  "fresh_adder_selected_sha256": "95bb321cbc56dbc1357575ef5ce9296cbf7a4c16be6295f859f7804b6ecac274"
 }

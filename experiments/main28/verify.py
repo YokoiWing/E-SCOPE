@@ -40,7 +40,7 @@ def main() -> None:
         raise RuntimeError("Iterative config does not match the historical RUN_MANIFEST")
     timing_boundary_config = ROOT / "runtime/config/timing_boundary_search.json"
     if digest(timing_boundary_config) != TIMING_BOUNDARY_CONFIG_SHA256:
-        raise RuntimeError("Conquer/adder config does not match the historical record")
+        raise RuntimeError("Conquer timing-boundary config does not match the historical record")
 
     for point in points:
         path = ROOT / point["g0_path"]

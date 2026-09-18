@@ -81,22 +81,20 @@
       "method_policy": "experiments/main28/policy.py",
       "small_policy_verification": "python3 experiments/main28/verify.py --small",
       "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
-      "aggregate": "D2AP geometric-mean ratio 0.8210095475250041 (17.89904524749959% reduction)",
-      "selection_boundary": "27 rows use the frozen Iterative/Conquer selections; current-PDF adder uses the later p0800 D x A archive_000 result",
-      "policy_boundary": "The retrospective in-sample policy matches all 28 method labels; 27 use the same anchor, while epfl_adder/p0800 is a method-only transfer from an older adder anchor. Saved policy observations use external PPA whose latency is excluded from search-only runtime.",
+      "aggregate": "D2AP geometric-mean ratio 0.8240760907489141 (17.592390925108592% reduction)",
+      "selection_boundary": "All 28 rows use D2AP; epfl_adder/p0800 is the fresh native-D2AP Iterative R5 result.",
+      "policy_boundary": "The retrospective in-sample policy matches all 28 method labels on the same anchors. Saved policy observations use external PPA whose latency is excluded from search-only runtime.",
       "missing_or_limited": [
         "Fresh 28-point optimization and Genus evaluation are intentionally not run during packaging.",
         "The packaged source builds and passed small fresh-search smoke tests, but rebuilt executables are not claimed byte-identical to historical canonical binaries.",
-        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user.",
-        "The complete Section III-E online runtime controller is not yet reproduced by the release wrapper."
+        "The main full-combinational Liberty and commercial Genus installation must be supplied by the user."
       ],
       "selected_outputs": "experiments/main28/expected/<benchmark>__<anchor>.v",
       "source_entry": "experiments/main28/source/D1-series/src/bin/run_generator_union_native.rs",
       "runner": "experiments/main28/run.py",
       "source_provenance": "experiments/main28/source/source_provenance.json",
       "optimization_replay": "python3 experiments/main28/run.py run-one or run-all; see experiments/main28/README.md",
-      "external_validation": "user-provided licensed Genus and formal tools; reuse saved PPA only on exact output-SHA match",
-      "section_iii_e_execution_gap": "The packaged wrapper launches both branches and waits for both, then replays the saved policy from historical external-PPA features. It does not reproduce the online stop/continue decision at Conquer completion, invokes Conquer search-only, and defaults to two internal workers."
+      "external_validation": "user-provided licensed Genus and formal tools; reuse saved PPA only on exact output-SHA match"
     },
     {
       "id": "figure-6-runtime",
@@ -104,12 +102,12 @@
       "status": "evidence_replay_verified_with_resource_caveat",
       "raw_runtime": "evidence/main28/table_iii_figure6_original_precision.csv",
       "evidence_replay": "python3 scripts/replay_main28.py --output-dir reproduced/main28",
-      "aggregate": "geometric mean E-SCOPE search / Genus mapping wall ratio 1.4583649253561954",
+      "aggregate": "geometric mean E-SCOPE search / Genus mapping wall ratio 1.4646139505859852",
       "adder_tuple": {
         "anchor": "p0800",
         "g0_gates": 1942,
         "genus_wall_sec": 301.06,
-        "escope_wall_sec": 303.351
+        "escope_wall_sec": 341.932352107
       },
       "resource_limit": "Saved wall times are machine-specific. Internal worker settings in the records require separate reconciliation with the paper's one-CPU-core wording."
     },

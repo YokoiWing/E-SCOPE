@@ -59,17 +59,11 @@ def point_for(name: str) -> dict:
 
 
 def rounds_for(point: dict) -> int:
-    if point["benchmark"] == "epfl_mem_ctrl":
-        return 2
-    if point["benchmark"] == "epfl_hyp":
-        return 1
-    return 5
+    return int(point["iterative_round_cap"])
 
 
 def objective_for(point: dict) -> Path:
-    return RUNTIME / "config" / (
-        "objective_da.json" if point["benchmark"] == "epfl_adder" else "objective_d2ap.json"
-    )
+    return RUNTIME / "config/objective_d2ap.json"
 
 
 def library_audit() -> Path:
@@ -135,8 +129,7 @@ def clean_env(liberty: Path, binary_dir: Path, objective: Path, jobs: int) -> di
     env.pop("EGG_EXPERIMENTAL_OBJECTIVE", None)
     # The historical Table III trajectories used the native D2AP path.  The
     # generic ObjectiveSpec engine enables additional candidate families and
-    # therefore is not trajectory-equivalent even with 2/1/1 exponents.  Only
-    # the replacement epfl_adder/p0800 experiment used the D x A spec.
+    # therefore is not trajectory-equivalent even with 2/1/1 exponents.
     if objective.name == "objective_da.json":
         env["EGG_OBJECTIVE_ENGINE"] = "v8-pareto"
         env["EGG_OBJECTIVE_SPEC"] = str(objective)
@@ -168,7 +161,11 @@ def commands_for(point: dict, output: Path, liberty: Path, binary_dir: Path, smo
             "--output",
             str(conquer_output),
             "--config",
-            str((RUNTIME / "config" / ("conquer_smoke.json" if smoke else "conquer.json")).resolve()),
+            str((RUNTIME / "config" / (
+                "conquer_smoke.json" if smoke else
+                "conquer_hyp.json" if point["benchmark"] == "epfl_hyp" else
+                "conquer.json"
+            )).resolve()),
             "--cases",
             point["benchmark"],
             "--targets",
@@ -276,8 +273,6 @@ def run_one(args) -> dict:
     timing_boundary_config = str(RUNTIME / "config/timing_boundary_search.json")
     if "conquer" in branch_env:
         branch_env["conquer"]["EGG_V8_ULTRA_CONFIG"] = timing_boundary_config
-    if "iterative" in branch_env and point["benchmark"] == "epfl_adder":
-        branch_env["iterative"]["EGG_V8_ULTRA_CONFIG"] = timing_boundary_config
     processes = {
         label: launch(label, plan[label], output, branch_env[label]) for label in labels
     }

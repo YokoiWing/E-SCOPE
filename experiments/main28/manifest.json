@@ -10,10 +10,8 @@
   "policy_status": "retrospective in-sample runtime-policy replay; not held-out generalization",
   "policy_observation_boundary": "The saved policy uses externally evaluated D2AP for the completed Iterative checkpoint and Conquer result. External evaluation latency is not included in the saved search-only runtime.",
   "anchor_replay": {
-    "same_anchor_points": 27,
-    "method_only_transfer_points": [
-      "epfl_adder/p0800"
-    ]
+    "same_anchor_points": 28,
+    "method_only_transfer_points": []
   },
   "points": [
     {
@@ -337,7 +335,7 @@
       "optimized_path": "expected/epfl_dec__t3_1.10x.v",
       "optimized_sha256": "d8ee41a7b6f60fe7f586f7230042735189ead5336827016e7cea61bb513cb854",
       "objective": "D2AP",
-      "iterative_round_cap": 5,
+      "iterative_round_cap": 3,
       "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
@@ -589,7 +587,7 @@
       "optimized_path": "expected/c6288__t4_1.20x.v",
       "optimized_sha256": "8dfaef91b9876afde4fd5ff3e4642111ef2d7e4a1a618c4e9a8576914ad437a3",
       "objective": "D2AP",
-      "iterative_round_cap": 5,
+      "iterative_round_cap": 3,
       "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
@@ -638,19 +636,19 @@
       "g0_area_um2": 117.188,
       "g0_power_uw": 191.903,
       "paper_selected_method": "Iterative",
-      "paper_selected_flow": "Iterative D\u00d7A objective",
-      "paper_selected_candidate": "archive_000",
+      "paper_selected_flow": "Iterative native D\u00b2\u00d7A\u00d7P objective",
+      "paper_selected_candidate": "R5",
       "source_workspace_path": "paper_results_v8/epfl_adder_genus_pareto_v1/strong_genus/epfl_adder/s04_p800/g0.v",
       "policy_replay": {
-        "anchor": "t0_0.95x",
-        "same_anchor_as_paper": false,
+        "anchor": "p0800",
+        "same_anchor_as_paper": true,
         "features": {
-          "instances": 1787,
+          "instances": 1942,
           "iterative_completed_rounds": 1,
-          "iterative_current_qor_delta_percent": -15.546589926359754,
-          "conquer_qor_delta_percent": -15.547,
-          "qor_gap_pp": -0.0004100736402463667,
-          "projected_iterative_to_conquer_ratio": 2.9598980407455016,
+          "iterative_current_qor_delta_percent": -17.813876148452813,
+          "conquer_qor_delta_percent": -17.813876148452813,
+          "qor_gap_pp": 0.0,
+          "projected_iterative_to_conquer_ratio": 2.6490124447544123,
           "conquer_normal_lane": true
         },
         "decision": "Iterative",
@@ -659,10 +657,10 @@
         "matches_paper_method": true
       },
       "optimized_path": "expected/epfl_adder__p0800.v",
-      "optimized_sha256": "a033549a68f4a2a6fe9e569b2c78e8d8fa79652a3df5a6d5786627a9727db471",
-      "objective": "DA",
+      "optimized_sha256": "95bb321cbc56dbc1357575ef5ce9296cbf7a4c16be6295f859f7804b6ecac274",
+      "objective": "D2AP",
       "iterative_round_cap": 5,
-      "paper_output_source_note": "recovered by byte identity from preserved experiment output"
+      "paper_output_source_note": "fresh p0800 native-D2AP online rerun; Genus/formal PASS"
     },
     {
       "benchmark": "epfl_arbiter",
@@ -769,7 +767,7 @@
       "optimized_path": "expected/epfl_voter__t4_1.20x.v",
       "optimized_sha256": "73ddf78b47ad98ccb951f0202a9f206b3130e256059053a1c42907c13794177c",
       "objective": "D2AP",
-      "iterative_round_cap": 5,
+      "iterative_round_cap": 3,
       "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
@@ -805,7 +803,7 @@
       "optimized_path": "expected/epfl_sqrt__t4_1.20x.v",
       "optimized_sha256": "be9a80e1f4795f502bb4d7d1e386ede0c6786b6154980122808b1759b1029791",
       "objective": "D2AP",
-      "iterative_round_cap": 5,
+      "iterative_round_cap": 3,
       "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {
@@ -985,7 +983,7 @@
       "optimized_path": "expected/epfl_div__t4_1.20x.v",
       "optimized_sha256": "711b6849749a32e2c2dc1c74c2482f873f033ef36f6a5e1bd5b0ffd17c36e882",
       "objective": "D2AP",
-      "iterative_round_cap": 5,
+      "iterative_round_cap": 3,
       "paper_output_source_note": "recovered by byte identity from preserved experiment output"
     },
     {

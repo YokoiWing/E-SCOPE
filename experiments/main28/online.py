@@ -258,45 +258,6 @@ def select_best(rows: list[dict], method: str, objective: str, valid: dict[str, 
     return min(candidates, key=lambda row: (objective_value(row, objective), row["sha256"]))
 
 
-def nondominated(rows: list[dict], metrics: tuple[str, str]) -> list[dict]:
-    return [
-        row for index, row in enumerate(rows)
-        if not any(
-            all(other[key] <= row[key] for key in metrics)
-            and any(other[key] < row[key] for key in metrics)
-            for other_index, other in enumerate(rows) if other_index != index
-        )
-    ]
-
-
-def collect_adder_internal_front(iterative_root: Path) -> list[dict]:
-    """Recreate the pre-Genus freeze used for the paper's adder result."""
-    unique = {}
-    pattern = "round_*/progressive/stage_*/**/summary.json"
-    for summary_path in sorted(iterative_root.glob(pattern)):
-        best = summary_path.parent / "best.v"
-        if not best.is_file():
-            continue
-        summary = load(summary_path)
-        ppa = summary.get("best")
-        if not ppa or not all(key in ppa for key in ("delay", "area", "power")):
-            continue
-        digest = sha256(best)
-        unique[digest] = {
-            "source": best, "sha256": digest,
-            "delay": float(ppa["delay"]), "area": float(ppa["area"]),
-            "power": float(ppa["power"]),
-            "round": int(next(part for part in summary_path.parts if part.startswith("round_")).split("_")[1]) + 1,
-        }
-    rows = list(unique.values())
-    if not rows:
-        raise RuntimeError("no progressive Iterative candidates found for epfl_adder")
-    selected = {row["sha256"]: row for row in (
-        nondominated(rows, ("delay", "area")) + nondominated(rows, ("delay", "power"))
-    )}
-    return sorted(selected.values(), key=lambda row: (row["delay"], row["area"], row["power"], row["sha256"]))
-
-
 def validate_snapshot(output: Path, point: dict, liberty: Path, genus: Path, yosys: Path,
                       abc: Path, genus_timeout: int, formal_timeout: int,
                       yosys_datdir: Path | None) -> dict:
@@ -305,7 +266,7 @@ def validate_snapshot(output: Path, point: dict, liberty: Path, genus: Path, yos
     evaluated = run_genus(root, snapshot["candidates"], liberty, genus, genus_timeout)
     valid = run_formal(root, evaluated, Path(HERE / point["g0_path"]), liberty,
                        yosys, abc, formal_timeout, yosys_datdir)
-    objective = "DA" if point["benchmark"] == "epfl_adder" else "D2AP"
+    objective = point["objective"]
     g0 = select_best(evaluated, "G0", objective, valid)
     iterative = select_best(evaluated, "Iterative", objective, valid)
     conquer = select_best(evaluated, "Conquer", objective, valid)
@@ -339,31 +300,30 @@ def freeze_final_iterative(output: Path, g0: Path, point: dict) -> dict:
     rows = [freeze_candidate(g0, root / "netlists/g0.v", {
         "method": "G0", "candidate_id": "G0", "round": 0,
         "sha256": point["g0_sha256"], "lane": "g0"})]
+    accepted = []
     for receipt_path in sorted((output / "iterative").glob("round_*/round_receipt.json")):
-        receipt = load(receipt_path); number = int(receipt["round"])
+        receipt = load(receipt_path)
+        accepted.append((receipt_path, receipt, int(receipt["round"])))
+    completed = [number for _, _, number in accepted]
+    if (not completed or completed != list(range(1, len(completed) + 1))
+            or len(completed) > int(point["iterative_round_cap"])):
+        raise RuntimeError(f"invalid final Iterative checkpoint sequence: {completed}")
+    # The paper externally evaluated R1/R3/R5.  If search stopped between those
+    # checkpoints, its final accepted round supplied the compatibility alias
+    # for the next checkpoint (for example, a two-round run supplied R3/R5).
+    selected_rounds = {number for number in completed if number in (1, 3, 5)}
+    selected_rounds.add(completed[-1])
+    if point["benchmark"] == "epfl_mem_ctrl":
+        selected_rounds = set(completed)
+    for receipt_path, receipt, number in accepted:
+        if number not in selected_rounds:
+            continue
         rows.append(freeze_candidate(receipt_path.parent / "accepted.v",
             root / f"netlists/iterative_r{number}.v", {
                 "method": "Iterative", "candidate_id": f"ITERATIVE_R{number}",
                 "round": number, "sha256": receipt["accepted_sha256"], "lane": "iterative",
                 "elapsed_sec": float(receipt["elapsed_sec"]), "instances": int(receipt["instance_count"])}))
-    completed = [row["round"] for row in rows if row["method"] == "Iterative"]
-    if (not completed or completed != list(range(1, len(completed) + 1))
-            or len(completed) > int(point["iterative_round_cap"])):
-        raise RuntimeError(f"invalid final Iterative checkpoint sequence: {completed}")
-    freeze_rule = "completed round checkpoints"
-    if point["benchmark"] == "epfl_adder":
-        freeze_rule = "union of exact Internal-NLDM-V3 delay-area and delay-power fronts"
-        rows = rows[:1]
-        existing = {rows[0]["sha256"]}
-        for index, candidate in enumerate(collect_adder_internal_front(output / "iterative")):
-            if candidate["sha256"] in existing:
-                continue
-            rows.append(freeze_candidate(candidate["source"],
-                root / f"netlists/iterative_front_{index:03d}.v", {
-                    "method": "Iterative", "candidate_id": f"ITERATIVE_FRONT_{index:03d}",
-                    "round": candidate["round"], "sha256": candidate["sha256"],
-                    "lane": "internal_da_dp_front"}))
-            existing.add(candidate["sha256"])
+    freeze_rule = "historical R1/R3/R5 checkpoints plus final accepted alias"
     manifest = {
         "schema": "escope-main28-final-iterative-v1", "candidates": rows,
         "selection_frozen_before_external_evaluation": True,
@@ -381,5 +341,5 @@ def validate_final_iterative(output: Path, point: dict, liberty: Path, genus: Pa
     rows = run_genus(root, manifest["candidates"], liberty, genus, genus_timeout)
     valid = run_formal(root, rows, Path(HERE / point["g0_path"]), liberty,
                        yosys, abc, formal_timeout, yosys_datdir)
-    objective = "DA" if point["benchmark"] == "epfl_adder" else "D2AP"
+    objective = point["objective"]
     return select_best(rows, "Iterative", objective, valid)
