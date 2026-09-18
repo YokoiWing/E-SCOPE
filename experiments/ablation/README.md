@@ -42,6 +42,9 @@ the G0 hashes, recomputes the three geometric means, and redraws Figure 8. The
 paper plot clips one `epfl_i2c` Phase-II bar to `1.035`; `--plot exact` keeps
 the measured `1.0708307702363498` ratio.
 
+The updated paper-rendered Figure 8 is packaged as
+`evidence/figure8/figure8_paper_values.{png,svg,pdf}`.
+
 All 28 rows now use the current main-table anchor. The `epfl_adder` row was
 freshly rerun on `p0800` with native D²AP: all 15 frozen netlists completed
 mapped-as-is Genus evaluation and all 14 non-G0 candidates passed formal.

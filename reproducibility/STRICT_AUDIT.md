@@ -31,7 +31,7 @@ packaging.
 The audit used a no-hardlink clone of the pushed tree. The checkout contained
 no local source edits or generated experiment files.
 
-- Release inventory: 928/928 files passed `scripts/verify_release.py`.
+- Release inventory: 931/931 files passed `scripts/verify_release.py`.
 - Identity/path scan: no absolute local home path, former internal method name,
   author account, or local username was found in tracked release content.
 - Python syntax: all Python under `scripts/`, `experiments/`, and `case_study/`
