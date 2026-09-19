@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Entry point for the selected-method ablation searches."""
+"""Run selected-method ablations and evaluate their PPA."""
 
 from __future__ import annotations
 
@@ -287,6 +287,16 @@ def run_all(args) -> None:
     print(json.dumps(result, indent=2))
 
 
+def finalize_results(args) -> None:
+    from pipeline import finalize
+    result = finalize(
+        args.output, args.full_results, args.liberty, args.genus_bin,
+        args.yosys_bin, args.abc_bin, args.genus_chunk, args.genus_timeout,
+        args.formal_jobs, args.formal_timeout, args.yosys_datdir, args.benchmark,
+    )
+    print(json.dumps(result, indent=2))
+
+
 def add_search_arguments(p) -> None:
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--liberty", type=Path, required=True)
@@ -308,12 +318,26 @@ def parser() -> argparse.ArgumentParser:
     p = sub.add_parser("plan", help="write all 84 ablation tasks without running them"); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path); p.add_argument("--bin-dir", type=Path); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=plan)
     p = sub.add_parser("run-one", help="run one benchmark and ablation mode"); p.add_argument("--benchmark", required=True); p.add_argument("--mode", choices=MODES, required=True); p.add_argument("--output", type=Path, required=True); p.add_argument("--liberty", type=Path, required=True); p.add_argument("--bin-dir", type=Path, required=True); p.add_argument("--jobs", type=int, default=2); p.add_argument("--timeout", type=int, default=43200); p.set_defaults(func=run_one)
     p = sub.add_parser("run-all", help="run or resume all 84 selected-method ablations"); add_search_arguments(p); p.set_defaults(func=run_all)
+    p = sub.add_parser("finalize", help="evaluate completed searches and export PPA and comparison CSVs")
+    p.add_argument("--output", type=Path, required=True, help="ablation run-all output directory")
+    p.add_argument("--full-results", type=Path, required=True, help="main28 run-all output, or one completed run-one directory")
+    p.add_argument("--benchmark", action="append", help="evaluate only this benchmark; may be repeated")
+    p.add_argument("--liberty", type=Path, required=True)
+    p.add_argument("--genus-bin", type=Path, required=True)
+    p.add_argument("--yosys-bin", type=Path, required=True)
+    p.add_argument("--abc-bin", type=Path, required=True)
+    p.add_argument("--yosys-datdir", type=Path)
+    p.add_argument("--genus-chunk", type=int, default=60)
+    p.add_argument("--genus-timeout", type=int, default=7200)
+    p.add_argument("--formal-jobs", type=int, default=2)
+    p.add_argument("--formal-timeout", type=int, default=1800)
+    p.set_defaults(func=finalize_results)
     return value
 
 
 def main() -> None:
     args = parser().parse_args()
-    for name in ("jobs", "timeout"):
+    for name in ("jobs", "timeout", "genus_chunk", "genus_timeout", "formal_jobs", "formal_timeout"):
         if hasattr(args, name) and getattr(args, name) <= 0:
             raise SystemExit(f"--{name.replace('_', '-')} must be positive")
     try:

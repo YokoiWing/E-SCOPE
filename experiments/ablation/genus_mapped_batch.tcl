@@ -1,4 +1,4 @@
-# Mapped-as-is Genus evaluation for the Figure 7 reproduction pipeline.
+# Mapped-as-is Genus evaluation for the ablation experiment.
 # Each line in E_SCOPE_BATCH_ITEMS_FILE is:
 # label|absolute_netlist|top_module|absolute_report_directory
 set lib $::env(E_SCOPE_GENUS_LIBERTY)
