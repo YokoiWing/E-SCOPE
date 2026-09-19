@@ -12,7 +12,7 @@ Build the shared binaries as described in the [root README](../../README.md).
 Run one anchor and objective:
 
 ```bash
-python3 experiments/pareto_adder/run.py run-one \
+python3 experiments/pareto/run.py run-one \
   --anchor p0800 --objective d2ap \
   --output /tmp/pareto-p0800 \
   --liberty /path/to/asap7_full_comb.lib \
@@ -22,7 +22,7 @@ python3 experiments/pareto_adder/run.py run-one \
 For the complete experiment, install Matplotlib and run:
 
 ```bash
-python3 experiments/pareto_adder/run.py reproduce \
+python3 experiments/pareto/run.py reproduce \
   --output /tmp/pareto-all \
   --liberty /path/to/asap7_full_comb.lib \
   --bin-dir /tmp/escope-build/release \

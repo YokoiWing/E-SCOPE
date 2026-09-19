@@ -40,7 +40,7 @@ def sha256(path: Path) -> str:
 
 
 def external_helpers():
-    path = HERE.parent / "pareto_adder/pipeline.py"
+    path = HERE.parent / "pareto/pipeline.py"
     spec = importlib.util.spec_from_file_location("escope_external_helpers", path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"cannot load validation helpers from {path}")
