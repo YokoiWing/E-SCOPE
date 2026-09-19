@@ -21,7 +21,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 MANIFEST = HERE / "manifest.json"
 RUNTIME = HERE / "runtime"
-SOURCE_MANIFEST = HERE / "source/D1-series/Cargo.toml"
+SOURCE_MANIFEST = HERE / "source/optimizer/Cargo.toml"
 EXPECTED_LIB_SHA256 = "48f3f7f1ae6ff4a6c50da7ac8ea2cb5dca3fc0e9763321d726583f17b3e659dd"
 BINARIES = (
     "run_generator_union_native",
@@ -163,7 +163,7 @@ def commands_for(point: dict, output: Path, liberty: Path, binary_dir: Path, smo
         ],
         "conquer": [
             sys.executable,
-            str((RUNTIME / "scripts/run_conquer_recall_v3.py").resolve()),
+            str((RUNTIME / "scripts/run_conquer.py").resolve()),
             "--output",
             str(conquer_output),
             "--config",
@@ -454,7 +454,7 @@ def build(args) -> None:
     command = ["cargo", "build", "--release", "--locked", "--manifest-path", str(SOURCE_MANIFEST), "--target-dir", str(target)]
     for binary in BINARIES:
         command += ["--bin", binary]
-    subprocess.run(command, cwd=HERE / "source/D1-series", check=True)
+    subprocess.run(command, cwd=HERE / "source/optimizer", check=True)
     result = {"status": "PASS", "binary_dir": str(target / "release"), "binaries": {name: sha(target / "release" / name) for name in BINARIES}}
     print(json.dumps(result, indent=2))
 

@@ -205,7 +205,7 @@ def run_native(point: dict, mode: str, output: Path, liberty: Path, binary_dir: 
 def run_conquer(point: dict, mode: str, output: Path, liberty: Path, binary_dir: Path, timeout: int) -> dict:
     anchors = output / "anchor_manifest.json"
     dump(anchors, {point["benchmark"]: {point["anchor"]: str(g0_path(point))}})
-    command = [sys.executable, str(RUNTIME / "scripts/run_conquer_recall_v3.py"), "--output", str(output / "search"),
+    command = [sys.executable, str(RUNTIME / "scripts/run_conquer.py"), "--output", str(output / "search"),
                "--config", str((HERE / point["conquer_config"]).resolve()), "--cases", point["benchmark"],
                "--targets", point["anchor"], "--anchor-manifest", str(anchors), "--search-only"]
     if mode == "no-pi-drive-expansion":

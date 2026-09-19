@@ -4,7 +4,7 @@ Run from the repository root:
 
 ```bash
 CARGO_TARGET_DIR=/tmp/escope-iterative cargo build --release --locked \
-  --manifest-path case_study/iterative/source/D1-series/Cargo.toml \
+  --manifest-path case_study/iterative/source/optimizer/Cargo.toml \
   --bin run_generator_union_native
 python3 case_study/iterative/run.py \
   --case usb_phy --guide internal_v3 --mode execute \

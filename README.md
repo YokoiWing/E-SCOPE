@@ -4,6 +4,22 @@ E-SCOPE optimizes mapped logic netlists using e-graph exploration and
 standard-cell PPA estimation. This repository contains the source, input
 netlists, and scripts for the paper's four experiments.
 
+## Source layout
+
+The main, Pareto, and ablation experiments share `experiments/main28/source/`:
+
+- `optimizer/`: Iterative search, conditional sizing, and topology planning.
+- `netlist/`: mapped-netlist I/O, e-graphs, and library handling.
+- `netlist/extraction/`: extraction and timing/power models.
+
+The case study keeps its separate source snapshot under
+`case_study/iterative/source/` with the same layout. Conquer orchestration
+and policies are in `experiments/main28/runtime/scripts/`, using descriptive
+names such as `run_conquer.py`, `closure_policy.py`, and `recall_policy.py`.
+Cargo library identifiers, executable names, environment keys, and result
+schemas remain stable compatibility interfaces. The run commands below are
+unchanged.
+
 ## Setup
 
 Use Linux with Python 3.10+, Rust/Cargo with edition 2024 support, and a C/C++
