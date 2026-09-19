@@ -1,55 +1,56 @@
 # E-SCOPE
 
-Minimal source release for the E-SCOPE experiments. The repository contains
-the implementation, runnable experiment drivers, configurations, and input
-netlists. It intentionally does not contain saved winners, expected output
-netlists, historical EDA reports, or pre-rendered figures.
+E-SCOPE optimizes mapped logic netlists using e-graph exploration and
+standard-cell PPA estimation. This repository contains the source, input
+netlists, and scripts for the paper's four experiments.
 
-## Requirements
+## Setup
 
-- Python 3.10+
-- Rust and Cargo
-- the ASAP7 6-track full-combinational Liberty used by the paper (SHA-256
-  `48f3f7f1ae6ff4a6c50da7ac8ea2cb5dca3fc0e9763321d726583f17b3e659dd`)
-- Cadence Genus for mapped-as-is PPA evaluation
-- Yosys and Berkeley ABC for legality and equivalence checking
+Use Linux with Python 3.10+, Rust/Cargo with edition 2024 support, and a C/C++
+build toolchain. AreaPMO also needs CMake. The evaluated tool version was
+Cadence Genus 23.14-s090_1; main and Pareto runs also use Yosys and Berkeley ABC.
+See [THIRD_PARTY.md](THIRD_PARTY.md) for software and library details.
 
-Commercial tools and licenses are not distributed. See `THIRD_PARTY.md`.
+For the main, Pareto, and ablation experiments, provide the ASAP7 6-track
+LVT/TT full-combinational Liberty. The runners check its SHA-256:
 
-## Build
-
-```bash
-python3 experiments/main28/run.py build \
-  --target-dir /tmp/escope-build
+```text
+48f3f7f1ae6ff4a6c50da7ac8ea2cb5dca3fc0e9763321d726583f17b3e659dd
 ```
 
-## Small smoke run
+Commands below and in the experiment READMEs run from the repository root.
+Replace `/path/to/...` with your local tool and library paths. Build once for
+all three experiments:
 
-This starts one Iterative round and one Conquer search on `epfl_ctrl`, then
-performs the online decision and external validation:
+```bash
+python3 experiments/main28/run.py build --target-dir /tmp/escope-build
+```
+
+## First run
+
+This small run checks the complete search and evaluation setup:
 
 ```bash
 python3 experiments/main28/run.py run-one \
-  --benchmark epfl_ctrl --method online --smoke \
+  --benchmark epfl_ctrl --smoke \
   --output /tmp/escope-smoke \
   --liberty /path/to/asap7_full_comb.lib \
   --bin-dir /tmp/escope-build/release \
   --genus-bin /path/to/genus \
-  --yosys-bin /path/to/yosys \
-  --abc-bin /path/to/abc
+  --yosys-bin /path/to/yosys --abc-bin /path/to/abc
 ```
 
-Every output is created by the current run. No command compares against or
-copies a packaged expected result.
+Look for `status.json`, `selected/mapped.v`, and `selected/receipt.json` in the
+output directory. The receipt contains the selected method and external PPA.
 
 ## Experiments
 
-- `experiments/main28/`: concurrent Iterative/Conquer main experiment.
-- `experiments/pareto_adder/`: three-objective adder Pareto experiment.
-- `experiments/ablation/`: selected-method phase ablations. Its finalization
-  consumes fresh full-method outputs from `main28/run.py run-all` through
-  `--full-results`.
-- `case_study/`: minimal AreaPMO and Iterative case-study runners.
+| Experiment | Instructions |
+|---|---|
+| Main 28-point comparison | [main28](experiments/main28/README.md) |
+| Adder Pareto search | [pareto_adder](experiments/pareto_adder/README.md) |
+| Phase ablation | [ablation](experiments/ablation/README.md) |
+| AreaPMO and Iterative case study | [case_study](case_study/README.md) |
 
-Each directory has its own README and `plan`/`run-one` or equivalent command.
-Write build and experiment outputs outside the checkout.
+Use a new output directory for each individual run. Keep results and builds
+outside the checkout; `run-all` commands skip completed tasks when restarted.

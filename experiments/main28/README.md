@@ -1,23 +1,17 @@
 # Main 28-point experiment
 
-`run.py` is the main entry. It builds the shared implementation and runs
-Iterative and Conquer concurrently from the same packaged G0. When Conquer
-finishes, the controller freezes completed Iterative checkpoints, validates
-the candidates with locally supplied tools, and applies the runtime policy.
+Iterative and Conquer start from the same G0 and run concurrently. At Conquer
+completion, the controller evaluates the available Iterative checkpoints and
+Conquer candidates, then decides whether to continue Iterative or keep
+Conquer. All 28 points use D²AP; the inputs and round limits are in
+`manifest.json`.
 
-```bash
-python3 experiments/main28/run.py build --target-dir /tmp/escope-build
-python3 experiments/main28/run.py preflight \
-  --liberty /path/to/asap7_full_comb.lib \
-  --bin-dir /tmp/escope-build/release
-python3 experiments/main28/run.py plan --output /tmp/main28-plan.json
-```
-
-Run a small point:
+Build and check the setup using the [root README](../../README.md). To run one
+point at its normal budget:
 
 ```bash
 python3 experiments/main28/run.py run-one \
-  --benchmark epfl_ctrl --method online --smoke \
+  --benchmark epfl_ctrl \
   --output /tmp/main28-ctrl \
   --liberty /path/to/asap7_full_comb.lib \
   --bin-dir /tmp/escope-build/release \
@@ -25,9 +19,30 @@ python3 experiments/main28/run.py run-one \
   --yosys-bin /path/to/yosys --abc-bin /path/to/abc
 ```
 
-Omit `--smoke` for the configured round cap. `run-all` provides a resumable
-28-point queue. The repository contains G0 inputs but no expected output
-netlists; every selected result is generated and validated by the fresh run.
+Run all 28 points:
 
-The default is two internal workers. Runtime-dependent checkpoint availability
-can change the Iterative/Conquer choice across machines.
+```bash
+python3 experiments/main28/run.py run-all \
+  --output /tmp/main28-all \
+  --liberty /path/to/asap7_full_comb.lib \
+  --bin-dir /tmp/escope-build/release \
+  --genus-bin /path/to/genus \
+  --yosys-bin /path/to/yosys --abc-bin /path/to/abc
+```
+
+The queue runs one benchmark at a time. Repeat the same command to resume;
+completed benchmarks are skipped and interrupted attempts are kept separately.
+Each benchmark directory contains:
+
+- `selected/mapped.v`: the output netlist.
+- `selected/receipt.json`: selected method and Genus PPA.
+- `DECISION.json`: the online choice and measurements used to make it.
+- `status.json`: completion state and elapsed end-to-end time.
+
+Two internal workers are used by default. Keep this setting for the larger
+cases, especially `div`, `sqrt`, `priority`, and `mem_ctrl`. Machine load and
+worker count affect which Iterative rounds finish before Conquer, so the
+chosen method and PPA can vary. `DECISION.json` makes that choice visible.
+Use the same Liberty and evaluation settings when comparing PPA; the Genus
+version can also affect measured values. Search time and end-to-end time,
+which includes external evaluation, are different measurements.

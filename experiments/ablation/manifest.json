@@ -16,8 +16,7 @@
       "g0_sha256": "3801f12c7c94b1f51290b9a04c7e8bf5fea1fd41f81454835c066470854fd22a",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_ctrl__t2_1.05x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_router",
@@ -27,8 +26,7 @@
       "g0_sha256": "806558ccc843489d48819565802dd0cd778baef933521a91411ddf2af6f52d9e",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_router__t0_0.95x.json",
-      "conquer_phase1_candidate": "RECALL_CLOSE_011"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c432",
@@ -46,8 +44,7 @@
       "g0_sha256": "970244c0b96865bc661d9e0fa3c214a4179c8477196e11810468737d779a0693",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_int2float__t4_1.20x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c880",
@@ -57,8 +54,7 @@
       "g0_sha256": "177c381b45d9d1a1b502663fa10f84928f0e1fc15032cfd0b0f2f917afa284ae",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/c880__t1_1.00x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c1908",
@@ -68,8 +64,7 @@
       "g0_sha256": "309caf69a8cd5a608d133e2008a6c8bc2b5a041ed05b8abc46853ef8e5f25a9f",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/c1908__t0_0.95x.json",
-      "conquer_phase1_candidate": "PI_IDENTITY_BYPASS_P246"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c2670",
@@ -79,8 +74,7 @@
       "g0_sha256": "df835b1ae22fe4fcdd0a90a6c42d247954b62c89fcd7b3eb9b114de278f2a991",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/c2670__t3_1.10x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c499",
@@ -90,8 +84,7 @@
       "g0_sha256": "6853e5d9812cf00fed444cb0ab82e4f1b8d4c8c888d850ffb5adced2356871b3",
       "round_cap": 5,
       "conquer_config": "configs/runtime-g0proof-recall-v3-underperformer.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/c499__t0_0.95x.json",
-      "conquer_phase1_candidate": "RECALL_CLOSE_004"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_dec",
@@ -117,8 +110,7 @@
       "g0_sha256": "685e33fe0e1a89d4d5381d47d3c56aee534b1d19bd22c0eca3011f5218e4d147",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_cavlc__t4_1.20x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c3540",
@@ -128,8 +120,7 @@
       "g0_sha256": "4a647d975b8bdcb9fada7ef0918709c60acae8e2a3b492737802add86e509874",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/c3540__t1_1.00x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_i2c",
@@ -139,8 +130,7 @@
       "g0_sha256": "fc7b911275fe2c1269d970484b90c1b94bf4e45b5942528cafc16fab99873e64",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_i2c__t4_1.20x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c5315",
@@ -150,8 +140,7 @@
       "g0_sha256": "4581dddb5dd148422db14f46d4296fb39577f21a1595eb3f822b7265d6a1ccd2",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/c5315__t4_1.20x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_bar",
@@ -161,8 +150,7 @@
       "g0_sha256": "d5c0b76c8387b935a8e0a3d96490af206dcfbe3a8f9f915fcc7144e64f25b474",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_bar__t4_1.20x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "c6288",
@@ -204,8 +192,7 @@
       "g0_sha256": "45418c3744331ef1c885394b94d15cd76dd298fc81b230898562abcfeef561cf",
       "round_cap": 5,
       "conquer_config": "configs/runtime-v3-original.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_sin__t4_1.20x.json",
-      "conquer_phase1_candidate": "RECALL_RECOURSE_001"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_voter",
@@ -231,8 +218,7 @@
       "g0_sha256": "2db4d9efee8ffcaa254ea949d958e269baa74f44815e5d8984a1930ac0d8e089",
       "round_cap": 5,
       "conquer_config": "configs/uniform-runtime-g0proof-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_square__t4_1.20x.json",
-      "conquer_phase1_candidate": "SIN_GENERIC_FUSION_0161_P2480_XNOR2x2"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_mem_ctrl",
@@ -250,8 +236,7 @@
       "g0_sha256": "73b5036d27eae72417e678b10827bf75ed035aebd35db8f5b8e18cff6e67240a",
       "round_cap": 5,
       "conquer_config": "configs/runtime-v3-original.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_multiplier__t3_1.10x.json",
-      "conquer_phase1_candidate": "NORMAL_PRE"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_log2",
@@ -261,8 +246,7 @@
       "g0_sha256": "24982cca330083d52984f107ecad0e67ee9c235a2d154ac1d1653aebc277ee0d",
       "round_cap": 5,
       "conquer_config": "configs/runtime-g0proof-recall-v3-underperformer.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_log2__t3_1.10x.json",
-      "conquer_phase1_candidate": "PI_IDENTITY_BYPASS_P17171"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     },
     {
       "benchmark": "epfl_div",
@@ -280,8 +264,7 @@
       "g0_sha256": "8ac127f84641f609c3b632f88cfed28dbba1eb4bb61d248f863b110ed2ae8121",
       "round_cap": 1,
       "conquer_config": "configs/hyp-fixed-chunked-recall-v3.json",
-      "conquer_phase2_policy": "conquer_phase2_policies/epfl_hyp__t1_1.00x.json",
-      "conquer_phase1_candidate": "RECALL_CLOSE_025"
+      "conquer_phase2_policy": "configs/conquer_phase2.json"
     }
   ]
 }
