@@ -1,6 +1,6 @@
-# Adder Pareto experiment
+# Pareto experiment
 
-The experiment starts from 20 Genus-mapped adder netlists. The 13 search
+The paper's experiment starts from 20 Genus-mapped adder netlists. The 13 search
 anchors were selected from their delay–area and delay–power fronts. Each
 anchor is optimized with DA, D²AP, and DP², giving 39 searches.
 

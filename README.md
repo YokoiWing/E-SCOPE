@@ -48,7 +48,7 @@ output directory. The receipt contains the selected method and external PPA.
 | Experiment | Instructions |
 |---|---|
 | Main 28-point comparison | [main28](experiments/main28/README.md) |
-| Adder Pareto search | [pareto](experiments/pareto/README.md) |
+| Pareto search | [pareto](experiments/pareto/README.md) |
 | Phase ablation | [ablation](experiments/ablation/README.md) |
 | AreaPMO and Iterative case study | [case_study](case_study/README.md) |
 
