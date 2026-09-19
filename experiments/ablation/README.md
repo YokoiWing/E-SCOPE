@@ -7,6 +7,11 @@ comparison, as recorded in `manifest.json`. The three modes are:
 - `phase2-only`: sizing without Phase-I exploration.
 - `no-pi-drive-expansion`: logic-only exploration in Phase I.
 
+![Topology–sizing ablation across 28 benchmarks](figures/ablation.png)
+
+Paper Fig. 8: D²AP(full) / D²AP(ablated) for the three ablations;
+values below 1 favor full E-SCOPE. [View the vector PDF](figures/ablation.pdf).
+
 Build the shared binaries using the [root README](../../README.md), then run
 one ablation:
 
